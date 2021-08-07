@@ -14,21 +14,21 @@
     <generator>Distill</generator>
     <lastBuildDate>Sat, 07 Aug 2021 00:00:00 +0000</lastBuildDate>
     <item>
-      <title>Welcome to DACSS 601</title>
-      <dc:creator>Meredith Rolfe</dc:creator>
-      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-07-welcome</link>
-      <description>August 2021 Orientation Session</description>
-      <category>welcome</category>
-      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-07-welcome</guid>
-      <pubDate>Sat, 07 Aug 2021 00:00:00 +0000</pubDate>
-    </item>
-    <item>
       <title>My first distill post</title>
       <dc:creator>Meredith Rolfe</dc:creator>
       <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-07-my-new-post</link>
       <description>I can't believe how easy it is to use R.</description>
       <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-07-my-new-post</guid>
       <pubDate>Sat, 07 Aug 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Welcome to DACSS 601</title>
+      <dc:creator>Meredith Rolfe</dc:creator>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-07-welcome</link>
+      <description>August 2021 Orientation Session</description>
+      <category>welcome</category>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-07-welcome</guid>
+      <pubDate>Fri, 06 Aug 2021 00:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
