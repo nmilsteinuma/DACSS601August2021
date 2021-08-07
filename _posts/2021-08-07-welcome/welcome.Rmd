@@ -1,14 +1,17 @@
 ---
-title: "Welcome!"
-description: |
-  A short description of the post.
+title: Welcome to DACSS 601
+description: August 2021 Orientation Session
 author:
-  name: Meredith Rolfe
+- name: Meredith Rolfe
+  url: http://umass.edu/sbs/dacss
+  affiliation: DACSS
+  affiliation_url: http://umass.edu/sbs/dacss
 date: 08-07-2021
+categories: welcome
 output:
   distill::distill_article:
-    self_contained: false
-draft: false
+    self_contained: no
+draft: yes
 ---
 
 
@@ -16,10 +19,6 @@ draft: false
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-Welcome to the Data Analytics and Computational Social Science Programs' Orientation 2021 session of DACSS 601 Foundations of Data Science. This blog will feature the work of our incoming M.S. students taking the class, as well as PhD students in the College of Behavioral and Social Sciences who are willing to go through `R` Bootcamp.
-
-Distill is a publication format for scientific and technical writing, native to the web.
-
-Learn more about using Distill at <https://rstudio.github.io/distill>.
+Welcome to the Data Analytics and Computational Social Science Programs' Orientation 2021 session of DACSS 601 Foundations of Data Science. This blog will feature the work of our incoming M.S. students taking the class, as well as PhD students in the College of Behavioral and Social Sciences who are willing to go through *"R Bootcamp"*.
 
 
