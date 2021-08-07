@@ -60,7 +60,7 @@ You will need to have the `devtools`, `blogbuilder`, `distill` and `postcards` p
 - [Distill](https://rstudio.github.io/distill/) will enable you to make posts to the blog.
 - [Postcards](https://github.com/seankross/postcards) will enable you to create a personalized 'About Me' page for the blog.
 
-Make sure you install the packages with `install.packages` and `devtools` with the commands below:
+Make sure you install the packages with `install.packages` and `devtools` with the commands below. You can enter these into the R console instead of starting a new .R or .Rmd file.
 
 ``` r
 install.packages('devtools')
@@ -69,7 +69,7 @@ install.packages("distill")
 install.packages('postcards')
 ```
 
-And load the libraries before proceeding further:
+And load the libraries before proceeding further. These commands you will need again, but just put them into the console also for now!
 
 ``` r
 library(blogbuilder)
@@ -104,6 +104,8 @@ Once you are done, simply knit the file as a `distill_article`.
 You will recieve an output preview of what your post will look like.
 
 Once you are done, commit and push your changes to your repo.
+
+
 
 ## Creating an About Me Page with Postcards
 
