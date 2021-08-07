@@ -4,7 +4,7 @@ This is the generic DACSS course blog hosted on GitHub pages. Students will crea
 
 # R Package (for Instructors)
 
-You may use [blogbuilder](https://github.com/DACSS/blogbuilder), an R package designed to create and manage DACSS course blogs. Here is the package's [documentation](https://github.com/DACSS/blogbuilder/tree/main/man#readme). Other than the written guide, a video version for instructors and students can be found as well.
+You may use [blogbuilder](https://github.com/DACSS/blogbuilder), an R package designed to create and manage DACSS course blogs. Here is the package's [documentation](https://github.com/DACSS/blogbuilder/tree/main/man#readme). Other than the written guide, a video version for instructors and students can be found as well. **Note that there have been minor changes since the time the video was created. Students no longer need to use the "iamstudent()" command.**
 
 # Workflow (for Students)
 - [Prerequisites](#prerequisites)
@@ -43,7 +43,7 @@ After you have forked the repo, you will have your 'own' version of the repo pag
 
 ## Create a new R Project for the Course
 
-Create a new R project, using the copied github URL. [[Need instructions]]
+Create a new R project, using the copied github URL. See video for more detailed instructions.
 
 ## R Package Requirements
 
