@@ -4,7 +4,7 @@ This is the generic DACSS course blog hosted on GitHub pages. Students will crea
 
 # R Package (for Instructors)
 
-You may use [blogbuilder](https://github.com/DACSS/blogbuilder), an R package designed to create and manage DACSS course blogs. Here is the package's [documentation](https://github.com/DACSS/blogbuilder/tree/main/man#readme). Other than the written guide, a video version for instructors and students can be found as well.
+You may use [blogbuilder](https://github.com/DACSS/blogbuilder), an R package designed to create and manage DACSS course blogs. Here is the package's [documentation](https://github.com/DACSS/blogbuilder/tree/main/man#readme). Other than the written guide, a video version for instructors and students can be found as well. **Note that there have been minor changes since the time the video was created. Students no longer need to use the "iamstudent()" command.**
 
 # Workflow (for Students)
 - [Prerequisites](#prerequisites)
@@ -41,9 +41,16 @@ If prompted to choose a user, choose your main GitHub account.
 
 After you have forked the repo, you will have your 'own' version of the repo page to edit and any changes made to this repo will not affect the main course blog repo. Before heading over to RStudio and making changes, make sure to clone the repo by using the repo HTTP link with a new RStudio project.
 
-##Create a new R Project for the Course
+## Create a new R Project for the Course
 
-Create a new R project, using the copied github URL. [[Need instructions]]
+First, copy the URl for your repository before switching back to RStudio.
+
+![repoUrl](repoURL.png)
+
+
+Create a new R project, using the copied github URL. See video for more detailed instructions.
+
+![RStudio Project](https://media.giphy.com/media/1l13atrlQmYTviEKO1/giphy.gif)
 
 ## R Package Requirements
 
@@ -53,16 +60,16 @@ You will need to have the `devtools`, `blogbuilder`, `distill` and `postcards` p
 - [Distill](https://rstudio.github.io/distill/) will enable you to make posts to the blog.
 - [Postcards](https://github.com/seankross/postcards) will enable you to create a personalized 'About Me' page for the blog.
 
-Make sure you install the packages with `install.packages` and `devtools` with the commands below:
+Make sure you install the packages with `install.packages` and `devtools` with the commands below. You can enter these into the R console instead of starting a new .R or .Rmd file.
 
 ``` r
 install.packages('devtools')
 devtools::install_github('DACSS/blogbuilder')
-devtools::install_github("rstudio/distill")
+install.packages("distill")
 install.packages('postcards')
 ```
 
-And load the libraries before proceeding further:
+And load the libraries before proceeding further. These commands you will need again, but just put them into the console also for now!
 
 ``` r
 library(blogbuilder)
@@ -97,6 +104,8 @@ Once you are done, simply knit the file as a `distill_article`.
 You will recieve an output preview of what your post will look like.
 
 Once you are done, commit and push your changes to your repo.
+
+
 
 ## Creating an About Me Page with Postcards
 
