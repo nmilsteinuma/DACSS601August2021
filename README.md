@@ -43,6 +43,9 @@ After you have forked the repo, you will have your 'own' version of the repo pag
 
 ## Create a new R Project for the Course
 
+First, copy the URl for your repository before switching back to RStudio.
+![repoUrl](repoURL.png)
+
 Create a new R project, using the copied github URL. See video for more detailed instructions.
 
 ## R Package Requirements

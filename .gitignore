@@ -25,6 +25,7 @@ Icon?
 
 # RStudio files
 *.Rproj
+*.user
 
 # produced vignettes
 vignettes/*.html
@@ -45,4 +46,5 @@ vignettes/*.pdf
 .Renviron
 .env
 
-.Rproj.user
+.Rproj
+.user
