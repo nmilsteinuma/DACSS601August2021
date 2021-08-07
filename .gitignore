@@ -24,7 +24,7 @@ Icon?
 /*.Rcheck/
 
 # RStudio files
-.Rproj.user/
+*.Rproj
 
 # produced vignettes
 vignettes/*.html
@@ -45,3 +45,4 @@ vignettes/*.pdf
 .Renviron
 .env
 
+.Rproj.user
