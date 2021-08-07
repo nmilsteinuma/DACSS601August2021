@@ -1,13 +1,13 @@
 ---
-title: "Still Learning the GitHib Workflow"
+title: Still Learning the GitHib Workflow
 description: |
   Fingers crossed this post works
 author: Maddi Hertz
 date: 08-07-2021
 output:
   distill::distill_article:
-    self_contained: false
-draft: true
+    self_contained: no
+draft: yes
 ---
 
 
