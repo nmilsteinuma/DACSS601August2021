@@ -5,7 +5,7 @@ theme: theme.css
 description: |
   This is a DACSS course website for student work offered at UMass Amherst.
 output_dir: docs
-base_url: https://github.com/DACSS/dacss_course_website
+base_url: https://mrolfe.github.io/DACSS601August2021/
 collections:
   posts:
     disqus: dacss-course-github

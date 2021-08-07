@@ -1,5 +1,22 @@
 [
   {
+    "path": "posts/2021-08-06-intro/",
+    "title": "Intro",
+    "description": "A short description of the post.",
+    "author": [
+      {
+        "name": "Larri Miller",
+        "url": {}
+      }
+    ],
+    "date": "2021-08-06",
+    "categories": [],
+    "contents": "\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-08-06T21:48:02-04:00",
+    "input_file": "intro.knit.md"
+  },
+  {
     "path": "posts/welcome/",
     "title": "Welcome to DACSS 601",
     "description": "Welcome to DACSS 601: Foundations of Data Science. We hope you enjoy \nreading what we have to say!",
@@ -15,11 +32,7 @@
     ],
     "contents": "\n\n\n\n",
     "preview": {},
-    "last_modified": "2021-08-06T20:10:55-04:00",
-<<<<<<< HEAD
-    "input_file": {}
-=======
+    "last_modified": "2021-08-06T21:48:03-04:00",
     "input_file": "welcome.knit.md"
->>>>>>> bd3513eb361d49fadbdd65d51a01f8e37fd6c2ad
   }
 ]
