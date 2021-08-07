@@ -32,7 +32,7 @@
     "categories": [],
     "contents": "\nThis is my first post in R using the distill package! Check out my R code.\n\n\n2+2\n\n\n[1] 4\n\nx<-4\ny<-6\n\nx+y\n\n\n[1] 10\n\n\n\n\n",
     "preview": {},
-    "last_modified": "2021-08-07T15:23:34-04:00",
+    "last_modified": "2021-08-07T15:59:18-04:00",
     "input_file": "my-new-post.knit.md"
   }
 ]
