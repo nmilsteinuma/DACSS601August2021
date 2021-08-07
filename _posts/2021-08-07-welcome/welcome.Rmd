@@ -19,6 +19,6 @@ draft: yes
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-Welcome to the Data Analytics and Computational Social Science Programs' Orientation 2021 session of DACSS 601 Foundations of Data Science. This blog will feature the work of our incoming M.S. students taking the class, as well as PhD students in the College of Behavioral and Social Sciences who are willing to go through *"R Bootcamp"*.
+Welcome to the Data Analytics and Computational Social Science Programs' Orientation 2021 session of DACSS 601 Foundations of Data Science. This blog will feature the work of our incoming M.S. students taking the class, as well as PhD students in the College of Behavioral and Social Sciences who have decided to participate through *"R Bootcamp"*.
 
 
