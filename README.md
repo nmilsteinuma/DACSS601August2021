@@ -7,6 +7,7 @@ This is the generic DACSS course blog hosted on GitHub pages. Students will crea
 You may use [blogbuilder](https://github.com/DACSS/blogbuilder), an R package designed to create and manage DACSS course blogs. Here is the package's [documentation](https://github.com/DACSS/blogbuilder/tree/main/man#readme). A useful video to help during setup is provided below.
 
 # [Setup R Course blog (for Students)](#setup-r-course-blog)
+If this is your first time setting up a DACSS course blog repository, or if you have forgotten how, please skip ahead and get the repository setup (directions at bottom of Read Me. The instructions for regular assignment submissions are provided first for ease of reference.
 
 # Weekly Workflow (for Students)
 - [Create a New Post](#creating-a-new-post-with-distill)
