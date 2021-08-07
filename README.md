@@ -47,6 +47,7 @@ First, copy the URl for your repository before switching back to RStudio.
 ![repoUrl](repoURL.png)
 
 Create a new R project, using the copied github URL. See video for more detailed instructions.
+![RStudio Project](https://media.giphy.com/media/1l13atrlQmYTviEKO1/giphy.gif)
 
 ## R Package Requirements
 
@@ -61,7 +62,7 @@ Make sure you install the packages with `install.packages` and `devtools` with t
 ``` r
 install.packages('devtools')
 devtools::install_github('DACSS/blogbuilder')
-devtools::install_github("rstudio/distill")
+install.packages("distill")
 install.packages('postcards')
 ```
 
