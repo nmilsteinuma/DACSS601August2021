@@ -41,7 +41,7 @@ If prompted to choose a user, choose your main GitHub account.
 
 After you have forked the repo, you will have your 'own' version of the repo page to edit and any changes made to this repo will not affect the main course blog repo. Before heading over to RStudio and making changes, make sure to clone the repo by using the repo HTTP link with a new RStudio project.
 
-##Create a new R Project for the Course
+## Create a new R Project for the Course
 
 Create a new R project, using the copied github URL. [[Need instructions]]
 
