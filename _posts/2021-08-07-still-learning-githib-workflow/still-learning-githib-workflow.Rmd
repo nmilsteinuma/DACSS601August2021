@@ -1,0 +1,29 @@
+---
+title: "Still Learning the GitHib Workflow"
+description: |
+  Fingers crossed this post works
+author: Maddi Hertz
+date: 08-07-2021
+output:
+  distill::distill_article:
+    self_contained: false
+draft: true
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Using Markdown is fun!
+
+I learned a lot this summer --- Markdown is your friend, as are flexdashboard and Stack Overflow. 
+
+Also, always keep in mind that social scientists understand data and data management just as well (if not better) than the computer scientists. 
+
+## TidyTuesday
+
+__New goal:__ Participate in Tidy Tuesdays
+
+
+
