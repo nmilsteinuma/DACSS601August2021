@@ -49,6 +49,7 @@ First, copy the URl for your repository before switching back to RStudio.
 
 
 Create a new R project, using the copied github URL. See video for more detailed instructions.
+![RStudio Project](https://media.giphy.com/media/1l13atrlQmYTviEKO1/giphy.gif)
 
 ![RStudio Project](https://media.giphy.com/media/1l13atrlQmYTviEKO1/giphy.gif)
 
