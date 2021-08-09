@@ -3,10 +3,9 @@ title: Introduction to Matrix Algebra Using R
 description: |
   Setting up a matrix and carrying out elementary operations on it.
 author:
-  - name: Mohit Arora
+- name: Mohit Arora
 date: 08-08-2021
-categories:
-  - matrix algebra
+categories: matrix algebra
 output:
   distill::distill_article:
     self_contained: no
