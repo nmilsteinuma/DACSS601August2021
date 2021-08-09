@@ -1,0 +1,26 @@
+---
+title: "Shih-Yen Pan"
+image: "portrait.jpg"
+links:
+
+  - label: Email
+    url: "shihyenpan@umass.edu"
+output:
+  postcards::trestles
+---
+ 
+## Bio
+
+Shih-Yen Pan studies political economic forces impacting population health.   
+
+## Education
+
+**University of Massachusetts, Amherst** | Amherst, MA
+
+Ph.D. in Economics | September 2019 - 
+
+**The University of Kansas** | Lawrence, KS
+
+B.A. in Sociology, August 2015 - May 2019
+
+B.A. in Mathematics, August 2015 - May 2019
