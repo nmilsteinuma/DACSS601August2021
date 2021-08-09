@@ -1,11 +1,12 @@
 ---
 title: Introduction to Matrix Algebra Using R
 description: |
-  In this post, I will talk about setting up a matrix in R, find its dimensions (number of rows and columns) and discuss elementary operations on matrices (addition, subtraction, multiplication and transpose).
+  Setting up a matrix and carrying out elementary operations on it.
 author:
-- name: Mohit Arora
+  - name: Mohit Arora
 date: 08-08-2021
-categories: matrix algebra basics
+categories:
+  - matrix algebra
 output:
   distill::distill_article:
     self_contained: no
@@ -13,7 +14,7 @@ draft: yes
 ---
 
 
-```{r echo=TRUE, message=FALSE, warning=FALSE}
+```{r knitr::opts_chunk$set(echo = TRUE)}
 A <- matrix(1:9, nrow = 3, ncol = 3)
 A
 B <- matrix(1:9, ncol = 3)
