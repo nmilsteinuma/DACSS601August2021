@@ -27,6 +27,8 @@ navbar:
     href: syllabus.html
   - text: Students
     href: students.html
+  - text: Example Data
+    href: Sample_data_info.html
   - icon: fab fa-github-alt fa-1x
     href: https://github.com/mrolfe/DACSS601August2021.git
   search: no
