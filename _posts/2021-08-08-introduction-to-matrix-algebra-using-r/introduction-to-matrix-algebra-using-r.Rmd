@@ -1,16 +1,15 @@
 ---
-title: "Introduction to Matrix Algebra Using R"
+title: Introduction to Matrix Algebra Using R
 description: |
   In this post, I will talk about setting up a matrix in R, find its dimensions (number of rows and columns) and discuss elementary operations on matrices (addition, subtraction, multiplication and transpose).
 author:
 - name: Mohit Arora
 date: 08-08-2021
-categories:
-  - matrix algebra basics
+categories: matrix algebra basics
 output:
   distill::distill_article:
-    self_contained: false
-draft: true
+    self_contained: no
+draft: yes
 ---
 
 
