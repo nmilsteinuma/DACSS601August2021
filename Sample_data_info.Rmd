@@ -1,8 +1,6 @@
 ---
-title: "Sample Datasets Info Page - DACSS 601 Aug 2021"
-author: "Sean Conway"
-date: "8/8/2021"
-output: html_document
+title: "Sample Datasets Info Page"
+site: distill::distill_website
 ---
 
 ```{r setup, include=FALSE, message=F}
