@@ -1,0 +1,15 @@
+---
+title: "Mohit Arora"
+image: "mohit.jpg"
+links:
+  - label: LinkedIn
+    url: "https://www.linkedin.com/in/mohit-arora-b2b3ba46"
+  - label: GitHub
+    url: "https://github.com/mohitarora18"
+  - label: Email
+    url: "mailto:marora@umass.edu"
+output:
+  postcards::jolla
+---
+ 
+I am a PhD Candidate in the Economics department at the University of Massachusetts, Amherst.

@@ -2,7 +2,7 @@
 title: "Sample Datasets Info Page - DACSS 601 Aug 2021"
 author: "Sean Conway"
 date: "8/8/2021"
-output: pdf_document
+output: html_document
 ---
 
 ```{r setup, include=FALSE, message=F}
