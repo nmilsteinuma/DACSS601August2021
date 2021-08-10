@@ -14,26 +14,26 @@ output:
   postcards::jolla_blue
 ---
  
-## Education/Work Background 
+## Education/Work Background: 
 BBA Finance, Business Ops/Rev Ops for SaaS companies in  cybersecurity and public safety sectors. Also a cook.
 
-Program
+Program:
 
 M.S.-DACSS 
 
-R experience
+R experience:
 
-None
+This Project
 
-Research interests 
+Research interests: 
 
 Economics, Risk Management
 
-Hometown 
+Hometown: 
 
 Canton, MA
 
-Hobbies
+Hobbies:
 
 Gardening, DIY, cooking
 
