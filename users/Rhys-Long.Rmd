@@ -1,5 +1,5 @@
 title: "Rhys Long"
-image: "Rhys Long.JPG"
+image: "Rhys.JPG"
 color1: "#5A59A3"
 color2: "#C66060"
 angle: 130
@@ -14,7 +14,9 @@ links:
     url: "rhyslong@umass.edu"
 output:
   postcards::onofre
+  
 ---
+
 Education/Work Background: Bachelor of Music in Trumpet Performance at Rhode Island College (2020)
 
 Program: M.S. DACSS
