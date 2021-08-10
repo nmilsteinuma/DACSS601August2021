@@ -1,0 +1,16 @@
+---
+title: "Todd Jennings"
+image: "Todd.jpg"
+links:
+  - label: LinkedIn
+    url: "https://www.linkedin.com/in/toddrjennings/"
+  - label: GitHub
+    url: "https://github.com/Toodleoodles"
+  - label: Email
+    url: "mailto:toddjennings87@gmail.com"
+output:
+  postcards::jolla
+---
+ 
+Born and raised in Boston. I am a senior at UMass, studying Economics and 
+Japanese. I research the Chinese BRI and want to implement R into my studies.
