@@ -14,7 +14,8 @@ knitr::opts_chunk$set(echo = FALSE)
 ```
 
 Hello, my name is Shih-Yen Pan. I am a PhD student in Economics at UMass, Amherst.
-In this post, I will introduce the [Two Sum problem](https://leetcode.com/problems/two-sum/) from LeetCode and a solution using double for loop provided by Pascal Schmidt [here](https://thatdatatho.com/two-sum-leetcode-four-algorithms-implemented-in-r/).
+
+In this post, I will introduce the [Two Sum problem](https://leetcode.com/problems/two-sum/) from LeetCode and a solution using double for loop provided by Pascal Schmidt [here](https://thatdatatho.com/two-sum-leetcode-four-algorithms-implemented-in-r/). I thought it might be useful to see what for loop looks like in R.
 
 The idea of the problem is, given a list of integers *nums* and an integer *target*, to write a function that spits out, if they exist, two different integers in *nums* that sum up to the *target* integer.
 
