@@ -1,6 +1,6 @@
 ---
 title: "Ben Lewis"
-image: "xiang.jpg"
+image: "BenL.jpg"
 links:
   - label: LinkedIn
     url: "https://linkedin.com/"
@@ -15,19 +15,31 @@ output:
 ---
  
 ## Education/Work Background 
-"BBA Finance, Business Ops/Rev Ops for SaaS companies in  cybersecurity and public safety sectors. Also a cook."
-##Program
-"MS DACSS" 
-##R experience
-"none"
-##Research interests 
-"Economics, Risk Management"
-##Hometown 
-"Canton, MA"
-##Hobbies
-"gardening, diy, cooking"
-##Fun fact  
-"great oyster shucker and sushi roller"
+BBA Finance, Business Ops/Rev Ops for SaaS companies in  cybersecurity and public safety sectors. Also a cook.
+
+Program
+
+M.S.-DACSS 
+
+R experience
+
+None
+
+Research interests 
+
+Economics, Risk Management
+
+Hometown 
+
+Canton, MA
+
+Hobbies
+
+Gardening, DIY, cooking
+
+Fun Fact:  
+
+Great oyster shucker and sushi roller
 ```{r}
 
 ```
