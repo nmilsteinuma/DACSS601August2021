@@ -1,0 +1,20 @@
+---
+title: "Meet Rhys"
+description: |
+  A short description of the post.
+author:
+  - name: Rhys Long
+date: 08-10-2021
+categories:
+  - homework one
+  - introduce yourself
+  - rhys long
+output:
+  distill::distill_article:
+    self_contained: false
+draft: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
