@@ -10,4 +10,4 @@ output:
   postcards::jolla_blue
 ---
  
-I am a 3rd-year PhD student in Cognitive Psychology at UMass, studying decision-making and perceptual categorization. I'm originally from La Crosse, a mid-size Midwestern town in Western Wisconsin, right on the WI/MN border. 
+I'm a 3rd-year PhD student in Cognitive Psychology at UMass, studying decision-making and perceptual categorization. I'm originally from La Crosse, a mid-size Midwestern town in Western Wisconsin, right on the WI/MN border.   
