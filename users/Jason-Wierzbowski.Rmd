@@ -1,0 +1,19 @@
+---
+title: "Jason Wierzbowski"
+image: "boatpic.jpg"
+links:
+ # - label: LinkedIn
+  #  url: "https://linkedin.com/"
+  - label: Twitter
+    url: "https://twitter.com/"
+  - label: GitHub
+    url: "https://github.com/JasonWierzbowski"
+  - label: Email
+    url: "mailto:jasonwierzbowski@gmail.com"
+output:
+  postcards::onofre
+---
+ 
+I am a classically trained data scientist living in the San Francisco Bay Area. 
+Currently I work on the Oculus team at Facebook. I love talking about baseball, 
+true crime podcasts, and causal inference.
