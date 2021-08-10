@@ -1,0 +1,30 @@
+---
+title: "Zoe Bean"
+image: "zoe.jpg"
+links:
+  - label: LinkedIn
+    url: "https://linkedin.com/"
+  - label: Twitter
+    url: "https://twitter.com/"
+  - label: GitHub
+    url: "https://github.com/zbean17"
+  - label: Email
+    url: "mailto:zbean@umass.edu"
+output:
+  postcards::trestles
+---
+ 
+Education/Work Background: BA Astronomy from Mount Holyoke College
+
+Program: MS DACSS
+
+R experience: Intermediate
+
+Research interests: effects of internet on socialization
+
+Hometown: Otis, MA
+
+Hobbies: Reading, knitting,  watching movies, hiking
+
+Fun fact: my eyes change color depending on the light
+
