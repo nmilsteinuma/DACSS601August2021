@@ -12,7 +12,27 @@
       <link>https://mrolfe.github.io/DACSS601August2021/</link>
     </image>
     <generator>Distill</generator>
-    <lastBuildDate>Sun, 08 Aug 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 10 Aug 2021 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>iris</title>
+      <dc:creator>bakharia</dc:creator>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-iris</link>
+      <description>Here is the iris dataset.</description>
+      <category>homework 3</category>
+      <category>iris</category>
+      <category>bakharia</category>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-iris</guid>
+      <pubDate>Tue, 10 Aug 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-iris/iris_files/figure-html5/unnamed-chunk-1-1.png" medium="image" type="image/png" width="1248" height="768"/>
+    </item>
+    <item>
+      <title>Sean Test Post 1</title>
+      <dc:creator>Sean Conway</dc:creator>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-09-sean-test-post-1</link>
+      <description>Sean's first test post.</description>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-09-sean-test-post-1</guid>
+      <pubDate>Mon, 09 Aug 2021 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Introduction to Matrix Algebra Using R</title>
       <dc:creator>Mohit Arora</dc:creator>
