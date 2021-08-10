@@ -1,0 +1,30 @@
+title: "Rhys Long"
+image: "Rhys Long.JPG"
+color1: "#5A59A3"
+color2: "#C66060"
+angle: 130
+links:
+  - label: YouTube
+    url: "https://youtube.com/"
+  - label: Vimeo
+    url: "https://vimeo.com/"
+  - label: Twitter
+    url: "https://twitter.com/"
+  - label: Email
+    url: "rhyslong@umass.edu"
+output:
+  postcards::onofre
+---
+Education/Work Background: Bachelor of Music in Trumpet Performance at Rhode Island College (2020)
+
+Program: M.S. DACSS
+
+R experience: None
+
+Research interests: Social justice, healthcare, and social media
+
+Hometown: Rutland, Massachusetts
+
+Hobbies: Trumpet, trombone, singing, playing video games, and spending time with my pets.
+
+Fun fact: I love cats
