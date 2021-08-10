@@ -1,0 +1,19 @@
+---
+title: "Xiang Guo"
+image: "xiang.jpg"
+links:
+  - label: LinkedIn
+    url: "https://linkedin.com/in/bakharia"
+  - label: Instagram
+    url: "https://www.instagram.com/_bakharia_/?hl=en"
+  - label: GitHub
+    url: "https://github.com/bakharia"
+  - label: Email
+    url: "mailto:email@email.com"
+output:
+  postcards::jolla_blue
+---
+ 
+An ambitious and self-motivated graduate student with a strong link between theoretical and practical knowledge. Data science enthusiast and always
+on the lookout to learn new things.
+
