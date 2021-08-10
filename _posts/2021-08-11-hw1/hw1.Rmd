@@ -1,0 +1,28 @@
+---
+title: "HW1"
+description: "A short description of the post."
+date: 08-11-2021
+output:
+  distill::distill_article:
+    self_contained: false
+draft: true
+---
+
+
+```{r setup, include=TRUE}
+knitr::opts_chunk$set(echo = FALSE)
+
+vac_tn <- c(52.01,39.84,33.42,5.8,7.29,4.73,4.29,0.55)
+pop <- c(83.78,60.46,46.75,10.42,10.2,8.65,5.79,0.89)
+vac_sh <- vac_tn/pop
+perc_vac_sh <- vac_sh*100
+perc_vac_sh > 70
+
+```
+Assuming that each vaccine dose provides full immunity and therefore is administered to different individuals, I examined the vaccination rates of 8 countries (Germany, Italy, Spain, Greece, Portugal, Switzerland, Denmark, Cypurs). I found that only in 3 cases (Spain, Portugal,Denmark) the herd immunity threshold of 70% has been reached.
+
+Distill is a publication format for scientific and technical writing, native to the web.
+
+Learn more about using Distill at <https://rstudio.github.io/distill>.
+
+
