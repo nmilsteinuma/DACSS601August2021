@@ -1,0 +1,34 @@
+---
+title: "Ben Lewis"
+image: "xiang.jpg"
+links:
+  - label: LinkedIn
+    url: "https://linkedin.com/"
+  - label: Twitter
+    url: ""
+  - label: GitHub
+    url: "https://https://github.com/BL328/BL328/"
+  - label: Email
+    url: "mailto:BELewis@UMass.edu"
+output:
+  postcards::jolla_blue
+---
+ 
+## Education/Work Background 
+"BBA Finance, Business Ops/Rev Ops for SaaS companies in  cybersecurity and public safety sectors. Also a cook."
+##Program
+"MS DACSS" 
+##R experience
+"none"
+##Research interests 
+"Economics, Risk Management"
+##Hometown 
+"Canton, MA"
+##Hobbies
+"gardening, diy, cooking"
+##Fun fact  
+"great oyster shucker and sushi roller"
+```{r}
+
+```
+
