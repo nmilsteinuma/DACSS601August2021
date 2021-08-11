@@ -1,13 +1,13 @@
 ---
-title: "Jason Wierzbowski - Exploring Eggs"
+title: Jason Wierzbowski - Exploring Eggs
 description: |
   A data set about eggs.
 author: Jason Wierzbowski
 date: 08-11-2021
 output:
   distill::distill_article:
-    self_contained: false
-draft: true
+    self_contained: no
+draft: yes
 ---
 
 

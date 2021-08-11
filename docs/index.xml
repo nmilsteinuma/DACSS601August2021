@@ -14,6 +14,38 @@
     <generator>Distill</generator>
     <lastBuildDate>Wed, 11 Aug 2021 00:00:00 +0000</lastBuildDate>
     <item>
+      <title>2012 US Railroad Employment</title>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-2012-us-railroad-employment</link>
+      <description>This is Shih-Yen's post on importing and tidying data</description>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-2012-us-railroad-employment</guid>
+      <pubDate>Wed, 11 Aug 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Larri Miller: Intro to [ ] Dataset</title>
+      <dc:creator>Larri Miller</dc:creator>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-blog-1</link>
+      <description>Blog Post 1</description>
+      <category>Dataset type</category>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-blog-1</guid>
+      <pubDate>Wed, 11 Aug 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[First Post]</title>
+      <dc:creator>Abhijit</dc:creator>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-first-post</link>
+      <description>A short description of the post.</description>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-first-post</guid>
+      <pubDate>Wed, 11 Aug 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Hanae-Data</title>
+      <dc:creator>Hanae Bouazza</dc:creator>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-hanae-data</link>
+      <description>This post is about how data is loaded.</description>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-hanae-data</guid>
+      <pubDate>Wed, 11 Aug 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
       <title>HW1</title>
       <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-hw1</link>
       <description>A short description of the post.</description>
@@ -30,6 +62,30 @@
       <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-iris</guid>
       <pubDate>Wed, 11 Aug 2021 00:00:00 +0000</pubDate>
       <media:content url="https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-iris/iris_files/figure-html5/unnamed-chunk-2-1.png" medium="image" type="image/png" width="1248" height="768"/>
+    </item>
+    <item>
+      <title>Jason Wierzbowski - Exploring Eggs</title>
+      <dc:creator>Jason Wierzbowski</dc:creator>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-jason-wierzbowski-exploring-eggs</link>
+      <description>A data set about eggs.</description>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-jason-wierzbowski-exploring-eggs</guid>
+      <pubDate>Wed, 11 Aug 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Larri Miller - Exploring Australian Marriage</title>
+      <dc:creator>Larri Miller</dc:creator>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-larri-miller-exploring-australian-marriage</link>
+      <description>A short description of the post.</description>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-larri-miller-exploring-australian-marriage</guid>
+      <pubDate>Wed, 11 Aug 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Noah_Chicken_Data</title>
+      <dc:creator>Noah Milstein</dc:creator>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-noahdata</link>
+      <description>Included is a brief analysis of chicken data with a plot between year and the average price of each cut of chicken.</description>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-noahdata</guid>
+      <pubDate>Wed, 11 Aug 2021 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>Post 1 HMWK 1</title>
@@ -86,11 +142,28 @@
       <pubDate>Tue, 10 Aug 2021 00:00:00 +0000</pubDate>
     </item>
     <item>
+      <title>Michelle Manning</title>
+      <dc:creator>Michelle Manning</dc:creator>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-michelle-manning</link>
+      <description>Intro for me.</description>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-michelle-manning</guid>
+      <pubDate>Tue, 10 Aug 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-michelle-manning/michelle-manning_files/figure-html5/unnamed-chunk-2-1.png" medium="image" type="image/png" width="1248" height="768"/>
+    </item>
+    <item>
       <title>Noahblogpost</title>
       <dc:creator>Noah Milstein</dc:creator>
       <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-noahblogpost</link>
       <description>A short description of the post.</description>
       <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-noahblogpost</guid>
+      <pubDate>Tue, 10 Aug 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>TEST</title>
+      <dc:creator>bakharia</dc:creator>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-test</link>
+      <description>A short description of the post.</description>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-test</guid>
       <pubDate>Tue, 10 Aug 2021 00:00:00 +0000</pubDate>
     </item>
     <item>

@@ -30,7 +30,7 @@ head(hotels)
 ### Try a harder one: an excel file with a number of useless rows
 ```{r}
 library(readxl)
-df <- read_excel("C://Users//Marina//OneDrive//Documents//DACSS//DACSS601//DACSS601August2021//_posts//2021-08-10-hello-world//ActiveDuty_MaritalStatus.xls",
+df <- read_excel("ActiveDuty_MaritalStatus.xls",
                  skip = 9,
                  col_names = c("blank",
                                "pay_grade",
