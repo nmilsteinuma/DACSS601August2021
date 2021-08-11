@@ -101,6 +101,14 @@
       <pubDate>Tue, 10 Aug 2021 00:00:00 +0000</pubDate>
     </item>
     <item>
+      <title>Zoe's Post</title>
+      <dc:creator>Zoe Bean</dc:creator>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-zoes-post</link>
+      <description>my first post</description>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-zoes-post</guid>
+      <pubDate>Tue, 10 Aug 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
       <title>Introduction to Matrix Algebra Using R</title>
       <dc:creator>Mohit Arora</dc:creator>
       <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-08-introduction-to-matrix-algebra-using-r</link>
