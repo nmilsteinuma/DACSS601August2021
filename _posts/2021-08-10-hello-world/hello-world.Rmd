@@ -1,0 +1,38 @@
+---
+title: "Hello World"
+description: |
+  Marina's first attempt at using distill
+author:
+  - name: Marina
+date: 08-10-2021
+output:
+  distill::distill_article:
+    self_contained: false
+draft: true
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+Hi folks! My name is Marina. I will now try to make R do something
+
+### What does the UCB Admissions dataset look like?
+```{r}
+UCBAdmissions <- as.data.frame(UCBAdmissions)
+head(UCBAdmissions)
+```
+### How many departments are in the dataset?
+```{r}
+table(UCBAdmissions$Dept)
+```
+
+### How many people were admitted across all departments?
+```{r}
+admitted <- subset(UCBAdmissions, Admit == "Admitted")
+total <- sum(admitted$Freq)
+print(paste("The sum of all admits is", total))
+```
+
+
