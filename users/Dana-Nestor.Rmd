@@ -1,0 +1,17 @@
+---
+title: "Dana Nestor"
+image: "DJNHeadshot.jpg"
+links:
+  - label: LinkedIn
+    url: "https://www.linkedin.com/in/dana-nestor/"
+  - label: Twitter
+    url: "https://twitter.com/danajnestor?lang=en"
+  - label: GitHub
+    url: "https://github.com/dnestor"
+  - label: Email
+    url: "mailto:dnestor@umass.edu"
+output:
+  postcards::jolla_blue
+---
+ 
+From Granby, CT, lives in Northampton, MA with his partner and their two cats. Interested in program impact evaluation and the spread of ideas.
