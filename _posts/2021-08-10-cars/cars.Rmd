@@ -1,0 +1,51 @@
+---
+title: "iris"
+description: iris dataset|
+ ErinTracy
+date: 08-10-2021
+categories: 
+  -homework 3
+output:
+  distill::distill_article:
+    self_contained: false
+draft: true
+
+
+---
+```{r setup, include = FALSE}
+library(ggplot2)
+library(dplyr)
+knitr::opts_chunk$set(fig.width = 5, fig.asp = 1/3)
+```
+
+## Column 1
+
+### Width
+
+```{r}
+ggplot(iris, aes(Petal.Width)) + geom_histogram(binwidth = 0.1)
+```
+
+### length
+
+```{r}
+ggplot(iris, aes(Petal.Length)) + geom_bar()
+```
+
+### Species
+
+```{r}
+ggplot(iris, aes(Species)) + geom_bar()
+```
+
+## Column 2
+
+### The largest iris
+
+```{r}
+iris %>% 
+  arrange(desc(Petal.Length)) %>% 
+  head(100) %>% 
+  select(Petal.Length, Petal.Width, Species) %>% 
+  DT::datatable()
+```
