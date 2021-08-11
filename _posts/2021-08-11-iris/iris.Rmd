@@ -1,0 +1,33 @@
+---
+title: "iris"
+description: |
+  IRIS dataset contains three plant species (setosa, virginica, versicolor) and four features measured for each sample.
+author: sathvikthogaru
+date: 08-11-2021
+output:
+  distill::distill_article:
+    self_contained: false
+draft: true
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r}
+library(datasets)
+data(iris)
+summary(iris)
+```
+
+```{r}
+head(iris)
+tail(iris)
+unique(iris$Species)
+plot(iris)
+```
+
+Learn more about using Distill at <https://rstudio.github.io/distill>.
+
+
