@@ -12,7 +12,9 @@ draft: true
 ---
 
 
-```{r setup, echo = FALSE, message = FALSE, warning=FALSE}
+```{r setup, }
+
+options(repos = list(CRAN="http://cran.rstudio.com/"))
 
 install.packages("dslabs")
 library(dslabs)
