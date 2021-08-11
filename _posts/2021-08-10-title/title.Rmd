@@ -1,13 +1,13 @@
 ---
-title: "title"
+title: title
 description: |
   A short description of the post.
-Shih-Yen Pan
+name: Shih-Yen Pan
 date: 08-10-2021
 output:
   distill::distill_article:
-    self_contained: false
-draft: true
+    self_contained: no
+draft: yes
 ---
 
 

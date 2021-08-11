@@ -1,14 +1,14 @@
 ---
-title: "Post 1 HMWK 1"
-description: "This is my post for the first homework"
+title: Post 1 HMWK 1
+description: This is my post for the first homework
 date: 08-11-2021
 categories:
-  - homework 1
-  - Annie McGrew
+- homework 1
+- Annie McGrew
 output:
   distill::distill_article:
-    self_contained: false
-draft: true
+    self_contained: no
+draft: yes
 ---
 
 

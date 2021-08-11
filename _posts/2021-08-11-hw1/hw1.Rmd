@@ -1,14 +1,14 @@
 ---
-title: "HW1"
-description: "A short description of the post."
+title: HW1
+description: A short description of the post.
 date: 08-11-2021
 categories:
-  - homework 1
-  - Antonis Gounalakis
+- homework 1
+- Antonis Gounalakis
 output:
   distill::distill_article:
-    self_contained: false
-draft: true
+    self_contained: no
+draft: yes
 ---
 
 

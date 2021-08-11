@@ -1,0 +1,17 @@
+---
+title: "Thanos Moraiits"
+image: "image.jpg"
+links:
+  - label: LinkedIn
+    url: "/https://www.linkedin.com/in/thanos-moraitis-b0bb27b9/"
+  - label: Twitter
+    url: "https://twitter.com/thanoSH7"
+  - label: GitHub
+    url: "https://github.com/thanos1925"
+  - label: Email
+    url: "mailto:athanasiosmo@umass.edu"
+output:
+  postcards::jolla
+---
+ 
+PhD student in the Economics department of UMass Amherst.

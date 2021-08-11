@@ -1,14 +1,14 @@
 ---
-title: "Hello World"
+title: Hello World
 description: |
   Marina's first attempt at using distill
 author:
-  - name: Marina
+- name: Marina
 date: 08-10-2021
 output:
   distill::distill_article:
-    self_contained: false
-draft: true
+    self_contained: no
+draft: yes
 ---
 
 

@@ -1,0 +1,15 @@
+---
+title: "Hanae Bouazza"
+image: "Hanae.jpg"
+links:
+  - label: GitHub
+    url: "https://github.com/HanaeBouazza"
+  - label: Email
+    url: "mailto:email@email.com"
+output:
+  postcards::jolla_blue
+---
+ 
+
+I am a 2nd year PhD student in Economics at UMass.Before joining UMass I graduated from Trinity College with a BS in Economics and Mathematics.My research interests hovers around macroeconomics and development. I am originally from Rabat in Morocco. I like Baking and spending time with my soon-to-be 13 years old daughter.
+

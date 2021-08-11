@@ -1,0 +1,13 @@
+---
+title: "Annie McGrew"
+image: "IMG_0090.jpg"
+links:
+  - label: Email
+    url: "mailto:amcgrew@umass.edu"
+output:
+  postcards::solana
+---
+ 
+## Bio
+
+Annie McGrew is a 4th year economics PhD student at University of Massachusetts, Amherst.

@@ -1,0 +1,13 @@
+---
+title: "Marina Levy"
+image: "profile-pic.jpg"
+links:
+  - label: LinkedIn
+    url: "https://www.linkedin.com/in/marinalevy/"
+  - label: Email
+    url: "mailto:mslevy@umass.edu"
+output:
+  postcards::jolla
+---
+ 
+I am a student in the DACSS program at UMass. 
