@@ -16,7 +16,6 @@ output:
   postcards::onofre
   
 ---
-
 Education/Work Background: Bachelor of Music in Trumpet Performance at Rhode Island College (2020)
 
 Program: M.S. DACSS
@@ -29,4 +28,4 @@ Hometown: Rutland, Massachusetts
 
 Hobbies: Trumpet, trombone, singing, playing video games, and spending time with my pets.
 
-Fun fact: I love cats
+Fun fact: I love cats and I taught myself Russian during the pandemic.
