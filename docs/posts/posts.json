@@ -43,8 +43,8 @@
     "categories": [],
     "contents": "\nHi folks! My name is Marina. I will now try to make R do something\nWhat does the UCB Admissions dataset look like?\n\n     Admit Gender Dept Freq\n1 Admitted   Male    A  512\n2 Rejected   Male    A  313\n3 Admitted Female    A   89\n4 Rejected Female    A   19\n5 Admitted   Male    B  353\n6 Rejected   Male    B  207\n\nHow many departments are in the dataset?\n\n\nA B C D E F \n4 4 4 4 4 4 \n\nHow many people were admitted across all departments?\n\n[1] \"The sum of all admits is 1755\"\n\n\n\n\n",
     "preview": {},
-    "last_modified": "2021-08-10T23:01:50-04:00",
-    "input_file": {}
+    "last_modified": "2021-08-11T09:52:19-04:00",
+    "input_file": "hello-world.knit.md"
   },
   {
     "path": "posts/2021-08-10-homework-1/",
@@ -55,8 +55,8 @@
     "categories": [],
     "contents": "\nHello, my name is Shih-Yen Pan. I am a PhD student in Economics at UMass, Amherst.\nIn this post, I will introduce the Two Sum problem from LeetCode and a solution using double for loop provided by Pascal Schmidt here. I thought it might be useful to see what for loop looks like in R.\nThe idea of the problem is, given a list of integers nums and an integer target, to write a function that spits out, if they exist, two different integers in nums that sum up to the target integer.\ntwo_sum <- function(nums, target) {\n\n  for(i in seq_along(nums)) {\n    for(j in seq_along(nums)[-length(nums)]) {\n      \n      sum <- nums[i] + nums[j + 1]\n      if(sum == target) {\n        \n        first <- i\n        second <- j + 1\n        output <- c(nums[first], nums[second])\n        return(output)\n        \n      }\n      \n    }\n    \n  }\n  \n}\nThis is what the function two_sum is doing: Starting from the beginning of the vector ‘nums’, for each integer, search the rest of vector using the second for loop. If the two numbers sum up to the target integer, the code returns those two numbers; otherwise, continue doing the same with the next integer in the list.\nExample:\nnums <- c(1, 2, 3, 5, 6, 9, 11)\ntarget <- 9\ntwo_sum(nums, target)\nThis should return 3 and 6.\nTry it out yourself with different numbers! How can the code be modified to return all the different pairs that sum to the target integer?\n\n\n\n",
     "preview": {},
-    "last_modified": "2021-08-10T23:01:51-04:00",
-    "input_file": {}
+    "last_modified": "2021-08-11T09:52:21-04:00",
+    "input_file": "homework-1-Shih-Yen.knit.md"
   },
   {
     "path": "posts/2021-08-10-iris/",
@@ -147,8 +147,8 @@
     ],
     "contents": "\n\n\nA <- matrix(1:9, nrow = 3, ncol = 3)\nA\n\n\n     [,1] [,2] [,3]\n[1,]    1    4    7\n[2,]    2    5    8\n[3,]    3    6    9\n\nB <- matrix(1:9, ncol = 3)\nB\n\n\n     [,1] [,2] [,3]\n[1,]    1    4    7\n[2,]    2    5    8\n[3,]    3    6    9\n\ndim(A)\n\n\n[1] 3 3\n\ndim(B)\n\n\n[1] 3 3\n\n#Scalar Multiplication\ns <- 10\ns*A\n\n\n     [,1] [,2] [,3]\n[1,]   10   40   70\n[2,]   20   50   80\n[3,]   30   60   90\n\n#Matrix Multiplication\nA%*%B\n\n\n     [,1] [,2] [,3]\n[1,]   30   66  102\n[2,]   36   81  126\n[3,]   42   96  150\n\n#Matrix Addition\nA + B\n\n\n     [,1] [,2] [,3]\n[1,]    2    8   14\n[2,]    4   10   16\n[3,]    6   12   18\n\n#Matrix Subtraction\nA - B\n\n\n     [,1] [,2] [,3]\n[1,]    0    0    0\n[2,]    0    0    0\n[3,]    0    0    0\n\n#Matrix Transpose\nt(A)\n\n\n     [,1] [,2] [,3]\n[1,]    1    2    3\n[2,]    4    5    6\n[3,]    7    8    9\n\nt(B)\n\n\n     [,1] [,2] [,3]\n[1,]    1    2    3\n[2,]    4    5    6\n[3,]    7    8    9\n\n\n\n\n",
     "preview": {},
-    "last_modified": "2021-08-10T23:01:46-04:00",
-    "input_file": {}
+    "last_modified": "2021-08-11T09:52:15-04:00",
+    "input_file": "introduction-to-matrix-algebra-using-r.knit.md"
   },
   {
     "path": "posts/2021-08-07-my-new-post/",
@@ -164,8 +164,8 @@
     "categories": [],
     "contents": "\nThis is my first post in R using the distill package! Check out my R code.\n\n\n2+2\n\n\n[1] 4\n\nx<-4\ny<-6\n\nx+y\n\n\n[1] 10\n\n\n\n\n",
     "preview": {},
-    "last_modified": "2021-08-10T23:01:43-04:00",
-    "input_file": {}
+    "last_modified": "2021-08-11T09:52:10-04:00",
+    "input_file": "my-new-post.knit.md"
   },
   {
     "path": "posts/2021-08-07-still-learning-githib-workflow/",
@@ -181,8 +181,8 @@
     "categories": [],
     "contents": "\nUsing Markdown is fun!\nI learned a lot this summer — Markdown is your friend, as are flexdashboard and Stack Overflow.\nAlso, always keep in mind that social scientists understand data and data management just as well (if not better) than the computer scientists.\nTidyTuesday\nNew goal: Participate in Tidy Tuesdays\n\n\n\n",
     "preview": {},
-    "last_modified": "2021-08-10T23:01:44-04:00",
-    "input_file": {}
+    "last_modified": "2021-08-11T09:52:11-04:00",
+    "input_file": "still-learning-githib-workflow.knit.md"
   },
   {
     "path": "posts/2021-08-07-welcome/",
@@ -200,7 +200,7 @@
     ],
     "contents": "\nWelcome to the Data Analytics and Computational Social Science Programs’ Orientation 2021 session of DACSS 601 Foundations of Data Science. This blog will feature the work of our incoming M.S. students taking the class, as well as PhD students in the College of Behavioral and Social Sciences who have decided to participate through “R Bootcamp”.\n\n\n\n",
     "preview": {},
-    "last_modified": "2021-08-10T23:01:45-04:00",
-    "input_file": {}
+    "last_modified": "2021-08-11T09:52:12-04:00",
+    "input_file": "welcome.knit.md"
   }
 ]
