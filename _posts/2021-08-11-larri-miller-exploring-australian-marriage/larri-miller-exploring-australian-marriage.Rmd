@@ -19,10 +19,11 @@ Here I am reading in my CSV file.
 ```{r}
 
 data <- read.csv("../../_data/australian_marriage_tidy.csv")
+head(data)
 ```
 
 
-This dataset explores Australian marriage. :)
+This dataset explores Australian marriage. It has 16 observations of 4 variables.
 
 Distill is a publication format for scientific and technical writing, native to the web.
 
