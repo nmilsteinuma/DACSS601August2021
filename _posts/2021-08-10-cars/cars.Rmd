@@ -1,16 +1,12 @@
 ---
-title: "iris"
-description: iris dataset|
- ErinTracy
+title: iris
+description: iris dataset| ErinTracy
 date: 08-10-2021
-categories: 
-  -homework 3
+categories: -homework 3
 output:
   distill::distill_article:
-    self_contained: false
-draft: true
-
-
+    self_contained: no
+draft: yes
 ---
 ```{r setup, include = FALSE}
 library(ggplot2)

@@ -89,11 +89,20 @@
     </item>
     <item>
       <title>Post 1 HMWK 1</title>
+      <dc:creator>Annie McGrew</dc:creator>
       <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-post-1-hmwk-1</link>
       <description>This is my post for the first homework</description>
       <category>homework 1</category>
       <category>Annie McGrew</category>
       <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-post-1-hmwk-1</guid>
+      <pubDate>Wed, 11 Aug 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[RAILROAD-COUNTY-TRACY]</title>
+      <dc:creator>Erin Tracy</dc:creator>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-railroad-county-tracy</link>
+      <description>A short description of the post.</description>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-railroad-county-tracy</guid>
       <pubDate>Wed, 11 Aug 2021 00:00:00 +0000</pubDate>
     </item>
     <item>
@@ -180,6 +189,15 @@
       <description>my first post</description>
       <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-zoes-post</guid>
       <pubDate>Tue, 10 Aug 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>iris</title>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-cars</link>
+      <description>iris dataset| ErinTracy</description>
+      <category>-homework 3</category>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-cars</guid>
+      <pubDate>Tue, 10 Aug 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-cars/cars_files/figure-html5/unnamed-chunk-1-1.png" medium="image" type="image/png" width="960" height="320"/>
     </item>
     <item>
       <title>Introduction to Matrix Algebra Using R</title>

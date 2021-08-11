@@ -1,13 +1,13 @@
 ---
-title: "[RAILROAD-COUNTY-TRACY]"
+title: '[RAILROAD-COUNTY-TRACY]'
 description: |
   A short description of the post.
-Erin-Tracy
+author: Erin Tracy
 date: 08-11-2021
 output:
   distill::distill_article:
-    self_contained: false
-draft: true
+    self_contained: no
+draft: yes
 ---
 
 
