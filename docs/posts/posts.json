@@ -1,5 +1,24 @@
 [
   {
+    "path": "posts/2021-08-08-introduction-to-matrix-algebra-using-r/",
+    "title": "Introduction to Matrix Algebra Using R",
+    "description": "In this post, I will talk about setting up a matrix in R, find its dimensions (number of rows and columns) and discuss elementary operations on matrices (addition, subtraction, multiplication and transpose).",
+    "author": [
+      {
+        "name": "Mohit Arora",
+        "url": {}
+      }
+    ],
+    "date": "2021-08-08",
+    "categories": [
+      "matrix algebra basics"
+    ],
+    "contents": "\n\n\nA <- matrix(1:9, nrow = 3, ncol = 3)\nA\n\n\n     [,1] [,2] [,3]\n[1,]    1    4    7\n[2,]    2    5    8\n[3,]    3    6    9\n\nB <- matrix(1:9, ncol = 3)\nB\n\n\n     [,1] [,2] [,3]\n[1,]    1    4    7\n[2,]    2    5    8\n[3,]    3    6    9\n\ndim(A)\n\n\n[1] 3 3\n\ndim(B)\n\n\n[1] 3 3\n\n#Scalar Multiplication\ns <- 10\ns*A\n\n\n     [,1] [,2] [,3]\n[1,]   10   40   70\n[2,]   20   50   80\n[3,]   30   60   90\n\n#Matrix Multiplication\nA%*%B\n\n\n     [,1] [,2] [,3]\n[1,]   30   66  102\n[2,]   36   81  126\n[3,]   42   96  150\n\n#Matrix Addition\nA + B\n\n\n     [,1] [,2] [,3]\n[1,]    2    8   14\n[2,]    4   10   16\n[3,]    6   12   18\n\n#Matrix Subtraction\nA - B\n\n\n     [,1] [,2] [,3]\n[1,]    0    0    0\n[2,]    0    0    0\n[3,]    0    0    0\n\n#Matrix Transpose\nt(A)\n\n\n     [,1] [,2] [,3]\n[1,]    1    2    3\n[2,]    4    5    6\n[3,]    7    8    9\n\nt(B)\n\n\n     [,1] [,2] [,3]\n[1,]    1    2    3\n[2,]    4    5    6\n[3,]    7    8    9\n\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-08-08T23:39:31-04:00",
+    "input_file": {}
+  },
+  {
     "path": "posts/2021-08-07-my-new-post/",
     "title": "My first distill post",
     "description": "I can't believe how easy it is to use R.",
@@ -13,8 +32,8 @@
     "categories": [],
     "contents": "\nThis is my first post in R using the distill package! Check out my R code.\n\n\n2+2\n\n\n[1] 4\n\nx<-4\ny<-6\n\nx+y\n\n\n[1] 10\n\n\n\n\n",
     "preview": {},
-    "last_modified": "2021-08-07T18:01:21-04:00",
-    "input_file": "my-new-post.knit.md"
+    "last_modified": "2021-08-08T23:39:28-04:00",
+    "input_file": {}
   },
   {
     "path": "posts/2021-08-07-still-learning-githib-workflow/",
@@ -30,8 +49,8 @@
     "categories": [],
     "contents": "\nUsing Markdown is fun!\nI learned a lot this summer — Markdown is your friend, as are flexdashboard and Stack Overflow.\nAlso, always keep in mind that social scientists understand data and data management just as well (if not better) than the computer scientists.\nTidyTuesday\nNew goal: Participate in Tidy Tuesdays\n\n\n\n",
     "preview": {},
-    "last_modified": "2021-08-07T18:01:22-04:00",
-    "input_file": "still-learning-githib-workflow.knit.md"
+    "last_modified": "2021-08-08T23:39:29-04:00",
+    "input_file": {}
   },
   {
     "path": "posts/2021-08-07-welcome/",
@@ -49,7 +68,7 @@
     ],
     "contents": "\nWelcome to the Data Analytics and Computational Social Science Programs’ Orientation 2021 session of DACSS 601 Foundations of Data Science. This blog will feature the work of our incoming M.S. students taking the class, as well as PhD students in the College of Behavioral and Social Sciences who have decided to participate through “R Bootcamp”.\n\n\n\n",
     "preview": {},
-    "last_modified": "2021-08-07T18:01:24-04:00",
-    "input_file": "welcome.knit.md"
+    "last_modified": "2021-08-08T23:39:30-04:00",
+    "input_file": {}
   }
 ]

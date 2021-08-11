@@ -1,5 +1,5 @@
 ---
-title: "Introduction to Matrix Algebra Using R"
+title: Introduction to Matrix Algebra Using R
 description: |
   Setting up a matrix and carrying out elementary operations on it.
 author:
@@ -9,8 +9,8 @@ categories:
   - matrix algebra
 output:
   distill::distill_article:
-    self_contained: false
-draft: true
+    self_contained: no
+draft: yes
 ---
 
 

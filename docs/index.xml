@@ -12,7 +12,16 @@
       <link>https://mrolfe.github.io/DACSS601August2021/</link>
     </image>
     <generator>Distill</generator>
-    <lastBuildDate>Sat, 07 Aug 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 08 Aug 2021 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Introduction to Matrix Algebra Using R</title>
+      <dc:creator>Mohit Arora</dc:creator>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-08-introduction-to-matrix-algebra-using-r</link>
+      <description>In this post, I will talk about setting up a matrix in R, find its dimensions (number of rows and columns) and discuss elementary operations on matrices (addition, subtraction, multiplication and transpose).</description>
+      <category>matrix algebra basics</category>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-08-introduction-to-matrix-algebra-using-r</guid>
+      <pubDate>Sun, 08 Aug 2021 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>My first distill post</title>
       <dc:creator>Meredith Rolfe</dc:creator>
