@@ -1,14 +1,11 @@
 ---
 title: "Antonis Gounalakis"
 image: "Antonis.jpg"
-color1: "#5A59A3"
-color2: "#C66060"
-angle: 130
 links:
   - label: Email
     url: "mailto:agounalakis@umass.edu"
 output:
-  postcards::onofre
+  postcards::solana
 ---
  
-Antonis Gounalakis is a PhD student in Economics at UMass Amherst. Born and raised in Athens, Greece.
+Antonis Gounalakis is an economics PhD student at UMass Amherst. Born and raised in Athens, Greece.
