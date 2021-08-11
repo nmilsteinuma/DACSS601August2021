@@ -116,7 +116,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["hello-world_files/anchor-4.2.2/anchor.min.js","hello-world_files/bowser-1.9.3/bowser.min.js","hello-world_files/distill-2.2.21/template.v2.js","hello-world_files/header-attrs-2.10/header-attrs.js","hello-world_files/jquery-1.11.3/jquery.min.js","hello-world_files/popper-2.6.0/popper.min.js","hello-world_files/tippy-6.2.7/tippy-bundle.umd.min.js","hello-world_files/tippy-6.2.7/tippy-light-border.css","hello-world_files/tippy-6.2.7/tippy.css","hello-world_files/tippy-6.2.7/tippy.umd.min.js","hello-world_files/webcomponents-2.0.0/webcomponents.js"]}
+  {"type":"character","attributes":{},"value":["ActiveDuty_MaritalStatus.xls","hello-world_files/anchor-4.2.2/anchor.min.js","hello-world_files/bowser-1.9.3/bowser.min.js","hello-world_files/distill-2.2.21/template.v2.js","hello-world_files/header-attrs-2.10/header-attrs.js","hello-world_files/jquery-1.11.3/jquery.min.js","hello-world_files/popper-2.6.0/popper.min.js","hello-world_files/tippy-6.2.7/tippy-bundle.umd.min.js","hello-world_files/tippy-6.2.7/tippy-light-border.css","hello-world_files/tippy-6.2.7/tippy.css","hello-world_files/tippy-6.2.7/tippy.umd.min.js","hello-world_files/webcomponents-2.0.0/webcomponents.js"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -1478,28 +1478,45 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </div>
 
 <div class="d-article">
-<p>Hi folks! My name is Marina. I will now try to make R do something</p>
-<h3 id="what-does-the-ucb-admissions-dataset-look-like">What does the UCB Admissions dataset look like?</h3>
+<h3 id="time-to-read-in-data.-start-with-an-easy-one">Time to read in data. Start with an easy one</h3>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code>     Admit Gender Dept Freq
-1 Admitted   Male    A  512
-2 Rejected   Male    A  313
-3 Admitted Female    A   89
-4 Rejected Female    A   19
-5 Admitted   Male    B  353
-6 Rejected   Male    B  207</code></pre>
+
 </div>
-<h3 id="how-many-departments-are-in-the-dataset">How many departments are in the dataset?</h3>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code>
-A B C D E F 
-4 4 4 4 4 4 </code></pre>
+<pre><code># A tibble: 6 x 32
+  hotel        is_canceled lead_time arrival_date_ye~ arrival_date_mo~
+  &lt;chr&gt;              &lt;dbl&gt;     &lt;dbl&gt;            &lt;dbl&gt; &lt;chr&gt;           
+1 Resort Hotel           0       342             2015 July            
+2 Resort Hotel           0       737             2015 July            
+3 Resort Hotel           0         7             2015 July            
+4 Resort Hotel           0        13             2015 July            
+5 Resort Hotel           0        14             2015 July            
+6 Resort Hotel           0        14             2015 July            
+# ... with 27 more variables: arrival_date_week_number &lt;dbl&gt;,
+#   arrival_date_day_of_month &lt;dbl&gt;, stays_in_weekend_nights &lt;dbl&gt;,
+#   stays_in_week_nights &lt;dbl&gt;, adults &lt;dbl&gt;, children &lt;dbl&gt;,
+#   babies &lt;dbl&gt;, meal &lt;chr&gt;, country &lt;chr&gt;, market_segment &lt;chr&gt;,
+#   distribution_channel &lt;chr&gt;, is_repeated_guest &lt;dbl&gt;,
+#   previous_cancellations &lt;dbl&gt;,
+#   previous_bookings_not_canceled &lt;dbl&gt;, ...</code></pre>
 </div>
-<h3 id="how-many-people-were-admitted-across-all-departments">How many people were admitted across all departments?</h3>
+<h3 id="try-a-harder-one-an-excel-file-with-a-number-of-useless-rows">Try a harder one: an excel file with a number of useless rows</h3>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code>[1] &quot;The sum of all admits is 1755&quot;</code></pre>
+<pre><code># A tibble: 6 x 17
+  blank pay_grade SWOC_male SWOC_female SWOC_total SWC_male SWC_female
+  &lt;chr&gt; &lt;chr&gt;         &lt;dbl&gt;       &lt;dbl&gt;      &lt;dbl&gt;    &lt;dbl&gt;      &lt;dbl&gt;
+1 &lt;NA&gt;  E-1           31229        5717      36946      563        122
+2 &lt;NA&gt;  E-2           53094        8388      61482     1457        275
+3 &lt;NA&gt;  E-3          131091       21019     152110     4264       1920
+4 &lt;NA&gt;  E-4          112710       16381     129091     9491       4662
+5 &lt;NA&gt;  E-5           57989       11021      69010    10937       6576
+6 &lt;NA&gt;  E-6           19125        4654      23779    10369       4962
+# ... with 10 more variables: SWC_total &lt;dbl&gt;, JSM_male &lt;dbl&gt;,
+#   JSM_female &lt;dbl&gt;, JSM_total &lt;dbl&gt;, CM_male &lt;dbl&gt;,
+#   CM_female &lt;dbl&gt;, CM_total &lt;dbl&gt;, Total_Male &lt;dbl&gt;,
+#   Total_Female &lt;dbl&gt;, Total_Total &lt;dbl&gt;</code></pre>
 </div>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
