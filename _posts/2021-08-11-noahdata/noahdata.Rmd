@@ -1,0 +1,45 @@
+---
+title: "Noah_Chicken_Data"
+description: |
+  Included is a brief analysis of chicken data with a plot between year and the average price of each cut of chicken.
+author:
+  - name: Noah Milstein
+    url: http://umass.edu/sbs/dacss
+date: 08-11-2021
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r, echo=FALSE}
+library(tidyverse)
+library(knitr)
+library(readxl)
+library(ggplot2)
+```
+
+```{r}
+poultry <- read_excel("/Users/noahmilstein/Desktop/Summer 2021/DACSS2021/work 8:11/poultry_tidy.xlsx")
+```
+
+```{r}
+poultry 
+```
+
+```{r}
+poultry %>% group_by(Year, Price_Dollar, Product) %>% ggplot() +
+  geom_line(mapping=aes(y=Price_Dollar, x=Year, color=Product), na.rm=TRUE)
+```
+
+## Chicken Data Conclusion
+
+The graph above suggests that the price of most chicken cuts remain relatively similar over time, however B/S Breast or boneless chicken breast appears to have increased in price over recent years. Thighs have also remained relatively similar
+
+*Noah Milstein*
+
+
+
+
+
+
