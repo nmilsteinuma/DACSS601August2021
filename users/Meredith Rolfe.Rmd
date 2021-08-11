@@ -1,6 +1,9 @@
 ---
 title: "Meredith Rolfe"
-image: "users/Rolfe.jpeg"
+image: "Rolfe.jpeg"
+color1: "#5A59A3"
+color2: "#C66060"
+angle: 130
 links:
   - label: GitHub
     url: "https://github.com/mrolfe/"
@@ -9,7 +12,7 @@ links:
   - label: Email
     url: "mailto:mrolfe@umass.edu"
 output:
-  postcards::trestles
+  postcards::onofre
 ---
  
 Meredith holds a BA Comparative Area Studies from Duke University, and an MA and PhD in Political Science from the University of Chicago. She is currently an Associate Professor of Political Science at University of Massachusetts Amherst and the Program Director of the Data Analytics and Computational Social Science (DACSS). She was previously hold positions as a Postdoctoral Prize Fellow in Sociology at Oxford University and Lecturer in Public Management at the London School of Economics.
@@ -19,4 +22,3 @@ Meredith was using R before it was cool (and when it was still called S). Her re
   - *Hometown*: Charlotte, NC
   - *Hobbies*: um, DACSS??? 
   - *Fun fact*: Coffee is my favorite food
-
