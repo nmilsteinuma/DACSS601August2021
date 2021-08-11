@@ -1,0 +1,42 @@
+---
+title: "2012 US Railroad Employment"
+description: This is Shih-Yen's post on importing and tidying data
+date: 08-11-2021
+output:
+  distill::distill_article:
+    self_contained: false
+draft: true
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+Hello, in this post, I will introduce the 2012 US Railroad Employment data, discuss some of the issues with the data, and provide the R code I used to import and tidy the data.
+
+First, let's [download](https://catalog.data.gov/dataset/total-railroad-employment-by-state-and-county-2012/resource/5a0b2831-23b9-4ce9-82e9-87a7d8f2c5d8) the data. Since the data is in a .xls file, I used the [readxl](https://readxl.tidyverse.org/) library that comes with the tidyverse package to import the data.
+
+```
+library(readxl)
+railroad_data <- read_excel("StateCounty2012.xls")
+view(railroad_data)
+```
+When viewing the data, you might first see that the column names for the variables are incorrect and the correct column names are actually in the third row. This error occurs because there are 3 lines of metadata at the top of the file, and read_excel uses the first line as the column names. To fix this problem, we can use skip = 3 in read_excel to skip the first 3 lines. 
+
+```
+railroad_data <- read_excel("StateCounty2012.xls", skip = 3)
+```
+
+Next, you might also see that there are two columns, column 2 and 4, that have nothing but *NA* as values. Here's an easy way to get rid of those columns:
+
+```
+railroad_data <- railroad_data[,-c(2, 4)]
+```
+Finally, it is likely that we are only interested in U.S. county-level data, but our data file also contains rows for state totals, a row for Canada, and a row for the grand total employment in U.S railroads. In addition, there are notes and footnotes that are not useful for the purpose of data analysis. 
+
+To get of these rows, I use the fact that all of these rows contain entries that have NA as a value, and the rows we want to keep do not. Hence, to clean our data of these rows, we simply get rid of any rows that contain NA as a value. We can achieve that with the following line of code that subsets the railroad_data by omitting all the rows containing NA:
+```
+railroad_data_clean <- na.omit(railroad_data)
+```
+Now, we have a county-level data set with clearly defined column/variable names. 
