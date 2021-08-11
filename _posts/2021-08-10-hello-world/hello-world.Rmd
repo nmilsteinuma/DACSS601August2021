@@ -16,23 +16,41 @@ draft: true
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-Hi folks! My name is Marina. I will now try to make R do something
-
-### What does the UCB Admissions dataset look like?
+### Time to read in data. Start with an easy one
 ```{r}
-UCBAdmissions <- as.data.frame(UCBAdmissions)
-head(UCBAdmissions)
-```
-### How many departments are in the dataset?
-```{r}
-table(UCBAdmissions$Dept)
+library(readr)
+library(here)
 ```
 
-### How many people were admitted across all departments?
 ```{r}
-admitted <- subset(UCBAdmissions, Admit == "Admitted")
-total <- sum(admitted$Freq)
-print(paste("The sum of all admits is", total))
+hotels <- read_csv(here("_data","hotel_bookings.csv"))
+head(hotels)
+```
+
+### Try a harder one: an excel file with a number of useless rows
+```{r}
+library(readxl)
+df <- read_excel("C://Users//Marina//OneDrive//Documents//DACSS//DACSS601//DACSS601August2021//_posts//2021-08-10-hello-world//ActiveDuty_MaritalStatus.xls",
+                 skip = 9,
+                 col_names = c("blank",
+                               "pay_grade",
+                               "SWOC_male",
+                               "SWOC_female",
+                               "SWOC_total",
+                               "SWC_male",
+                               "SWC_female",
+                               "SWC_total",
+                               "JSM_male",
+                               "JSM_female",
+                               "JSM_total",
+                               "CM_male",
+                               "CM_female",
+                               "CM_total",
+                               "Total_Male",
+                               "Total_Female",
+                               "Total_Total")
+                 )
+head(df)
 ```
 
 
