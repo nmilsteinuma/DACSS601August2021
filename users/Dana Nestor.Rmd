@@ -1,0 +1,18 @@
+---
+title: "Hi my name is Dana"
+image: "DJNHeadshot_1.jpg"
+color1: "#5A59A3"
+color2: "#C66060"
+angle: 130
+links:
+  - label: Linkedin
+    url: "https://www.linkedin.com/in/dana-nestor/"
+  - label: Twitter
+    url: "https://twitter.com/danajnestor?lang=en"
+  - label: Email
+    url: "mailto:dnestor@umass.edu"
+output:
+  postcards::onofre
+---
+ 
+Dana Nestor is from Granby, CT and currently lives in Northampton, MA with his partner and their two cats. He is interested in program impact evaluation and how to share and replicate solutions to common problems.
