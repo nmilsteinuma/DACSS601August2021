@@ -1,0 +1,37 @@
+---
+title: "Michelle Manning"
+description: |
+  Intro for me.
+author:
+  -name: Michelle Manning
+date: 08-10-2021
+output:
+  distill::distill_article:
+    self_contained: false
+draft: true
+---
+
+
+```{r setup, echo = FALSE, message = FALSE, warning=FALSE}
+
+install.packages("dslabs")
+library(dslabs)
+data("gapminder")
+install.packages("dplyr")
+library(dplyr)
+install.packages("ggplot2")
+library(ggplot2)
+gapminder %>% 
+  select(continent, region, gdp, population) %>%
+  mutate(gdp_per_capita = gdp / population) %>% 
+  arrange(desc(gdp_per_capita)) %>%
+  ggplot(aes(x=gdp_per_capita)) + 
+  geom_histogram(binwidth = 30)
+
+```
+
+Distill is a publication format for scientific and technical writing, native to the web.
+
+Learn more about using Distill at <https://rstudio.github.io/distill>.
+
+
