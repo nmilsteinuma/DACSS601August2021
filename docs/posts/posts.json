@@ -11,8 +11,8 @@
     ],
     "contents": "\n\n\nknitr::opts_chunk$set(echo = FALSE)\n\nvac_tn <- c(52.01,39.84,33.42,5.8,7.29,4.73,4.29,0.55)\npop <- c(83.78,60.46,46.75,10.42,10.2,8.65,5.79,0.89)\nvac_sh <- vac_tn/pop\nperc_vac_sh <- vac_sh*100\nperc_vac_sh > 70\n\n\n[1] FALSE FALSE  TRUE FALSE  TRUE FALSE  TRUE FALSE\n\nAssuming that each vaccine dose provides full immunity and therefore is administered to different individuals, I examined the vaccination rates of 8 countries (Germany, Italy, Spain, Greece, Portugal, Switzerland, Denmark, Cypurs). I found that only in 3 cases (Spain, Portugal,Denmark) the herd immunity threshold of 70% has been reached!\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\n\n\n\n",
     "preview": {},
-    "last_modified": "2021-08-10T23:02:00-04:00",
-    "input_file": {}
+    "last_modified": "2021-08-11T09:55:00-04:00",
+    "input_file": "hw1.knit.md"
   },
   {
     "path": "posts/2021-08-11-post-1-hmwk-1/",
@@ -26,8 +26,27 @@
     ],
     "contents": "\n\n\nknitr::opts_chunk$set(echo = FALSE)\nvector <- c(1,2,3,4,5)\nnew_vector <- c(3,5,1,1,2)\navg_vector <- (vector + new_vector)/2\nperc_vector <- avg_vector/5\nfinal_vector <- perc_vector*100\n\n\n\nFirst I input two vectors: vector = 1, 2, 3, 4, 5 and new_vector = 3, 5, 1, 1, 2 Then I take the average of these two vectors creating avg_vector = 2, 3.5, 2, 2.5, 3.5 Then I divide the average of the vectors by 5 (perc_vector = 0.4, 0.7, 0.4, 0.5, 0.7) and finally I multiple the vector by 100 (final_vector = 40, 70, 40, 50, 70).\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\n\n\n\n",
     "preview": {},
-    "last_modified": "2021-08-10T23:02:01-04:00",
-    "input_file": {}
+    "last_modified": "2021-08-11T09:55:04-04:00",
+    "input_file": "post-1-hmwk-1.knit.md"
+  },
+  {
+    "path": "posts/2021-08-11-iris/",
+    "title": "iris",
+    "description": "IRIS dataset contains three plant species (setosa, virginica, versicolor) and four features measured for each sample.",
+    "author": [
+      {
+        "name": "sathvikthogaru",
+        "url": {}
+      }
+    ],
+    "date": "2021-08-11",
+    "categories": [],
+    "contents": "\n\n  Sepal.Length    Sepal.Width     Petal.Length    Petal.Width   \n Min.   :4.300   Min.   :2.000   Min.   :1.000   Min.   :0.100  \n 1st Qu.:5.100   1st Qu.:2.800   1st Qu.:1.600   1st Qu.:0.300  \n Median :5.800   Median :3.000   Median :4.350   Median :1.300  \n Mean   :5.843   Mean   :3.057   Mean   :3.758   Mean   :1.199  \n 3rd Qu.:6.400   3rd Qu.:3.300   3rd Qu.:5.100   3rd Qu.:1.800  \n Max.   :7.900   Max.   :4.400   Max.   :6.900   Max.   :2.500  \n       Species  \n setosa    :50  \n versicolor:50  \n virginica :50  \n                \n                \n                \n\n\n  Sepal.Length Sepal.Width Petal.Length Petal.Width Species\n1          5.1         3.5          1.4         0.2  setosa\n2          4.9         3.0          1.4         0.2  setosa\n3          4.7         3.2          1.3         0.2  setosa\n4          4.6         3.1          1.5         0.2  setosa\n5          5.0         3.6          1.4         0.2  setosa\n6          5.4         3.9          1.7         0.4  setosa\n    Sepal.Length Sepal.Width Petal.Length Petal.Width   Species\n145          6.7         3.3          5.7         2.5 virginica\n146          6.7         3.0          5.2         2.3 virginica\n147          6.3         2.5          5.0         1.9 virginica\n148          6.5         3.0          5.2         2.0 virginica\n149          6.2         3.4          5.4         2.3 virginica\n150          5.9         3.0          5.1         1.8 virginica\n[1] setosa     versicolor virginica \nLevels: setosa versicolor virginica\n\n\nLearn more about using Distill at https://rstudio.github.io/distill.\n\n\n\n",
+    "preview": "posts/2021-08-11-iris/iris_files/figure-html5/unnamed-chunk-2-1.png",
+    "last_modified": "2021-08-11T09:55:02-04:00",
+    "input_file": "iris.knit.md",
+    "preview_width": 1248,
+    "preview_height": 768
   },
   {
     "path": "posts/2021-08-10-hello-world/",
@@ -43,7 +62,7 @@
     "categories": [],
     "contents": "\nHi folks! My name is Marina. I will now try to make R do something\nWhat does the UCB Admissions dataset look like?\n\n     Admit Gender Dept Freq\n1 Admitted   Male    A  512\n2 Rejected   Male    A  313\n3 Admitted Female    A   89\n4 Rejected Female    A   19\n5 Admitted   Male    B  353\n6 Rejected   Male    B  207\n\nHow many departments are in the dataset?\n\n\nA B C D E F \n4 4 4 4 4 4 \n\nHow many people were admitted across all departments?\n\n[1] \"The sum of all admits is 1755\"\n\n\n\n\n",
     "preview": {},
-    "last_modified": "2021-08-11T09:52:19-04:00",
+    "last_modified": "2021-08-11T09:54:50-04:00",
     "input_file": "hello-world.knit.md"
   },
   {
@@ -55,7 +74,7 @@
     "categories": [],
     "contents": "\nHello, my name is Shih-Yen Pan. I am a PhD student in Economics at UMass, Amherst.\nIn this post, I will introduce the Two Sum problem from LeetCode and a solution using double for loop provided by Pascal Schmidt here. I thought it might be useful to see what for loop looks like in R.\nThe idea of the problem is, given a list of integers nums and an integer target, to write a function that spits out, if they exist, two different integers in nums that sum up to the target integer.\ntwo_sum <- function(nums, target) {\n\n  for(i in seq_along(nums)) {\n    for(j in seq_along(nums)[-length(nums)]) {\n      \n      sum <- nums[i] + nums[j + 1]\n      if(sum == target) {\n        \n        first <- i\n        second <- j + 1\n        output <- c(nums[first], nums[second])\n        return(output)\n        \n      }\n      \n    }\n    \n  }\n  \n}\nThis is what the function two_sum is doing: Starting from the beginning of the vector ‘nums’, for each integer, search the rest of vector using the second for loop. If the two numbers sum up to the target integer, the code returns those two numbers; otherwise, continue doing the same with the next integer in the list.\nExample:\nnums <- c(1, 2, 3, 5, 6, 9, 11)\ntarget <- 9\ntwo_sum(nums, target)\nThis should return 3 and 6.\nTry it out yourself with different numbers! How can the code be modified to return all the different pairs that sum to the target integer?\n\n\n\n",
     "preview": {},
-    "last_modified": "2021-08-11T09:52:21-04:00",
+    "last_modified": "2021-08-11T09:54:51-04:00",
     "input_file": "homework-1-Shih-Yen.knit.md"
   },
   {
@@ -76,8 +95,8 @@
     ],
     "contents": "\nHere is a plot of the iris dataset:\n\n\nlibrary(datasets)\nplot(iris)\n\n\n\n\n\n\n\n",
     "preview": "posts/2021-08-10-iris/iris_files/figure-html5/unnamed-chunk-1-1.png",
-    "last_modified": "2021-08-10T23:01:53-04:00",
-    "input_file": {},
+    "last_modified": "2021-08-11T09:54:55-04:00",
+    "input_file": "iris.knit.md",
     "preview_width": 1248,
     "preview_height": 768
   },
@@ -99,8 +118,8 @@
     ],
     "contents": "\n\n\n\n",
     "preview": {},
-    "last_modified": "2021-08-10T23:01:54-04:00",
-    "input_file": {}
+    "last_modified": "2021-08-11T09:54:57-04:00",
+    "input_file": "meet-rhys.knit.md"
   },
   {
     "path": "posts/2021-08-10-noahblogpost/",
@@ -116,8 +135,8 @@
     "categories": [],
     "contents": "\n\n\n8+8\n\n\n[1] 16\n\n\n\n8==2\n\n\n[1] FALSE\n\n\n\n\n",
     "preview": {},
-    "last_modified": "2021-08-10T23:01:55-04:00",
-    "input_file": {}
+    "last_modified": "2021-08-11T09:54:58-04:00",
+    "input_file": "noahblogpost.knit.md"
   },
   {
     "path": "posts/2021-08-10-title/",
@@ -128,8 +147,20 @@
     "categories": [],
     "contents": "\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\n\n\n\n",
     "preview": {},
-    "last_modified": "2021-08-10T23:01:58-04:00",
-    "input_file": {}
+    "last_modified": "2021-08-11T09:54:59-04:00",
+    "input_file": "title.knit.md"
+  },
+  {
+    "path": "posts/2021-08-10-hw01/",
+    "title": "HW01",
+    "description": "A short description of the post.",
+    "author": [],
+    "date": "2021-08-10",
+    "categories": [],
+    "contents": "\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-08-11T09:54:54-04:00",
+    "input_file": "hw01.knit.md"
   },
   {
     "path": "posts/2021-08-08-introduction-to-matrix-algebra-using-r/",
@@ -147,7 +178,7 @@
     ],
     "contents": "\n\n\nA <- matrix(1:9, nrow = 3, ncol = 3)\nA\n\n\n     [,1] [,2] [,3]\n[1,]    1    4    7\n[2,]    2    5    8\n[3,]    3    6    9\n\nB <- matrix(1:9, ncol = 3)\nB\n\n\n     [,1] [,2] [,3]\n[1,]    1    4    7\n[2,]    2    5    8\n[3,]    3    6    9\n\ndim(A)\n\n\n[1] 3 3\n\ndim(B)\n\n\n[1] 3 3\n\n#Scalar Multiplication\ns <- 10\ns*A\n\n\n     [,1] [,2] [,3]\n[1,]   10   40   70\n[2,]   20   50   80\n[3,]   30   60   90\n\n#Matrix Multiplication\nA%*%B\n\n\n     [,1] [,2] [,3]\n[1,]   30   66  102\n[2,]   36   81  126\n[3,]   42   96  150\n\n#Matrix Addition\nA + B\n\n\n     [,1] [,2] [,3]\n[1,]    2    8   14\n[2,]    4   10   16\n[3,]    6   12   18\n\n#Matrix Subtraction\nA - B\n\n\n     [,1] [,2] [,3]\n[1,]    0    0    0\n[2,]    0    0    0\n[3,]    0    0    0\n\n#Matrix Transpose\nt(A)\n\n\n     [,1] [,2] [,3]\n[1,]    1    2    3\n[2,]    4    5    6\n[3,]    7    8    9\n\nt(B)\n\n\n     [,1] [,2] [,3]\n[1,]    1    2    3\n[2,]    4    5    6\n[3,]    7    8    9\n\n\n\n\n",
     "preview": {},
-    "last_modified": "2021-08-11T09:52:15-04:00",
+    "last_modified": "2021-08-11T09:54:47-04:00",
     "input_file": "introduction-to-matrix-algebra-using-r.knit.md"
   },
   {
@@ -164,7 +195,7 @@
     "categories": [],
     "contents": "\nThis is my first post in R using the distill package! Check out my R code.\n\n\n2+2\n\n\n[1] 4\n\nx<-4\ny<-6\n\nx+y\n\n\n[1] 10\n\n\n\n\n",
     "preview": {},
-    "last_modified": "2021-08-11T09:52:10-04:00",
+    "last_modified": "2021-08-11T09:54:44-04:00",
     "input_file": "my-new-post.knit.md"
   },
   {
@@ -181,7 +212,7 @@
     "categories": [],
     "contents": "\nUsing Markdown is fun!\nI learned a lot this summer — Markdown is your friend, as are flexdashboard and Stack Overflow.\nAlso, always keep in mind that social scientists understand data and data management just as well (if not better) than the computer scientists.\nTidyTuesday\nNew goal: Participate in Tidy Tuesdays\n\n\n\n",
     "preview": {},
-    "last_modified": "2021-08-11T09:52:11-04:00",
+    "last_modified": "2021-08-11T09:54:45-04:00",
     "input_file": "still-learning-githib-workflow.knit.md"
   },
   {
@@ -200,7 +231,7 @@
     ],
     "contents": "\nWelcome to the Data Analytics and Computational Social Science Programs’ Orientation 2021 session of DACSS 601 Foundations of Data Science. This blog will feature the work of our incoming M.S. students taking the class, as well as PhD students in the College of Behavioral and Social Sciences who have decided to participate through “R Bootcamp”.\n\n\n\n",
     "preview": {},
-    "last_modified": "2021-08-11T09:52:12-04:00",
+    "last_modified": "2021-08-11T09:54:46-04:00",
     "input_file": "welcome.knit.md"
   }
 ]

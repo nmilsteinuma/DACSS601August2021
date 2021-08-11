@@ -32,6 +32,15 @@
       <pubDate>Wed, 11 Aug 2021 00:00:00 +0000</pubDate>
     </item>
     <item>
+      <title>iris</title>
+      <dc:creator>sathvikthogaru</dc:creator>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-iris</link>
+      <description>IRIS dataset contains three plant species (setosa, virginica, versicolor) and four features measured for each sample.</description>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-iris</guid>
+      <pubDate>Wed, 11 Aug 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-iris/iris_files/figure-html5/unnamed-chunk-2-1.png" medium="image" type="image/png" width="1248" height="768"/>
+    </item>
+    <item>
       <title>Hello World</title>
       <dc:creator>Marina</dc:creator>
       <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-hello-world</link>
@@ -82,6 +91,13 @@
       <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-title</link>
       <description>A short description of the post.</description>
       <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-title</guid>
+      <pubDate>Tue, 10 Aug 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>HW01</title>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-hw01</link>
+      <description>A short description of the post.</description>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-hw01</guid>
       <pubDate>Tue, 10 Aug 2021 00:00:00 +0000</pubDate>
     </item>
     <item>
