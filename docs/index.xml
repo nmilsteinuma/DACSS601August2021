@@ -23,15 +23,6 @@
       <pubDate>Wed, 11 Aug 2021 00:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>Post 1 HMWK 1</title>
-      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-post-1-hmwk-1</link>
-      <description>This is my post for the first homework</description>
-      <category>homework 1</category>
-      <category>Annie McGrew</category>
-      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-post-1-hmwk-1</guid>
-      <pubDate>Wed, 11 Aug 2021 00:00:00 +0000</pubDate>
-    </item>
-    <item>
       <title>iris</title>
       <dc:creator>sathvikthogaru</dc:creator>
       <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-iris</link>
@@ -39,6 +30,15 @@
       <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-iris</guid>
       <pubDate>Wed, 11 Aug 2021 00:00:00 +0000</pubDate>
       <media:content url="https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-iris/iris_files/figure-html5/unnamed-chunk-2-1.png" medium="image" type="image/png" width="1248" height="768"/>
+    </item>
+    <item>
+      <title>Post 1 HMWK 1</title>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-post-1-hmwk-1</link>
+      <description>This is my post for the first homework</description>
+      <category>homework 1</category>
+      <category>Annie McGrew</category>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-post-1-hmwk-1</guid>
+      <pubDate>Wed, 11 Aug 2021 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>Hello World</title>
@@ -53,6 +53,13 @@
       <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-homework-1</link>
       <description>Homework 1</description>
       <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-homework-1</guid>
+      <pubDate>Tue, 10 Aug 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>HW01</title>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-hw01</link>
+      <description>A short description of the post.</description>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-hw01</guid>
       <pubDate>Tue, 10 Aug 2021 00:00:00 +0000</pubDate>
     </item>
     <item>
@@ -91,13 +98,6 @@
       <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-title</link>
       <description>A short description of the post.</description>
       <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-title</guid>
-      <pubDate>Tue, 10 Aug 2021 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>HW01</title>
-      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-hw01</link>
-      <description>A short description of the post.</description>
-      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-hw01</guid>
       <pubDate>Tue, 10 Aug 2021 00:00:00 +0000</pubDate>
     </item>
     <item>
