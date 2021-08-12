@@ -13,15 +13,20 @@ draft: true
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
+
+library(tidyverse)
+library(readr)
+
 ```
 Reading in my CSV file
 ```{r}
-data <- read.csv("../../_data/eggs_tidy.csv")
-
+data <- read_csv("../../_data/eggs_tidy.csv")
+head(data)
 
 
 
 ```
+
 This data set contains information on how many half dozens and dozens of eggs made to be sold in a given month of a given year.
 
 Distill is a publication format for scientific and technical writing, native to the web.
