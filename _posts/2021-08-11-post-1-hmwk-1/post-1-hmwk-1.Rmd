@@ -1,0 +1,35 @@
+---
+title: Post 1 HMWK 1
+description: This is my post for the first homework
+date: 08-11-2021
+author: Annie McGrew
+categories:
+- homework 1
+- Annie McGrew
+output:
+  distill::distill_article:
+    self_contained: no
+draft: yes
+---
+
+
+```{r setup, include=TRUE}
+knitr::opts_chunk$set(echo = FALSE)
+vector <- c(1,2,3,4,5)
+new_vector <- c(3,5,1,1,2)
+avg_vector <- (vector + new_vector)/2
+perc_vector <- avg_vector/5
+final_vector <- perc_vector*100
+```
+
+First I input two vectors: vector = `r vector` and new_vector = `r new_vector`
+Then I take the average of these two vectors creating avg_vector = `r avg_vector`
+Then I divide the average of the vectors by 5 (perc_vector = `r perc_vector`) and finally I multiple the vector by 100 (final_vector = `r final_vector`).
+
+
+
+Distill is a publication format for scientific and technical writing, native to the web.
+
+Learn more about using Distill at <https://rstudio.github.io/distill>.
+
+

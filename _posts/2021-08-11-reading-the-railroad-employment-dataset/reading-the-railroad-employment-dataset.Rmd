@@ -1,0 +1,32 @@
+---
+title: "Reading the railroad employment dataset"
+description: |
+  Data breaking down US railroad employment numbers in 2012 by state and county
+author:
+  - name: Mohit Arora
+date: 08-11-2021
+categories:
+  - railroad employment
+output:
+  distill::distill_article:
+    self_contained: false
+draft: true
+---
+
+
+```{r knitr::opts_chunk$set(echo = TRUE)}
+library(readxl)
+library(dplyr)
+State_county <- read_excel("/Users/mohitarora/Desktop/StateCounty2012.xlsx", sheet="Sheet1", skip = 3)
+head(State_county)
+tail(State_county)
+sum(is.na(State_county$"...4"))
+State_county <- select(State_county, -c(2, 4))
+State_county <- State_county[-c(2985, 2987, 2989), ]
+State_county <- State_county[complete.cases(State_county),]
+head(State_county)
+tail(State_county)
+```
+
+
+

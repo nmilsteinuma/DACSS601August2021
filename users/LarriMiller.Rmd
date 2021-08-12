@@ -1,0 +1,18 @@
+---
+title: "Larri Miller"
+image: "images/students/larri.jpg"
+links:
+  - label: LinkedIn
+    url: "https://www.linkedin.com/in/larrisa-miller/"
+  - label: Twitter
+    url: "https://twitter.com/larri_mill"
+  - label: GitHub
+    url: "https://github.com/LarriMill"
+  - label: Email
+    url: "mailto:larrisamille@umass.edu"
+output:
+  postcards::jolla
+---
+ 
+Hi, I'm Larri!
+I am an incoming Communication PhD student with my M.S. in DACSS and a B.A. in Cognitive Science and Psychology. My research interest is primarily in disinformation flow via social media; more generally, I am interested in the intersection of media, technology, and society. I am from DuBois, Pennsylvania, and I currently live in Amherst, MA with my bunny Cleo!
