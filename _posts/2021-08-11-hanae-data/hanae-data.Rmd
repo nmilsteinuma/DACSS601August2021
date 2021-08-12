@@ -13,19 +13,19 @@ output:
 
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(echo = TRUE)
 ```
 
-##Loading Library
 
-```{r echo=FALSE, message=FALSE}
+```{r message=FALSE}
+#Loading Library
 library(tidyverse)
 ```
 
 ##Data
 
 ```{r}
-poultry<-read_csv(file="C:/R Working Directory/Datasets/poultry_tidy.csv")
+poultry<-read_csv(file="../../_data/poultry_tidy.csv")
 
 head(poultry)
 ```
