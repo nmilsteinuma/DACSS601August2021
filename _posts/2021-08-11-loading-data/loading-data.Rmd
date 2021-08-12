@@ -1,0 +1,34 @@
+---
+title: "Loading a data set"
+description: |
+  Homework assignment to load data in to a R Markdown file.
+author:
+  - name: Karl Tacheron
+date: 2021-08-11
+output:
+  distill::distill_article:
+    self_contained: false
+draft: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+Load the tidyverse library:
+
+```{r echo=TRUE}
+library(tidyverse)
+```
+
+Import a sample data set from the working directory and assign it to variable `poultry`:
+
+```{r echo=TRUE}
+read_csv('data/poultry_tidy.csv') -> poultry
+```
+
+Show the first few values: 
+
+```{r echo=TRUE}
+head(poultry)
+```
