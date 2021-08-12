@@ -106,6 +106,15 @@
       <pubDate>Wed, 11 Aug 2021 00:00:00 +0000</pubDate>
     </item>
     <item>
+      <title>iris</title>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-cars</link>
+      <description>iris dataset| ErinTracy</description>
+      <category>-homework 3</category>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-cars</guid>
+      <pubDate>Tue, 10 Aug 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-cars/cars_files/figure-html5/unnamed-chunk-1-1.png" medium="image" type="image/png" width="960" height="320"/>
+    </item>
+    <item>
       <title>Hello World</title>
       <dc:creator>Marina</dc:creator>
       <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-hello-world</link>
@@ -189,15 +198,6 @@
       <description>my first post</description>
       <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-zoes-post</guid>
       <pubDate>Tue, 10 Aug 2021 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>iris</title>
-      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-cars</link>
-      <description>iris dataset| ErinTracy</description>
-      <category>-homework 3</category>
-      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-cars</guid>
-      <pubDate>Tue, 10 Aug 2021 00:00:00 +0000</pubDate>
-      <media:content url="https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-cars/cars_files/figure-html5/unnamed-chunk-1-1.png" medium="image" type="image/png" width="960" height="320"/>
     </item>
     <item>
       <title>Introduction to Matrix Algebra Using R</title>
