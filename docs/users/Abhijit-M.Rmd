@@ -1,6 +1,6 @@
 ---
 title: "Abhijit"
-image: "./images/students/Abhijit.jpg"
+image: "./images/students/Abhijit.JPG"
 links:
   - label: LinkedIn
     url: "https://linkedin.com/"
