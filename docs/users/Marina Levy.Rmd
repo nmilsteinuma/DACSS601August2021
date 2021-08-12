@@ -1,6 +1,6 @@
 ---
 title: "Marina Levy"
-image: "profile-pic.jpg"
+image: "images/students/profile-pic.jpg"
 links:
   - label: LinkedIn
     url: "https://www.linkedin.com/in/marinalevy/"

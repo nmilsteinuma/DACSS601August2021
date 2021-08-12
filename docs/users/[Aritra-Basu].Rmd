@@ -1,7 +1,7 @@
 ---
 title: "Aritra Basu"
 draft: True
-image: "Me.jpeg"
+image: "images/students/Me.jpeg"
 links:
   - label: Facebook
     url: "HTTPS://WWW.FACEBOOK.COM/ARITRA.BASU.1994"

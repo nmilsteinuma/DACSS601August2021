@@ -1,6 +1,6 @@
 ---
 title: "Hi my name is Dana"
-image: "DJNHeadshot_1.jpg"
+image: "images/students/DJNHeadshot_1.jpg"
 color1: "#5A59A3"
 color2: "#C66060"
 angle: 130

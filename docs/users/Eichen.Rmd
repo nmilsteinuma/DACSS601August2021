@@ -1,6 +1,6 @@
 ---
 title: "Adam Eichen"
-image: "Eichen.jpg"
+image: "images/students/Eichen.jpg"
 color1: "#5A59A3"
 color2: "#C66060"
 angle: 130

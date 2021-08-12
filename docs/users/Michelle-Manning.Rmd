@@ -1,6 +1,6 @@
 ---
 title: "Michelle Manning"
-image: "mm_profile.jpg"
+image: "images/students/mm_profile.jpg"
 links:
 - label: LinkedIn
   url: https://www.linkedin.com/in/m3manning17/
