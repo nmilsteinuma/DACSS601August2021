@@ -1,6 +1,6 @@
 ---
 title: "Mohit Arora"
-image: "mohit.jpg"
+image: "images/students/mohit.jpg"
 links:
   - label: LinkedIn
     url: "https://www.linkedin.com/in/mohit-arora-b2b3ba46"

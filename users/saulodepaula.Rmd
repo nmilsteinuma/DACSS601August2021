@@ -1,6 +1,6 @@
 ---
 title: "Saulo DePaula"
-image: "saulopic.png"
+image: "images/students/saulopic.png"
 color1: "#881c1c"
 color2: "#808080"
 angle: 130

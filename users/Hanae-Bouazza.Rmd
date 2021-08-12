@@ -1,6 +1,6 @@
 ---
 title: "Hanae Bouazza"
-image: "Hanae.jpg"
+image: "images/students/Hanae.jpg"
 links:
   - label: GitHub
     url: "https://github.com/HanaeBouazza"

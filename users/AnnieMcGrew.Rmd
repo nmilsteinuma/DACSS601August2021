@@ -1,6 +1,6 @@
 ---
 title: "Annie McGrew"
-image: "IMG_0090.jpg"
+image: "images/students/IMG_0090.jpg"
 links:
   - label: Email
     url: "mailto:amcgrew@umass.edu"
