@@ -1,0 +1,13 @@
+---
+title: "Aritra Basu"
+draft: True
+image: "Me.jpeg"
+links:
+  - label: Facebook
+    url: "HTTPS://WWW.FACEBOOK.COM/ARITRA.BASU.1994"
+  - label: Instagram
+    url: HTTPS://WWW.INSTAGRAM.COM/ARITRA.BASU.1994/
+output:
+  postcards::jolla
+---
+ I am a PhD student in Economics. I am interested in Marxist Political Economy and Agrarian Development.
