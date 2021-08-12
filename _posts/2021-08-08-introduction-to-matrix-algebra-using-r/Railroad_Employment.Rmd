@@ -1,16 +1,15 @@
 ---
-title: "Reading the Railroad employment dataset"
+title: Reading the Railroad employment dataset
 description: |
   Data breaking down US railroad employment numbers in 2012 by state and county
 author:
-  - name: Mohit Arora
+- name: Mohit Arora
 date: 08-11-2021
-categories:
-  - railroad employment
+categories: railroad employment
 output:
   distill::distill_article:
-    self_contained: false
-draft: true
+    self_contained: no
+draft: no
 ---
 
 
