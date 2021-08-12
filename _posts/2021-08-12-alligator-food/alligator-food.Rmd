@@ -1,0 +1,22 @@
+---
+title: "Alligator Food"
+description: |
+  The diet of Alligators throughout several different lakes. Data has the lake, sex of alligator, size of food, and species of animal used for food. 
+name: Ben Lewis
+date: 08-12-2021
+output:
+  distill::distill_article:
+    self_contained: false
+draft: true
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+Distill is a publication format for scientific and technical writing, native to the web.
+
+Learn more about using Distill at <https://rstudio.github.io/distill>.
+
+
