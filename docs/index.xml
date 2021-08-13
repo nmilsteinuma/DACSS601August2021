@@ -12,7 +12,15 @@
       <link>https://mrolfe.github.io/DACSS601August2021/</link>
     </image>
     <generator>Distill</generator>
-    <lastBuildDate>Wed, 11 Aug 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 12 Aug 2021 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Wrangling the Australian marriage law dataset</title>
+      <dc:creator>Karl Tacheron</dc:creator>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-12-wrangling-the-australian-marriage-law-dataset</link>
+      <description>A short description of the post.</description>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-12-wrangling-the-australian-marriage-law-dataset</guid>
+      <pubDate>Thu, 12 Aug 2021 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>2012 US Railroad Employment</title>
       <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-2012-us-railroad-employment</link>
@@ -103,6 +111,23 @@
       <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-railroad-county-tracy</link>
       <description>A short description of the post.</description>
       <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-railroad-county-tracy</guid>
+      <pubDate>Wed, 11 Aug 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Loading a data set</title>
+      <dc:creator>Karl Tacheron</dc:creator>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-loading-data</link>
+      <description>Homework assignment to load data in to a R Markdown file.</description>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-loading-data</guid>
+      <pubDate>Wed, 11 Aug 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Reading the railroad employment dataset</title>
+      <dc:creator>Mohit Arora</dc:creator>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-reading-the-railroad-employment-dataset</link>
+      <description>Data breaking down US railroad employment numbers in 2012 by state and county</description>
+      <category>railroad employment</category>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-reading-the-railroad-employment-dataset</guid>
       <pubDate>Wed, 11 Aug 2021 00:00:00 +0000</pubDate>
     </item>
     <item>
@@ -207,14 +232,6 @@
       <category>matrix algebra</category>
       <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-08-introduction-to-matrix-algebra-using-r</guid>
       <pubDate>Sun, 08 Aug 2021 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>My first distill post</title>
-      <dc:creator>Meredith Rolfe</dc:creator>
-      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-07-my-new-post</link>
-      <description>I can't believe how easy it is to use R.</description>
-      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-07-my-new-post</guid>
-      <pubDate>Sat, 07 Aug 2021 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>Still Learning the GitHib Workflow</title>

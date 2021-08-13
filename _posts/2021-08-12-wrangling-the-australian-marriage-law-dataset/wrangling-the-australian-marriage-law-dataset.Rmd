@@ -1,13 +1,13 @@
 ---
-title: "Wrangling the Australian marriage law dataset"
+title: Wrangling the Australian marriage law dataset
 description: |
   A short description of the post.
 author: Karl Tacheron
-date: 2021-08-12
+date: '2021-08-12'
 output:
   distill::distill_article:
-    self_contained: false
-draft: true
+    self_contained: no
+draft: yes
 ---
 
 ```{r setup, include=FALSE}
