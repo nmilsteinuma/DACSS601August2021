@@ -1,0 +1,42 @@
+---
+title: "Saulo DePaula"
+image: "images/students/saulopic.png"
+color1: "#881c1c"
+color2: "#808080"
+angle: 130
+links:
+  - label: Email
+    url: "mailto:sdepaula@umass.edu"
+output:
+  postcards::onofre
+---
+ 
+Hello, my name is Saulo. Learning a lot with R already!
+
+## Education/Work Background
+
+BA in Sociology (2015) and MEd in Higher Education (2017), both from UMass Amherst. Director of Analytics and Operations for the College of Social and Behavioral Sciences.
+
+## Program
+
+PhD in Higher Education (expected 2023) at UMass Amherst.
+
+## R experience
+
+Minimal.
+
+## Research Interests
+
+Remote Work, Organizations, Leadership Development, Conflict Management, Productivity, Efficiency, Bureaucracy.
+
+## Hometown
+
+Marlborough, MA
+
+## Hobbies
+
+Cycling, home improvement projects, Excel (it can be a hobby…).
+
+## Fun Fact
+
+I lived in Brazil for five years.

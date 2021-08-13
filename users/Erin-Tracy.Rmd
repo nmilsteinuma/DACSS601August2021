@@ -1,0 +1,21 @@
+---
+title: "Erin Tracy"
+image: "images/students/38310_1525531659571_8034532_n.jpg"
+color1: "#5A59A3"
+color2: "#C66060"
+angle: 130
+links:
+  - label: LinkedIn
+    url: "https://www.linkedin.com/in/erin-tracy-00466b15/"
+  - label: Personal Email
+    url: "mailto:erinkathleentracy@yahoo.com"
+  - label: Facebook
+    url: "https://www.facebook.com/erin.halacy/"
+  - label: School Email
+    url: "mailto:ektracy@umass.edu"
+output:
+  postcards::onofre
+---
+ 
+Hi, I'm Erin!
+I am an incoming DACSS UWW student with my B.S. in Interdisciplinary Social Sciences and Early Childhood Education from James Madison University. I work for the Massachusetts Teachers Association. My research interest is primarily in comparing teacher salaries/benefits across comparative districts, and other research related to union negotiations. I am from Warner NH, but now live in Wakefield, MA with my husband and 4 year old son, Mitchell.
