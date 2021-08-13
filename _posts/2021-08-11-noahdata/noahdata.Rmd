@@ -1,14 +1,15 @@
 ---
-title: "Noah_Chicken_Data"
+title: Noah_Chicken_Data
 description: |
   Included is a brief analysis of chicken data with a plot between year and the average price of each cut of chicken.
 author:
-  - name: Noah Milstein
-    url: http://umass.edu/sbs/dacss
+- name: Noah Milstein
+  url: http://umass.edu/sbs/dacss
 date: 08-11-2021
 output:
   distill::distill_article:
-    self_contained: false
+    self_contained: no
+draft: yes
 ---
 
 
@@ -20,16 +21,18 @@ library(ggplot2)
 ```
 
 ```{r}
-poultry <- read_excel("/Users/noahmilstein/Desktop/Summer 2021/DACSS2021/work 8:11/poultry_tidy.xlsx")
+poultry <- read_csv("../../_data/eggs_tidy.csv")
 ```
 
 ```{r}
 poultry 
 ```
 
+Note: This code isn't running because the variables you are using aren't in the original csv that I found - but this might be because you are using the poultry file not the eggs file. Sorry I couldn't get it to work - Meredith
+
 ```{r}
-poultry %>% group_by(Year, Price_Dollar, Product) %>% ggplot() +
-  geom_line(mapping=aes(y=Price_Dollar, x=Year, color=Product), na.rm=TRUE)
+#poultry %>% group_by(year, Price_Dollar, Product) %>% ggplot() +
+#  geom_line(mapping=aes(y=Price_Dollar, x=Year, color=Product), na.rm=TRUE)
 ```
 
 ## Chicken Data Conclusion

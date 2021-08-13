@@ -1,6 +1,6 @@
 ---
 title: "Jason Wierzbowski"
-image: "boatpic.jpg"
+image: "images/students/boatpic.jpg"
 links:
  # - label: LinkedIn
   #  url: "https://linkedin.com/"
@@ -14,4 +14,17 @@ output:
   postcards::jolla
 ---
  
-I have a bachelors in economics and currently work as a manager at the Texas Roadhouse in Hadley. I read a lot of history books and I am very passionate about music.
+Education/Work Background: Bachelors in economics with a minor in mathematics from UMass Amherst
+
+Program: M.S. DACSS
+
+R experience: None
+
+Research interests: Economic inequality, environmental economics, and interest rate policy
+
+Hometown: Palmer, MA
+
+Hobbies: Reading, video games, cooking, and listening to music
+
+Fun fact: I really love the Adirondacks and go up there every year.
+

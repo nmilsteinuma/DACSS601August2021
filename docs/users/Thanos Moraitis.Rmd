@@ -1,6 +1,6 @@
 ---
 title: "Thanos Moraiits"
-image: "image.jpg"
+image: "images/students/image.jpg"
 links:
   - label: LinkedIn
     url: "/https://www.linkedin.com/in/thanos-moraitis-b0bb27b9/"

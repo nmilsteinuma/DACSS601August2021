@@ -1,6 +1,6 @@
 ---
 title: "Jason Wierzbowski"
-image: "boatpic.jpg"
+image: "images/students/boatpic.jpg"
 links:
  # - label: LinkedIn
   #  url: "https://linkedin.com/"

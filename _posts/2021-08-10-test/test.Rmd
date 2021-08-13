@@ -1,14 +1,15 @@
 ---
-title: "TEST"
+title: TEST
 description: |
   A short description of the post.
 author:
-  - name: bakharia
-    url: {}
+- name: bakharia
+  url: {}
 date: 08-10-2021
 output:
   distill::distill_article:
-    self_contained: false
+    self_contained: no
+draft: yes
 ---
 
 

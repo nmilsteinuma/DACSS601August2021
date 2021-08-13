@@ -1,6 +1,6 @@
 ---
 title: "Erin Tracy"
-image: "38310_1525531659571_8034532_n.jpg"
+image: "images/students/38310_1525531659571_8034532_n.jpg"
 color1: "#5A59A3"
 color2: "#C66060"
 angle: 130

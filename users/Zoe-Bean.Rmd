@@ -1,6 +1,6 @@
 ---
 title: "Zoe Bean"
-image: "zoe.jpg"
+image: "images/students/zoe.jpg"
 links:
   - label: LinkedIn
     url: "https://linkedin.com/"

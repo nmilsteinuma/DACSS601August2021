@@ -1,15 +1,14 @@
 ---
-title: "Larri Miller: Intro to [ ] Dataset"
+title: 'Larri Miller: Intro to [ ] Dataset'
 description: |
   Blog Post 1
 author: Larri Miller
 date: 08-11-2021
-categories:
-  - Dataset type
+categories: Dataset type
 output:
   distill::distill_article:
-    self_contained: false
-draft: true
+    self_contained: no
+draft: yes
 ---
 
 

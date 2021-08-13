@@ -1,6 +1,6 @@
 ---
 title: "sathvik thogaru"
-image: "dp.jpg"
+image: "images/students/dp.jpg"
 links:
   - label: LinkedIn
     url: "https://linkedin.com/"

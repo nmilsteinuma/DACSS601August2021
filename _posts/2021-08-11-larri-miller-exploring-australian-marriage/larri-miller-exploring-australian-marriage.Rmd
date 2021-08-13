@@ -1,13 +1,13 @@
 ---
-title: "Larri Miller - Exploring Australian Marriage"
+title: Larri Miller - Exploring Australian Marriage
 description: |
   A short description of the post.
 author: Larri Miller
 date: 08-11-2021
 output:
   distill::distill_article:
-    self_contained: false
-draft: true
+    self_contained: no
+draft: yes
 ---
 
 
