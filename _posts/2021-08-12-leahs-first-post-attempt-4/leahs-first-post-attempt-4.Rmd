@@ -1,22 +1,44 @@
 ---
-title: "Leah's first post: attempt 4"
+title: "Leah's first post: Attempt 4"
 description: |
-  A short description of the post.
-Leah Dion
+  My first blog post.
+author:
+  Leah Dion
 date: 08-12-2021
+categories:
+  .ruminating
+  .random
 output:
   distill::distill_article:
     self_contained: false
 draft: true
 ---
 
+Education/Work Background: I worked in retail management for many years and am currently entering my final semester to finish my undergraduate degree in Math/Stats.
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+Program: DACSS
+
+R experience: I used R for several classes and did several projects in the past few years.
+
+Research interests: Public Policy, machine learning, criminal punishment system, and social movements
+
+Hometown: South Hadley, MA
+
+Hobbies:  Music, basketball, spending time with my cat Jordan.
+
+Fun fact: I have bowled a perfect game (300).
+
+Below is a scatter plot of 250 randomly generated data points.
+
+```{r setup, include=TRUE}
+knitr::opts_chunk$set(echo = TRUE)
+#set seed to reproduce results
+set.seed(327)
+#randomly generate 250 int from 1-100
+X <- sample.int(100, 250, replace=TRUE) 
+#randomly generate 250 int from 1-100
+Y <- sample.int(100, 250, replace=TRUE)
+#scatter plot of X, Y
+plot(X, Y, xlab="X Samples", ylab="Y Samples",
+     pch = 16, col = "red")
 ```
-
-Distill is a publication format for scientific and technical writing, native to the web.
-
-Learn more about using Distill at <https://rstudio.github.io/distill>.
-
-
