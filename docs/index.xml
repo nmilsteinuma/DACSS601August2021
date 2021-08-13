@@ -12,7 +12,155 @@
       <link>https://mrolfe.github.io/DACSS601August2021/</link>
     </image>
     <generator>Distill</generator>
-    <lastBuildDate>Tue, 10 Aug 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 12 Aug 2021 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Wrangling the Australian marriage law dataset</title>
+      <dc:creator>Karl Tacheron</dc:creator>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-12-wrangling-the-australian-marriage-law-dataset</link>
+      <description>A short description of the post.</description>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-12-wrangling-the-australian-marriage-law-dataset</guid>
+      <pubDate>Thu, 12 Aug 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>2012 US Railroad Employment</title>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-2012-us-railroad-employment</link>
+      <description>This is Shih-Yen's post on importing and tidying data</description>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-2012-us-railroad-employment</guid>
+      <pubDate>Wed, 11 Aug 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Larri Miller: Intro to [ ] Dataset</title>
+      <dc:creator>Larri Miller</dc:creator>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-blog-1</link>
+      <description>Blog Post 1</description>
+      <category>Dataset type</category>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-blog-1</guid>
+      <pubDate>Wed, 11 Aug 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[First Post]</title>
+      <dc:creator>Abhijit</dc:creator>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-first-post</link>
+      <description>A short description of the post.</description>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-first-post</guid>
+      <pubDate>Wed, 11 Aug 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Hanae-Data</title>
+      <dc:creator>Hanae Bouazza</dc:creator>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-hanae-data</link>
+      <description>This post is about how data is loaded.</description>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-hanae-data</guid>
+      <pubDate>Wed, 11 Aug 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>HW1</title>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-hw1</link>
+      <description>A short description of the post.</description>
+      <category>homework 1</category>
+      <category>Antonis Gounalakis</category>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-hw1</guid>
+      <pubDate>Wed, 11 Aug 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>iris</title>
+      <dc:creator>sathvikthogaru</dc:creator>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-iris</link>
+      <description>IRIS dataset contains three plant species (setosa, virginica, versicolor) and four features measured for each sample.</description>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-iris</guid>
+      <pubDate>Wed, 11 Aug 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-iris/iris_files/figure-html5/unnamed-chunk-2-1.png" medium="image" type="image/png" width="1248" height="768"/>
+    </item>
+    <item>
+      <title>Jason Wierzbowski - Exploring Eggs</title>
+      <dc:creator>Jason Wierzbowski</dc:creator>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-jason-wierzbowski-exploring-eggs</link>
+      <description>A data set about eggs.</description>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-jason-wierzbowski-exploring-eggs</guid>
+      <pubDate>Wed, 11 Aug 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Larri Miller - Exploring Australian Marriage</title>
+      <dc:creator>Larri Miller</dc:creator>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-larri-miller-exploring-australian-marriage</link>
+      <description>A short description of the post.</description>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-larri-miller-exploring-australian-marriage</guid>
+      <pubDate>Wed, 11 Aug 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Noah_Chicken_Data</title>
+      <dc:creator>Noah Milstein</dc:creator>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-noahdata</link>
+      <description>Included is a brief analysis of chicken data with a plot between year and the average price of each cut of chicken.</description>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-noahdata</guid>
+      <pubDate>Wed, 11 Aug 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Post 1 HMWK 1</title>
+      <dc:creator>Annie McGrew</dc:creator>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-post-1-hmwk-1</link>
+      <description>This is my post for the first homework</description>
+      <category>homework 1</category>
+      <category>Annie McGrew</category>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-post-1-hmwk-1</guid>
+      <pubDate>Wed, 11 Aug 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[RAILROAD-COUNTY-TRACY]</title>
+      <dc:creator>Erin Tracy</dc:creator>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-railroad-county-tracy</link>
+      <description>A short description of the post.</description>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-railroad-county-tracy</guid>
+      <pubDate>Wed, 11 Aug 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Loading a data set</title>
+      <dc:creator>Karl Tacheron</dc:creator>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-loading-data</link>
+      <description>Homework assignment to load data in to a R Markdown file.</description>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-loading-data</guid>
+      <pubDate>Wed, 11 Aug 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Reading the railroad employment dataset</title>
+      <dc:creator>Mohit Arora</dc:creator>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-reading-the-railroad-employment-dataset</link>
+      <description>Data breaking down US railroad employment numbers in 2012 by state and county</description>
+      <category>railroad employment</category>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-reading-the-railroad-employment-dataset</guid>
+      <pubDate>Wed, 11 Aug 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>iris</title>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-cars</link>
+      <description>iris dataset| ErinTracy</description>
+      <category>-homework 3</category>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-cars</guid>
+      <pubDate>Tue, 10 Aug 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-cars/cars_files/figure-html5/unnamed-chunk-1-1.png" medium="image" type="image/png" width="960" height="320"/>
+    </item>
+    <item>
+      <title>Hello World</title>
+      <dc:creator>Marina</dc:creator>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-hello-world</link>
+      <description>Marina's first attempt at using distill</description>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-hello-world</guid>
+      <pubDate>Tue, 10 Aug 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Homework 1</title>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-homework-1</link>
+      <description>Homework 1</description>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-homework-1</guid>
+      <pubDate>Tue, 10 Aug 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>HW01</title>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-hw01</link>
+      <description>A short description of the post.</description>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-hw01</guid>
+      <pubDate>Tue, 10 Aug 2021 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>iris</title>
       <dc:creator>bakharia</dc:creator>
@@ -26,12 +174,55 @@
       <media:content url="https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-iris/iris_files/figure-html5/unnamed-chunk-1-1.png" medium="image" type="image/png" width="1248" height="768"/>
     </item>
     <item>
-      <title>Sean Test Post 1</title>
-      <dc:creator>Sean Conway</dc:creator>
-      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-09-sean-test-post-1</link>
-      <description>Sean's first test post.</description>
-      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-09-sean-test-post-1</guid>
-      <pubDate>Mon, 09 Aug 2021 00:00:00 +0000</pubDate>
+      <title>Meet Rhys</title>
+      <dc:creator>Rhys Long</dc:creator>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-meet-rhys</link>
+      <description>A short description of the post.</description>
+      <category>homework one</category>
+      <category>introduce yourself</category>
+      <category>rhys long</category>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-meet-rhys</guid>
+      <pubDate>Tue, 10 Aug 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Michelle Manning</title>
+      <dc:creator>Michelle Manning</dc:creator>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-michelle-manning</link>
+      <description>Intro for me.</description>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-michelle-manning</guid>
+      <pubDate>Tue, 10 Aug 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-michelle-manning/michelle-manning_files/figure-html5/unnamed-chunk-2-1.png" medium="image" type="image/png" width="1248" height="768"/>
+    </item>
+    <item>
+      <title>Noahblogpost</title>
+      <dc:creator>Noah Milstein</dc:creator>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-noahblogpost</link>
+      <description>A short description of the post.</description>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-noahblogpost</guid>
+      <pubDate>Tue, 10 Aug 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>TEST</title>
+      <dc:creator>bakharia</dc:creator>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-test</link>
+      <description>A short description of the post.</description>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-test</guid>
+      <pubDate>Tue, 10 Aug 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>title</title>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-title</link>
+      <description>A short description of the post.</description>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-title</guid>
+      <pubDate>Tue, 10 Aug 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Zoe's Post</title>
+      <dc:creator>Zoe Bean</dc:creator>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-zoes-post</link>
+      <description>my first post</description>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-zoes-post</guid>
+      <pubDate>Tue, 10 Aug 2021 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>Introduction to Matrix Algebra Using R</title>
@@ -41,14 +232,6 @@
       <category>matrix algebra</category>
       <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-08-introduction-to-matrix-algebra-using-r</guid>
       <pubDate>Sun, 08 Aug 2021 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>My first distill post</title>
-      <dc:creator>Meredith Rolfe</dc:creator>
-      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-07-my-new-post</link>
-      <description>I can't believe how easy it is to use R.</description>
-      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-07-my-new-post</guid>
-      <pubDate>Sat, 07 Aug 2021 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>Still Learning the GitHib Workflow</title>

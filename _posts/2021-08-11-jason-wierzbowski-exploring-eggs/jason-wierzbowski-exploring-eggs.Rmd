@@ -1,0 +1,36 @@
+---
+title: Jason Wierzbowski - Exploring Eggs
+description: |
+  A data set about eggs.
+author: Jason Wierzbowski
+date: 08-11-2021
+output:
+  distill::distill_article:
+    self_contained: no
+draft: yes
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+library(tidyverse)
+library(readr)
+
+```
+Reading in my CSV file
+```{r}
+data <- read_csv("../../_data/eggs_tidy.csv")
+head(data)
+
+
+
+```
+
+This data set contains information on how many half dozens and dozens of eggs made to be sold in a given month of a given year.
+
+Distill is a publication format for scientific and technical writing, native to the web.
+
+Learn more about using Distill at <https://rstudio.github.io/distill>.
+
+
