@@ -21,6 +21,7 @@ Load the tidyverse library:
 library(tidyverse)
 ```
 
+
 Import a sample data set from the working directory and assign it to variable `poultry`:
 
 ```{r echo=TRUE}
