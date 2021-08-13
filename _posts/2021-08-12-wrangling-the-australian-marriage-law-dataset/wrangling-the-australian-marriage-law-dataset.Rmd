@@ -30,21 +30,14 @@ library(tidyverse)
 library(readxl)
 
 votes <- read_excel("../../_data/australian_marriage_law_postal_survey_2017_-_response_final.xls",
-           sheet=3,
-           skip=6)
-keepcols <- colnames(votes)[c(1,2,4,11,13)]
-votes <- votes[keepcols]
-newcolnames <- c("Town","Yes","No","Illegible","No Response")
-colnames(votes) = newcolnames 
+           sheet="Table 2",
+           skip=7,
+           col_names = c("Town", "Yes", "d", "No", rep("d", 6), "Illegible", "d", "No Response", rep("d", 3)))%>%
+  select(!starts_with("d"))%>%
+  drop_na(Town)%>%
+  filter(!str_detect(Town, "(Total)"))%>%
+  filter(!str_starts(Town, "\\("))
 
-keeprows <- 1:(dim(votes)[1]-12) # All row numbers but the last 12
-votes <- votes[keeprows,]
-votes <- votes %>% drop_na("Town") # Remove rows where Town is empty
-
-# Drop junk rows containing " (Total)"
-droprows <- str_detect(votes$Town,'(Total)') * c(1:dim(votes)[1])
-droprows <- droprows[droprows != 0]
-votes <- votes[-c(droprows),]
 ```
 
 The last step is more complicated. Each observation needs a variable for is administrative "division", but this is displayed at the top of each block. These junk rows listing the parent division names must be turned into a variable for each row. 
@@ -52,48 +45,16 @@ The last step is more complicated. Each observation needs a variable for is admi
 We get the number of each row that contains `" Divisions"`.
 
 ```{r}
-divrows <- str_detect(votes$Town,' Divisions') * c(1:dim(votes)[1])
-divrows <- divrows[divrows != 0]
-```
+votes<- votes%>%
+  mutate(Divisions = case_when(
+    str_ends(Town, "Divisions") ~ Town,
+    TRUE ~ NA_character_
+  ))
 
-We also grab the name of each row and strip the end. 
-
-```{r}
-divnames <- str_replace(votes$Town[divrows]," Divisions","")
-divnames
-```
-
-A nested for loop adds the Division variable for each row that follows. The loop creates a vector that contains the first and last value of each Division block in the spreadsheet, then adds the Division variable to each one in that range of rows.
-
-```{r}
-# First create an empty Division column
-votes$Division <- NA
-
-# Loop through the values in divrows, applying the Division name for each section of values
-for (i in seq(1,length(divrows))) {
-  divname <- divnames[i]
-  start <- divrows[i]+1 # Start in the next row after the Division name
-  end <- 0 # Temporary, Are values set within the if/else might be outside scope for later code?
-  if (i == length(divrows)) {
-    end <- dim(votes)[1] # Use the last row if at last item in divrows
-  } else {
-    end <- divrows[i+1]-1 # Go to right before the next value in divrows
-  }
-  rows_to_do <- seq(start,end)
-  votes[c(rows_to_do),]$Division <- divname # Finally, print the Division to the Division variable
+for(i in 1:length(votes$Divisions)){
+  votes$Divisions[i]<-ifelse(is.na(votes$Divisions[i]),votes$Divisions[i-1], votes$Divisions[i])
 }
+
+votes<- filter(votes,!str_detect(Town, "Divisions|Australia"))
 ```
 
-The rows containing the Division names are dropped. The Division column is converted into a factor, as it is categorical data.
-
-```{r}
-votes <- votes[-c(divrows),]
-votes$Division <- as_factor(votes$Division)
-```
-
-We now have a table that only contains the relevant columns, and each Town has its Division as a variable.
-
-```{r}
-head(votes)
-tail(votes)
-```
