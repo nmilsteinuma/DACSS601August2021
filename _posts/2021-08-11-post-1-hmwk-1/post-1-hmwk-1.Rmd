@@ -2,6 +2,7 @@
 title: Post 1 HMWK 1
 description: This is my post for the first homework
 date: 08-11-2021
+author: Annie McGrew
 categories:
 - homework 1
 - Annie McGrew

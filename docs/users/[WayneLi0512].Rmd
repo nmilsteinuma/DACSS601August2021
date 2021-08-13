@@ -1,6 +1,6 @@
 ---
 title: "Weigeng Li"
-image: "WeigengLi.jpg"
+image: "images/students/WeigengLi.jpg"
 links:
   - label: GitHub
     url: "https://github.com/WayneLi0512"

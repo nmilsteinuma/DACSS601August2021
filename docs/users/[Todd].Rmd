@@ -1,6 +1,6 @@
 ---
 title: "Todd Jennings"
-image: "Todd.jpg"
+image: "images/students/Todd.jpg"
 links:
   - label: LinkedIn
     url: "https://www.linkedin.com/in/toddrjennings/"

@@ -1,6 +1,6 @@
 ---
 title: "Noah's Blog"
-image: "photoofme.jpg"
+image: "images/students/photoofme.jpg"
 links:
   - label: Linkdin
     url: "linkedin.com/in/noah-milstein-"

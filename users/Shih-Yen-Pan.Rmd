@@ -1,6 +1,6 @@
 ---
 title: "Shih-Yen Pan"
-image: "Shih-Yen.jpg"
+image: "images/students/Shih-Yen.jpg"
 links:
   - label: GitHub
     url: https://github.com/shihyenpan

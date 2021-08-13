@@ -1,6 +1,6 @@
 ---
 title: "Canan Cevik"
-image: "Canan.jpg"
+image: "images/students/Canan.jpg"
 links:
   - label: Email
     url: "ccevik@umass.edu"

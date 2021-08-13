@@ -1,13 +1,13 @@
 ---
-title: "Michelle Manning"
+title: Michelle Manning
 description: |
   Intro for me.
 author: Michelle Manning
 date: 08-10-2021
 output:
   distill::distill_article:
-    self_contained: false
-draft: true
+    self_contained: no
+draft: yes
 ---
 
 

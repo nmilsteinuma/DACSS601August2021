@@ -1,6 +1,6 @@
 ---
 title: "Antonis Gounalakis"
-image: "Antonis.jpg"
+image: "images/students/Antonis.jpg"
 links:
   - label: Email
     url: "mailto:agounalakis@umass.edu"

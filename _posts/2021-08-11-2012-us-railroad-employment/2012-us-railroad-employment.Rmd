@@ -1,11 +1,11 @@
 ---
-title: "2012 US Railroad Employment"
+title: 2012 US Railroad Employment
 description: This is Shih-Yen's post on importing and tidying data
 date: 08-11-2021
 output:
   distill::distill_article:
-    self_contained: false
-draft: true
+    self_contained: no
+draft: yes
 ---
 
 
