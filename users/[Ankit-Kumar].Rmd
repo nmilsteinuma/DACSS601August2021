@@ -3,38 +3,37 @@ title: "Ankit Kumar"
 image: "AnkitKumar.jpeg"
 links:
   - label: LinkedIn
-    url: "https://linkedin.com/"
+    url: "https://www.linkedin.com/in/ankit-kumar-86796587"
   - label: Twitter
-    url: "https://twitter.com/"
+    url: "https://twitter.com/aunkitskumar?s=08"
   - label: GitHub
-    url: "https://github.com/"
+    url: "https://github.com/ankitkumar0708"
   - label: Email
-    url: "mailto:email@email.com"
+    url: "mailto:ankitkumar@umass.edu"
 output:
   postcards::trestles
 ---
  
 ## Bio
 
-Frank Hermosillo studies neural networks and their applications at Google 
-Brain. His research focuses on differentiable network pruning approximation and 
-decentralized gradient inversion mechanics. He frequently collaborates with 
-researchers who study machine learning, computer vision, and cognitive science.
-His work has been featured in WIRED, The Atlantic, Newsweek, and The New York 
-Times Magazine.
+Ankit Kumar is a Masters student in Data Analytics and Computational Social Science at University of Massachusetts Amherst. He is interested in sports analytics, social network analysis, legal analytics, health, marketing analytics and risk management.
 
 ## Education
 
-**Massachusetts Institute of Technology** | Cambridge, MA
+**Delhi School of Economics** | Delhi, India
 
-Ph.D. in Computer Science | September 2009 - May 2014
+M.A. in Economics | 2016
 
-**The University of California, Berkeley** | Berkeley, CA
+**University of Delhi** | Delhi, India
 
-B.S. in Computer Science | September 2005 - May 2009
+B.A.(Hons.) in Economics | 2013
 
 ## Experience
 
-**Google Brain** | Principal Investigator | January 2018 - Present
+**Institute of Economics Growth** | Research Assistant | February 2019 - November 2019
 
-**Netflix** | Research Scientist | June 2014 - December 2017
+**Institute of Economics Growth** | Research Analyst | October 2018 - January 2019
+
+**Chief Minister's Good Governance Associates, Haryana, India** | Research Analyst | October 2017 - August 2018
+
+**Ashoka University** | Teaching Assistant | August 2016 - Decemeber 2017
