@@ -1,0 +1,39 @@
+---
+title: "Ankit Kumar"
+image: "AnkitKumar.jpeg"
+links:
+  - label: LinkedIn
+    url: "https://www.linkedin.com/in/ankit-kumar-86796587"
+  - label: Twitter
+    url: "https://twitter.com/aunkitskumar?s=08"
+  - label: GitHub
+    url: "https://github.com/ankitkumar0708"
+  - label: Email
+    url: "mailto:ankitkumar@umass.edu"
+output:
+  postcards::trestles
+---
+ 
+## Bio
+
+Ankit Kumar is a Masters student in Data Analytics and Computational Social Science at University of Massachusetts Amherst. He is interested in sports analytics, social network analysis, legal analytics, health, marketing analytics and risk management.
+
+## Education
+
+**Delhi School of Economics** | Delhi, India
+
+M.A. in Economics | 2016
+
+**University of Delhi** | Delhi, India
+
+B.A.(Hons.) in Economics | 2013
+
+## Experience
+
+**Institute of Economics Growth** | Research Assistant | February 2019 - November 2019
+
+**Institute of Economics Growth** | Research Analyst | October 2018 - January 2019
+
+**Chief Minister's Good Governance Associates, Haryana, India** | Research Analyst | October 2017 - August 2018
+
+**Ashoka University** | Teaching Assistant | August 2016 - December 2017
