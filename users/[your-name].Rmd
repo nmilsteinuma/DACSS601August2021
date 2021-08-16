@@ -1,6 +1,6 @@
 ---
 title: "Ben Lewis"
-image: "BenL.jpg"
+image: "images/students/BenL.jpg"
 links:
   - label: LinkedIn
     url: "https://linkedin.com/"

@@ -1,0 +1,23 @@
+---
+title: 'Larri Miller: Intro to [ ] Dataset'
+description: |
+  Blog Post 1
+author: Larri Miller
+date: 08-11-2021
+categories: Dataset type
+output:
+  distill::distill_article:
+    self_contained: no
+draft: yes
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+Distill is a publication format for scientific and technical writing, native to the web.
+
+Learn more about using Distill at <https://rstudio.github.io/distill>.
+
+
