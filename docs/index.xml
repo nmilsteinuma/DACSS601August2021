@@ -46,14 +46,6 @@
       <pubDate>Wed, 11 Aug 2021 00:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>Hanae-Data</title>
-      <dc:creator>Hanae Bouazza</dc:creator>
-      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-hanae-data</link>
-      <description>This post is about how data is loaded.</description>
-      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-hanae-data</guid>
-      <pubDate>Wed, 11 Aug 2021 00:00:00 +0000</pubDate>
-    </item>
-    <item>
       <title>HW1</title>
       <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-hw1</link>
       <description>A short description of the post.</description>
@@ -61,15 +53,6 @@
       <category>Antonis Gounalakis</category>
       <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-hw1</guid>
       <pubDate>Wed, 11 Aug 2021 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>iris</title>
-      <dc:creator>sathvikthogaru</dc:creator>
-      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-iris</link>
-      <description>IRIS dataset contains three plant species (setosa, virginica, versicolor) and four features measured for each sample.</description>
-      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-iris</guid>
-      <pubDate>Wed, 11 Aug 2021 00:00:00 +0000</pubDate>
-      <media:content url="https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-iris/iris_files/figure-html5/unnamed-chunk-2-1.png" medium="image" type="image/png" width="1248" height="768"/>
     </item>
     <item>
       <title>Jason Wierzbowski - Exploring Eggs</title>
@@ -88,6 +71,14 @@
       <pubDate>Wed, 11 Aug 2021 00:00:00 +0000</pubDate>
     </item>
     <item>
+      <title>Loading a data set</title>
+      <dc:creator>Karl Tacheron</dc:creator>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-loading-data</link>
+      <description>Homework assignment to load data in to a R Markdown file.</description>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-loading-data</guid>
+      <pubDate>Wed, 11 Aug 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
       <title>Noah_Chicken_Data</title>
       <dc:creator>Noah Milstein</dc:creator>
       <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-noahdata</link>
@@ -103,31 +94,6 @@
       <category>homework 1</category>
       <category>Annie McGrew</category>
       <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-post-1-hmwk-1</guid>
-      <pubDate>Wed, 11 Aug 2021 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[RAILROAD-COUNTY-TRACY]</title>
-      <dc:creator>Erin Tracy</dc:creator>
-      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-railroad-county-tracy</link>
-      <description>A short description of the post.</description>
-      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-railroad-county-tracy</guid>
-      <pubDate>Wed, 11 Aug 2021 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Loading a data set</title>
-      <dc:creator>Karl Tacheron</dc:creator>
-      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-loading-data</link>
-      <description>Homework assignment to load data in to a R Markdown file.</description>
-      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-loading-data</guid>
-      <pubDate>Wed, 11 Aug 2021 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Reading the railroad employment dataset</title>
-      <dc:creator>Mohit Arora</dc:creator>
-      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-reading-the-railroad-employment-dataset</link>
-      <description>Data breaking down US railroad employment numbers in 2012 by state and county</description>
-      <category>railroad employment</category>
-      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-reading-the-railroad-employment-dataset</guid>
       <pubDate>Wed, 11 Aug 2021 00:00:00 +0000</pubDate>
     </item>
     <item>

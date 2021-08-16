@@ -1,46 +1,19 @@
 ---
-title: "Ben Lewis"
-image: "images/students/BenL.jpg"
+title: "Abhinav Kumar"
+image: "Abhi.jpg"
 links:
   - label: LinkedIn
-    url: "https://linkedin.com/"
+    url: "https://linkedin.com/in/ak26381"
   - label: Twitter
-    url: ""
+    url: "https://twitter.com/"
   - label: GitHub
-    url: "https://https://github.com/BL328/BL328/"
+    url: "https://github.com/ak64823"
   - label: Email
-    url: "mailto:BELewis@UMass.edu"
+    url: "mailto:abhinavkumarl@umass.edu"
 output:
-  postcards::jolla_blue
+  postcards::jolla
 ---
  
-## Education/Work Background 
-BBA Finance, Business Ops/Rev Ops for SaaS companies in  cybersecurity and public safety sectors. Also a cook.
+Education/Work Background: PGD in Analysis & Research, MBA in International Business, MA in Philosophy, and B.Sc. in Chemistry. Have 18 years of experience across IT/ITES, consumer banking, entrepreneurship, consulting, and teaching.
 
-Program
-
-M.S.-DACSS 
-
-R experience
-
-None
-
-Research interests 
-
-Economics, Risk Management
-
-Hometown 
-
-Canton, MA
-
-Hobbies
-
-Gardening, DIY, cooking
-
-Fun Fact:  
-
-Great oyster shucker and sushi roller
-```{r}
-
-```
-
+Research interests: Networks, marketing, risk, health, and financial analytics
