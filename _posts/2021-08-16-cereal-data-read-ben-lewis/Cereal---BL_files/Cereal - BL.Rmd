@@ -1,0 +1,22 @@
+---
+title: "Cereal Data Read - Ben Lewis"
+description: |
+  Different Cereals and their Sodium content, sugar content, and type categorized from A-D.
+Your Name: Ben Lewis
+date: 08-16-2021
+output:
+  distill::distill_article:
+    self_contained: false
+draft: true
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+Distill is a publication format for scientific and technical writing, native to the web.
+
+Learn more about using Distill at <https://rstudio.github.io/distill>.
+
+
