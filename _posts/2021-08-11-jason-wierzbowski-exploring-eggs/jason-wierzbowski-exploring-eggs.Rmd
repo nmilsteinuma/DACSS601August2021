@@ -20,12 +20,30 @@ library(readr)
 ```
 Reading in my CSV file
 ```{r}
+view(data)
+```
+
+Homework #3
+```{r}
 data <- read_csv("../../_data/eggs_tidy.csv")
 head(data)
-
-
+data%>%
+  select(starts_with("extra"))%>%
+  filter(data$extra_large_dozen > 260)%>%
+  arrange(desc(extra_large_dozen), desc(extra_large_half_dozen))%>%
+  summarize(mean(extra_large_dozen), mean(extra_large_half_dozen))
 
 ```
+Working on Regression of if certain months have an impact on the number of eggs produced
+```{r}
+data%>%
+  group_by(month)%>%
+  filter(month == "January" | month == "July")
+  
+  
+```
+
+
 
 This data set contains information on how many half dozens and dozens of eggs made to be sold in a given month of a given year.
 

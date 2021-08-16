@@ -116,7 +116,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"NULL"}
+  {"type":"character","attributes":{},"value":["jason-wierzbowski-exploring-eggs_files/anchor-4.2.2/anchor.min.js","jason-wierzbowski-exploring-eggs_files/bowser-1.9.3/bowser.min.js","jason-wierzbowski-exploring-eggs_files/distill-2.2.21/template.v2.js","jason-wierzbowski-exploring-eggs_files/header-attrs-2.10/header-attrs.js","jason-wierzbowski-exploring-eggs_files/jquery-1.11.3/jquery.min.js","jason-wierzbowski-exploring-eggs_files/popper-2.6.0/popper.min.js","jason-wierzbowski-exploring-eggs_files/tippy-6.2.7/tippy-bundle.umd.min.js","jason-wierzbowski-exploring-eggs_files/tippy-6.2.7/tippy-light-border.css","jason-wierzbowski-exploring-eggs_files/tippy-6.2.7/tippy.css","jason-wierzbowski-exploring-eggs_files/tippy-6.2.7/tippy.umd.min.js","jason-wierzbowski-exploring-eggs_files/webcomponents-2.0.0/webcomponents.js"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -1483,10 +1483,55 @@ Reading in my CSV file
 <div class="layout-chunk" data-layout="l-body">
 
 </div>
+Homework #3
+<div class="layout-chunk" data-layout="l-body">
+<pre><code># A tibble: 6 x 6
+  month     year large_half_dozen large_dozen extra_large_half_dozen
+  &lt;chr&gt;    &lt;dbl&gt;            &lt;dbl&gt;       &lt;dbl&gt;                  &lt;dbl&gt;
+1 January   2004             126         230                    132 
+2 February  2004             128.        226.                   134.
+3 March     2004             131         225                    137 
+4 April     2004             131         225                    137 
+5 May       2004             131         225                    137 
+6 June      2004             134.        231.                   137 
+# ... with 1 more variable: extra_large_dozen &lt;dbl&gt;</code></pre>
+<pre><code># A tibble: 1 x 2
+  `mean(extra_large_dozen)` `mean(extra_large_half_dozen)`
+                      &lt;dbl&gt;                          &lt;dbl&gt;
+1                      287.                           186.</code></pre>
+</div>
+Working on Regression of if certain months have an impact on the number of eggs produced
+<div class="layout-chunk" data-layout="l-body">
+<pre><code># A tibble: 20 x 6
+# Groups:   month [2]
+   month    year large_half_dozen large_dozen extra_large_half_dozen
+   &lt;chr&gt;   &lt;dbl&gt;            &lt;dbl&gt;       &lt;dbl&gt;                  &lt;dbl&gt;
+ 1 January  2004             126         230                    132 
+ 2 July     2004             134.        234.                   137 
+ 3 January  2005             128.        234.                   136.
+ 4 July     2005             128.        234.                   136.
+ 5 January  2006             128.        234.                   136.
+ 6 July     2006             128.        234.                   136.
+ 7 January  2007             128.        234.                   136.
+ 8 July     2007             132         237                    139 
+ 9 January  2008             132         237                    139 
+10 July     2008             174.        278.                   186.
+11 January  2009             174.        278.                   186.
+12 July     2009             174.        278.                   186.
+13 January  2010             174.        272.                   186.
+14 July     2010             174.        268                    186.
+15 January  2011             174.        268.                   186.
+16 July     2011             174.        270                    186.
+17 January  2012             174.        268.                   186.
+18 July     2012             173.        268.                   186.
+19 January  2013             178         268.                   188.
+20 July     2013             178         268.                   188.
+# ... with 1 more variable: extra_large_dozen &lt;dbl&gt;</code></pre>
+</div>
 <p>This data set contains information on how many half dozens and dozens of eggs made to be sold in a given month of a given year.</p>
 <p>Distill is a publication format for scientific and technical writing, native to the web.</p>
 <p>Learn more about using Distill at <a href="https://rstudio.github.io/distill" class="uri">https://rstudio.github.io/distill</a>.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
