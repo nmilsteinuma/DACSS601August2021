@@ -1,14 +1,13 @@
 ---
-title: "Railroad Employment data"
+title: Railroad Employment data
 description: |
   Reading in the railroad dataset
-author: 
-      Mohit-Arora
+author: Mohit-Arora
 date: 08-17-2021
 output:
   distill::distill_article:
-    self_contained: false
-draft: true
+    self_contained: no
+draft: yes
 ---
 
 

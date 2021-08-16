@@ -1,5 +1,56 @@
 [
   {
+    "path": "posts/2021-08-16-railroad-employment-data/",
+    "title": "Railroad Employment data",
+    "description": "Reading in the railroad dataset",
+    "author": [
+      {
+        "name": "Mohit-Arora",
+        "url": {}
+      }
+    ],
+    "date": "2021-08-17",
+    "categories": [],
+    "contents": "\n\n\nlibrary(readxl)\n  library(dplyr)\n  State_county <- read_excel(\"../../_data/StateCounty2012.xls\", skip=3)\n  \n\n\nThe data has been read in. Let’s see how it looks like -\n\n\nhead(State_county)\n\n\n# A tibble: 6 × 5\n  STATE     ...2  COUNTY               ...4  TOTAL\n  <chr>     <lgl> <chr>                <lgl> <dbl>\n1 AE        NA    APO                  NA        2\n2 AE Total1 NA    <NA>                 NA        2\n3 AK        NA    ANCHORAGE            NA        7\n4 AK        NA    FAIRBANKS NORTH STAR NA        2\n5 AK        NA    JUNEAU               NA        3\n6 AK        NA    MATANUSKA-SUSITNA    NA        2\n\ntail(State_county)\n\n\n# A tibble: 6 × 5\n  STATE                                       ...2  COUNTY ...4  TOTAL\n  <chr>                                       <lgl> <chr>  <lgl> <dbl>\n1 <NA>                                        NA    <NA>   NA       NA\n2 CANADA                                      NA    <NA>   NA      662\n3 <NA>                                        NA    <NA>   NA       NA\n4 1  Military designation.                    NA    <NA>   NA       NA\n5 <NA>                                        NA    <NA>   NA       NA\n6 NOTE:  Excludes 2,896 employees without an… NA    <NA>   NA       NA\n\nThis needs further cleaning to make it suitable for further analysis.\n\n\nState_county <- select(State_county, -c(2, 4))\nState_county <- State_county[complete.cases(State_county),]\nhead(State_county)\n\n\n# A tibble: 6 × 3\n  STATE COUNTY               TOTAL\n  <chr> <chr>                <dbl>\n1 AE    APO                      2\n2 AK    ANCHORAGE                7\n3 AK    FAIRBANKS NORTH STAR     2\n4 AK    JUNEAU                   3\n5 AK    MATANUSKA-SUSITNA        2\n6 AK    SITKA                    1\n\ntail(State_county)\n\n\n# A tibble: 6 × 3\n  STATE COUNTY     TOTAL\n  <chr> <chr>      <dbl>\n1 WY    SHERIDAN     252\n2 WY    SUBLETTE       3\n3 WY    SWEETWATER   196\n4 WY    UINTA         49\n5 WY    WASHAKIE      10\n6 WY    WESTON        37\n\nThis looks much better!\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-08-16T12:08:13-04:00",
+    "input_file": "railroad-employment-data.knit.md"
+  },
+  {
+    "path": "posts/2021-08-15-zoe-hotel-bookings-dataset/",
+    "title": "Zoe Hotel Bookings Dataset",
+    "description": "An introdution to the hotel dataset",
+    "author": [
+      {
+        "name": "Zoe Bean",
+        "url": {}
+      }
+    ],
+    "date": "2021-08-15",
+    "categories": [],
+    "contents": "\nHomework 2\nI will be processing a dataset about hotel bookings from 2015 to 2017. First, I import the dataset, which requires the tidyverse package to be loaded.\n\n\nlibrary(tidyverse)\nhotel_data=read_csv(\"../../_data/hotel_bookings.csv\")\n\n\n\nNext, I use head() to give an example of what the dataset looks like.\n\n\nhead(hotel_data)\n\n\n# A tibble: 6 × 32\n  hotel        is_canceled lead_time arrival_date_ye… arrival_date_mo…\n  <chr>              <dbl>     <dbl>            <dbl> <chr>           \n1 Resort Hotel           0       342             2015 July            \n2 Resort Hotel           0       737             2015 July            \n3 Resort Hotel           0         7             2015 July            \n4 Resort Hotel           0        13             2015 July            \n5 Resort Hotel           0        14             2015 July            \n6 Resort Hotel           0        14             2015 July            \n# … with 27 more variables: arrival_date_week_number <dbl>,\n#   arrival_date_day_of_month <dbl>, stays_in_weekend_nights <dbl>,\n#   stays_in_week_nights <dbl>, adults <dbl>, children <dbl>,\n#   babies <dbl>, meal <chr>, country <chr>, market_segment <chr>,\n#   distribution_channel <chr>, is_repeated_guest <dbl>,\n#   previous_cancellations <dbl>,\n#   previous_bookings_not_canceled <dbl>, reserved_room_type <chr>, …\n\nTo find out how many rows are in the dataset, I use dim(). I also use colnames() to figure out what the data drawn from each observation are.\n\n\ndim(hotel_data)\n\n\n[1] 119390     32\n\ncolnames(hotel_data)\n\n\n [1] \"hotel\"                          \"is_canceled\"                   \n [3] \"lead_time\"                      \"arrival_date_year\"             \n [5] \"arrival_date_month\"             \"arrival_date_week_number\"      \n [7] \"arrival_date_day_of_month\"      \"stays_in_weekend_nights\"       \n [9] \"stays_in_week_nights\"           \"adults\"                        \n[11] \"children\"                       \"babies\"                        \n[13] \"meal\"                           \"country\"                       \n[15] \"market_segment\"                 \"distribution_channel\"          \n[17] \"is_repeated_guest\"              \"previous_cancellations\"        \n[19] \"previous_bookings_not_canceled\" \"reserved_room_type\"            \n[21] \"assigned_room_type\"             \"booking_changes\"               \n[23] \"deposit_type\"                   \"agent\"                         \n[25] \"company\"                        \"days_in_waiting_list\"          \n[27] \"customer_type\"                  \"adr\"                           \n[29] \"required_car_parking_spaces\"    \"total_of_special_requests\"     \n[31] \"reservation_status\"             \"reservation_status_date\"       \n\nThe result from dim() means that there are 119390 rows and 32 columns. This is important since the number of rows tells us how many hotel bookings there are in this dataset, and the columns tell us how many pieces of data are available per booking.\nHomework 3\nThe colnames function is helpful for this next step, where I select columns. Here, I select the year of arrival and the month.\n\n\nselect(hotel_data, arrival_date_year, arrival_date_month )\n\n\n# A tibble: 119,390 × 2\n   arrival_date_year arrival_date_month\n               <dbl> <chr>             \n 1              2015 July              \n 2              2015 July              \n 3              2015 July              \n 4              2015 July              \n 5              2015 July              \n 6              2015 July              \n 7              2015 July              \n 8              2015 July              \n 9              2015 July              \n10              2015 July              \n# … with 119,380 more rows\n\nI can do more with select, such as selecting all columns that start with ‘arrival_date’ to get more clear information about when each the booking is.\n\n\nselect(hotel_data, starts_with(\"arrival_date\"))\n\n\n# A tibble: 119,390 × 4\n   arrival_date_ye… arrival_date_mo… arrival_date_we… arrival_date_da…\n              <dbl> <chr>                       <dbl>            <dbl>\n 1             2015 July                           27                1\n 2             2015 July                           27                1\n 3             2015 July                           27                1\n 4             2015 July                           27                1\n 5             2015 July                           27                1\n 6             2015 July                           27                1\n 7             2015 July                           27                1\n 8             2015 July                           27                1\n 9             2015 July                           27                1\n10             2015 July                           27                1\n# … with 119,380 more rows\n\nIf I want to look at all the bookings where there are no children, I use filter() as follows:\n\n\nfilter(hotel_data, children== 0)\n\n\n# A tibble: 110,796 × 32\n   hotel        is_canceled lead_time arrival_date_ye… arrival_date_mo…\n   <chr>              <dbl>     <dbl>            <dbl> <chr>           \n 1 Resort Hotel           0       342             2015 July            \n 2 Resort Hotel           0       737             2015 July            \n 3 Resort Hotel           0         7             2015 July            \n 4 Resort Hotel           0        13             2015 July            \n 5 Resort Hotel           0        14             2015 July            \n 6 Resort Hotel           0        14             2015 July            \n 7 Resort Hotel           0         0             2015 July            \n 8 Resort Hotel           0         9             2015 July            \n 9 Resort Hotel           1        85             2015 July            \n10 Resort Hotel           1        75             2015 July            \n# … with 110,786 more rows, and 27 more variables:\n#   arrival_date_week_number <dbl>, arrival_date_day_of_month <dbl>,\n#   stays_in_weekend_nights <dbl>, stays_in_week_nights <dbl>,\n#   adults <dbl>, children <dbl>, babies <dbl>, meal <chr>,\n#   country <chr>, market_segment <chr>, distribution_channel <chr>,\n#   is_repeated_guest <dbl>, previous_cancellations <dbl>,\n#   previous_bookings_not_canceled <dbl>, reserved_room_type <chr>, …\n\nIf I want to arrange the hotel data by putting a column in order, I use arrange(). In this example, I order the data by the arrival month, which is sorted alphabetically.\n\n\narrange(hotel_data, arrival_date_month)\n\n\n# A tibble: 119,390 × 32\n   hotel        is_canceled lead_time arrival_date_ye… arrival_date_mo…\n   <chr>              <dbl>     <dbl>            <dbl> <chr>           \n 1 Resort Hotel           1        31             2016 April           \n 2 Resort Hotel           0         0             2016 April           \n 3 Resort Hotel           0       144             2016 April           \n 4 Resort Hotel           0       144             2016 April           \n 5 Resort Hotel           0       144             2016 April           \n 6 Resort Hotel           0       163             2016 April           \n 7 Resort Hotel           1        38             2016 April           \n 8 Resort Hotel           0       175             2016 April           \n 9 Resort Hotel           1        39             2016 April           \n10 Resort Hotel           1        32             2016 April           \n# … with 119,380 more rows, and 27 more variables:\n#   arrival_date_week_number <dbl>, arrival_date_day_of_month <dbl>,\n#   stays_in_weekend_nights <dbl>, stays_in_week_nights <dbl>,\n#   adults <dbl>, children <dbl>, babies <dbl>, meal <chr>,\n#   country <chr>, market_segment <chr>, distribution_channel <chr>,\n#   is_repeated_guest <dbl>, previous_cancellations <dbl>,\n#   previous_bookings_not_canceled <dbl>, reserved_room_type <chr>, …\n\nIf I actually wanted to have the months in order, I would have to make a numerical variable in the dataset using mutate() and case_when() and then arrange by that variable.\n\n\nhotel_data<- hotel_data %>%\n  mutate(arrival_date_month_num = case_when(\n         arrival_date_month == \"January\" ~ 1,\n         arrival_date_month == \"February\" ~ 2,\n         arrival_date_month == \"March\" ~ 3,\n         arrival_date_month == \"April\" ~ 4,\n         arrival_date_month == \"May\" ~ 5,\n         arrival_date_month == \"June\" ~ 6,\n         arrival_date_month == \"July\" ~ 7,\n         arrival_date_month == \"August\" ~ 8,\n         arrival_date_month == \"September\" ~ 9,\n         arrival_date_month == \"October\" ~ 10,\n         arrival_date_month == \"November\" ~ 11,\n         arrival_date_month == \"December\" ~ 12\n         ))\n\narrange(hotel_data, arrival_date_month_num)\n\n\n# A tibble: 119,390 × 33\n   hotel        is_canceled lead_time arrival_date_ye… arrival_date_mo…\n   <chr>              <dbl>     <dbl>            <dbl> <chr>           \n 1 Resort Hotel           0       109             2016 January         \n 2 Resort Hotel           0       109             2016 January         \n 3 Resort Hotel           1         2             2016 January         \n 4 Resort Hotel           0        88             2016 January         \n 5 Resort Hotel           1        20             2016 January         \n 6 Resort Hotel           1        76             2016 January         \n 7 Resort Hotel           0        88             2016 January         \n 8 Resort Hotel           1       113             2016 January         \n 9 Resort Hotel           1       113             2016 January         \n10 Resort Hotel           1       113             2016 January         \n# … with 119,380 more rows, and 28 more variables:\n#   arrival_date_week_number <dbl>, arrival_date_day_of_month <dbl>,\n#   stays_in_weekend_nights <dbl>, stays_in_week_nights <dbl>,\n#   adults <dbl>, children <dbl>, babies <dbl>, meal <chr>,\n#   country <chr>, market_segment <chr>, distribution_channel <chr>,\n#   is_repeated_guest <dbl>, previous_cancellations <dbl>,\n#   previous_bookings_not_canceled <dbl>, reserved_room_type <chr>, …\n\nIf I wanted to know the average amount of adults per booking, I would use summarise() like so:\n\n\nsummarise(hotel_data, mean=mean(adults))\n\n\n# A tibble: 1 × 1\n   mean\n  <dbl>\n1  1.86\n\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-08-16T12:08:07-04:00",
+    "input_file": "zoe-hotel-bookings-dataset.knit.md"
+  },
+  {
+    "path": "posts/2021-08-13-ishas-blog-post/",
+    "title": "Isha's Blog Post",
+    "description": "Running Blog Post for Course Homeworks",
+    "author": [
+      {
+        "name": "Isha Akshita Mahajan",
+        "url": {}
+      }
+    ],
+    "date": "2021-08-13",
+    "categories": [],
+    "contents": "\n##Introduction\nHello Everybody! My name is Isha and I am starting the DACSS program this summer. I am from India and completed my bachelors in journalism and political science from UMass. I am excited to meet everyone this fall and delve into the world of data and social science.\n##Homework 2\n\n# A tibble: 6 × 4\n  territory       resp    count percent\n  <chr>           <chr>   <dbl>   <dbl>\n1 New South Wales yes   2374362    57.8\n2 New South Wales no    1736838    42.2\n3 Victoria        yes   2145629    64.9\n4 Victoria        no    1161098    35.1\n5 Queensland      yes   1487060    60.7\n6 Queensland      no     961015    39.3\n\n#About the Data This data sample is drawn from the Australian Marriage Law Postal Survey in 2017. Eligible participants were those who enrolled in the Commonwealth Electoral Roll by August 24 , 2017 and were 18 years of Age. They had not served prison sentences of three years and longer and participated in the survey voluntarily. The responses were recorded to the question\nShould the law be changed to allow same-sex couples to marry?\n##Homework 3\n\nHow can you arrange your dataset by territory?\n\n\n\n\n\nWhich Territory had the highest population count who voted yes to the law allowing same-sex couples to marry.\n\n\n\n\n\nRename the resp column to response.\n\n\n\n\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-08-16T12:08:02-04:00",
+    "input_file": "ishas-blog-post.knit.md"
+  },
+  {
     "path": "posts/2021-08-12-wrangling-the-australian-marriage-law-dataset/",
     "title": "Wrangling the Australian marriage law dataset",
     "description": "A short description of the post.",
@@ -11,10 +62,43 @@
     ],
     "date": "2021-08-12",
     "categories": [],
-    "contents": "\nThe Australian Bureau of Statistics 2017 Marriage Law Postal survey contains data about a nationwide vote that took place by mail. The data has a few things making reading into a tibble difficult:\nGrouped information instead of individual observations where variables appear elsewhere\nMany extraneous & repeated calculated variables\nMulti-index data formatted visually into blocks\nMulti-index column names with confusing and unhelpful names\nTo make this data usable we must transform its structure in both its column layout and its rows.\nWe read in the Excel file’s third sheet, cut it down to only the needed variables and rows, rename the columns, and remove NA values. We also remove rows that contain section totals.\n\n\nlibrary(tidyverse)\nlibrary(readxl)\n\nvotes <- read_excel(\"../../_data/australian_marriage_law_postal_survey_2017_-_response_final.xls\",\n           sheet=3,\n           skip=6)\nkeepcols <- colnames(votes)[c(1,2,4,11,13)]\nvotes <- votes[keepcols]\nnewcolnames <- c(\"Town\",\"Yes\",\"No\",\"Illegible\",\"No Response\")\ncolnames(votes) = newcolnames \n\nkeeprows <- 1:(dim(votes)[1]-12) # All row numbers but the last 12\nvotes <- votes[keeprows,]\nvotes <- votes %>% drop_na(\"Town\") # Remove rows where Town is empty\n\n# Drop junk rows containing \" (Total)\"\ndroprows <- str_detect(votes$Town,'(Total)') * c(1:dim(votes)[1])\ndroprows <- droprows[droprows != 0]\nvotes <- votes[-c(droprows),]\n\n\n\nThe last step is more complicated. Each observation needs a variable for is administrative “division”, but this is displayed at the top of each block. These junk rows listing the parent division names must be turned into a variable for each row.\nWe get the number of each row that contains \" Divisions\".\n\n\ndivrows <- str_detect(votes$Town,' Divisions') * c(1:dim(votes)[1])\ndivrows <- divrows[divrows != 0]\n\n\n\nWe also grab the name of each row and strip the end.\n\n\ndivnames <- str_replace(votes$Town[divrows],\" Divisions\",\"\")\ndivnames\n\n\n[1] \"New South Wales\"              \"Victoria\"                    \n[3] \"Queensland\"                   \"South Australia\"             \n[5] \"Western Australia\"            \"Tasmania\"                    \n[7] \"Northern Territory\"           \"Australian Capital Territory\"\n\nA nested for loop adds the Division variable for each row that follows. The loop creates a vector that contains the first and last value of each Division block in the spreadsheet, then adds the Division variable to each one in that range of rows.\n\n\n# First create an empty Division column\nvotes$Division <- NA\n\n# Loop through the values in divrows, applying the Division name for each section of values\nfor (i in seq(1,length(divrows))) {\n  divname <- divnames[i]\n  start <- divrows[i]+1 # Start in the next row after the Division name\n  end <- 0 # Temporary, Are values set within the if/else might be outside scope for later code?\n  if (i == length(divrows)) {\n    end <- dim(votes)[1] # Use the last row if at last item in divrows\n  } else {\n    end <- divrows[i+1]-1 # Go to right before the next value in divrows\n  }\n  rows_to_do <- seq(start,end)\n  votes[c(rows_to_do),]$Division <- divname # Finally, print the Division to the Division variable\n}\n\n\n\nThe rows containing the Division names are dropped. The Division column is converted into a factor, as it is categorical data.\n\n\nvotes <- votes[-c(divrows),]\nvotes$Division <- as_factor(votes$Division)\n\n\n\nWe now have a table that only contains the relevant columns, and each Town has its Division as a variable.\n\n\nhead(votes)\n\n\n# A tibble: 6 × 6\n  Town        Yes    No Illegible `No Response` Division       \n  <chr>     <dbl> <dbl>     <dbl>         <dbl> <fct>          \n1 Banks     37736 46343       247         20928 New South Wales\n2 Barton    37153 47984       226         24008 New South Wales\n3 Bennelong 42943 43215       244         19973 New South Wales\n4 Berowra   48471 40369       212         16038 New South Wales\n5 Blaxland  20406 57926       220         25883 New South Wales\n6 Bradfield 53681 34927       202         17261 New South Wales\n\ntail(votes)\n\n\n# A tibble: 6 × 6\n  Town          Yes    No Illegible `No Response` Division            \n  <chr>       <dbl> <dbl>     <dbl>         <dbl> <fct>               \n1 Franklin    44746 20322       163         13605 Tasmania            \n2 Lyons       35894 25258       176         17204 Tasmania            \n3 Lingiari(c) 19026 15898       106         34854 Northern Territory  \n4 Solomon     29660 15792       123         22642 Northern Territory  \n5 Canberra(d) 89590 31361       281         24399 Australian Capital …\n6 Fenner(e)   85869 30159       253         26196 Australian Capital …\n\n\n\n\n",
+    "contents": "\nThe Australian Bureau of Statistics 2017 Marriage Law Postal survey contains data about a nationwide vote that took place by mail. The data has a few things making reading into a tibble difficult:\nGrouped information instead of individual observations where variables appear elsewhere\nMany extraneous & repeated calculated variables\nMulti-index data formatted visually into blocks\nMulti-index column names with confusing and unhelpful names\nTo make this data usable we must transform its structure in both its column layout and its rows.\nWe read in the Excel file’s third sheet, cut it down to only the needed variables and rows, rename the columns, and remove NA values. We also remove rows that contain section totals.\n\n\nlibrary(tidyverse)\nlibrary(readxl)\n\nvotes <- read_excel(\"../../_data/australian_marriage_law_postal_survey_2017_-_response_final.xls\",\n           sheet=\"Table 2\",\n           skip=7,\n           col_names = c(\"Town\", \"Yes\", \"d\", \"No\", rep(\"d\", 6), \"Illegible\", \"d\", \"No Response\", rep(\"d\", 3)))%>%\n  select(!starts_with(\"d\"))%>%\n  drop_na(Town)%>%\n  filter(!str_detect(Town, \"(Total)\"))%>%\n  filter(!str_starts(Town, \"\\\\(\"))\n\n\n\nThe last step is more complicated. Each observation needs a variable for is administrative “division”, but this is displayed at the top of each block. These junk rows listing the parent division names must be turned into a variable for each row.\nWe get the number of each row that contains \" Divisions\".\n\n\nvotes<- votes%>%\n  mutate(Divisions = case_when(\n    str_ends(Town, \"Divisions\") ~ Town,\n    TRUE ~ NA_character_\n  ))\n\nfor(i in 1:length(votes$Divisions)){\n  votes$Divisions[i]<-ifelse(is.na(votes$Divisions[i]),votes$Divisions[i-1], votes$Divisions[i])\n}\n\nvotes<- filter(votes,!str_detect(Town, \"Divisions|Australia\"))\n\n\n\n\n\n\n",
     "preview": {},
-    "last_modified": "2021-08-13T09:13:51-04:00",
-    "input_file": {}
+    "last_modified": "2021-08-16T12:08:01-04:00",
+    "input_file": "wrangling-the-australian-marriage-law-dataset.knit.md"
+  },
+  {
+    "path": "posts/2021-08-12-alligator-food/",
+    "title": "Alligator Food",
+    "description": "The diet of Alligators throughout several different lakes. Data has the lake, sex of alligator, size of food, and species of animal used for food.",
+    "author": [],
+    "date": "2021-08-12",
+    "categories": [],
+    "contents": "\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-08-16T12:07:57-04:00",
+    "input_file": "alligator-food.knit.md"
+  },
+  {
+    "path": "posts/2021-08-12-leahs-first-post-attempt-4/",
+    "title": "Leah's first post: Attempt 4",
+    "description": "My first blog post.",
+    "author": [
+      {
+        "name": "Leah Dion",
+        "url": {}
+      }
+    ],
+    "date": "2021-08-12",
+    "categories": [
+      ".ruminating .random"
+    ],
+    "contents": "\nEducation/Work Background: I worked in retail management for many years and am currently entering my final semester to finish my undergraduate degree in Math/Stats.\nProgram: DACSS\nR experience: I used R for several classes and did several projects in the past few years.\nResearch interests: Public Policy, machine learning, criminal punishment system, and social movements\nHometown: South Hadley, MA\nHobbies: Music, basketball, spending time with my cat Jordan.\nFun fact: I have bowled a perfect game (300).\nBelow is a scatter plot of 250 randomly generated data points.\n\n\nknitr::opts_chunk$set(echo = TRUE)\n#set seed to reproduce results\nset.seed(327)\n#randomly generate 250 int from 1-100\nX <- sample.int(100, 250, replace=TRUE) \n#randomly generate 250 int from 1-100\nY <- sample.int(100, 250, replace=TRUE)\n#scatter plot of X, Y\nplot(X, Y, xlab=\"X Samples\", ylab=\"Y Samples\",\n     pch = 16, col = \"red\")\n\n\n\n\n\n\n\n",
+    "preview": "posts/2021-08-12-leahs-first-post-attempt-4/leahs-first-post-attempt-4_files/figure-html5/setup-1.png",
+    "last_modified": "2021-08-16T12:07:58-04:00",
+    "input_file": "leahs-first-post-attempt-4.knit.md",
+    "preview_width": 1248,
+    "preview_height": 768
   },
   {
     "path": "posts/2021-08-11-2012-us-railroad-employment/",
@@ -25,8 +109,8 @@
     "categories": [],
     "contents": "\nHello, in this post, I will introduce the 2012 US Railroad Employment data, discuss some of the issues with the data, and provide the R code I used to import and tidy the data.\nFirst, let’s download the data. Since the data is in a .xls file, I used the readxl library that comes with the tidyverse package to import the data.\nlibrary(readxl)\nrailroad_data <- read_excel(\"StateCounty2012.xls\")\nview(railroad_data)\nWhen viewing the data, you might first see that the column names for the variables are incorrect and the correct column names are actually in the third row. This error occurs because there are 3 lines of metadata at the top of the file, and read_excel uses the first line as the column names. To fix this problem, we can use skip = 3 in read_excel to skip the first 3 lines.\nrailroad_data <- read_excel(\"StateCounty2012.xls\", skip = 3)\nNext, you might also see that there are two columns, column 2 and 4, that have nothing but NA as values. Here’s an easy way to get rid of those columns:\nrailroad_data <- railroad_data[,-c(2, 4)]\nFinally, it is likely that we are only interested in U.S. county-level data, but our data file also contains rows for state totals, a row for Canada, and a row for the grand total employment in U.S railroads. In addition, there are notes and footnotes that are not useful for the purpose of data analysis.\nTo get of these rows, I use the fact that all of these rows contain entries that have NA as a value, and the rows we want to keep do not. Hence, to clean our data of these rows, we simply get rid of any rows that contain NA as a value. We can achieve that with the following line of code that subsets the railroad_data by omitting all the rows containing NA:\nrailroad_data_clean <- na.omit(railroad_data)\nNow, we have a county-level data set with clearly defined column/variable names.\n\n\n\n",
     "preview": {},
-    "last_modified": "2021-08-13T09:13:24-04:00",
-    "input_file": {}
+    "last_modified": "2021-08-16T12:07:46-04:00",
+    "input_file": "2012-us-railroad-employment.knit.md"
   },
   {
     "path": "posts/2021-08-11-blog-1/",
@@ -44,8 +128,8 @@
     ],
     "contents": "\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\n\n\n\n",
     "preview": {},
-    "last_modified": "2021-08-13T09:13:26-04:00",
-    "input_file": {}
+    "last_modified": "2021-08-16T12:07:47-04:00",
+    "input_file": "blog-1.knit.md"
   },
   {
     "path": "posts/2021-08-11-first-post/",
@@ -61,8 +145,8 @@
     "categories": [],
     "contents": "\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\n\n\n\n",
     "preview": {},
-    "last_modified": "2021-08-13T09:13:29-04:00",
-    "input_file": {}
+    "last_modified": "2021-08-16T12:07:49-04:00",
+    "input_file": "first-post.knit.md"
   },
   {
     "path": "posts/2021-08-11-hw1/",
@@ -76,25 +160,8 @@
     ],
     "contents": "\n\n\nknitr::opts_chunk$set(echo = FALSE)\n\nvac_tn <- c(52.01,39.84,33.42,5.8,7.29,4.73,4.29,0.55)\npop <- c(83.78,60.46,46.75,10.42,10.2,8.65,5.79,0.89)\nvac_sh <- vac_tn/pop\nperc_vac_sh <- vac_sh*100\nperc_vac_sh > 70\n\n\n[1] FALSE FALSE  TRUE FALSE  TRUE FALSE  TRUE FALSE\n\nAssuming that each vaccine dose provides full immunity and therefore is administered to different individuals, I examined the vaccination rates of 8 countries (Germany, Italy, Spain, Greece, Portugal, Switzerland, Denmark, Cypurs). I found that only in 3 cases (Spain, Portugal,Denmark) the herd immunity threshold of 70% has been reached!\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\n\n\n\n",
     "preview": {},
-    "last_modified": "2021-08-13T09:13:32-04:00",
-    "input_file": {}
-  },
-  {
-    "path": "posts/2021-08-11-jason-wierzbowski-exploring-eggs/",
-    "title": "Jason Wierzbowski - Exploring Eggs",
-    "description": "A data set about eggs.",
-    "author": [
-      {
-        "name": "Jason Wierzbowski",
-        "url": {}
-      }
-    ],
-    "date": "2021-08-11",
-    "categories": [],
-    "contents": "\nReading in my CSV file\n\n# A tibble: 6 × 6\n  month     year large_half_dozen large_dozen extra_large_half_dozen\n  <chr>    <dbl>            <dbl>       <dbl>                  <dbl>\n1 January   2004             126         230                    132 \n2 February  2004             128.        226.                   134.\n3 March     2004             131         225                    137 \n4 April     2004             131         225                    137 \n5 May       2004             131         225                    137 \n6 June      2004             134.        231.                   137 \n# … with 1 more variable: extra_large_dozen <dbl>\n\nThis data set contains information on how many half dozens and dozens of eggs made to be sold in a given month of a given year.\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\n\n\n\n",
-    "preview": {},
-    "last_modified": "2021-08-13T09:13:37-04:00",
-    "input_file": {}
+    "last_modified": "2021-08-16T12:07:50-04:00",
+    "input_file": "hw1.knit.md"
   },
   {
     "path": "posts/2021-08-11-larri-miller-exploring-australian-marriage/",
@@ -110,8 +177,8 @@
     "categories": [],
     "contents": "\nHere I am reading in my CSV file.\n\n        territory resp   count percent\n1 New South Wales  yes 2374362    57.8\n2 New South Wales   no 1736838    42.2\n3        Victoria  yes 2145629    64.9\n4        Victoria   no 1161098    35.1\n5      Queensland  yes 1487060    60.7\n6      Queensland   no  961015    39.3\n\nThis dataset explores Australian marriage. It has 16 observations of 4 variables.\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\n\n\n\n",
     "preview": {},
-    "last_modified": "2021-08-13T09:13:39-04:00",
-    "input_file": {}
+    "last_modified": "2021-08-16T12:07:53-04:00",
+    "input_file": "larri-miller-exploring-australian-marriage.knit.md"
   },
   {
     "path": "posts/2021-08-11-loading-data/",
@@ -127,8 +194,8 @@
     "categories": [],
     "contents": "\nLoad the tidyverse library:\n\n\nlibrary(tidyverse)\n\n\n\nImport a sample data set from the working directory and assign it to variable poultry:\n\n\npoultry<-read_csv('data/poultry_tidy.csv') \n\n\n\nFixed direction of the assignment - Meredith\nShow the first few values:\n\n\nhead(poultry)\n\n\n# A tibble: 6 × 4\n  Product  Year Month    Price_Dollar\n  <chr>   <dbl> <chr>           <dbl>\n1 Whole    2013 January          2.38\n2 Whole    2013 February         2.38\n3 Whole    2013 March            2.38\n4 Whole    2013 April            2.38\n5 Whole    2013 May              2.38\n6 Whole    2013 June             2.38\n\n\n\n\n",
     "preview": {},
-    "last_modified": "2021-08-13T09:13:40-04:00",
-    "input_file": {}
+    "last_modified": "2021-08-16T12:07:54-04:00",
+    "input_file": "loading-data.knit.md"
   },
   {
     "path": "posts/2021-08-11-noahdata/",
@@ -144,8 +211,8 @@
     "categories": [],
     "contents": "\n\n\n\n\n\npoultry <- read_csv(\"../../_data/eggs_tidy.csv\")\n\n\n\n\n\npoultry \n\n\n# A tibble: 120 × 6\n   month      year large_half_dozen large_dozen extra_large_half_dozen\n   <chr>     <dbl>            <dbl>       <dbl>                  <dbl>\n 1 January    2004             126         230                    132 \n 2 February   2004             128.        226.                   134.\n 3 March      2004             131         225                    137 \n 4 April      2004             131         225                    137 \n 5 May        2004             131         225                    137 \n 6 June       2004             134.        231.                   137 \n 7 July       2004             134.        234.                   137 \n 8 August     2004             134.        234.                   137 \n 9 September  2004             130.        234.                   136.\n10 October    2004             128.        234.                   136.\n# … with 110 more rows, and 1 more variable: extra_large_dozen <dbl>\n\nNote: This code isn’t running because the variables you are using aren’t in the original csv that I found - but this might be because you are using the poultry file not the eggs file. Sorry I couldn’t get it to work - Meredith\n\n\n#poultry %>% group_by(year, Price_Dollar, Product) %>% ggplot() +\n#  geom_line(mapping=aes(y=Price_Dollar, x=Year, color=Product), na.rm=TRUE)\n\n\n\nChicken Data Conclusion\nThe graph above suggests that the price of most chicken cuts remain relatively similar over time, however B/S Breast or boneless chicken breast appears to have increased in price over recent years. Thighs have also remained relatively similar\nNoah Milstein\n\n\n\n",
     "preview": {},
-    "last_modified": "2021-08-13T09:13:43-04:00",
-    "input_file": {}
+    "last_modified": "2021-08-16T12:07:55-04:00",
+    "input_file": "noahdata.knit.md"
   },
   {
     "path": "posts/2021-08-11-post-1-hmwk-1/",
@@ -164,8 +231,27 @@
     ],
     "contents": "\n\n\nknitr::opts_chunk$set(echo = FALSE)\nvector <- c(1,2,3,4,5)\nnew_vector <- c(3,5,1,1,2)\navg_vector <- (vector + new_vector)/2\nperc_vector <- avg_vector/5\nfinal_vector <- perc_vector*100\n\n\n\nFirst I input two vectors: vector = 1, 2, 3, 4, 5 and new_vector = 3, 5, 1, 1, 2 Then I take the average of these two vectors creating avg_vector = 2, 3.5, 2, 2.5, 3.5 Then I divide the average of the vectors by 5 (perc_vector = 0.4, 0.7, 0.4, 0.5, 0.7) and finally I multiple the vector by 100 (final_vector = 40, 70, 40, 50, 70).\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\n\n\n\n",
     "preview": {},
-    "last_modified": "2021-08-13T09:13:44-04:00",
-    "input_file": {}
+    "last_modified": "2021-08-16T12:07:56-04:00",
+    "input_file": "post-1-hmwk-1.knit.md"
+  },
+  {
+    "path": "posts/2021-08-11-iris/",
+    "title": "Arbitrary",
+    "description": "My life in DACSS and with MAX :)",
+    "author": [
+      {
+        "name": "Abhinav Kumar",
+        "url": {}
+      }
+    ],
+    "date": "2021-08-11",
+    "categories": [],
+    "contents": "\n\n\n# Analysis of Iris\n\nlibrary(datasets)\n\nsummary(iris)\n\n\n  Sepal.Length    Sepal.Width     Petal.Length    Petal.Width   \n Min.   :4.300   Min.   :2.000   Min.   :1.000   Min.   :0.100  \n 1st Qu.:5.100   1st Qu.:2.800   1st Qu.:1.600   1st Qu.:0.300  \n Median :5.800   Median :3.000   Median :4.350   Median :1.300  \n Mean   :5.843   Mean   :3.057   Mean   :3.758   Mean   :1.199  \n 3rd Qu.:6.400   3rd Qu.:3.300   3rd Qu.:5.100   3rd Qu.:1.800  \n Max.   :7.900   Max.   :4.400   Max.   :6.900   Max.   :2.500  \n       Species  \n setosa    :50  \n versicolor:50  \n virginica :50  \n                \n                \n                \n\nplot(iris)\n\n\n\n\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\n\n\n\n",
+    "preview": "posts/2021-08-11-iris/Abhinav_files/figure-html5/unnamed-chunk-1-1.png",
+    "last_modified": "2021-08-16T12:07:51-04:00",
+    "input_file": "Abhinav.knit.md",
+    "preview_width": 1248,
+    "preview_height": 768
   },
   {
     "path": "posts/2021-08-10-cars/",
@@ -178,8 +264,8 @@
     ],
     "contents": "\nColumn 1\nWidth\n\n\nggplot(iris, aes(Petal.Width)) + geom_histogram(binwidth = 0.1)\n\n\n\n\nlength\n\n\nggplot(iris, aes(Petal.Length)) + geom_bar()\n\n\n\n\nSpecies\n\n\nggplot(iris, aes(Species)) + geom_bar()\n\n\n\n\nColumn 2\nThe largest iris\n\n\niris %>% \n  arrange(desc(Petal.Length)) %>% \n  head(100) %>% \n  select(Petal.Length, Petal.Width, Species) %>% \n  DT::datatable()\n\n\n\n{\"x\":{\"filter\":\"none\",\"data\":[[\"1\",\"2\",\"3\",\"4\",\"5\",\"6\",\"7\",\"8\",\"9\",\"10\",\"11\",\"12\",\"13\",\"14\",\"15\",\"16\",\"17\",\"18\",\"19\",\"20\",\"21\",\"22\",\"23\",\"24\",\"25\",\"26\",\"27\",\"28\",\"29\",\"30\",\"31\",\"32\",\"33\",\"34\",\"35\",\"36\",\"37\",\"38\",\"39\",\"40\",\"41\",\"42\",\"43\",\"44\",\"45\",\"46\",\"47\",\"48\",\"49\",\"50\",\"51\",\"52\",\"53\",\"54\",\"55\",\"56\",\"57\",\"58\",\"59\",\"60\",\"61\",\"62\",\"63\",\"64\",\"65\",\"66\",\"67\",\"68\",\"69\",\"70\",\"71\",\"72\",\"73\",\"74\",\"75\",\"76\",\"77\",\"78\",\"79\",\"80\",\"81\",\"82\",\"83\",\"84\",\"85\",\"86\",\"87\",\"88\",\"89\",\"90\",\"91\",\"92\",\"93\",\"94\",\"95\",\"96\",\"97\",\"98\",\"99\",\"100\"],[6.9,6.7,6.7,6.6,6.4,6.3,6.1,6.1,6.1,6,6,5.9,5.9,5.8,5.8,5.8,5.7,5.7,5.7,5.6,5.6,5.6,5.6,5.6,5.6,5.5,5.5,5.5,5.4,5.4,5.3,5.3,5.2,5.2,5.1,5.1,5.1,5.1,5.1,5.1,5.1,5.1,5,5,5,5,4.9,4.9,4.9,4.9,4.9,4.8,4.8,4.8,4.8,4.7,4.7,4.7,4.7,4.7,4.6,4.6,4.6,4.5,4.5,4.5,4.5,4.5,4.5,4.5,4.5,4.4,4.4,4.4,4.4,4.3,4.3,4.2,4.2,4.2,4.2,4.1,4.1,4.1,4,4,4,4,4,3.9,3.9,3.9,3.8,3.7,3.6,3.5,3.5,3.3,3.3,3],[2.3,2.2,2,2.1,2,1.8,2.5,1.9,2.3,2.5,1.8,2.1,2.3,2.2,1.8,1.6,2.3,2.1,2.5,1.8,2.1,2.2,1.4,2.4,2.4,2.1,1.8,1.8,2.1,2.3,1.9,2.3,2.3,2,1.6,1.9,2,2.4,1.5,2.3,1.9,1.8,1.7,2,1.5,1.9,1.5,1.5,2,1.8,1.8,1.8,1.4,1.8,1.8,1.4,1.6,1.4,1.2,1.5,1.5,1.3,1.4,1.5,1.3,1.5,1.5,1.5,1.5,1.6,1.7,1.4,1.4,1.3,1.2,1.3,1.3,1.5,1.3,1.2,1.3,1,1.3,1.3,1.3,1,1.3,1.3,1.2,1.4,1.1,1.2,1.1,1,1.3,1,1,1,1,1.1],[\"virginica\",\"virginica\",\"virginica\",\"virginica\",\"virginica\",\"virginica\",\"virginica\",\"virginica\",\"virginica\",\"virginica\",\"virginica\",\"virginica\",\"virginica\",\"virginica\",\"virginica\",\"virginica\",\"virginica\",\"virginica\",\"virginica\",\"virginica\",\"virginica\",\"virginica\",\"virginica\",\"virginica\",\"virginica\",\"virginica\",\"virginica\",\"virginica\",\"virginica\",\"virginica\",\"virginica\",\"virginica\",\"virginica\",\"virginica\",\"versicolor\",\"virginica\",\"virginica\",\"virginica\",\"virginica\",\"virginica\",\"virginica\",\"virginica\",\"versicolor\",\"virginica\",\"virginica\",\"virginica\",\"versicolor\",\"versicolor\",\"virginica\",\"virginica\",\"virginica\",\"versicolor\",\"versicolor\",\"virginica\",\"virginica\",\"versicolor\",\"versicolor\",\"versicolor\",\"versicolor\",\"versicolor\",\"versicolor\",\"versicolor\",\"versicolor\",\"versicolor\",\"versicolor\",\"versicolor\",\"versicolor\",\"versicolor\",\"versicolor\",\"versicolor\",\"virginica\",\"versicolor\",\"versicolor\",\"versicolor\",\"versicolor\",\"versicolor\",\"versicolor\",\"versicolor\",\"versicolor\",\"versicolor\",\"versicolor\",\"versicolor\",\"versicolor\",\"versicolor\",\"versicolor\",\"versicolor\",\"versicolor\",\"versicolor\",\"versicolor\",\"versicolor\",\"versicolor\",\"versicolor\",\"versicolor\",\"versicolor\",\"versicolor\",\"versicolor\",\"versicolor\",\"versicolor\",\"versicolor\",\"versicolor\"]],\"container\":\"<table class=\\\"display\\\">\\n  <thead>\\n    <tr>\\n      <th> <\\/th>\\n      <th>Petal.Length<\\/th>\\n      <th>Petal.Width<\\/th>\\n      <th>Species<\\/th>\\n    <\\/tr>\\n  <\\/thead>\\n<\\/table>\",\"options\":{\"columnDefs\":[{\"className\":\"dt-right\",\"targets\":[1,2]},{\"orderable\":false,\"targets\":0}],\"order\":[],\"autoWidth\":false,\"orderClasses\":false}},\"evals\":[],\"jsHooks\":[]}\n\n\n\n",
     "preview": "posts/2021-08-10-cars/cars_files/figure-html5/unnamed-chunk-1-1.png",
-    "last_modified": "2021-08-13T09:13:02-04:00",
-    "input_file": {},
+    "last_modified": "2021-08-16T12:07:31-04:00",
+    "input_file": "cars.knit.md",
     "preview_width": 960,
     "preview_height": 320
   },
@@ -197,8 +283,8 @@
     "categories": [],
     "contents": "\nTime to read in data. Start with an easy one\n\n\n\n\n# A tibble: 6 × 32\n  hotel        is_canceled lead_time arrival_date_ye… arrival_date_mo…\n  <chr>              <dbl>     <dbl>            <dbl> <chr>           \n1 Resort Hotel           0       342             2015 July            \n2 Resort Hotel           0       737             2015 July            \n3 Resort Hotel           0         7             2015 July            \n4 Resort Hotel           0        13             2015 July            \n5 Resort Hotel           0        14             2015 July            \n6 Resort Hotel           0        14             2015 July            \n# … with 27 more variables: arrival_date_week_number <dbl>,\n#   arrival_date_day_of_month <dbl>, stays_in_weekend_nights <dbl>,\n#   stays_in_week_nights <dbl>, adults <dbl>, children <dbl>,\n#   babies <dbl>, meal <chr>, country <chr>, market_segment <chr>,\n#   distribution_channel <chr>, is_repeated_guest <dbl>,\n#   previous_cancellations <dbl>,\n#   previous_bookings_not_canceled <dbl>, reserved_room_type <chr>, …\n\nTry a harder one: an excel file with a number of useless rows\n\n# A tibble: 6 × 17\n  blank pay_grade SWOC_male SWOC_female SWOC_total SWC_male SWC_female\n  <chr> <chr>         <dbl>       <dbl>      <dbl>    <dbl>      <dbl>\n1 <NA>  E-1           31229        5717      36946      563        122\n2 <NA>  E-2           53094        8388      61482     1457        275\n3 <NA>  E-3          131091       21019     152110     4264       1920\n4 <NA>  E-4          112710       16381     129091     9491       4662\n5 <NA>  E-5           57989       11021      69010    10937       6576\n6 <NA>  E-6           19125        4654      23779    10369       4962\n# … with 10 more variables: SWC_total <dbl>, JSM_male <dbl>,\n#   JSM_female <dbl>, JSM_total <dbl>, CM_male <dbl>,\n#   CM_female <dbl>, CM_total <dbl>, Total_Male <dbl>,\n#   Total_Female <dbl>, Total_Total <dbl>\n\n\n\n\n",
     "preview": {},
-    "last_modified": "2021-08-13T09:13:07-04:00",
-    "input_file": {}
+    "last_modified": "2021-08-16T12:07:34-04:00",
+    "input_file": "hello-world.knit.md"
   },
   {
     "path": "posts/2021-08-10-homework-1/",
@@ -209,8 +295,8 @@
     "categories": [],
     "contents": "\nHello, my name is Shih-Yen Pan. I am a PhD student in Economics at UMass, Amherst.\nIn this post, I will introduce the Two Sum problem from LeetCode and a solution using double for loop provided by Pascal Schmidt here. I thought it might be useful to see what for loop looks like in R.\nThe idea of the problem is, given a list of integers nums and an integer target, to write a function that spits out, if they exist, two different integers in nums that sum up to the target integer.\ntwo_sum <- function(nums, target) {\n\n  for(i in seq_along(nums)) {\n    for(j in seq_along(nums)[-length(nums)]) {\n      \n      sum <- nums[i] + nums[j + 1]\n      if(sum == target) {\n        \n        first <- i\n        second <- j + 1\n        output <- c(nums[first], nums[second])\n        return(output)\n        \n      }\n      \n    }\n    \n  }\n  \n}\nThis is what the function two_sum is doing: Starting from the beginning of the vector ‘nums’, for each integer, search the rest of vector using the second for loop. If the two numbers sum up to the target integer, the code returns those two numbers; otherwise, continue doing the same with the next integer in the list.\nExample:\nnums <- c(1, 2, 3, 5, 6, 9, 11)\ntarget <- 9\ntwo_sum(nums, target)\nThis should return 3 and 6.\nTry it out yourself with different numbers! How can the code be modified to return all the different pairs that sum to the target integer?\n\n\n\n",
     "preview": {},
-    "last_modified": "2021-08-13T09:13:09-04:00",
-    "input_file": {}
+    "last_modified": "2021-08-16T12:07:35-04:00",
+    "input_file": "homework-1-Shih-Yen.knit.md"
   },
   {
     "path": "posts/2021-08-10-hw01/",
@@ -221,8 +307,8 @@
     "categories": [],
     "contents": "\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\n\n\n\n",
     "preview": {},
-    "last_modified": "2021-08-13T09:13:10-04:00",
-    "input_file": {}
+    "last_modified": "2021-08-16T12:07:36-04:00",
+    "input_file": "hw01.knit.md"
   },
   {
     "path": "posts/2021-08-10-iris/",
@@ -242,8 +328,8 @@
     ],
     "contents": "\nHere is a plot of the iris dataset:\n\n\nlibrary(datasets)\nplot(iris)\n\n\n\n\n\n\n\n",
     "preview": "posts/2021-08-10-iris/iris_files/figure-html5/unnamed-chunk-1-1.png",
-    "last_modified": "2021-08-13T09:13:12-04:00",
-    "input_file": {},
+    "last_modified": "2021-08-16T12:07:38-04:00",
+    "input_file": "iris.knit.md",
     "preview_width": 1248,
     "preview_height": 768
   },
@@ -265,8 +351,8 @@
     ],
     "contents": "\n\n\n\n",
     "preview": {},
-    "last_modified": "2021-08-13T09:13:14-04:00",
-    "input_file": {}
+    "last_modified": "2021-08-16T12:07:39-04:00",
+    "input_file": "meet-rhys.knit.md"
   },
   {
     "path": "posts/2021-08-10-michelle-manning/",
@@ -282,8 +368,8 @@
     "categories": [],
     "contents": "\n\n\nlibrary(dslabs)\ndata(\"gapminder\")\nlibrary(dplyr)\nlibrary(ggplot2)\n\n\n\n\n\ngapminder %>% \n  select(continent, region, gdp, population) %>%\n  mutate(gdp_per_capita = gdp / population) %>% \n  arrange(desc(gdp_per_capita)) %>%\n  ggplot(aes(x=gdp_per_capita)) + \n  geom_histogram(binwidth = 30)\n\n\n\n\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\n\n\n\n",
     "preview": "posts/2021-08-10-michelle-manning/michelle-manning_files/figure-html5/unnamed-chunk-2-1.png",
-    "last_modified": "2021-08-13T09:13:17-04:00",
-    "input_file": {},
+    "last_modified": "2021-08-16T12:07:41-04:00",
+    "input_file": "michelle-manning.knit.md",
     "preview_width": 1248,
     "preview_height": 768
   },
@@ -301,8 +387,8 @@
     "categories": [],
     "contents": "\n\n\n8+8\n\n\n[1] 16\n\n\n\n8==2\n\n\n[1] FALSE\n\n\n\n\n",
     "preview": {},
-    "last_modified": "2021-08-13T09:13:18-04:00",
-    "input_file": {}
+    "last_modified": "2021-08-16T12:07:42-04:00",
+    "input_file": "noahblogpost.knit.md"
   },
   {
     "path": "posts/2021-08-10-test/",
@@ -318,8 +404,8 @@
     "categories": [],
     "contents": "\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\n\n\n\n",
     "preview": {},
-    "last_modified": "2021-08-13T09:13:20-04:00",
-    "input_file": {}
+    "last_modified": "2021-08-16T12:07:43-04:00",
+    "input_file": "test.knit.md"
   },
   {
     "path": "posts/2021-08-10-title/",
@@ -330,8 +416,8 @@
     "categories": [],
     "contents": "\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\n\n\n\n",
     "preview": {},
-    "last_modified": "2021-08-13T09:13:21-04:00",
-    "input_file": {}
+    "last_modified": "2021-08-16T12:07:44-04:00",
+    "input_file": "title.knit.md"
   },
   {
     "path": "posts/2021-08-10-zoes-post/",
@@ -347,27 +433,8 @@
     "categories": [],
     "contents": "\nHi! I’m Zoe. I really like for loops. Here’s one in R!\n\n\ncool_sequence<-c(1,1,2,3,5,8,13,21,34)\ntotal<-0\nfor (el in cool_sequence) {\n  total=total+el\n}\nprint(total)\n\n\n[1] 88\n\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\n\n\n\n",
     "preview": {},
-    "last_modified": "2021-08-13T09:13:23-04:00",
-    "input_file": {}
-  },
-  {
-    "path": "posts/2021-08-08-introduction-to-matrix-algebra-using-r/",
-    "title": "Introduction to Matrix Algebra Using R",
-    "description": "Setting up a matrix and carrying out elementary operations on it.",
-    "author": [
-      {
-        "name": "Mohit Arora",
-        "url": {}
-      }
-    ],
-    "date": "2021-08-08",
-    "categories": [
-      "matrix algebra"
-    ],
-    "contents": "\n\n\nA <- matrix(1:9, nrow = 3, ncol = 3)\nA\n\n\n     [,1] [,2] [,3]\n[1,]    1    4    7\n[2,]    2    5    8\n[3,]    3    6    9\n\nB <- matrix(1:9, ncol = 3)\nB\n\n\n     [,1] [,2] [,3]\n[1,]    1    4    7\n[2,]    2    5    8\n[3,]    3    6    9\n\ndim(A)\n\n\n[1] 3 3\n\ndim(B)\n\n\n[1] 3 3\n\n#Scalar Multiplication\ns <- 10\ns*A\n\n\n     [,1] [,2] [,3]\n[1,]   10   40   70\n[2,]   20   50   80\n[3,]   30   60   90\n\n#Matrix Multiplication\nA%*%B\n\n\n     [,1] [,2] [,3]\n[1,]   30   66  102\n[2,]   36   81  126\n[3,]   42   96  150\n\n#Matrix Addition\nA + B\n\n\n     [,1] [,2] [,3]\n[1,]    2    8   14\n[2,]    4   10   16\n[3,]    6   12   18\n\n#Matrix Subtraction\nA - B\n\n\n     [,1] [,2] [,3]\n[1,]    0    0    0\n[2,]    0    0    0\n[3,]    0    0    0\n\n#Matrix Transpose\nt(A)\n\n\n     [,1] [,2] [,3]\n[1,]    1    2    3\n[2,]    4    5    6\n[3,]    7    8    9\n\nt(B)\n\n\n     [,1] [,2] [,3]\n[1,]    1    2    3\n[2,]    4    5    6\n[3,]    7    8    9\n\n\n\n\n",
-    "preview": {},
-    "last_modified": "2021-08-13T09:13:00-04:00",
-    "input_file": {}
+    "last_modified": "2021-08-16T12:07:45-04:00",
+    "input_file": "zoes-post.knit.md"
   },
   {
     "path": "posts/2021-08-07-still-learning-githib-workflow/",
@@ -383,8 +450,8 @@
     "categories": [],
     "contents": "\nUsing Markdown is fun!\nI learned a lot this summer — Markdown is your friend, as are flexdashboard and Stack Overflow.\nAlso, always keep in mind that social scientists understand data and data management just as well (if not better) than the computer scientists.\nTidyTuesday\nNew goal: Participate in Tidy Tuesdays\nExample of R Chunk\n\n\n2+2\n\n\n[1] 4\n\n\n\n\n",
     "preview": {},
-    "last_modified": "2021-08-13T09:12:56-04:00",
-    "input_file": {}
+    "last_modified": "2021-08-16T12:07:28-04:00",
+    "input_file": "still-learning-githib-workflow.knit.md"
   },
   {
     "path": "posts/2021-08-07-welcome/",
@@ -402,7 +469,7 @@
     ],
     "contents": "\nWelcome to the Data Analytics and Computational Social Science Programs’ Orientation 2021 session of DACSS 601 Foundations of Data Science. This blog will feature the work of our incoming M.S. students taking the class, as well as PhD students in the College of Behavioral and Social Sciences who have decided to participate through “R Bootcamp”.\n\n\n\n",
     "preview": {},
-    "last_modified": "2021-08-13T09:12:58-04:00",
-    "input_file": {}
+    "last_modified": "2021-08-16T12:07:29-04:00",
+    "input_file": "welcome.knit.md"
   }
 ]

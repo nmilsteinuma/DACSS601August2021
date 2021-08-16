@@ -1,17 +1,14 @@
 ---
-title: "Leah's first post: Attempt 4"
+title: 'Leah''s first post: Attempt 4'
 description: |
   My first blog post.
-author:
-  Leah Dion
+author: Leah Dion
 date: 08-12-2021
-categories:
-  .ruminating
-  .random
+categories: .ruminating .random
 output:
   distill::distill_article:
-    self_contained: false
-draft: true
+    self_contained: no
+draft: yes
 ---
 
 Education/Work Background: I worked in retail management for many years and am currently entering my final semester to finish my undergraduate degree in Math/Stats.

@@ -1,13 +1,13 @@
 ---
-title: "Zoe Hotel Bookings Dataset"
+title: Zoe Hotel Bookings Dataset
 description: |
   An introdution to the hotel dataset
 author: Zoe Bean
 date: 08-15-2021
 output:
   distill::distill_article:
-    self_contained: false
-draft: true
+    self_contained: no
+draft: yes
 ---
 
 

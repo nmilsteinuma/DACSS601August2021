@@ -1,13 +1,12 @@
 ---
-title: "Isha's Blog Post"
-description: "Running Blog Post for Course Homeworks"
+title: Isha's Blog Post
+description: Running Blog Post for Course Homeworks
 author: Isha Akshita Mahajan
 date: 08-13-2021
 output:
   distill::distill_article:
-    self_contained: false
-draft: true
-
+    self_contained: no
+draft: yes
 ---
 
 ##Introduction
@@ -23,7 +22,7 @@ library(dplyr)
 ##Homework 2 
 
 ```{r}
-marriage_data <- read_csv('/Users/isha/Desktop/DACSS601August2021/_data/australian_marriage_tidy.csv')
+marriage_data <- read_csv('../../_data/australian_marriage_tidy.csv')
 head(marriage_data)
 ```
 

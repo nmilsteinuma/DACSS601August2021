@@ -1,13 +1,13 @@
 ---
-title: "Arbitrary"
+title: Arbitrary
 description: |
   My life in DACSS and with MAX :)
 author: Abhinav Kumar
 date: 08-11-2021
 output:
   distill::distill_article:
-    self_contained: false
-draft: true
+    self_contained: no
+draft: yes
 ---
 ```{r}
 # Analysis of Iris
