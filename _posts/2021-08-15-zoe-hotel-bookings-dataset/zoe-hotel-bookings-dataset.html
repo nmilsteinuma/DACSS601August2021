@@ -88,7 +88,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_meta_tags-->
   <title>Zoe Hotel Bookings Dataset</title>
 
-  <meta property="description" itemprop="description" content="An intodution to the hotel dataset"/>
+  <meta property="description" itemprop="description" content="An introdution to the hotel dataset"/>
 
 
   <!--  https://schema.org/Article -->
@@ -99,19 +99,19 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
   <meta property="og:title" content="Zoe Hotel Bookings Dataset"/>
   <meta property="og:type" content="article"/>
-  <meta property="og:description" content="An intodution to the hotel dataset"/>
+  <meta property="og:description" content="An introdution to the hotel dataset"/>
   <meta property="og:locale" content="en_US"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
   <meta property="twitter:title" content="Zoe Hotel Bookings Dataset"/>
-  <meta property="twitter:description" content="An intodution to the hotel dataset"/>
+  <meta property="twitter:description" content="An introdution to the hotel dataset"/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","draft"]}},"value":[{"type":"character","attributes":{},"value":["Zoe Hotel Bookings Dataset"]},{"type":"character","attributes":{},"value":["An intodution to the hotel dataset\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Zoe Bean"]}]}]},{"type":"character","attributes":{},"value":["08-15-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"logical","attributes":{},"value":[true]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","draft"]}},"value":[{"type":"character","attributes":{},"value":["Zoe Hotel Bookings Dataset"]},{"type":"character","attributes":{},"value":["An introdution to the hotel dataset\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Zoe Bean"]}]}]},{"type":"character","attributes":{},"value":["08-15-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"logical","attributes":{},"value":[true]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   
@@ -1455,7 +1455,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Zoe Hotel Bookings Dataset","description":"An intodution to the hotel dataset","authors":[{"author":"Zoe Bean","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-08-15T00:00:00.000-04:00","citationText":"Bean, 2021"}
+{"title":"Zoe Hotel Bookings Dataset","description":"An introdution to the hotel dataset","authors":[{"author":"Zoe Bean","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-08-15T00:00:00.000-04:00","citationText":"Bean, 2021"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -1468,7 +1468,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h1>Zoe Hotel Bookings Dataset</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-<p><p>An intodution to the hotel dataset</p></p>
+<p><p>An introdution to the hotel dataset</p></p>
 </div>
 
 <div class="d-byline">
@@ -1479,6 +1479,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </div>
 
 <div class="d-article">
+<h3 id="homework-2">Homework 2</h3>
 <p>I will be processing a dataset about hotel bookings from 2015 to 2017. First, I import the dataset, which requires the tidyverse package to be loaded.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
@@ -1510,16 +1511,187 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 #   previous_cancellations &lt;dbl&gt;,
 #   previous_bookings_not_canceled &lt;dbl&gt;, ...</code></pre>
 </div>
-<p>To find out how many rows are in the dataset, I use dim()</p>
+<p>To find out how many rows are in the dataset, I use dim(). I also use colnames() to figure out what the data drawn from each observation are.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span><span class='op'>(</span><span class='va'>hotel_data</span><span class='op'>)</span>
 </code></pre>
 </div>
 <pre><code>[1] 119390     32</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>colnames</a></span><span class='op'>(</span><span class='va'>hotel_data</span><span class='op'>)</span>
+</code></pre>
 </div>
-<p>This means that there are 119390 rows and 32 columns. This is important since the number of rows tells us how many hotel bookings there are in this dataset, and the columns tell us how many pieces of data are available per booking.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<pre><code> [1] &quot;hotel&quot;                          &quot;is_canceled&quot;                   
+ [3] &quot;lead_time&quot;                      &quot;arrival_date_year&quot;             
+ [5] &quot;arrival_date_month&quot;             &quot;arrival_date_week_number&quot;      
+ [7] &quot;arrival_date_day_of_month&quot;      &quot;stays_in_weekend_nights&quot;       
+ [9] &quot;stays_in_week_nights&quot;           &quot;adults&quot;                        
+[11] &quot;children&quot;                       &quot;babies&quot;                        
+[13] &quot;meal&quot;                           &quot;country&quot;                       
+[15] &quot;market_segment&quot;                 &quot;distribution_channel&quot;          
+[17] &quot;is_repeated_guest&quot;              &quot;previous_cancellations&quot;        
+[19] &quot;previous_bookings_not_canceled&quot; &quot;reserved_room_type&quot;            
+[21] &quot;assigned_room_type&quot;             &quot;booking_changes&quot;               
+[23] &quot;deposit_type&quot;                   &quot;agent&quot;                         
+[25] &quot;company&quot;                        &quot;days_in_waiting_list&quot;          
+[27] &quot;customer_type&quot;                  &quot;adr&quot;                           
+[29] &quot;required_car_parking_spaces&quot;    &quot;total_of_special_requests&quot;     
+[31] &quot;reservation_status&quot;             &quot;reservation_status_date&quot;       </code></pre>
+</div>
+<p>The result from dim() means that there are 119390 rows and 32 columns. This is important since the number of rows tells us how many hotel bookings there are in this dataset, and the columns tell us how many pieces of data are available per booking.</p>
+<h3 id="homework-3">Homework 3</h3>
+<p>The colnames function is helpful for this next step, where I select columns. Here, I select the year of arrival and the month.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>select</span><span class='op'>(</span><span class='va'>hotel_data</span>, <span class='va'>arrival_date_year</span>, <span class='va'>arrival_date_month</span> <span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code># A tibble: 119,390 x 2
+   arrival_date_year arrival_date_month
+               &lt;dbl&gt; &lt;chr&gt;             
+ 1              2015 July              
+ 2              2015 July              
+ 3              2015 July              
+ 4              2015 July              
+ 5              2015 July              
+ 6              2015 July              
+ 7              2015 July              
+ 8              2015 July              
+ 9              2015 July              
+10              2015 July              
+# ... with 119,380 more rows</code></pre>
+</div>
+<p>I can do more with select, such as selecting all columns that start with ‘arrival_date’ to get more clear information about when each the booking is.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>select</span><span class='op'>(</span><span class='va'>hotel_data</span>, <span class='fu'>starts_with</span><span class='op'>(</span><span class='st'>"arrival_date"</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code># A tibble: 119,390 x 4
+   arrival_date_ye~ arrival_date_mo~ arrival_date_we~ arrival_date_da~
+              &lt;dbl&gt; &lt;chr&gt;                       &lt;dbl&gt;            &lt;dbl&gt;
+ 1             2015 July                           27                1
+ 2             2015 July                           27                1
+ 3             2015 July                           27                1
+ 4             2015 July                           27                1
+ 5             2015 July                           27                1
+ 6             2015 July                           27                1
+ 7             2015 July                           27                1
+ 8             2015 July                           27                1
+ 9             2015 July                           27                1
+10             2015 July                           27                1
+# ... with 119,380 more rows</code></pre>
+</div>
+<p>If I want to look at all the bookings where there are no children, I use filter() as follows:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/stats/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>hotel_data</span>, <span class='va'>children</span><span class='op'>==</span> <span class='fl'>0</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code># A tibble: 110,796 x 32
+   hotel        is_canceled lead_time arrival_date_ye~ arrival_date_mo~
+   &lt;chr&gt;              &lt;dbl&gt;     &lt;dbl&gt;            &lt;dbl&gt; &lt;chr&gt;           
+ 1 Resort Hotel           0       342             2015 July            
+ 2 Resort Hotel           0       737             2015 July            
+ 3 Resort Hotel           0         7             2015 July            
+ 4 Resort Hotel           0        13             2015 July            
+ 5 Resort Hotel           0        14             2015 July            
+ 6 Resort Hotel           0        14             2015 July            
+ 7 Resort Hotel           0         0             2015 July            
+ 8 Resort Hotel           0         9             2015 July            
+ 9 Resort Hotel           1        85             2015 July            
+10 Resort Hotel           1        75             2015 July            
+# ... with 110,786 more rows, and 27 more variables:
+#   arrival_date_week_number &lt;dbl&gt;, arrival_date_day_of_month &lt;dbl&gt;,
+#   stays_in_weekend_nights &lt;dbl&gt;, stays_in_week_nights &lt;dbl&gt;,
+#   adults &lt;dbl&gt;, children &lt;dbl&gt;, babies &lt;dbl&gt;, meal &lt;chr&gt;,
+#   country &lt;chr&gt;, market_segment &lt;chr&gt;, distribution_channel &lt;chr&gt;,
+#   is_repeated_guest &lt;dbl&gt;, previous_cancellations &lt;dbl&gt;,
+#   previous_bookings_not_canceled &lt;dbl&gt;, ...</code></pre>
+</div>
+<p>If I want to arrange the hotel data by putting a column in order, I use arrange(). In this example, I order the data by the arrival month, which is sorted alphabetically.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>arrange</span><span class='op'>(</span><span class='va'>hotel_data</span>, <span class='va'>arrival_date_month</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code># A tibble: 119,390 x 32
+   hotel        is_canceled lead_time arrival_date_ye~ arrival_date_mo~
+   &lt;chr&gt;              &lt;dbl&gt;     &lt;dbl&gt;            &lt;dbl&gt; &lt;chr&gt;           
+ 1 Resort Hotel           1        31             2016 April           
+ 2 Resort Hotel           0         0             2016 April           
+ 3 Resort Hotel           0       144             2016 April           
+ 4 Resort Hotel           0       144             2016 April           
+ 5 Resort Hotel           0       144             2016 April           
+ 6 Resort Hotel           0       163             2016 April           
+ 7 Resort Hotel           1        38             2016 April           
+ 8 Resort Hotel           0       175             2016 April           
+ 9 Resort Hotel           1        39             2016 April           
+10 Resort Hotel           1        32             2016 April           
+# ... with 119,380 more rows, and 27 more variables:
+#   arrival_date_week_number &lt;dbl&gt;, arrival_date_day_of_month &lt;dbl&gt;,
+#   stays_in_weekend_nights &lt;dbl&gt;, stays_in_week_nights &lt;dbl&gt;,
+#   adults &lt;dbl&gt;, children &lt;dbl&gt;, babies &lt;dbl&gt;, meal &lt;chr&gt;,
+#   country &lt;chr&gt;, market_segment &lt;chr&gt;, distribution_channel &lt;chr&gt;,
+#   is_repeated_guest &lt;dbl&gt;, previous_cancellations &lt;dbl&gt;,
+#   previous_bookings_not_canceled &lt;dbl&gt;, ...</code></pre>
+</div>
+<p>If I actually wanted to have the months in order, I would have to make a numerical variable in the dataset using mutate() and case_when() and then arrange by that variable.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>hotel_data</span><span class='op'>&lt;-</span> <span class='va'>hotel_data</span> <span class='op'>%&gt;%</span>
+  <span class='fu'>mutate</span><span class='op'>(</span>arrival_date_month_num <span class='op'>=</span> <span class='fu'>case_when</span><span class='op'>(</span>
+         <span class='va'>arrival_date_month</span> <span class='op'>==</span> <span class='st'>"January"</span> <span class='op'>~</span> <span class='fl'>1</span>,
+         <span class='va'>arrival_date_month</span> <span class='op'>==</span> <span class='st'>"February"</span> <span class='op'>~</span> <span class='fl'>2</span>,
+         <span class='va'>arrival_date_month</span> <span class='op'>==</span> <span class='st'>"March"</span> <span class='op'>~</span> <span class='fl'>3</span>,
+         <span class='va'>arrival_date_month</span> <span class='op'>==</span> <span class='st'>"April"</span> <span class='op'>~</span> <span class='fl'>4</span>,
+         <span class='va'>arrival_date_month</span> <span class='op'>==</span> <span class='st'>"May"</span> <span class='op'>~</span> <span class='fl'>5</span>,
+         <span class='va'>arrival_date_month</span> <span class='op'>==</span> <span class='st'>"June"</span> <span class='op'>~</span> <span class='fl'>6</span>,
+         <span class='va'>arrival_date_month</span> <span class='op'>==</span> <span class='st'>"July"</span> <span class='op'>~</span> <span class='fl'>7</span>,
+         <span class='va'>arrival_date_month</span> <span class='op'>==</span> <span class='st'>"August"</span> <span class='op'>~</span> <span class='fl'>8</span>,
+         <span class='va'>arrival_date_month</span> <span class='op'>==</span> <span class='st'>"September"</span> <span class='op'>~</span> <span class='fl'>9</span>,
+         <span class='va'>arrival_date_month</span> <span class='op'>==</span> <span class='st'>"October"</span> <span class='op'>~</span> <span class='fl'>10</span>,
+         <span class='va'>arrival_date_month</span> <span class='op'>==</span> <span class='st'>"November"</span> <span class='op'>~</span> <span class='fl'>11</span>,
+         <span class='va'>arrival_date_month</span> <span class='op'>==</span> <span class='st'>"December"</span> <span class='op'>~</span> <span class='fl'>12</span>
+         <span class='op'>)</span><span class='op'>)</span>
+
+<span class='fu'>arrange</span><span class='op'>(</span><span class='va'>hotel_data</span>, <span class='va'>arrival_date_month_num</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code># A tibble: 119,390 x 33
+   hotel        is_canceled lead_time arrival_date_ye~ arrival_date_mo~
+   &lt;chr&gt;              &lt;dbl&gt;     &lt;dbl&gt;            &lt;dbl&gt; &lt;chr&gt;           
+ 1 Resort Hotel           0       109             2016 January         
+ 2 Resort Hotel           0       109             2016 January         
+ 3 Resort Hotel           1         2             2016 January         
+ 4 Resort Hotel           0        88             2016 January         
+ 5 Resort Hotel           1        20             2016 January         
+ 6 Resort Hotel           1        76             2016 January         
+ 7 Resort Hotel           0        88             2016 January         
+ 8 Resort Hotel           1       113             2016 January         
+ 9 Resort Hotel           1       113             2016 January         
+10 Resort Hotel           1       113             2016 January         
+# ... with 119,380 more rows, and 28 more variables:
+#   arrival_date_week_number &lt;dbl&gt;, arrival_date_day_of_month &lt;dbl&gt;,
+#   stays_in_weekend_nights &lt;dbl&gt;, stays_in_week_nights &lt;dbl&gt;,
+#   adults &lt;dbl&gt;, children &lt;dbl&gt;, babies &lt;dbl&gt;, meal &lt;chr&gt;,
+#   country &lt;chr&gt;, market_segment &lt;chr&gt;, distribution_channel &lt;chr&gt;,
+#   is_repeated_guest &lt;dbl&gt;, previous_cancellations &lt;dbl&gt;,
+#   previous_bookings_not_canceled &lt;dbl&gt;, ...</code></pre>
+</div>
+<p>If I wanted to know the average amount of adults per booking, I would use summarise() like so:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>summarise</span><span class='op'>(</span><span class='va'>hotel_data</span>, mean<span class='op'>=</span><span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>adults</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code># A tibble: 1 x 1
+   mean
+  &lt;dbl&gt;
+1  1.86</code></pre>
+</div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
