@@ -1,6 +1,8 @@
 ---
 title: "RAILROAD-COUNTY-TRACY"
 description: |
+  **HOMEWORK 2**
+  
   **Data breaking down US railroad employment numbers in 2012 by state and county. Data includes three variables: state, county and total employees. 2930 observations. Total number of employees ranges from 1 to over 3000. Specifically analyzing two subsets of data: large railroads (1000+ employees) and separately railroads in New England.**
 #Source https://catalog.data.gov/dataset/total-railroad-employment-by-state-and-county-2012/resource/5a0b2831-23b9-4ce9-82e9-87a7d8f2c5d8 
 
@@ -25,8 +27,8 @@ library("dplyr")
 knitr::opts_chunk$set(fig.width = 5, fig.asp = 1/3)
 
 ```
+#**HOMEWORK 1**
 # **Here I am reading in my CSV file.** 
-#*QUESTION- WHY IS THIS FONT DIFFERENT FROM OTHER COMMENTS???*
 ```{r}
 data<-read.csv("../../_data/railroad_2012_clean_county.csv")
 
@@ -41,7 +43,7 @@ colnames(data)
 
 ```
 
-#**Experimenting with Data Transformation**
+#**HOMEWORK 3: Experimenting with Data Transformation**
 #*Specifically determining average number of railroad employees with Summarise, count of railroads per state and average number of railroad employees by state.*  
 ```{r}
 #Average of Railroad Employees for complete dataset
@@ -67,7 +69,7 @@ data%>%
   prop.table()*100
 ```
 
-#**Experimenting with Filter and Arrange**
+#**HOMEWORK 3: Experimenting with Filter and Arrange**
 #*Specifically pulling only railroads with 1000+ employees, naming that group "Large Railroads"*
 ```{r}
 #Filter out large railroads
@@ -87,12 +89,12 @@ arrange(large_railroads, desc(total_employees), state, county)
 
 ```
 
-#**Experimenting with Select**
+#**HOMEWORK 3: Experimenting with Select**
 ```{r}
 #Large Railroads (1000+ employees)are located in these counties/states
 select(large_railroads,"state", "county")
 ```
-#**Experimenting with Filter, Vector and Piping**
+#**HOMEWORK 3: Experimenting with Filter, Vector, Piping, and Group by**
 ```{r}
 #Created subset of data that is just New England states, rename that group "new_england"
 new_england <- filter(data, state %in% c("NH", "VT", "CT", "MA", "RI", "ME"))
@@ -139,26 +141,48 @@ ggplot(new_england,aes(state,total_employees))+
 #*QUESTION- CAN I MAKE KEY SMALLER AND GRAPH LARGER?*
 ```{r}
 #Geomplot for New England States with County filled (Two Ways)
-ggplot(new_england,aes(state, fill=county))+ geom_bar()+
-  theme_bw()+
-  labs(title="New England States Railroad Employee Counts by State and County", y="Number of Employees", x= "State")
+#ggplot(new_england,aes(state, fill=county))+ geom_bar()+
+  #theme_bw()+
+  #labs(title="New England States Railroad Employee Counts by State and County", y="Number of Employees", x= "State")
 
-ggplot(data=new_england)+
-  geom_bar(mapping=aes(x=state, fill=county))
-  theme_bw()+
-  labs(title="New England States Railroad Employee Counts by State and County", y="Number of Employees", x= "State")
+#ggplot(data=new_england)+
+  #geom_bar(mapping=aes(x=state, fill=county))
+  #theme_bw()+
+  #labs(title="New England States Railroad Employee Counts by State and County", y="Number of Employees", x= "State")
 
+#Removed Code, Very Messy for Now
 ```
 
  
  
-#**Experimenting with Geompoint, different dataset** 
+#**Experimenting with geompoint, with different dataset** 
 ```{r}
 ggplot(data=large_railroads)+
   geom_point(mapping=aes(x=state, y=total_employees))+
   labs(title = "Railroads with 1000+ Employees", y = "Total Employees", x = "State") 
 
 ```
+
+#**Experimenting with Advanced Functions for HW3**
+```{r}
+#rename()
+
+#case_when()
+
+#relocate()
+
+#across()/c_across()
+
+#pivot_longer()/pivot_wider()
+
+#purrr::map()
+
+#lapply()
+
+```
+
+
+
 
 Distill is a publication format for scientific and technical writing, native to the web.
 
