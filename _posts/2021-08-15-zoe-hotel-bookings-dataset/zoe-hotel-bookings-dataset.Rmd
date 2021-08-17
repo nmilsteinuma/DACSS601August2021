@@ -1,0 +1,96 @@
+---
+title: Zoe Hotel Bookings Dataset
+description: |
+  An introdution to the hotel dataset
+author: Zoe Bean
+date: 08-15-2021
+output:
+  distill::distill_article:
+    self_contained: no
+draft: yes
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### Homework 2
+
+I will be processing a dataset about hotel bookings from 2015 to 2017. First, I import the dataset, which requires the tidyverse package to be loaded.
+
+```{r import}
+library(tidyverse)
+hotel_data=read_csv("../../_data/hotel_bookings.csv")
+```
+
+Next, I use head() to give an example of what the dataset looks like.
+
+```{r show}
+head(hotel_data)
+```
+
+To find out how many rows are in the dataset, I use dim(). I also use colnames() to figure out what the data drawn from each observation are.
+
+```{r dim}
+dim(hotel_data)
+colnames(hotel_data)
+```
+
+The result from dim() means that there are 119390 rows and 32 columns. This is important since the number of rows tells us how many hotel bookings there are in this dataset, and the columns tell us how many pieces of data are available per booking. 
+
+### Homework 3
+
+The colnames function is helpful for this next step, where I select columns. Here, I select the year of arrival and the month. 
+
+```{r select}
+select(hotel_data, arrival_date_year, arrival_date_month )
+```
+
+I can do more with select, such as selecting all columns that start with 'arrival_date' to get more clear information about when each the booking is.
+
+```{r select advanced}
+select(hotel_data, starts_with("arrival_date"))
+```
+
+If I want to look at all the bookings where there are no children, I use filter() as follows:
+
+```{r filter}
+filter(hotel_data, children== 0)
+```
+If I want to arrange the hotel data by putting a column in order, I use arrange(). In this example, I order the data by the arrival month, which is sorted alphabetically.
+
+```{r arrange}
+
+arrange(hotel_data, arrival_date_month)
+
+```
+If I actually wanted to have the months in order, I would have to make a numerical variable in the dataset using mutate() and case_when() and then arrange by that variable.
+
+```{r advanced}
+hotel_data<- hotel_data %>%
+  mutate(arrival_date_month_num = case_when(
+         arrival_date_month == "January" ~ 1,
+         arrival_date_month == "February" ~ 2,
+         arrival_date_month == "March" ~ 3,
+         arrival_date_month == "April" ~ 4,
+         arrival_date_month == "May" ~ 5,
+         arrival_date_month == "June" ~ 6,
+         arrival_date_month == "July" ~ 7,
+         arrival_date_month == "August" ~ 8,
+         arrival_date_month == "September" ~ 9,
+         arrival_date_month == "October" ~ 10,
+         arrival_date_month == "November" ~ 11,
+         arrival_date_month == "December" ~ 12
+         ))
+
+arrange(hotel_data, arrival_date_month_num)
+
+```
+
+If I wanted to know the average amount of adults per booking, I would use summarise() like so:
+
+```{r summarise}
+summarise(hotel_data, mean=mean(adults))
+```
+

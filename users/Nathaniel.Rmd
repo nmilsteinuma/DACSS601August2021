@@ -1,0 +1,35 @@
+---
+title: "Nathaniel Ross"
+image: "Nathaniel.jpg"
+links:
+  - label: LinkedIn
+    url: "https://www.linkedin.com/in/nathaniel-ross-854458122/"
+  - label: Twitter
+    url: "https://twitter.com/"
+  - label: GitHub
+    url: "https://github.com/njrossUMass"
+  - label: Email
+    url: "njross@umass.edu"
+output:
+  postcards::trestles
+---
+ 
+## Bio
+
+Nathaniel Ross is studying for his Masters in Data Analytics and Computational Social Science at the University of Massachusetts, Amherst. He is from Danvers, Massachsuetts, a small suburb about 25 minutes north of Boston. He enjoys gaming and nature
+
+## Education
+
+**University of Massachusetts, Amherst** | Amherst, MA
+
+M.S. in Data Analytics and Computational Social Science | August 2021 - Present
+
+**University of Massachusetts, Amherst** | Amherst, MA
+
+B.S. in Resource Economics | September 2017 - May 2021
+
+## Experience
+
+**Finish Lawncare** | Foreman | May 2018 - Present
+
+**Atlantic Semiconductor** | Excess Analyst | Summer 2019, Winter 2020

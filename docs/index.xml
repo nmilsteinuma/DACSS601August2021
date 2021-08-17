@@ -12,7 +12,56 @@
       <link>https://mrolfe.github.io/DACSS601August2021/</link>
     </image>
     <generator>Distill</generator>
-    <lastBuildDate>Wed, 11 Aug 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 17 Aug 2021 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Railroad Employment data</title>
+      <dc:creator>Mohit-Arora</dc:creator>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-16-railroad-employment-data</link>
+      <description>Reading in the railroad dataset</description>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-16-railroad-employment-data</guid>
+      <pubDate>Tue, 17 Aug 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Zoe Hotel Bookings Dataset</title>
+      <dc:creator>Zoe Bean</dc:creator>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-15-zoe-hotel-bookings-dataset</link>
+      <description>An introdution to the hotel dataset</description>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-15-zoe-hotel-bookings-dataset</guid>
+      <pubDate>Sun, 15 Aug 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Isha's Blog Post</title>
+      <dc:creator>Isha Akshita Mahajan</dc:creator>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-13-ishas-blog-post</link>
+      <description>Running Blog Post for Course Homeworks</description>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-13-ishas-blog-post</guid>
+      <pubDate>Fri, 13 Aug 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Wrangling the Australian marriage law dataset</title>
+      <dc:creator>Karl Tacheron</dc:creator>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-12-wrangling-the-australian-marriage-law-dataset</link>
+      <description>A short description of the post.</description>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-12-wrangling-the-australian-marriage-law-dataset</guid>
+      <pubDate>Thu, 12 Aug 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Alligator Food</title>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-12-alligator-food</link>
+      <description>The diet of Alligators throughout several different lakes. Data has the lake, sex of alligator, size of food, and species of animal used for food.</description>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-12-alligator-food</guid>
+      <pubDate>Thu, 12 Aug 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Leah's first post: Attempt 4</title>
+      <dc:creator>Leah Dion</dc:creator>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-12-leahs-first-post-attempt-4</link>
+      <description>My first blog post.</description>
+      <category>.ruminating .random</category>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-12-leahs-first-post-attempt-4</guid>
+      <pubDate>Thu, 12 Aug 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://mrolfe.github.io/DACSS601August2021/posts/2021-08-12-leahs-first-post-attempt-4/leahs-first-post-attempt-4_files/figure-html5/setup-1.png" medium="image" type="image/png" width="1248" height="768"/>
+    </item>
     <item>
       <title>2012 US Railroad Employment</title>
       <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-2012-us-railroad-employment</link>
@@ -38,14 +87,6 @@
       <pubDate>Wed, 11 Aug 2021 00:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>Hanae-Data</title>
-      <dc:creator>Hanae Bouazza</dc:creator>
-      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-hanae-data</link>
-      <description>This post is about how data is loaded.</description>
-      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-hanae-data</guid>
-      <pubDate>Wed, 11 Aug 2021 00:00:00 +0000</pubDate>
-    </item>
-    <item>
       <title>HW1</title>
       <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-hw1</link>
       <description>A short description of the post.</description>
@@ -55,28 +96,19 @@
       <pubDate>Wed, 11 Aug 2021 00:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>iris</title>
-      <dc:creator>sathvikthogaru</dc:creator>
-      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-iris</link>
-      <description>IRIS dataset contains three plant species (setosa, virginica, versicolor) and four features measured for each sample.</description>
-      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-iris</guid>
-      <pubDate>Wed, 11 Aug 2021 00:00:00 +0000</pubDate>
-      <media:content url="https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-iris/iris_files/figure-html5/unnamed-chunk-2-1.png" medium="image" type="image/png" width="1248" height="768"/>
-    </item>
-    <item>
-      <title>Jason Wierzbowski - Exploring Eggs</title>
-      <dc:creator>Jason Wierzbowski</dc:creator>
-      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-jason-wierzbowski-exploring-eggs</link>
-      <description>A data set about eggs.</description>
-      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-jason-wierzbowski-exploring-eggs</guid>
-      <pubDate>Wed, 11 Aug 2021 00:00:00 +0000</pubDate>
-    </item>
-    <item>
       <title>Larri Miller - Exploring Australian Marriage</title>
       <dc:creator>Larri Miller</dc:creator>
       <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-larri-miller-exploring-australian-marriage</link>
       <description>A short description of the post.</description>
       <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-larri-miller-exploring-australian-marriage</guid>
+      <pubDate>Wed, 11 Aug 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Loading a data set</title>
+      <dc:creator>Karl Tacheron</dc:creator>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-loading-data</link>
+      <description>Homework assignment to load data in to a R Markdown file.</description>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-loading-data</guid>
       <pubDate>Wed, 11 Aug 2021 00:00:00 +0000</pubDate>
     </item>
     <item>
@@ -98,12 +130,22 @@
       <pubDate>Wed, 11 Aug 2021 00:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>[RAILROAD-COUNTY-TRACY]</title>
-      <dc:creator>Erin Tracy</dc:creator>
-      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-railroad-county-tracy</link>
-      <description>A short description of the post.</description>
-      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-railroad-county-tracy</guid>
+      <title>Arbitrary</title>
+      <dc:creator>Abhinav Kumar</dc:creator>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-iris</link>
+      <description>My life in DACSS and with MAX :)</description>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-iris</guid>
       <pubDate>Wed, 11 Aug 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-iris/Abhinav_files/figure-html5/unnamed-chunk-1-1.png" medium="image" type="image/png" width="1248" height="768"/>
+    </item>
+    <item>
+      <title>iris</title>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-cars</link>
+      <description>iris dataset| ErinTracy</description>
+      <category>-homework 3</category>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-cars</guid>
+      <pubDate>Tue, 10 Aug 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-cars/cars_files/figure-html5/unnamed-chunk-1-1.png" medium="image" type="image/png" width="960" height="320"/>
     </item>
     <item>
       <title>Hello World</title>
@@ -189,32 +231,6 @@
       <description>my first post</description>
       <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-zoes-post</guid>
       <pubDate>Tue, 10 Aug 2021 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>iris</title>
-      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-cars</link>
-      <description>iris dataset| ErinTracy</description>
-      <category>-homework 3</category>
-      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-cars</guid>
-      <pubDate>Tue, 10 Aug 2021 00:00:00 +0000</pubDate>
-      <media:content url="https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-cars/cars_files/figure-html5/unnamed-chunk-1-1.png" medium="image" type="image/png" width="960" height="320"/>
-    </item>
-    <item>
-      <title>Introduction to Matrix Algebra Using R</title>
-      <dc:creator>Mohit Arora</dc:creator>
-      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-08-introduction-to-matrix-algebra-using-r</link>
-      <description>Setting up a matrix and carrying out elementary operations on it.</description>
-      <category>matrix algebra</category>
-      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-08-introduction-to-matrix-algebra-using-r</guid>
-      <pubDate>Sun, 08 Aug 2021 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>My first distill post</title>
-      <dc:creator>Meredith Rolfe</dc:creator>
-      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-07-my-new-post</link>
-      <description>I can't believe how easy it is to use R.</description>
-      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-07-my-new-post</guid>
-      <pubDate>Sat, 07 Aug 2021 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>Still Learning the GitHib Workflow</title>
