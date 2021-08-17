@@ -22,7 +22,7 @@ library(knitr)
 #This is me reading in data. It contains nutritional information (sugar and sodium per serving) of popular cereals. The data set can be found [here](https://artofstat.com/datasets).
 
 ```{r}
-Cereal_Data <- read.csv("C:/Users/Benja/Documents/GitHub/DACSS601August2021/_data/cereal.csv")
+Cereal_Data <- read.csv("../../_data/cereal.csv")
 ```
 
 #Homework 3
