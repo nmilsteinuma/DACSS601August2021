@@ -1,0 +1,69 @@
+---
+title: "DN Australian Data"
+description: |
+  A short description of the post.
+author:
+  - name: Dana Nestor
+    url: {}
+date: 08-17-2021
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(readxl)
+```
+
+Importing data using a specific range to isolate desired variables, renaming variables to add meaningful values and allow for easier selecting, removing interstitial undesirable variables
+
+```{r}
+base_marriage_data <- read_excel("../../_data/australian_marriage_law_postal_survey_2017_-_response_final.xls", 
+         sheet = "Table 2", 
+         range = "A8:P179", 
+         col_names = c("Town", "Yes", "d", "No", rep("d", 6), "Not Clear", "d", 
+                       "No Response", rep("d", 3)))%>%
+  select(!starts_with("d"))
+```
+The next variable we need to isolate is County which, in this data set, has a parent-child relationship with Town. To accomplish this, we will create a new column for County values that correlate with their child towns and order the columns in descending complexity (in this case, county then town)
+
+```{r}
+base_marriage_data <- base_marriage_data%>%
+  mutate(County = case_when(
+    str_ends(Town, "Divisions") ~ Town, 
+    TRUE ~ NA_character_))%>%
+# Because I cannot get the .before or .after arguments to work with mutate(), I am using the relocate() function to move the County column before the Town column so we can maintain a descending order of complexity in governmental organizations
+  relocate(County, .before = Town)
+```
+
+To complete the isolation of County data, we need to populate our new column with the appropriate parent-county for their associated child-towns. We use a loop function to pull the County value down our column, stopping when a new county is reached and then restarting itself with the new county value.
+
+```{r}
+tidy_marriage_data <- base_marriage_data
+for(i in seq_along(tidy_marriage_data$County)) {tidy_marriage_data$County[i] <- ifelse(is.na(tidy_marriage_data$County[i]), tidy_marriage_data$County[i-1], tidy_marriage_data$County[i])}
+```
+
+This next chunk removes undesirable rows so we can isolate our observations. Since we were able to import our data with a range that cut out unnecessary rows above and below our data frame, now we need to account for interstitial rows without data and rows with totals
+
+```{r}
+tidier_marriage_data <- tidy_marriage_data%>%drop_na(Town, Yes)%>%
+  filter(!str_detect(Town, "(Total)"))
+```
+
+As an extra step to tidy the data, we can remove "Divisions" in the County column as this variable is now describing the county itself, not the child-towns.
+
+```{r}
+tidiest_marriage_data <- mutate(tidier_marriage_data, County = str_remove(County, " Divisions"))%>%
+  mutate(Town = str_remove(Town, "\\([cde]\\)"))
+  view(tidiest_marriage_data)
+```
+
+
+
+# NOTE (a)-type characters at bottom of Town column, tidy objects, condense code (under 15 lines?)
+
+
+
