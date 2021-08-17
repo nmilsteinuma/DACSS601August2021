@@ -1,0 +1,56 @@
+---
+title: Hello World
+description: |
+  Marina's first attempt at using distill
+author:
+- name: Marina
+date: 08-10-2021
+output:
+  distill::distill_article:
+    self_contained: no
+draft: yes
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+### Time to read in data. Start with an easy one
+```{r}
+library(readr)
+library(here)
+```
+
+```{r}
+hotels <- read_csv(here("_data","hotel_bookings.csv"))
+head(hotels)
+```
+
+### Try a harder one: an excel file with a number of useless rows
+```{r}
+library(readxl)
+df <- read_excel("ActiveDuty_MaritalStatus.xls",
+                 skip = 9,
+                 col_names = c("blank",
+                               "pay_grade",
+                               "SWOC_male",
+                               "SWOC_female",
+                               "SWOC_total",
+                               "SWC_male",
+                               "SWC_female",
+                               "SWC_total",
+                               "JSM_male",
+                               "JSM_female",
+                               "JSM_total",
+                               "CM_male",
+                               "CM_female",
+                               "CM_total",
+                               "Total_Male",
+                               "Total_Female",
+                               "Total_Total")
+                 )
+head(df)
+```
+
+

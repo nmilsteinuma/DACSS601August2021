@@ -12,7 +12,7 @@ draft: yes
 
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ## Using Markdown is fun!
@@ -24,6 +24,12 @@ Also, always keep in mind that social scientists understand data and data manage
 ## TidyTuesday
 
 __New goal:__ Participate in Tidy Tuesdays
+
+### Example of R Chunk
+
+```{r}
+2+2
+```
 
 
 

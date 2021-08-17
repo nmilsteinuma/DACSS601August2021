@@ -1,0 +1,35 @@
+---
+title: Zoe's Post
+description: |
+  my first post
+author: Zoe Bean
+date: 08-10-2021
+output:
+  distill::distill_article:
+    self_contained: no
+draft: yes
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+# Hi! I'm Zoe. I really like for loops. Here's one in R!
+
+
+```{r echo=TRUE}
+cool_sequence<-c(1,1,2,3,5,8,13,21,34)
+total<-0
+for (el in cool_sequence) {
+  total=total+el
+}
+print(total)
+```
+
+Distill is a publication format for scientific and technical writing, native to the web.
+
+Learn more about using Distill at <https://rstudio.github.io/distill>.
+
+

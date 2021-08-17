@@ -1,0 +1,19 @@
+---
+title: "Karl tacheron"
+image: "karl-tacheron-picture.jpg"
+links:
+  - label: website
+    url: "http://karltacheron.com/"
+  - label: github
+    url: "https://github.com/karltach/"
+  - label: email
+    url: "mailto:ktacheron@umass.edu"
+output:
+  postcards::solana
+---
+ 
+## Bio
+
+I am an incoming student to the Geosciences department's Geography MS program. I hold a BFA in Photography from MassArt. 
+My favorite place to be is on a bicycle far from where the Google Street View cameras have reached. 
+I am from Ipswich, Massachusetts, and have lived in Boston MA, Western MA, Brooklyn NY, Northern Virginia, and Santa Fe, NM.
