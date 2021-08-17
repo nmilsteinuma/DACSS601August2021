@@ -55,6 +55,8 @@ tidier_marriage_data <- tidy_marriage_data%>%drop_na(Town, Yes)%>%
 
 As an extra step to tidy the data, we can remove "Divisions" in the County column as this variable is now describing the county itself, not the child-towns.
 
+
+
 ```{r}
 tidiest_marriage_data <- mutate(tidier_marriage_data, County = str_remove(County, " Divisions"))%>%
   mutate(Town = str_remove(Town, "\\([cde]\\)"))
