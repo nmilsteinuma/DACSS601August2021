@@ -32,8 +32,8 @@ bookings<-read_csv(file="../../_data/hotel_bookings.csv")
 ##Using summarise() and group_by()
 
 ```{r}
-group_by(bookings, "adr")%>%
-summarise(meadAdr=mean(adr), n=n())
+group_by(bookings, hotel)%>%
+summarise(meanAdr=mean(adr), n=n())
 ```
 
 ##Using arrange(), select(), and filter()
