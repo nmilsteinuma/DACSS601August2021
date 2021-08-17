@@ -1,0 +1,41 @@
+---
+title: Railroad Employment data
+description: |
+  Reading in the railroad dataset
+author: Mohit-Arora
+date: 08-17-2021
+output:
+  distill::distill_article:
+    self_contained: no
+draft: yes
+---
+
+
+  ```{r setup}
+library(readxl)
+library(dplyr)
+State_county <- read_excel("../../_data/StateCounty2012.xls", skip=3)
+```
+
+The data has been read in. Let's see how it looks like -
+
+```{r}
+head(State_county)
+tail(State_county)
+```
+
+This needs further cleaning to make it suitable for further analysis.
+
+```{r}
+State_county <- select(State_county, -c(2, 4))
+State_county <- State_county[complete.cases(State_county),]
+head(State_county)
+tail(State_county)
+```
+
+This looks much better!
+
+
+
+
+

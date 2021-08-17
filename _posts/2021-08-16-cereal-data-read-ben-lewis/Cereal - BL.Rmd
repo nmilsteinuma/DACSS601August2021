@@ -1,0 +1,70 @@
+---
+title: Cereal Data Read - Ben Lewis
+description: |
+  Different Cereals and their Sodium content, sugar content, and type categorized with A & C.
+Your Name: Ben Lewis
+date: 08-16-2021
+output:
+  distill::distill_article:
+    self_contained: no
+draft: yes
+---
+```{r}
+library(dplyr)
+library(tidyverse)
+library(magrittr)
+library(knitr)
+```
+
+
+#Homework 2
+
+#This is me reading in data. It contains nutritional information (sugar and sodium per serving) of popular cereals. The data set can be found [here](https://artofstat.com/datasets).
+
+```{r}
+Cereal_Data <- read.csv("C:/Users/Benja/Documents/GitHub/DACSS601August2021/_data/cereal.csv")
+```
+
+#Homework 3
+
+##Using the select function to see the cereal names
+
+```{r}
+brand_data <- Cereal_Data %>%
+  select(`Cereal`,`Type`)
+```
+
+#Using Filter funtion to find Cereals with Sugar greater than 10
+
+```{r}
+sugar_data <- Cereal_Data
+  filter(Cereal_Data,`Sugar` >= 10)
+
+```
+
+#Using arrange to sort by type
+
+```{r}
+type_data <- Cereal_Data
+  arrange(Cereal_Data,`Type`) 
+  
+```
+
+#Summarize mean sodium and sugar of cereals 
+
+```{r}
+mean_sugar_sodium <- Cereal_Data
+  summarise(Cereal_Data, mean(`Sugar`), mean(`Sodium`))
+
+```
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+Distill is a publication format for scientific and technical writing, native to the web.
+
+Learn more about using Distill at <https://rstudio.github.io/distill>.
+
+

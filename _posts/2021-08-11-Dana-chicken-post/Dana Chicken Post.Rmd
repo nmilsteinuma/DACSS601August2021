@@ -1,13 +1,13 @@
 ---
-title: "Dana Chicken Data Post"
+title: Dana Chicken Data Post
 description: |
   A short description of the post.
 author: Dana Nestor
 date: 08-11-2021
 output:
   distill::distill_article:
-    self_contained: false
-draft: true
+    self_contained: no
+draft: yes
 ---
 
 
