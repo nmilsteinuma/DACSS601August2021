@@ -54,7 +54,8 @@ type_data <- Cereal_Data
 
 ```{r}
 mean_sugar_sodium <- Cereal_Data
-  summarise(Cereal_Data, mean(`Sodium`), mean(`Sugar`))
+  summarise(Cereal_Data, mean(`Sugar`), mean(`Sodium`))
+
 ```
 
 
