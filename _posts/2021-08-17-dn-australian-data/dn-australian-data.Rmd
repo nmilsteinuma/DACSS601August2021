@@ -63,7 +63,7 @@ tidiest_marriage_data <- mutate(tidier_marriage_data, County = str_remove(County
 
 
 
-# NOTE (a)-type characters at bottom of Town column, tidy objects, condense code (under 15 lines?)
+# NOTE tidy objects, condense code (under 15 lines?)
 
 
 
