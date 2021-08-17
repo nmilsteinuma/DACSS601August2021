@@ -88,7 +88,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_meta_tags-->
   <title>Cereal Data Read - Ben Lewis</title>
 
-  <meta property="description" itemprop="description" content="Different Cereals and their Sodium content, sugar content, and type categorized from A-D."/>
+  <meta property="description" itemprop="description" content="Different Cereals and their Sodium content, sugar content, and type categorized with A &amp; C."/>
 
 
   <!--  https://schema.org/Article -->
@@ -98,24 +98,24 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
   <meta property="og:title" content="Cereal Data Read - Ben Lewis"/>
   <meta property="og:type" content="article"/>
-  <meta property="og:description" content="Different Cereals and their Sodium content, sugar content, and type categorized from A-D."/>
+  <meta property="og:description" content="Different Cereals and their Sodium content, sugar content, and type categorized with A &amp; C."/>
   <meta property="og:locale" content="en_US"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
   <meta property="twitter:title" content="Cereal Data Read - Ben Lewis"/>
-  <meta property="twitter:description" content="Different Cereals and their Sodium content, sugar content, and type categorized from A-D."/>
+  <meta property="twitter:description" content="Different Cereals and their Sodium content, sugar content, and type categorized with A &amp; C."/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","Your Name","date","output","draft"]}},"value":[{"type":"character","attributes":{},"value":["Cereal Data Read - Ben Lewis"]},{"type":"character","attributes":{},"value":["Different Cereals and their Sodium content, sugar content, and type categorized from A-D.\n"]},{"type":"character","attributes":{},"value":["Ben Lewis"]},{"type":"character","attributes":{},"value":["08-16-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"logical","attributes":{},"value":[true]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","Your Name","date","output","draft"]}},"value":[{"type":"character","attributes":{},"value":["Cereal Data Read - Ben Lewis"]},{"type":"character","attributes":{},"value":["Different Cereals and their Sodium content, sugar content, and type categorized with A & C.\n"]},{"type":"character","attributes":{},"value":["Ben Lewis"]},{"type":"character","attributes":{},"value":["08-16-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"logical","attributes":{},"value":[true]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"NULL"}
+  {"type":"character","attributes":{},"value":["Cereal---BL_files/anchor-4.2.2/anchor.min.js","Cereal---BL_files/bowser-1.9.3/bowser.min.js","Cereal---BL_files/Cereal - BL.Rmd","Cereal---BL_files/distill-2.2.21/template.v2.js","Cereal---BL_files/header-attrs-2.10/header-attrs.js","Cereal---BL_files/jquery-1.11.3/jquery.min.js","Cereal---BL_files/popper-2.6.0/popper.min.js","Cereal---BL_files/tippy-6.2.7/tippy-bundle.umd.min.js","Cereal---BL_files/tippy-6.2.7/tippy-light-border.css","Cereal---BL_files/tippy-6.2.7/tippy.css","Cereal---BL_files/tippy-6.2.7/tippy.umd.min.js","Cereal---BL_files/webcomponents-2.0.0/webcomponents.js"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -1454,7 +1454,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Cereal Data Read - Ben Lewis","description":"Different Cereals and their Sodium content, sugar content, and type categorized from A-D.","authors":[],"publishedDate":"2021-08-16T00:00:00.000-04:00"}
+{"title":"Cereal Data Read - Ben Lewis","description":"Different Cereals and their Sodium content, sugar content, and type categorized with A & C.","authors":[],"publishedDate":"2021-08-16T00:00:00.000-04:00"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -1467,14 +1467,98 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h1>Cereal Data Read - Ben Lewis</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-<p><p>Different Cereals and their Sodium content, sugar content, and type categorized from A-D.</p></p>
+<p><p>Different Cereals and their Sodium content, sugar content, and type categorized with A &amp; C.</p></p>
 </div>
 
 
 <div class="d-article">
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://dplyr.tidyverse.org'>dplyr</a></span><span class='op'>)</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://tidyverse.tidyverse.org'>tidyverse</a></span><span class='op'>)</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://magrittr.tidyverse.org'>magrittr</a></span><span class='op'>)</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://yihui.org/knitr/'>knitr</a></span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<p>#Homework 2</p>
+<p>#This is me reading in data. It contains nutritional information (sugar and sodium per serving) of popular cereals. The data set can be found <a href="https://artofstat.com/datasets">here</a>.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>Cereal_Data</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/utils/read.table.html'>read.csv</a></span><span class='op'>(</span><span class='st'>"C:/Users/Benja/Documents/GitHub/DACSS601August2021/_data/cereal.csv"</span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<p>#Homework 3</p>
+<p>##Using the select function to see the cereal names</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>brand_data</span> <span class='op'>&lt;-</span> <span class='va'>Cereal_Data</span> <span class='op'>%&gt;%</span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>`Cereal`</span>,<span class='va'>`Type`</span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<p>#Using Filter funtion to find Cereals with Sugar greater than 10</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>sugar_data</span> <span class='op'>&lt;-</span> <span class='va'>Cereal_Data</span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>Cereal_Data</span>,<span class='va'>`Sugar`</span> <span class='op'>&gt;=</span> <span class='fl'>10</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>                  Cereal Sodium Sugar Type
+1    Frosted Mini Wheats      0    11    A
+2            Raisin Bran    340    18    A
+3            Apple Jacks    140    14    C
+4         Captain Crunch    200    12    C
+5  Cinnamon Toast Crunch    210    10    C
+6     Crackling Oat Bran    150    16    A
+7         Frosted Flakes    130    12    C
+8            Froot Loops    140    14    C
+9           Honey Smacks     50    15    A
+10             Honeycomb    210    11    C</code></pre>
+</div>
+<p>#Using arrange to sort by type</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>type_data</span> <span class='op'>&lt;-</span> <span class='va'>Cereal_Data</span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/arrange.html'>arrange</a></span><span class='op'>(</span><span class='va'>Cereal_Data</span>,<span class='va'>`Type`</span><span class='op'>)</span> 
+</code></pre>
+</div>
+<pre><code>                  Cereal Sodium Sugar Type
+1    Frosted Mini Wheats      0    11    A
+2            Raisin Bran    340    18    A
+3               All Bran     70     5    A
+4     Crackling Oat Bran    150    16    A
+5              Fiber One    100     0    A
+6  Honey Bunches of Oats    180     7    A
+7           Honey Smacks     50    15    A
+8              Special K    220     4    A
+9               Wheaties    180     4    A
+10           Corn Flakes    200     3    A
+11           Apple Jacks    140    14    C
+12        Captain Crunch    200    12    C
+13              Cheerios    180     1    C
+14 Cinnamon Toast Crunch    210    10    C
+15        Frosted Flakes    130    12    C
+16           Froot Loops    140    14    C
+17    Honey Nut Cheerios    190     9    C
+18                  Life    160     6    C
+19         Rice Krispies    290     3    C
+20             Honeycomb    210    11    C</code></pre>
+</div>
+<p>#Summarize mean sodium and sugar of cereals</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>mean_sugar_sodium</span> <span class='op'>&lt;-</span> <span class='va'>Cereal_Data</span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/summarise.html'>summarise</a></span><span class='op'>(</span><span class='va'>Cereal_Data</span>, <span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>`Sodium`</span><span class='op'>)</span>, <span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>`Sugar`</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>  mean(Sodium) mean(Sugar)
+1          167        8.75</code></pre>
+</div>
 <p>Distill is a publication format for scientific and technical writing, native to the web.</p>
 <p>Learn more about using Distill at <a href="https://rstudio.github.io/distill" class="uri">https://rstudio.github.io/distill</a>.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
