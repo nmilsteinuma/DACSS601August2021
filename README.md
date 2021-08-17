@@ -22,7 +22,7 @@ You can create a post by using the `create_post` function from Distill. It takes
 For example I can do:
 
 ``` r
-distill::create_post(title = "iris", author = "Your Name", draft = TRUE)
+distill::create_post(title = "[INSERT POST TITLE]", author = "Your Name", draft = TRUE)
 ```
 
 The command will automatically generate an R Markdown file for you to edit and use as a template for your post. Now, you can edit the file to your liking.

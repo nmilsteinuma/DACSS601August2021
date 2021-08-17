@@ -1,0 +1,67 @@
+---
+title: Isha's Blog Post
+description: Running Blog Post for Course Homeworks
+author: Isha Akshita Mahajan
+date: 08-13-2021
+output:
+  distill::distill_article:
+    self_contained: no
+draft: yes
+---
+
+##Introduction
+
+Hello Everybody! My name is Isha and I am starting the DACSS program this summer. I am from India and completed my bachelors in journalism and political science from UMass. I am excited to meet everyone this fall and delve into the world of data and social science. 
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(tidyverse)
+library(dplyr)
+```
+
+##Homework 2 
+
+```{r}
+marriage_data <- read_csv('../../_data/australian_marriage_tidy.csv')
+head(marriage_data)
+```
+
+
+#About the Data 
+This data sample is drawn from the Australian Marriage Law Postal Survey in 2017. Eligible participants were those who enrolled in the Commonwealth Electoral Roll by August 24 , 2017 and were 18 years of Age. They had not served prison sentences of three years and longer and participated in the survey voluntarily. The responses were recorded to the question 
+
+*Should the law be changed to allow same-sex couples to marry?*
+
+##Homework 3
+
+>How can you arrange your dataset by territory? 
+
+```{r}
+data_summary <- marriage_data %>% 
+  group_by(territory) %>% 
+  summarise(count,resp)
+```
+
+
+>Which Territory had the highest population count who voted yes to the law allowing same-sex couples to marry. 
+
+```{r}
+yes_voters <-marriage_data %>% 
+  filter(resp=="yes") %>% 
+  arrange(-count) 
+```
+
+>Rename the resp column to response. 
+
+```{r}
+marriage_data <- marriage_data %>% 
+  rename(response = resp)
+```
+
+
+
+Distill is a publication format for scientific and technical writing, native to the web.
+
+Learn more about using Distill at <https://rstudio.github.io/distill>.
+
+

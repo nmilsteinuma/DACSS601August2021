@@ -2363,8 +2363,9 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <div class="d-article">
 <h2 id="datasets">Datasets</h2>
 <p>This document summarizes the datasets that have been collected for use in DACSS 601 for the August 2021 session. All files can be found in the <code>_data</code> folder on the course blog. Note that some of these datasets require significant wrangling/cleaning. Also note that any .xls/.xlsx files may have multiple sheets, so it will be helpful to open these files in a spreadsheet software first, to examine the file you are reading in.</p>
+<p>Also note that there are both <strong>basic</strong> and <strong>advanced</strong> versions of the datasets. The basic versions are clean and can be read into <code>R</code> fairly easily. These are great to practice on if you are new to <code>R</code> or need a refresher on importing data. For those who are more advanced <code>R</code> programmers, the advanced datasets will require significant work to be imported into <code>R</code> and tidied.</p>
 <h2 id="hotel-bookings">Hotel Bookings</h2>
-<p>This dataset contains hotel bookings from 2015-2017. Each row is an individual hotel booking. The file is named <code>hotel_bookings.csv</code>. Because the file format is .csv, we can use the function <code>read_csv()</code> from the <code>readr</code> package to read in the data to <code>R</code>.</p>
+<p>This dataset contains hotel bookings from 2015-2017. Each row is an individual hotel booking. This dataset is <strong>only available as an advanced dataset</strong>. The file is named <code>hotel_bookings.csv</code>. Because the file format is .csv, we can use the function <code>read_csv()</code> from the <code>readr</code> package to read in the data to <code>R</code>.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>hotels</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://readr.tidyverse.org/reference/read_delim.html'>read_csv</a></span><span class='op'>(</span><span class='fu'><a href='https://here.r-lib.org//reference/here.html'>here</a></span><span class='op'>(</span><span class='st'>"_data"</span>,<span class='st'>"hotel_bookings.csv"</span><span class='op'>)</span><span class='op'>)</span>
@@ -2395,31 +2396,72 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <p><strong>Source: <a href="https://www.kaggle.com/jessemostipak/hotel-booking-demand" class="uri">https://www.kaggle.com/jessemostipak/hotel-booking-demand</a></strong></p>
 <p>Also see the link for a detailed key.</p>
 <h2 id="new-york-city-air-bnb-bookings">2019 New York City Air BnB Bookings</h2>
-<p>This dataset contains Air Bnb bookings from 2019 in New York City. Each row contains an individual Air Bnb listing, and each column contains information about it (e.g., number of reviews per month, price, data of last review). The file is named <code>AB_NYC_2019.csv</code>. Because the file format is .csv, we can use the function <code>read_csv()</code> from the <code>readr</code> package to read in the data to <code>R</code>.</p>
+<p>This dataset contains Air Bnb bookings from 2019 in New York City. Each row contains an individual Air Bnb listing, and each column contains information about it (e.g., number of reviews per month, price, data of last review). This dataset is <strong>only available as an advanced dataset</strong>. The file is named <code>AB_NYC_2019.csv</code>. Because the file format is .csv, we can use the function <code>read_csv()</code> from the <code>readr</code> package to read in the data to <code>R</code>.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>air_bnb</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://readr.tidyverse.org/reference/read_delim.html'>read_csv</a></span><span class='op'>(</span><span class='fu'><a href='https://here.r-lib.org//reference/here.html'>here</a></span><span class='op'>(</span><span class='st'>"_data"</span>,<span class='st'>"AB_NYC_2019.csv"</span><span class='op'>)</span><span class='op'>)</span>
+<span class='va'>air_bnb</span>
 </code></pre>
 </div>
+<pre><code># A tibble: 48,895 × 16
+      id name        host_id host_name  neighbourhood_g… neighbourhood
+   &lt;dbl&gt; &lt;chr&gt;         &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;            &lt;chr&gt;        
+ 1  2539 Clean &amp; qu…    2787 John       Brooklyn         Kensington   
+ 2  2595 Skylit Mid…    2845 Jennifer   Manhattan        Midtown      
+ 3  3647 THE VILLAG…    4632 Elisabeth  Manhattan        Harlem       
+ 4  3831 Cozy Entir…    4869 LisaRoxan… Brooklyn         Clinton Hill 
+ 5  5022 Entire Apt…    7192 Laura      Manhattan        East Harlem  
+ 6  5099 Large Cozy…    7322 Chris      Manhattan        Murray Hill  
+ 7  5121 BlissArtsS…    7356 Garon      Brooklyn         Bedford-Stuy…
+ 8  5178 Large Furn…    8967 Shunichi   Manhattan        Hell&#39;s Kitch…
+ 9  5203 Cozy Clean…    7490 MaryEllen  Manhattan        Upper West S…
+10  5238 Cute &amp; Coz…    7549 Ben        Manhattan        Chinatown    
+# … with 48,885 more rows, and 10 more variables: latitude &lt;dbl&gt;,
+#   longitude &lt;dbl&gt;, room_type &lt;chr&gt;, price &lt;dbl&gt;,
+#   minimum_nights &lt;dbl&gt;, number_of_reviews &lt;dbl&gt;,
+#   last_review &lt;date&gt;, reviews_per_month &lt;dbl&gt;,
+#   calculated_host_listings_count &lt;dbl&gt;, availability_365 &lt;dbl&gt;</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://pillar.r-lib.org/reference/glimpse.html'>glimpse</a></span><span class='op'>(</span><span class='va'>air_bnb</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>Rows: 48,895
+Columns: 16
+$ id                             &lt;dbl&gt; 2539, 2595, 3647, 3831, 5022,…
+$ name                           &lt;chr&gt; &quot;Clean &amp; quiet apt home by th…
+$ host_id                        &lt;dbl&gt; 2787, 2845, 4632, 4869, 7192,…
+$ host_name                      &lt;chr&gt; &quot;John&quot;, &quot;Jennifer&quot;, &quot;Elisabet…
+$ neighbourhood_group            &lt;chr&gt; &quot;Brooklyn&quot;, &quot;Manhattan&quot;, &quot;Man…
+$ neighbourhood                  &lt;chr&gt; &quot;Kensington&quot;, &quot;Midtown&quot;, &quot;Har…
+$ latitude                       &lt;dbl&gt; 40.64749, 40.75362, 40.80902,…
+$ longitude                      &lt;dbl&gt; -73.97237, -73.98377, -73.941…
+$ room_type                      &lt;chr&gt; &quot;Private room&quot;, &quot;Entire home/…
+$ price                          &lt;dbl&gt; 149, 225, 150, 89, 80, 200, 6…
+$ minimum_nights                 &lt;dbl&gt; 1, 1, 3, 1, 10, 3, 45, 2, 2, …
+$ number_of_reviews              &lt;dbl&gt; 9, 45, 0, 270, 9, 74, 49, 430…
+$ last_review                    &lt;date&gt; 2018-10-19, 2019-05-21, NA, …
+$ reviews_per_month              &lt;dbl&gt; 0.21, 0.38, NA, 4.64, 0.10, 0…
+$ calculated_host_listings_count &lt;dbl&gt; 6, 2, 1, 1, 1, 1, 1, 1, 1, 4,…
+$ availability_365               &lt;dbl&gt; 365, 355, 365, 194, 0, 129, 0…</code></pre>
 </div>
 <p><strong>Source: <a href="https://www.kaggle.com/dgomonov/new-york-city-airbnb-open-data" class="uri">https://www.kaggle.com/dgomonov/new-york-city-airbnb-open-data</a></strong></p>
 <p>Also see the link for a detailed key.</p>
 <h2 id="austrailian-marriage-law">2017 Austrailian Marriage Law</h2>
-<p>Data on public opinion of a proposed same sex marriage law in Australia in 2017. The file is called <code>australian_marriage_law_postal_survey_2017_-_response_final.xlsx</code>, so we can use the function <code>read_excel()</code> to read in the data. However, this dataset was designed as an Excel spreadsheet, and so will take some extra work to be read into <code>R</code>.</p>
+<p>Data on public opinion of a proposed same sex marriage law in Australia in 2017. The <strong>basic</strong> version of this dataset can be found as <code>australian_marriage_tidy.csv</code> and <code>australian_marriage_tidy.xlsx</code>. The advanced version is <code>australian_marriage_law_postal_survey_2017_-_response_final.xlsx</code>, so we can use the function <code>read_excel()</code> to read in the data. However, this advanced dataset was designed as an Excel spreadsheet, and so will take some extra work to be read into <code>R</code>.</p>
 <p><strong>Source: <a href="https://www.abs.gov.au/ausstats/abs@.nsf/mf/1800.0" class="uri">https://www.abs.gov.au/ausstats/abs@.nsf/mf/1800.0</a></strong></p>
 <h2 id="dod-active-duty-marital-status">DOD Active Duty Marital Status</h2>
-<p>Count data on various demographic charasterics, notably marital status and child status, by pay grade, for multiple branches of the military (as well as DOD as a whole). This file is called <code>ActiveDuty_MaritalStatus.xls</code>. However, this dataset was designed as an Excel spreadsheet, and so will take some extra work to be read into <code>R</code>.</p>
+<p>Count data on various demographic charasterics, notably marital status and child status, by pay grade, for multiple branches of the military (as well as DOD as a whole). This dataset is <strong>only available as an advanced dataset</strong>. This file is called <code>ActiveDuty_MaritalStatus.xls</code>. However, this dataset was designed as an Excel spreadsheet, and so will take some extra work to be read into <code>R</code>.</p>
 <p><strong>Source: <a href="https://catalog.data.gov/dataset/active-duty-marital-status/resource/638cad03-b16c-48ac-8346-f858ff89d202" class="uri">https://catalog.data.gov/dataset/active-duty-marital-status/resource/638cad03-b16c-48ac-8346-f858ff89d202</a></strong></p>
 <h2 id="public-school-characteristics-2017-2018">Public School Characteristics 2017-2018</h2>
 <p>Data on characteristics of every US public school from 2017-2018. File is called <code>Public_School_Characteristics_2017-18.csv</code>. Note that this file is fairly large, and if you aren’t careful, you may encounter parsing errors when reading in the file.</p>
 <p><strong>Source: <a href="https://catalog.data.gov/dataset/public-school-characteristics-2017-18" class="uri">https://catalog.data.gov/dataset/public-school-characteristics-2017-18</a></strong></p>
 <h2 id="us-railroad-employment.">2012 US Railroad Employment.</h2>
-<p>Data breaking down US railroad employment numbers in 2012 by state and county. File is <code>StateCounty2012.xls</code>.</p>
+<p>Data breaking down US railroad employment numbers in 2012 by state and county. The <strong>basic</strong> versions are divided into county data and state data. The <strong>basic</strong> files are <code>railroad_2012_clean_county.csv</code> and <code>railroad_2012_clean_county.xlsx</code>, and <code>railroad_2012_clean_state.csv</code> and <code>railroad_2012_clean_state.xlsx</code>. The <strong>advanced</strong> file is <code>StateCounty2012.xls</code>.</p>
 <p><strong>Source: <a href="https://catalog.data.gov/dataset/total-railroad-employment-by-state-and-county-2012/resource/5a0b2831-23b9-4ce9-82e9-87a7d8f2c5d8" class="uri">https://catalog.data.gov/dataset/total-railroad-employment-by-state-and-county-2012/resource/5a0b2831-23b9-4ce9-82e9-87a7d8f2c5d8</a></strong></p>
 <h2 id="organic-egg-poultry-prices">Organic Egg &amp; Poultry Prices</h2>
-<p>Data on organic egg &amp; poultry prices in the US from 2004-2013. File is <code>organiceggpoultry.xls</code>.</p>
+<p>Data on organic egg &amp; poultry prices in the US from 2004-2013. The basic versions of the files are <code>poultry_tidy.csv</code> and <code>poultry_tidy.xlsx</code>, as well as <code>eggs_tidy.csv</code> and <code>eggs_tidy.xlsx</code>. The <strong>advanced</strong> file is <code>organiceggpoultry.xls</code>.</p>
 <p><strong>Source: <a href="https://www.ers.usda.gov/data-products/organic-prices.aspx" class="uri">https://www.ers.usda.gov/data-products/organic-prices.aspx</a></strong></p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

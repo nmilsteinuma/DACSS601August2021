@@ -1,0 +1,20 @@
+---
+title: "Meet Keith"
+image: "1-2.jpg"
+color1: "#5A59A3"
+color2: "#C66060"
+angle: 130
+links:
+  - label: Snapchat
+    url: "https://accounts.snapchat.com/accounts/snapcodes"
+  - label: Instagram
+    url: "https://www.instagram.com/keith_bell14/"
+  - label: Phone
+    url: "(203) 241-2926"
+  - label: Email
+    url: "keith.mcl.bell@gmail.com"
+output:
+  postcards::onofre
+---
+ 
+Keith Bell is a first year grad student within the DACSS program and recently achieved a bachelors degree in Communication from the University of Massachusetts Amherst. His interest in the monetary side of the media industry is what drew him to data analysis. Currently his research intrests lie in consumer data though this will prone to develope as he moves through DACSS. When he's not battling with R, he can often be found fishing or cooking said fish. In terms of fun facts there are frankly too many to choose from, but he takes pride in the fact that Zach Woods (Gabe from The Office, Jared from Silicon Valley) is recently engaged to his cousin. 

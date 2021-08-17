@@ -1,0 +1,22 @@
+---
+title: Noahblogpost
+description: |
+  A short description of the post.
+author:
+- name: Noah Milstein
+date: 08-10-2021
+output:
+  distill::distill_article:
+    self_contained: no
+draft: yes
+---
+```{r}
+8+8
+```
+```{r}
+8==2
+```
+
+
+
+

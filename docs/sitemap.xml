@@ -2,42 +2,134 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" version="1.0">
   <url>
     <loc>https://mrolfe.github.io/DACSS601August2021/about.html</loc>
-    <lastmod>2021-08-07T13:16:38-04:00</lastmod>
+    <lastmod>2021-08-16T12:02:24-04:00</lastmod>
   </url>
   <url>
     <loc>https://mrolfe.github.io/DACSS601August2021/</loc>
-    <lastmod>2021-08-07T13:16:38-04:00</lastmod>
+    <lastmod>2021-08-16T12:02:25-04:00</lastmod>
   </url>
   <url>
     <loc>https://mrolfe.github.io/DACSS601August2021/instructor.html</loc>
-    <lastmod>2021-08-08T23:33:49-04:00</lastmod>
-  </url>
-  <url>
-    <loc>https://mrolfe.github.io/DACSS601August2021/Sample_data_info.html</loc>
-    <lastmod>2021-08-08T23:54:22-04:00</lastmod>
+    <lastmod>2021-08-16T12:02:25-04:00</lastmod>
   </url>
   <url>
     <loc>https://mrolfe.github.io/DACSS601August2021/students.html</loc>
-    <lastmod>2021-08-07T13:16:38-04:00</lastmod>
+    <lastmod>2021-08-16T12:02:25-04:00</lastmod>
   </url>
   <url>
     <loc>https://mrolfe.github.io/DACSS601August2021/syllabus.html</loc>
-    <lastmod>2021-08-08T23:33:08-04:00</lastmod>
+    <lastmod>2021-08-16T12:02:25-04:00</lastmod>
   </url>
   <url>
-    <loc>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-08-introduction-to-matrix-algebra-using-r/</loc>
-    <lastmod>2021-08-09T00:19:48-04:00</lastmod>
+    <loc>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-16-railroad-employment-data/</loc>
+    <lastmod>2021-08-16T12:08:13-04:00</lastmod>
   </url>
   <url>
-    <loc>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-07-my-new-post/</loc>
-    <lastmod>2021-08-09T00:19:44-04:00</lastmod>
+    <loc>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-15-zoe-hotel-bookings-dataset/</loc>
+    <lastmod>2021-08-16T12:08:07-04:00</lastmod>
+  </url>
+  <url>
+    <loc>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-13-ishas-blog-post/</loc>
+    <lastmod>2021-08-16T12:08:02-04:00</lastmod>
+  </url>
+  <url>
+    <loc>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-12-wrangling-the-australian-marriage-law-dataset/</loc>
+    <lastmod>2021-08-16T12:08:01-04:00</lastmod>
+  </url>
+  <url>
+    <loc>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-12-alligator-food/</loc>
+    <lastmod>2021-08-16T12:07:57-04:00</lastmod>
+  </url>
+  <url>
+    <loc>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-12-leahs-first-post-attempt-4/</loc>
+    <lastmod>2021-08-16T12:07:58-04:00</lastmod>
+  </url>
+  <url>
+    <loc>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-2012-us-railroad-employment/</loc>
+    <lastmod>2021-08-16T12:07:46-04:00</lastmod>
+  </url>
+  <url>
+    <loc>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-blog-1/</loc>
+    <lastmod>2021-08-16T12:07:47-04:00</lastmod>
+  </url>
+  <url>
+    <loc>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-first-post/</loc>
+    <lastmod>2021-08-16T12:07:49-04:00</lastmod>
+  </url>
+  <url>
+    <loc>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-hw1/</loc>
+    <lastmod>2021-08-16T12:07:50-04:00</lastmod>
+  </url>
+  <url>
+    <loc>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-larri-miller-exploring-australian-marriage/</loc>
+    <lastmod>2021-08-16T12:07:53-04:00</lastmod>
+  </url>
+  <url>
+    <loc>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-loading-data/</loc>
+    <lastmod>2021-08-16T12:07:54-04:00</lastmod>
+  </url>
+  <url>
+    <loc>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-noahdata/</loc>
+    <lastmod>2021-08-16T12:07:55-04:00</lastmod>
+  </url>
+  <url>
+    <loc>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-post-1-hmwk-1/</loc>
+    <lastmod>2021-08-16T12:07:56-04:00</lastmod>
+  </url>
+  <url>
+    <loc>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-iris/</loc>
+    <lastmod>2021-08-16T12:07:51-04:00</lastmod>
+  </url>
+  <url>
+    <loc>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-cars/</loc>
+    <lastmod>2021-08-16T12:07:31-04:00</lastmod>
+  </url>
+  <url>
+    <loc>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-hello-world/</loc>
+    <lastmod>2021-08-16T12:07:34-04:00</lastmod>
+  </url>
+  <url>
+    <loc>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-homework-1/</loc>
+    <lastmod>2021-08-16T12:07:35-04:00</lastmod>
+  </url>
+  <url>
+    <loc>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-hw01/</loc>
+    <lastmod>2021-08-16T12:07:36-04:00</lastmod>
+  </url>
+  <url>
+    <loc>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-iris/</loc>
+    <lastmod>2021-08-16T12:07:38-04:00</lastmod>
+  </url>
+  <url>
+    <loc>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-meet-rhys/</loc>
+    <lastmod>2021-08-16T12:07:39-04:00</lastmod>
+  </url>
+  <url>
+    <loc>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-michelle-manning/</loc>
+    <lastmod>2021-08-16T12:07:41-04:00</lastmod>
+  </url>
+  <url>
+    <loc>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-noahblogpost/</loc>
+    <lastmod>2021-08-16T12:07:42-04:00</lastmod>
+  </url>
+  <url>
+    <loc>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-test/</loc>
+    <lastmod>2021-08-16T12:07:43-04:00</lastmod>
+  </url>
+  <url>
+    <loc>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-title/</loc>
+    <lastmod>2021-08-16T12:07:44-04:00</lastmod>
+  </url>
+  <url>
+    <loc>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-zoes-post/</loc>
+    <lastmod>2021-08-16T12:07:45-04:00</lastmod>
   </url>
   <url>
     <loc>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-07-still-learning-githib-workflow/</loc>
-    <lastmod>2021-08-09T00:19:46-04:00</lastmod>
+    <lastmod>2021-08-16T12:07:28-04:00</lastmod>
   </url>
   <url>
     <loc>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-07-welcome/</loc>
-    <lastmod>2021-08-09T00:19:46-04:00</lastmod>
+    <lastmod>2021-08-16T12:07:29-04:00</lastmod>
   </url>
 </urlset>
