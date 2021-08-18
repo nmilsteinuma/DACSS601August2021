@@ -1,13 +1,12 @@
 ---
-title: "sathvik_iris_data_hw2"
-description: 
-  the Iris dataset
+title: sathvik_iris_data_hw2
+description: the Iris dataset
 author: sathvik_thogaru
 date: 08-18-2021
 output:
   distill::distill_article:
-    self_contained: false
-draft: true
+    self_contained: no
+draft: yes
 ---
 
 

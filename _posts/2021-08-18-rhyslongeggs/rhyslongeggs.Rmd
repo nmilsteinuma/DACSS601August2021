@@ -1,14 +1,13 @@
 ---
-title: "Rhys_Long_Eggs"
+title: Rhys_Long_Eggs
 description: |
   This is a data set that includes records of how many cartons of eggs were sold every month in 2004-2013. I got this data from the Basic Data sets section of google classroom. This data set contains four variables.
-  
 author: Rhys Long
 date: 08-11-2021
 output:
   distill::distill_article:
-    self_contained: false
-draft: true
+    self_contained: no
+draft: yes
 ---
 
 ```{r setup, include=FALSE}

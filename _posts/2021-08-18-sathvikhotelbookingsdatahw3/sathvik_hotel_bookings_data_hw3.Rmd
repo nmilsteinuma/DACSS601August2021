@@ -1,13 +1,13 @@
 ---
-title: "sathvik_hotel_bookings_data_hw3"
+title: sathvik_hotel_bookings_data_hw3
 description: |
   Hotel bookings Data
 author: sathvik_thogaru
 date: 08-18-2021
 output:
   distill::distill_article:
-    self_contained: false
-draft: true
+    self_contained: no
+draft: yes
 ---
 
 
