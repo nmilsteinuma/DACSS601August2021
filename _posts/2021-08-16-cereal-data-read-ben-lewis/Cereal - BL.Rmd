@@ -19,22 +19,25 @@ library(knitr)
 
 #Homework 2
 
-#This is me reading in data. It contains nutritional information (sugar and sodium per serving) of popular cereals. The data set can be found [here](https://artofstat.com/datasets).
+This is me reading in data. It contains nutritional information (sugar and sodium per serving) of popular cereals. The data set can be found [here](https://artofstat.com/datasets).
 
-```{r}
-Cereal_Data <- read.csv("C:/Users/Benja/Documents/GitHub/DACSS601August2021/_data/cereal.csv")
+**I had to edit this to fix the pathname, as it wasn't compiling for the course blog. Also, I did some editing of the .Rmd file - the hashtag is used to create header styles (h1, h2, h3) and not a comment the way it is in base R.**
+*Note: now that I have left a comment for you, please don't edit this post, just delete it and start over. You can look in the .RmD file on gitHub if you would like to see the edits I made.
+
+```{r, echo=TRUE}
+Cereal_Data <- read.csv("../../_data/cereal.csv")
 ```
 
 #Homework 3
 
-##Using the select function to see the cereal names
+Using the select function to see the cereal names
 
 ```{r}
 brand_data <- Cereal_Data %>%
   select(`Cereal`,`Type`)
 ```
 
-#Using Filter funtion to find Cereals with Sugar greater than 10
+Using Filter funtion to find Cereals with Sugar greater than 10
 
 ```{r}
 sugar_data <- Cereal_Data
@@ -42,7 +45,7 @@ sugar_data <- Cereal_Data
 
 ```
 
-#Using arrange to sort by type
+Using arrange to sort by type
 
 ```{r}
 type_data <- Cereal_Data
@@ -50,7 +53,7 @@ type_data <- Cereal_Data
   
 ```
 
-#Summarize mean sodium and sugar of cereals 
+Summarize mean sodium and sugar of cereals 
 
 ```{r}
 mean_sugar_sodium <- Cereal_Data

@@ -1,14 +1,15 @@
 ---
-title: "DN Australian Data"
+title: DN Australian Data
 description: |
   A short description of the post.
 author:
-  - name: Dana Nestor
-    url: {}
+- name: Dana Nestor
+  url: {}
 date: 08-17-2021
 output:
   distill::distill_article:
-    self_contained: false
+    self_contained: no
+draft: yes
 ---
 
 

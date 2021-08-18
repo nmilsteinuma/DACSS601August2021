@@ -111,7 +111,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","draft"]}},"value":[{"type":"character","attributes":{},"value":["RAILROAD-COUNTY-TRACY"]},{"type":"character","attributes":{},"value":["**HOMEWORK 2**\n\n**Data breaking down US railroad employment numbers in 2012 by state and county. Data includes three variables: state, county and total employees. 2930 observations. Total number of employees ranges from 1 to over 3000. Specifically analyzing two subsets of data: large railroads (1000+ employees) and separately railroads in New England.**\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Erin-Tracy"]}]}]},{"type":"character","attributes":{},"value":["2021-08-17"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"logical","attributes":{},"value":[true]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","draft"]}},"value":[{"type":"character","attributes":{},"value":["RAILROAD-COUNTY-TRACY"]},{"type":"character","attributes":{},"value":["**HOMEWORK 2**\n\n**Data breaking down US railroad employment numbers in 2012 by state and county. Data includes three variables: state, county and total employees. 2930 observations. Total number of employees ranges from 1 to over 3000. Specifically analyzing two subsets of data: large railroads (1000+ employees) and separately railroads in New England.**\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Erin-Tracy"]}]}]},{"type":"character","attributes":{},"value":["2021-08-17"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"logical","attributes":{},"value":[false]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   
@@ -1434,7 +1434,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
 
   <!--/radix_placeholder_distill-->
-  <script src="railroad-county-tracy_files/header-attrs-2.9/header-attrs.js"></script>
+  <script src="railroad-county-tracy_files/header-attrs-2.10/header-attrs.js"></script>
   <script src="railroad-county-tracy_files/jquery-1.11.3/jquery.min.js"></script>
   <script src="railroad-county-tracy_files/popper-2.6.0/popper.min.js"></script>
   <link href="railroad-county-tracy_files/tippy-6.2.7/tippy.css" rel="stylesheet" />
@@ -1455,7 +1455,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"RAILROAD-COUNTY-TRACY","description":"**HOMEWORK 2**\n\n**Data breaking down US railroad employment numbers in 2012 by state and county. Data includes three variables: state, county and total employees. 2930 observations. Total number of employees ranges from 1 to over 3000. Specifically analyzing two subsets of data: large railroads (1000+ employees) and separately railroads in New England.**","authors":[{"author":"Erin-Tracy","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-08-17T00:00:00.000-04:00","citationText":"Erin-Tracy, 2021"}
+{"title":"RAILROAD-COUNTY-TRACY","description":"**HOMEWORK 2**\n\n**Data breaking down US railroad employment numbers in 2012 by state and county. Data includes three variables: state, county and total employees. 2930 observations. Total number of employees ranges from 1 to over 3000. Specifically analyzing two subsets of data: large railroads (1000+ employees) and separately railroads in New England.**","authors":[{"author":"Erin-Tracy","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-08-17T00:00:00.000+00:00","citationText":"Erin-Tracy, 2021"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -1611,7 +1611,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <span class='fu'><a href='https://dplyr.tidyverse.org/reference/summarise.html'>summarise</a></span><span class='op'>(</span>avg<span class='op'>=</span><span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>total_employees</span><span class='op'>)</span><span class='op'>)</span>
 </code></pre>
 </div>
-<pre><code># A tibble: 53 x 2
+<pre><code># A tibble: 53 × 2
    state   avg
    &lt;chr&gt; &lt;dbl&gt;
  1 AE      2  
@@ -1624,7 +1624,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
  8 CO     64.0
  9 CT    324  
 10 DC    279  
-# ... with 43 more rows</code></pre>
+# … with 43 more rows</code></pre>
 </div>
 #<strong>Experimenting with prop.table</strong>
 <div class="layout-chunk" data-layout="l-body">
@@ -1877,7 +1877,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <span class='fu'><a href='https://dplyr.tidyverse.org/reference/summarise.html'>summarise</a></span><span class='op'>(</span>avg<span class='op'>=</span><span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>total_employees</span><span class='op'>)</span><span class='op'>)</span>
 </code></pre>
 </div>
-<pre><code># A tibble: 6 x 2
+<pre><code># A tibble: 6 × 2
   state   avg
   &lt;chr&gt; &lt;dbl&gt;
 1 CT    324  

@@ -22,6 +22,42 @@
       <pubDate>Tue, 17 Aug 2021 00:00:00 +0000</pubDate>
     </item>
     <item>
+      <title>DN Australian Data</title>
+      <dc:creator>Dana Nestor</dc:creator>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-17-dn-australian-data</link>
+      <description>A short description of the post.</description>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-17-dn-australian-data</guid>
+      <pubDate>Tue, 17 Aug 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>NoahHw3</title>
+      <dc:creator>Noah Milstein</dc:creator>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-17-noahhw3</link>
+      <description>A short description of the post.</description>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-17-noahhw3</guid>
+      <pubDate>Tue, 17 Aug 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://mrolfe.github.io/DACSS601August2021/posts/2021-08-17-noahhw3/noahhw3_files/figure-html5/unnamed-chunk-6-1.png" medium="image" type="image/png" width="1248" height="768"/>
+    </item>
+    <item>
+      <title>RAILROAD-COUNTY-TRACY</title>
+      <dc:creator>Erin-Tracy</dc:creator>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-17-railroad-county-tracy</link>
+      <description>**HOMEWORK 2**
+
+**Data breaking down US railroad employment numbers in 2012 by state and county. Data includes three variables: state, county and total employees. 2930 observations. Total number of employees ranges from 1 to over 3000. Specifically analyzing two subsets of data: large railroads (1000+ employees) and separately railroads in New England.**</description>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-17-railroad-county-tracy</guid>
+      <pubDate>Tue, 17 Aug 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://mrolfe.github.io/DACSS601August2021/posts/2021-08-17-railroad-county-tracy/railroad-county-tracy_files/figure-html5/unnamed-chunk-8-1.png" medium="image" type="image/png" width="960" height="320"/>
+    </item>
+    <item>
+      <title>Hanae- Homework 3</title>
+      <dc:creator>Hanae Bouazza</dc:creator>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-16-hanae-homework-3</link>
+      <description>This is my submission of Homework 3.</description>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-16-hanae-homework-3</guid>
+      <pubDate>Mon, 16 Aug 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
       <title>Zoe Hotel Bookings Dataset</title>
       <dc:creator>Zoe Bean</dc:creator>
       <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-15-zoe-hotel-bookings-dataset</link>
@@ -137,6 +173,14 @@
       <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-iris</guid>
       <pubDate>Wed, 11 Aug 2021 00:00:00 +0000</pubDate>
       <media:content url="https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-iris/Abhinav_files/figure-html5/unnamed-chunk-1-1.png" medium="image" type="image/png" width="1248" height="768"/>
+    </item>
+    <item>
+      <title>Jason Wierzbowski - Exploring Eggs</title>
+      <dc:creator>Jason Wierzbowski</dc:creator>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-17-jason-wierzbowski-exploring-eggs</link>
+      <description>A data set about eggs.</description>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-17-jason-wierzbowski-exploring-eggs</guid>
+      <pubDate>Wed, 11 Aug 2021 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>iris</title>

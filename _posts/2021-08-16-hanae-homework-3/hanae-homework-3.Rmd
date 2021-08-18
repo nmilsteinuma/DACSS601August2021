@@ -1,15 +1,15 @@
 ---
-title: "Hanae- Homework 3"
+title: Hanae- Homework 3
 description: |
   This is my submission of Homework 3.
 author:
-  - name: Hanae Bouazza
-    url: {}
+- name: Hanae Bouazza
+  url: {}
 date: 08-16-2021
 output:
   distill::distill_article:
-    self_contained: false
-draft: true
+    self_contained: no
+draft: yes
 ---
 
 

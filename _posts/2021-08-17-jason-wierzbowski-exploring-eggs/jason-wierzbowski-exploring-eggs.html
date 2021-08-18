@@ -111,12 +111,12 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","draft"]}},"value":[{"type":"character","attributes":{},"value":["Jason Wierzbowski - Exploring Eggs"]},{"type":"character","attributes":{},"value":["A data set about eggs.\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Jason Wierzbowski"]}]}]},{"type":"character","attributes":{},"value":["08-11-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"logical","attributes":{},"value":[true]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","draft"]}},"value":[{"type":"character","attributes":{},"value":["Jason Wierzbowski - Exploring Eggs"]},{"type":"character","attributes":{},"value":["A data set about eggs.\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Jason Wierzbowski"]}]}]},{"type":"character","attributes":{},"value":["08-11-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"logical","attributes":{},"value":[false]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"NULL"}
+  {"type":"character","attributes":{},"value":["jason-wierzbowski-exploring-eggs_files/anchor-4.2.2/anchor.min.js","jason-wierzbowski-exploring-eggs_files/bowser-1.9.3/bowser.min.js","jason-wierzbowski-exploring-eggs_files/distill-2.2.21/template.v2.js","jason-wierzbowski-exploring-eggs_files/header-attrs-2.10/header-attrs.js","jason-wierzbowski-exploring-eggs_files/jquery-1.11.3/jquery.min.js","jason-wierzbowski-exploring-eggs_files/popper-2.6.0/popper.min.js","jason-wierzbowski-exploring-eggs_files/tippy-6.2.7/tippy-bundle.umd.min.js","jason-wierzbowski-exploring-eggs_files/tippy-6.2.7/tippy-light-border.css","jason-wierzbowski-exploring-eggs_files/tippy-6.2.7/tippy.css","jason-wierzbowski-exploring-eggs_files/tippy-6.2.7/tippy.umd.min.js","jason-wierzbowski-exploring-eggs_files/webcomponents-2.0.0/webcomponents.js"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -1455,7 +1455,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Jason Wierzbowski - Exploring Eggs","description":"A data set about eggs.","authors":[{"author":"Jason Wierzbowski","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-08-11T00:00:00.000-04:00","citationText":"Wierzbowski, 2021"}
+{"title":"Jason Wierzbowski - Exploring Eggs","description":"A data set about eggs.","authors":[{"author":"Jason Wierzbowski","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-08-11T00:00:00.000+00:00","citationText":"Wierzbowski, 2021"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -1485,7 +1485,7 @@ Reading in my CSV file
 </div>
 Homework #3
 <div class="layout-chunk" data-layout="l-body">
-<pre><code># A tibble: 6 x 6
+<pre><code># A tibble: 6 × 6
   month     year large_half_dozen large_dozen extra_large_half_dozen
   &lt;chr&gt;    &lt;dbl&gt;            &lt;dbl&gt;       &lt;dbl&gt;                  &lt;dbl&gt;
 1 January   2004             126         230                    132 
@@ -1494,15 +1494,15 @@ Homework #3
 4 April     2004             131         225                    137 
 5 May       2004             131         225                    137 
 6 June      2004             134.        231.                   137 
-# ... with 1 more variable: extra_large_dozen &lt;dbl&gt;</code></pre>
-<pre><code># A tibble: 1 x 2
+# … with 1 more variable: extra_large_dozen &lt;dbl&gt;</code></pre>
+<pre><code># A tibble: 1 × 2
   `mean(extra_large_dozen)` `mean(extra_large_half_dozen)`
                       &lt;dbl&gt;                          &lt;dbl&gt;
 1                      287.                           186.</code></pre>
 </div>
 Working on Regression of if certain months have an impact on the number of eggs produced
 <div class="layout-chunk" data-layout="l-body">
-<pre><code># A tibble: 20 x 6
+<pre><code># A tibble: 20 × 6
 # Groups:   month [2]
    month    year large_half_dozen large_dozen extra_large_half_dozen
    &lt;chr&gt;   &lt;dbl&gt;            &lt;dbl&gt;       &lt;dbl&gt;                  &lt;dbl&gt;
@@ -1526,7 +1526,7 @@ Working on Regression of if certain months have an impact on the number of eggs 
 18 July     2012             173.        268.                   186.
 19 January  2013             178         268.                   188.
 20 July     2013             178         268.                   188.
-# ... with 1 more variable: extra_large_dozen &lt;dbl&gt;</code></pre>
+# … with 1 more variable: extra_large_dozen &lt;dbl&gt;</code></pre>
 </div>
 <p>This data set contains information on how many half dozens and dozens of eggs made to be sold in a given month of a given year.</p>
 <p>Distill is a publication format for scientific and technical writing, native to the web.</p>

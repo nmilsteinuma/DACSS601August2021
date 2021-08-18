@@ -1,14 +1,14 @@
 ---
-title: "NoahHw3"
+title: NoahHw3
 description: |
   A short description of the post.
-author: 
-  - name: Noah Milstein
+author:
+- name: Noah Milstein
 date: 08-17-2021
 output:
   distill::distill_article:
-    self_contained: false
-draft: true
+    self_contained: no
+draft: yes
 ---
 # Chicken Data In the code below I am loading all of the packages I will be using throughout this assignment 
 
@@ -28,7 +28,7 @@ prices in excel form
 
 
 ```{r} 
-poultry <- read_excel("/Users/noahmilstein/Desktop/Summer 2021/DACSS2021/work 8:11/poultry_tidy.xlsx") 
+poultry <- read_excel("../../_data/poultry_tidy.xlsx") 
 ``` 
 
 ## The Poultry The Poultry data is broken into 4 columns, Product which is the cut of chicken, Year and Month corresponding to each observation. Price_Dollar represents the price of each cut at a month and year. 
