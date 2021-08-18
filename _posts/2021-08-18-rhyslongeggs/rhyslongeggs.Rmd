@@ -1,0 +1,48 @@
+---
+title: "Rhys_Long_Eggs"
+description: |
+  This is a data set that includes records of how many cartons of eggs were sold every month in 2004-2013. I got this data from the Basic Data sets section of google classroom. This data set contains four variables
+  
+author: Rhys Long
+date: 08-11-2021
+output:
+  distill::distill_article:
+    self_contained: false
+draft: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Part 1: Full Data Set
+
+```{r}
+library(tidyverse)
+eggs_data <- read.csv(file = "../../_data/eggs_tidy.csv")
+as.tibble(eggs_data)
+library(ggplot2)
+ggplot(data = eggs_data, aes(year)) +
+  geom_point(mapping = aes(y=extra_large_dozen), color = 'magenta') +
+  geom_point(mapping = aes(y=large_dozen), color = 'purple') +
+  geom_point(mapping = aes(y=extra_large_half_dozen), color = 'blue') +
+  geom_point(mapping = aes(y=large_half_dozen), color = 'cyan') +
+  labs(title="Eggs Sold in 2004-2013", y="Eggs Sold", x="Year")
+```
+
+Part 2: Using Filter And Summarize To Show How Sales Changed Over Time
+
+```{r}
+first_third <- filter(eggs_data, year <= 2007)
+ggplot(data = first_third, aes(year)) +
+  geom_point(mapping = aes(y=extra_large_dozen), color = 'magenta') +
+  geom_point(mapping = aes(y=large_dozen), color = 'purple') +
+  geom_point(mapping = aes(y=extra_large_half_dozen), color = 'blue') +
+  geom_point(mapping = aes(y=large_half_dozen), color = 'cyan') +
+  labs(title="Eggs Sold in 2004-2007", y="Eggs Sold", x="Year")
+
+summarize(first_third, max(extra_large_dozen), min(extra_large_dozen), median(extra_large_dozen), mean(extra_large_dozen))
+summarize(first_third, max(large_dozen), min(large_dozen), median(large_dozen), mean(large_dozen))
+summarize(first_third, max(extra_large_half_dozen), min(extra_large_half_dozen), median(extra_large_half_dozen), mean(extra_large_half_dozen))
+summarize(first_third, max(large_half_dozen), min(large_half_dozen), median(large_half_dozen), mean(large_half_dozen))
+```
