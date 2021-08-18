@@ -1,0 +1,117 @@
+---
+title: "Shih-Yen's Post on DoD Marital Status data"
+author: "Shih-Yen Pan"
+date: "8/17/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(readxl)
+```
+In this post, I will introduce the DoD Active Duty Marital Status data and tidy it.
+If you open the .xsl file, you will see that there are actually several sheets of data for different branches of the military. We ultimately need to join the data from these different sheets to create a single tidy data frame. In Part 1, I will first show what needs to be done for each sheet of data to make them tidy. In Part 2, I will simply repeat the same steps and create a new variable called *branch*. In Part 3, I will join the data frames from all branches of the military.
+
+## Part 1
+
+Before we start, let's take a look at what the data looks like.
+
+```{r}
+marital_total <- read_excel("ActiveDuty_MaritalStatus.xls")
+marital_total
+```
+We first see that there are several rows that we don't want like the ones starting with *TOTAL* and the *GRAND TOTAL*. There are also several columns for total counts that we surely don't want. Now, to make our data tidy, we also need to think about what are the variables for our data? The data, strangely, contain no information about whether or not people that are married have children or not. Furthermore, whether or not marriage is with another service member or with a civilian is not relevant for those who are single. The variables that we will consider are *classification*, *pay grade*, *marital status*, *gender*, and *cases*.
+
+```{r}
+#importing data and renaming columns in a way convenient for getting rid of them later
+marital_total <- read_excel("ActiveDuty_MaritalStatus.xls", skip = 7, sheet = 1, col_names = c("d", "Paygrade", "d_single_without_children_m", "d_single_without_children_f", "d", "d_single_with_children_m", "d_single_with_children_f", "d", "d_joint_service_marriage_m", "d_joint_service_marriage_f", "d", "d_civilian_marriage_m", "d_civilian_marriage_f", "d", "d", "d", "d"))%>% 
+  
+  #getting rid of rows we don't want
+  filter(!is.na(Paygrade))%>%
+  filter(!str_starts(Paygrade, "TOTAL|GRAND|Pay"))%>%
+  
+  #creating new variables that we care about
+  mutate(single_m = as.numeric(d_single_without_children_m) + as.numeric(d_single_with_children_m), single_f = as.numeric(d_single_without_children_f) + as.numeric(d_single_with_children_f), married_m = as.numeric(d_joint_service_marriage_m) + as.numeric(d_civilian_marriage_m), married_f = as.numeric(d_joint_service_marriage_f) + as.numeric(d_civilian_marriage_f))%>%
+  
+  #getting rid of the columns that we no longer want
+  select(!starts_with("d"))%>%
+  
+  #splitting the paygrade column into two columns, one for the classification and one for the level of paygrade
+  separate(Paygrade, into = c("classification", "paygrade"), sep = "-")%>%
+  
+  #because columns like single_m are actually values for the variables, marital status and gender, we use pivot_longer
+  pivot_longer(c("single_m", "single_f", "married_m", "married_f"), names_to = "marital", values_to = "cases") %>%
+  
+  #splitting the marital column into two columns, marital_status and gender
+  separate(marital, into = c("marital_status", "gender"), sep = "_")
+marital_total
+```
+## Part 2
+
+Air Force
+```{r}
+marital_airforce <- read_excel("ActiveDuty_MaritalStatus.xls", skip = 7, sheet = 2, col_names = c("d", "Paygrade", "d_single_without_children_m", "d_single_without_children_f", "d", "d_single_with_children_m", "d_single_with_children_f", "d", "d_joint_service_marriage_m", "d_joint_service_marriage_f", "d", "d_civilian_marriage_m", "d_civilian_marriage_f", "d", "d", "d", "d"))%>% 
+  filter(!is.na(Paygrade))%>%
+  filter(!str_starts(Paygrade, "TOTAL|GRAND|Pay"))%>%
+  mutate(single_m = as.numeric(d_single_without_children_m) + as.numeric(d_single_with_children_m), single_f = as.numeric(d_single_without_children_f) + as.numeric(d_single_with_children_f), married_m = as.numeric(d_joint_service_marriage_m) + as.numeric(d_civilian_marriage_m), married_f = as.numeric(d_joint_service_marriage_f) + as.numeric(d_civilian_marriage_f))%>%
+  select(!starts_with("d"))%>%
+  separate(Paygrade, into = c("classification", "paygrade"), sep = "-")%>%
+  pivot_longer(c("single_m", "single_f", "married_m", "married_f"), names_to = "marital", values_to = "cases") %>%
+  separate(marital, into = c("marital_status", "gender"), sep = "_")%>%
+  mutate(branch = "airforce")
+marital_airforce
+```
+
+Marine Corps
+
+```{r}
+marital_marinecorps <- read_excel("ActiveDuty_MaritalStatus.xls", skip = 7, sheet = 3, col_names = c("d", "Paygrade", "d_single_without_children_m", "d_single_without_children_f", "d", "d_single_with_children_m", "d_single_with_children_f", "d", "d_joint_service_marriage_m", "d_joint_service_marriage_f", "d", "d_civilian_marriage_m", "d_civilian_marriage_f", "d", "d", "d", "d"))%>% 
+  filter(!is.na(Paygrade))%>%
+  filter(!str_starts(Paygrade, "TOTAL|GRAND|Pay"))%>%
+  mutate(single_m = as.numeric(d_single_without_children_m) + as.numeric(d_single_with_children_m), single_f = as.numeric(d_single_without_children_f) + as.numeric(d_single_with_children_f), married_m = as.numeric(d_joint_service_marriage_m) + as.numeric(d_civilian_marriage_m), married_f = as.numeric(d_joint_service_marriage_f) + as.numeric(d_civilian_marriage_f))%>%
+  select(!starts_with("d"))%>%
+  separate(Paygrade, into = c("classification", "paygrade"), sep = "-")%>%
+  pivot_longer(c("single_m", "single_f", "married_m", "married_f"), names_to = "marital", values_to = "cases") %>%
+  separate(marital, into = c("marital_status", "gender"), sep = "_")%>%
+  mutate(branch = "marine corps")
+marital_marinecorps
+```
+
+Navy
+```{r}
+marital_navy <- read_excel("ActiveDuty_MaritalStatus.xls", skip = 7, sheet = 4, col_names = c("d", "Paygrade", "d_single_without_children_m", "d_single_without_children_f", "d", "d_single_with_children_m", "d_single_with_children_f", "d", "d_joint_service_marriage_m", "d_joint_service_marriage_f", "d", "d_civilian_marriage_m", "d_civilian_marriage_f", "d", "d", "d", "d"))%>% 
+  filter(!is.na(Paygrade))%>%
+  filter(!str_starts(Paygrade, "TOTAL|GRAND|Pay"))%>%
+  mutate(single_m = as.numeric(d_single_without_children_m) + as.numeric(d_single_with_children_m), single_f = as.numeric(d_single_without_children_f) + as.numeric(d_single_with_children_f), married_m = as.numeric(d_joint_service_marriage_m) + as.numeric(d_civilian_marriage_m), married_f = as.numeric(d_joint_service_marriage_f) + as.numeric(d_civilian_marriage_f))%>%
+  select(!starts_with("d"))%>%
+  separate(Paygrade, into = c("classification", "paygrade"), sep = "-")%>%
+  pivot_longer(c("single_m", "single_f", "married_m", "married_f"), names_to = "marital", values_to = "cases") %>%
+  separate(marital, into = c("marital_status", "gender"), sep = "_")%>%
+  mutate(branch = "navy")
+marital_navy
+```
+Army
+```{r}
+marital_army <- read_excel("ActiveDuty_MaritalStatus.xls", skip = 7, sheet = 5, col_names = c("d", "Paygrade", "d_single_without_children_m", "d_single_without_children_f", "d", "d_single_with_children_m", "d_single_with_children_f", "d", "d_joint_service_marriage_m", "d_joint_service_marriage_f", "d", "d_civilian_marriage_m", "d_civilian_marriage_f", "d", "d", "d", "d"))%>% 
+  filter(!is.na(Paygrade))%>%
+  filter(!str_starts(Paygrade, "TOTAL|GRAND|Pay"))%>%
+  mutate(single_m = as.numeric(d_single_without_children_m) + as.numeric(d_single_with_children_m), single_f = as.numeric(d_single_without_children_f) + as.numeric(d_single_with_children_f), married_m = as.numeric(d_joint_service_marriage_m) + as.numeric(d_civilian_marriage_m), married_f = as.numeric(d_joint_service_marriage_f) + as.numeric(d_civilian_marriage_f))%>%
+  select(!starts_with("d"))%>%
+  separate(Paygrade, into = c("classification", "paygrade"), sep = "-")%>%
+  pivot_longer(c("single_m", "single_f", "married_m", "married_f"), names_to = "marital", values_to = "cases") %>%
+  separate(marital, into = c("marital_status", "gender"), sep = "_")%>%
+  mutate(branch = "army")
+marital_army
+```
+
+
+## Part 3
+I use the full_join() function from dplyr to join the four data frames.
+```{r}
+marital_full <- full_join(marital_airforce, marital_marinecorps, by = NULL, copy = FALSE)%>%
+  full_join(marital_navy, by = NULL, copy = FALSE)%>%
+  full_join(marital_army, by = NULL, copy = FALSE)
+marital_full
+```
+

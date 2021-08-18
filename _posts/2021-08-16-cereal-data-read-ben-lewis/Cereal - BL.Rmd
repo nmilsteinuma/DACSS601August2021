@@ -21,6 +21,7 @@ library(knitr)
 
 This is me reading in data. It contains nutritional information (sugar and sodium per serving) of popular cereals. The data set can be found [here](https://artofstat.com/datasets).
 
+
 **I had to edit this to fix the pathname, as it wasn't compiling for the course blog. Also, I did some editing of the .Rmd file - the hashtag is used to create header styles (h1, h2, h3) and not a comment the way it is in base R.**
 *Note: now that I have left a comment for you, please don't edit this post, just delete it and start over. You can look in the .RmD file on gitHub if you would like to see the edits I made.
 
@@ -34,14 +35,14 @@ Using the select function to see the cereal names
 
 ```{r}
 brand_data <- Cereal_Data %>%
-  select(`Cereal`,`Type`)
+  select(Cereal,Type)
 ```
 
 Using Filter funtion to find Cereals with Sugar greater than 10
 
 ```{r}
 sugar_data <- Cereal_Data
-  filter(Cereal_Data,`Sugar` >= 10)
+  filter(Cereal_Data,Sugar >= 10)
 
 ```
 
@@ -49,7 +50,7 @@ Using arrange to sort by type
 
 ```{r}
 type_data <- Cereal_Data
-  arrange(Cereal_Data,`Type`) 
+  arrange(Cereal_Data,Type) 
   
 ```
 
@@ -57,7 +58,8 @@ Summarize mean sodium and sugar of cereals
 
 ```{r}
 mean_sugar_sodium <- Cereal_Data
-  summarise(Cereal_Data, mean(`Sodium`), mean(`Sugar`))
+  summarise(Cereal_Data, mean(Sugar), mean(Sodium))
+
 ```
 
 
