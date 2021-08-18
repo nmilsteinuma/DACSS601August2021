@@ -18,12 +18,18 @@ library(tidyverse)
 library(readr)
 
 ```
+
+
 Reading in my CSV file
+
+
 ```{r}
 view(data)
 ```
 
 Homework #3
+
+
 ```{r}
 data <- read_csv("../../_data/eggs_tidy.csv")
 head(data)
@@ -34,7 +40,9 @@ data%>%
   summarize(mean(extra_large_dozen), mean(extra_large_half_dozen))
 
 ```
+
 Working on Regression of if certain months have an impact on the number of eggs produced
+
 ```{r}
 data%>%
   group_by(month)%>%
@@ -47,8 +55,6 @@ data%>%
 
 This data set contains information on how many half dozens and dozens of eggs made to be sold in a given month of a given year.
 
-Distill is a publication format for scientific and technical writing, native to the web.
 
-Learn more about using Distill at <https://rstudio.github.io/distill>.
 
 
