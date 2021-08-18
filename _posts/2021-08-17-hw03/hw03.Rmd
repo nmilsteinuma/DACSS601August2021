@@ -1,12 +1,12 @@
 ---
-title: "HW03"
+title: HW03
 description: This is my submission of HW3
 name: T Moraitis
 date: 08-17-2021
 output:
   distill::distill_article:
-    self_contained: false
-draft: true
+    self_contained: no
+draft: yes
 ---
 
 

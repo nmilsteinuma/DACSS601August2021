@@ -1,8 +1,9 @@
 ---
-title: "Shih-Yen's Post on DoD Marital Status data"
-author: "Shih-Yen Pan"
-date: "8/17/2021"
+title: Shih-Yen's Post on DoD Marital Status data
+author: Shih-Yen Pan
+date: 8/17/2021
 output: html_document
+draft: yes
 ---
 
 ```{r setup, include=FALSE}
