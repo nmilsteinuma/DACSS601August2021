@@ -12,7 +12,7 @@ output:
 ---
 
 
-```{r setup, include=False}
+```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 library(tidyverse)
 library(readxl)
@@ -26,4 +26,4 @@ read_csv("_data/australian_marriage_tidy.csv")
 
 
 ```
-
+Read in data on Australian Marriage
