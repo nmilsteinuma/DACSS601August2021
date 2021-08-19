@@ -1,13 +1,13 @@
 ---
-title: "Interest Rate, Inflation, and Unemployment rates"
+title: Interest Rate, Inflation, and Unemployment rates
 description: |
   A comparison of interest rates vs GDP change vs inflation vs unemployment rates in the US from 1954 - 2017
 author: Ben Lewis
 date: 08-18-2021
 output:
   distill::distill_article:
-    self_contained: false
-draft: true
+    self_contained: no
+draft: yes
 ---
 
 # My Packages
@@ -25,7 +25,7 @@ library(ggplot2)
 # Reading in my data. This set contains monthly Federal Reserve interest rates from 1954-2017. It also contains the quarterly inflation rates, and monthly unemployment rates. I downloaded this data from Kaggle. Raw data can be found [here](https://www.kaggle.com/federalreserve/interest-rates)
 
 ```{r}
-fed_rates <- read_csv("C:/Users/Benja/Documents/GitHub/DACSS601August2021/_data/FedFundsRate.csv")
+fed_rates <- read_csv("../../_data/FedFundsRate.csv")
 ```
 
 # Changing numeric values in column "Year" to names of the month. I want to simplify the data set by being able to see the names of the month instead of month number. 

@@ -32,6 +32,15 @@
       <media:content url="https://mrolfe.github.io/DACSS601August2021/posts/2021-08-18-sathvikirisdatahw2/sathvik_iris_data_hw2_files/figure-html5/unnamed-chunk-6-1.png" medium="image" type="image/png" width="1248" height="768"/>
     </item>
     <item>
+      <title>Interest Rate, Inflation, and Unemployment rates</title>
+      <dc:creator>Ben Lewis</dc:creator>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-18-interest-rate-inflation-and-unemployment-rates</link>
+      <description>A comparison of interest rates vs GDP change vs inflation vs unemployment rates in the US from 1954 - 2017</description>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-18-interest-rate-inflation-and-unemployment-rates</guid>
+      <pubDate>Wed, 18 Aug 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://mrolfe.github.io/DACSS601August2021/posts/2021-08-18-interest-rate-inflation-and-unemployment-rates/interest-rate-inflation-and-unemployment-rates_files/figure-html5/unnamed-chunk-7-1.png" medium="image" type="image/png" width="1248" height="768"/>
+    </item>
+    <item>
       <title>Railroad Employment data</title>
       <dc:creator>Mohit-Arora</dc:creator>
       <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-16-railroad-employment-data</link>
@@ -88,6 +97,13 @@
       <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-17-example-code-for-pivot-longer</link>
       <description>I'm sharing some example code for pivot_longer using the eggs data. Enjoy!</description>
       <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-17-example-code-for-pivot-longer</guid>
+      <pubDate>Tue, 17 Aug 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>HW3Nathaniel</title>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-17-hw3nathaniel</link>
+      <description>Reading in marriage data</description>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-17-hw3nathaniel</guid>
       <pubDate>Tue, 17 Aug 2021 00:00:00 +0000</pubDate>
     </item>
     <item>

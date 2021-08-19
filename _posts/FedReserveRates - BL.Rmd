@@ -1,8 +1,9 @@
 ---
-title: "Fed Rates Over Time"
-author: "BL"
-date: "8/17/2021"
+title: Fed Rates Over Time
+author: BL
+date: 8/17/2021
 output: html_document
+draft: no
 ---
 
 #Packages I am using
@@ -20,7 +21,7 @@ library(ggplot2)
 #Reading in my data. This set contains monthly Federal Reserve interest rates from 1954-2017. It also contains the quarterly inflation rates, and monthly unemployment rates. I downloaded this data from Kaggle. Raw data can be found [here](https://www.kaggle.com/federalreserve/interest-rates)
 
 ```{r}
-fed_rates <- read_csv("C:/Users/Benja/Documents/GitHub/DACSS601August2021/_data/FedFundsRate.csv")
+fed_rates <- read_csv("../../_data/FedFundsRate.csv")
 ```
 
 #Changing numeric values to names of the month 

@@ -1,13 +1,11 @@
 ---
-title: "HW3Nathaniel"
+title: HW3Nathaniel
 description: Reading in marriage data
-  
-
 date: 08-17-2021
 output:
   distill::distill_article:
-    self_contained: false
-draft: true
+    self_contained: no
+draft: yes
 ---
 
 

@@ -23,7 +23,6 @@
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
@@ -111,7 +110,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","draft"]}},"value":[{"type":"character","attributes":{},"value":["Interest Rate, Inflation, and Unemployment rates"]},{"type":"character","attributes":{},"value":["A comparison of interest rates vs GDP change vs inflation vs unemployment rates in the US from 1954 - 2017\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Ben Lewis"]}]}]},{"type":"character","attributes":{},"value":["08-18-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"logical","attributes":{},"value":[true]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","draft"]}},"value":[{"type":"character","attributes":{},"value":["Interest Rate, Inflation, and Unemployment rates"]},{"type":"character","attributes":{},"value":["A comparison of interest rates vs GDP change vs inflation vs unemployment rates in the US from 1954 - 2017\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Ben Lewis"]}]}]},{"type":"character","attributes":{},"value":["08-18-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"logical","attributes":{},"value":[false]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   
@@ -1455,7 +1454,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Interest Rate, Inflation, and Unemployment rates","description":"A comparison of interest rates vs GDP change vs inflation vs unemployment rates in the US from 1954 - 2017","authors":[{"author":"Ben Lewis","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-08-18T00:00:00.000-04:00","citationText":"Lewis, 2021"}
+{"title":"Interest Rate, Inflation, and Unemployment rates","description":"A comparison of interest rates vs GDP change vs inflation vs unemployment rates in the US from 1954 - 2017","authors":[{"author":"Ben Lewis","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-08-18T00:00:00.000+00:00","citationText":"Lewis, 2021"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -1495,7 +1494,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h1 id="reading-in-my-data.-this-set-contains-monthly-federal-reserve-interest-rates-from-1954-2017.-it-also-contains-the-quarterly-inflation-rates-and-monthly-unemployment-rates.-i-downloaded-this-data-from-kaggle.-raw-data-can-be-found-here">Reading in my data. This set contains monthly Federal Reserve interest rates from 1954-2017. It also contains the quarterly inflation rates, and monthly unemployment rates. I downloaded this data from Kaggle. Raw data can be found <a href="https://www.kaggle.com/federalreserve/interest-rates">here</a></h1>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>fed_rates</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://readr.tidyverse.org/reference/read_delim.html'>read_csv</a></span><span class='op'>(</span><span class='st'>"C:/Users/Benja/Documents/GitHub/DACSS601August2021/_data/FedFundsRate.csv"</span><span class='op'>)</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>fed_rates</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://readr.tidyverse.org/reference/read_delim.html'>read_csv</a></span><span class='op'>(</span><span class='st'>"../../_data/FedFundsRate.csv"</span><span class='op'>)</span>
 </code></pre>
 </div>
 </div>
@@ -1529,8 +1528,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <span class='va'>fed_rates_new</span>
 </code></pre>
 </div>
-<pre><code># A tibble: 904 x 7
-    Year Month       Day `Effective Federal Fun~ `Real GDP (Percent C~
+<pre><code># A tibble: 904 × 7
+    Year Month       Day `Effective Federal Fun… `Real GDP (Percent C…
    &lt;dbl&gt; &lt;chr&gt;     &lt;dbl&gt;                   &lt;dbl&gt;                 &lt;dbl&gt;
  1  1954 July          1                    0.8                    4.6
  2  1954 August        1                    1.22                  NA  
@@ -1542,7 +1541,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
  8  1955 February      1                    1.29                  NA  
  9  1955 March         1                    1.35                  NA  
 10  1955 April         1                    1.43                   6.7
-# ... with 894 more rows, and 2 more variables:
+# … with 894 more rows, and 2 more variables:
 #   Unemployment Rate &lt;dbl&gt;, Inflation Rate &lt;dbl&gt;</code></pre>
 </div>
 <h2 id="filtering-by-quarter-to-make-viewing-quarterly-gdp-growth-rate-data-easier-to-track.-because-we-do-not-tend-to-see-wild-swings-in-monthly-data-in-regards-to-inflation-and-interest-rate-change.">Filtering by Quarter to make viewing quarterly GDP growth rate data easier to track. Because we do not tend to see wild swings in monthly data in regards to inflation and interest rate change.</h2>
@@ -1554,8 +1553,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <span class='va'>fed_rates_quarter</span>
 </code></pre>
 </div>
-<pre><code># A tibble: 295 x 7
-    Year Month     Day `Effective Federal Funds Rate` `Real GDP (Perc~
+<pre><code># A tibble: 295 × 7
+    Year Month     Day `Effective Federal Funds Rate` `Real GDP (Perc…
    &lt;dbl&gt; &lt;chr&gt;   &lt;dbl&gt;                          &lt;dbl&gt;            &lt;dbl&gt;
  1  1954 July        1                           0.8               4.6
  2  1954 October     1                           0.85              8  
@@ -1567,7 +1566,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
  8  1956 April       1                           2.62              3.4
  9  1956 July        1                           2.75             -0.3
 10  1956 October     1                           2.96              6.7
-# ... with 285 more rows, and 2 more variables:
+# … with 285 more rows, and 2 more variables:
 #   Unemployment Rate &lt;dbl&gt;, Inflation Rate &lt;dbl&gt;</code></pre>
 </div>
 <h2 id="real-gdp-percent-change-over-time.-we-see-a-downward-annual-trend-since-1954-with-fairly-substantial-movement-in-gdp-percent-growth-quarterly.-the-highest-change-in-gdp-came-in-q2-april-of-1978-with-a-16-increase-qoq.">Real GDP (Percent Change) over time. We see a downward annual trend since 1954 with fairly substantial movement in GDP percent growth quarterly. The highest % change in GDP came in Q2 (April) of 1978 with a 16% increase QoQ.</h2>
@@ -1577,7 +1576,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>fed_rates_quarter</span>,<span class='va'>`Month`</span>, <span class='va'>`Real GDP (Percent Change)`</span><span class='op'>)</span>
 </code></pre>
 </div>
-<pre><code># A tibble: 295 x 2
+<pre><code># A tibble: 295 × 2
    Month   `Real GDP (Percent Change)`
    &lt;chr&gt;                         &lt;dbl&gt;
  1 July                            4.6
@@ -1590,12 +1589,12 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
  8 April                           3.4
  9 July                           -0.3
 10 October                         6.7
-# ... with 285 more rows</code></pre>
+# … with 285 more rows</code></pre>
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r">  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/summarise.html'>summarise</a></span><span class='op'>(</span><span class='va'>fed_rates_quarter</span> , mean.Real_GDP <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>`Real GDP (Percent Change)`</span> , na.rm <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span> , max.Real_GDP <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Extremes.html'>max</a></span><span class='op'>(</span><span class='va'>`Real GDP (Percent Change)`</span> , na.rm <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span> , min.Real_GDP <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Extremes.html'>min</a></span><span class='op'>(</span><span class='va'>`Real GDP (Percent Change)`</span> , na.rm <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span> , sd.Real_GDP <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/stats/sd.html'>sd</a></span><span class='op'>(</span><span class='va'>`Real GDP (Percent Change)`</span> , na.rm <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span> , IQR.Real_GDP <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/stats/IQR.html'>IQR</a></span><span class='op'>(</span><span class='va'>`Real GDP (Percent Change)`</span> , na.rm <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span><span class='op'>)</span>
 </code></pre>
 </div>
-<pre><code># A tibble: 1 x 5
+<pre><code># A tibble: 1 × 5
   mean.Real_GDP max.Real_GDP min.Real_GDP sd.Real_GDP IQR.Real_GDP
           &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;       &lt;dbl&gt;        &lt;dbl&gt;
 1          3.14         16.5          -10        3.60         3.48</code></pre>
