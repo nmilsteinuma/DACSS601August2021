@@ -1,0 +1,124 @@
+---
+title: Interest Rate, Inflation, and Unemployment rates
+description: |
+  A comparison of interest rates vs GDP change vs inflation vs unemployment rates in the US from 1954 - 2017
+author: Ben Lewis
+date: 08-18-2021
+output:
+  distill::distill_article:
+    self_contained: no
+draft: yes
+---
+
+# My Packages
+
+```{r}
+library(dplyr)
+library(tidyverse)
+library(magrittr)
+library(knitr)
+library(readr)
+library(readxl)
+library(ggplot2)
+```
+
+# Reading in my data. This set contains monthly Federal Reserve interest rates from 1954-2017. It also contains the quarterly inflation rates, and monthly unemployment rates. I downloaded this data from Kaggle. Raw data can be found [here](https://www.kaggle.com/federalreserve/interest-rates)
+
+```{r}
+fed_rates <- read_csv("../../_data/FedFundsRate.csv")
+```
+
+# Changing numeric values in column "Year" to names of the month. I want to simplify the data set by being able to see the names of the month instead of month number. 
+
+```{r}
+fed_rates <- fed_rates %>%
+  mutate(Month = case_when(
+         Month == 1 ~ "January",
+         Month == 2 ~ "February",
+         Month == 3 ~ "March",
+         Month == 4 ~ "April",
+         Month == 5 ~ "May",
+         Month == 6 ~ "June",
+         Month == 7 ~ "July",
+         Month == 8 ~ "August", 
+         Month == 9 ~ "September",
+         Month == 10 ~ "October",
+         Month == 11 ~ "November",
+         Month == 12 ~ "December")
+  )
+```
+
+## There are variables in the fed_rates data set that I am not concerned with. These columns are the Fed Funds Target Rate, Fed Funds Upper Target Rate, and Fed Funds Lower Target Rate. Taking my variables from 10 to 7 by removing those columns and reducing noise in the data.
+
+```{r}
+fed_rates_new <- fed_rates %>%
+  select("Year" , "Month" ,	"Day" , "Effective Federal Funds Rate" ,	"Real GDP (Percent Change)",	"Unemployment Rate" ,	"Inflation Rate")
+
+fed_rates_new
+```
+
+## Filtering by Quarter to make viewing quarterly GDP growth rate data easier to track. Because we do not tend to see wild swings in monthly data in regards to inflation and interest rate change. 
+
+```{r}
+fed_rates_quarter <- fed_rates_new %>%
+  filter(`Month` %in% c("January" , "April" , "July" , "October"))
+
+fed_rates_quarter
+  
+```
+
+## Real GDP (Percent Change) over time. We see a  downward annual trend since 1954 with fairly substantial movement in GDP percent growth quarterly. The highest % change in GDP came in Q2 (April) of 1978 with a 16% increase QoQ. 
+
+```{r}
+summarise_GDP <- fed_rates_quarter 
+select(fed_rates_quarter,`Month`, `Real GDP (Percent Change)`)
+  summarise(fed_rates_quarter , mean.Real_GDP = mean(`Real GDP (Percent Change)` , na.rm = TRUE) , max.Real_GDP = max(`Real GDP (Percent Change)` , na.rm = TRUE) , min.Real_GDP = min(`Real GDP (Percent Change)` , na.rm = TRUE) , sd.Real_GDP = sd(`Real GDP (Percent Change)` , na.rm = TRUE) , IQR.Real_GDP = IQR(`Real GDP (Percent Change)` , na.rm = TRUE))
+```
+
+```{r}
+ggplot(fed_rates_quarter, aes(`Year` , `Real GDP (Percent Change)`)) + 
+  geom_point() + 
+  geom_smooth()
+```
+
+
+
+
+# Unemployment rate over time  
+
+```{r}
+ggplot(fed_rates_quarter, aes(`Year` , `Unemployment Rate`)) + 
+  geom_point() + 
+  geom_smooth() 
+
+```
+
+# Interest Rate over time
+
+```{r}
+ggplot(fed_rates_quarter, aes(`Year` , `Effective Federal Funds Rate`)) + 
+  geom_point() + 
+  geom_smooth()
+```
+
+# Inflation Rate over time
+
+```{r}
+ ggplot(fed_rates_quarter, aes(`Year` , `Inflation Rate`)) + 
+  geom_point() + 
+  geom_smooth()
+```
+
+
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+Distill is a publication format for scientific and technical writing, native to the web.
+
+Learn more about using Distill at <https://rstudio.github.io/distill>.
+
+
