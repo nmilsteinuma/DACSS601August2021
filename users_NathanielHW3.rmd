@@ -32,7 +32,7 @@ colnames(Aus_Marriage)
 ```
 In my data set on Australian marriages there are 16 rows and 4 columns with variable names indicating Australian Territory name, Response(Y/N), the count of a particular response, and the percent of territory with that specific response
 
-```{r, include = TRUE}
+```{r, include = TRUE, }
 #I am selecting my data by territory, response, percent, and then arranging my data in descending order by percent
 Aus_Marriage %>%
 select(territory, resp, percent) %>%
@@ -44,4 +44,4 @@ summarize(Aus_Marriage, 'territory', 'resp', 'percent')
 
   
 ```
-
+Above, I selected my data based on their response, and then filter my data in descending order to see which territories have the highest and lowest percentage of yes responses.
