@@ -1,14 +1,15 @@
 ---
-title: "Reading in Tabular Data"
+title: Reading in Tabular Data
 description: |
   A short description of the post.
 author:
-  - name: Meredith Rolfe
-    url: {}
+- name: Meredith Rolfe
+  url: {}
 date: 08-18-2021
 output:
   distill::distill_article:
-    self_contained: false
+    self_contained: no
+draft: yes
 ---
 
 

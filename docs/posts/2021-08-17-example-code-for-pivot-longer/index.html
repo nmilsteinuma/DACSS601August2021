@@ -23,6 +23,7 @@
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
@@ -2410,7 +2411,7 @@ d-appendix d-footnote-list a.footnote-backlink {
 # … with 110 more rows, and 1 more variable: extra_large_dozen &lt;dbl&gt;</code></pre>
 </div>
 <p>Looking at the data, we can see that each <em>case</em> consists of a year-month combination (e.g., January 2004), while the <em>values</em> are the average price (in cents) of four different types of eggs (e.g., large_half_dozen, large_dozen, etc) But really, wouldn’t it possibly make more sense to consider the case as a year-month-type combination, with a single price <em>value</em> for each case?</p>
-<h2 id="pivot-longer---one-bew-category-variable">Pivot Longer - One Bew Category Variable</h2>
+<h2 id="pivot-longer---one-new-category-variable">Pivot Longer - One New Category Variable</h2>
 <p>To do this (and make our data easier to graph and analyze), we can pivot longer - changing our data from 120 rows with 6 variables (2 grouping and 4 values) to 480 rows of 4 variables (with 3 grouping variables and a single <em>price</em> value).</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">

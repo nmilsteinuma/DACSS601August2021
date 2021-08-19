@@ -111,7 +111,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Reading in Tabular Data"]},{"type":"character","attributes":{},"value":["A short description of the post.\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Meredith Rolfe"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":[]}},"value":[]}]}]},{"type":"character","attributes":{},"value":["08-18-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","draft"]}},"value":[{"type":"character","attributes":{},"value":["Reading in Tabular Data"]},{"type":"character","attributes":{},"value":["A short description of the post.\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Meredith Rolfe"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":[]}},"value":[]}]}]},{"type":"character","attributes":{},"value":["08-18-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"logical","attributes":{},"value":[false]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   
@@ -1521,7 +1521,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://readxl.tidyverse.org/reference/read_excel.html'>read_excel</a></span><span class='op'>(</span><span class='st'>"../../_data/StateCounty2012.xls"</span>,
                      skip <span class='op'>=</span> <span class='fl'>4</span>,
                      col_names<span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"State"</span>, <span class='st'>"delete"</span>, <span class='st'>"County"</span>, <span class='st'>"delete"</span>, <span class='st'>"Employees"</span><span class='op'>)</span><span class='op'>)</span><span class='op'>%&gt;%</span>
-  <span class='fu'>select</span><span class='op'>(</span><span class='op'>!</span><span class='fu'>contains</span><span class='op'>(</span><span class='st'>"delete"</span><span class='op'>)</span><span class='op'>)</span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='op'>!</span><span class='fu'><a href='https://tidyselect.r-lib.org/reference/starts_with.html'>contains</a></span><span class='op'>(</span><span class='st'>"delete"</span><span class='op'>)</span><span class='op'>)</span>
 </code></pre>
 </div>
 <pre><code># A tibble: 2,990 × 3
@@ -1547,8 +1547,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>railroad</span><span class='op'>&lt;-</span><span class='fu'><a href='https://readxl.tidyverse.org/reference/read_excel.html'>read_excel</a></span><span class='op'>(</span><span class='st'>"../../_data/StateCounty2012.xls"</span>,
                      skip <span class='op'>=</span> <span class='fl'>4</span>,
                      col_names<span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"State"</span>, <span class='st'>"delete"</span>, <span class='st'>"County"</span>, <span class='st'>"delete"</span>, <span class='st'>"Employees"</span><span class='op'>)</span><span class='op'>)</span><span class='op'>%&gt;%</span>
-  <span class='fu'>select</span><span class='op'>(</span><span class='op'>!</span><span class='fu'>contains</span><span class='op'>(</span><span class='st'>"delete"</span><span class='op'>)</span><span class='op'>)</span><span class='op'>%&gt;%</span>
-  <span class='fu'><a href='https://rdrr.io/r/stats/filter.html'>filter</a></span><span class='op'>(</span><span class='op'>!</span><span class='fu'>str_detect</span><span class='op'>(</span><span class='va'>State</span>, <span class='st'>"Total"</span><span class='op'>)</span><span class='op'>)</span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='op'>!</span><span class='fu'><a href='https://tidyselect.r-lib.org/reference/starts_with.html'>contains</a></span><span class='op'>(</span><span class='st'>"delete"</span><span class='op'>)</span><span class='op'>)</span><span class='op'>%&gt;%</span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='op'>!</span><span class='fu'>str_detect</span><span class='op'>(</span><span class='va'>State</span>, <span class='st'>"Total"</span><span class='op'>)</span><span class='op'>)</span>
 <span class='va'>railroad</span>
 </code></pre>
 </div>
@@ -1613,8 +1613,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>railroad</span><span class='op'>%&gt;%</span>
-  <span class='fu'>group_by</span><span class='op'>(</span><span class='va'>State</span><span class='op'>)</span><span class='op'>%&gt;%</span>
-  <span class='fu'>summarise</span><span class='op'>(</span>`State Employees` <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sum.html'>sum</a></span><span class='op'>(</span><span class='va'>Employees</span><span class='op'>)</span><span class='op'>)</span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/group_by.html'>group_by</a></span><span class='op'>(</span><span class='va'>State</span><span class='op'>)</span><span class='op'>%&gt;%</span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/summarise.html'>summarise</a></span><span class='op'>(</span>`State Employees` <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sum.html'>sum</a></span><span class='op'>(</span><span class='va'>Employees</span><span class='op'>)</span><span class='op'>)</span>
 </code></pre>
 </div>
 <pre><code># A tibble: 54 × 2
@@ -1645,10 +1645,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
            sheet<span class='op'>=</span><span class='st'>"Table 2"</span>,
            skip<span class='op'>=</span><span class='fl'>7</span>,
            col_names <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Town"</span>, <span class='st'>"Yes"</span>, <span class='st'>"d"</span>, <span class='st'>"No"</span>, <span class='fu'><a href='https://rdrr.io/r/base/rep.html'>rep</a></span><span class='op'>(</span><span class='st'>"d"</span>, <span class='fl'>6</span><span class='op'>)</span>, <span class='st'>"Illegible"</span>, <span class='st'>"d"</span>, <span class='st'>"No Response"</span>, <span class='fu'><a href='https://rdrr.io/r/base/rep.html'>rep</a></span><span class='op'>(</span><span class='st'>"d"</span>, <span class='fl'>3</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span><span class='op'>%&gt;%</span>
-  <span class='fu'>select</span><span class='op'>(</span><span class='op'>!</span><span class='fu'>starts_with</span><span class='op'>(</span><span class='st'>"d"</span><span class='op'>)</span><span class='op'>)</span><span class='op'>%&gt;%</span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='op'>!</span><span class='fu'><a href='https://tidyselect.r-lib.org/reference/starts_with.html'>starts_with</a></span><span class='op'>(</span><span class='st'>"d"</span><span class='op'>)</span><span class='op'>)</span><span class='op'>%&gt;%</span>
   <span class='fu'>drop_na</span><span class='op'>(</span><span class='va'>Town</span><span class='op'>)</span><span class='op'>%&gt;%</span>
-  <span class='fu'><a href='https://rdrr.io/r/stats/filter.html'>filter</a></span><span class='op'>(</span><span class='op'>!</span><span class='fu'>str_detect</span><span class='op'>(</span><span class='va'>Town</span>, <span class='st'>"(Total)"</span><span class='op'>)</span><span class='op'>)</span><span class='op'>%&gt;%</span>
-  <span class='fu'><a href='https://rdrr.io/r/stats/filter.html'>filter</a></span><span class='op'>(</span><span class='op'>!</span><span class='fu'>str_starts</span><span class='op'>(</span><span class='va'>Town</span>, <span class='st'>"\\("</span><span class='op'>)</span><span class='op'>)</span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='op'>!</span><span class='fu'>str_detect</span><span class='op'>(</span><span class='va'>Town</span>, <span class='st'>"(Total)"</span><span class='op'>)</span><span class='op'>)</span><span class='op'>%&gt;%</span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='op'>!</span><span class='fu'>str_starts</span><span class='op'>(</span><span class='va'>Town</span>, <span class='st'>"\\("</span><span class='op'>)</span><span class='op'>)</span>
 
 <span class='va'>votes</span>
 </code></pre>
@@ -1674,7 +1674,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>votes</span><span class='op'>&lt;-</span> <span class='va'>votes</span><span class='op'>%&gt;%</span>
-  <span class='fu'>mutate</span><span class='op'>(</span>Divisions <span class='op'>=</span> <span class='fu'>case_when</span><span class='op'>(</span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>Divisions <span class='op'>=</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/case_when.html'>case_when</a></span><span class='op'>(</span>
     <span class='fu'>str_ends</span><span class='op'>(</span><span class='va'>Town</span>, <span class='st'>"Divisions"</span><span class='op'>)</span> <span class='op'>~</span> <span class='va'>Town</span>,
     <span class='cn'>TRUE</span> <span class='op'>~</span> <span class='cn'>NA_character_</span>
   <span class='op'>)</span><span class='op'>)</span>
@@ -1683,7 +1683,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <span class='va'>votes</span><span class='op'>$</span><span class='va'>Divisions</span><span class='op'>[</span><span class='va'>i</span><span class='op'>]</span><span class='op'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/base/ifelse.html'>ifelse</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/NA.html'>is.na</a></span><span class='op'>(</span><span class='va'>votes</span><span class='op'>$</span><span class='va'>Divisions</span><span class='op'>[</span><span class='va'>i</span><span class='op'>]</span><span class='op'>)</span>,<span class='va'>votes</span><span class='op'>$</span><span class='va'>Divisions</span><span class='op'>[</span><span class='va'>i</span><span class='op'>-</span><span class='fl'>1</span><span class='op'>]</span>, <span class='va'>votes</span><span class='op'>$</span><span class='va'>Divisions</span><span class='op'>[</span><span class='va'>i</span><span class='op'>]</span><span class='op'>)</span>
 <span class='op'>}</span>
 
-<span class='va'>votes</span><span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>votes</span>,<span class='op'>!</span><span class='fu'>str_detect</span><span class='op'>(</span><span class='va'>Town</span>, <span class='st'>"Divisions|Australia"</span><span class='op'>)</span><span class='op'>)</span>
+<span class='va'>votes</span><span class='op'>&lt;-</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>votes</span>,<span class='op'>!</span><span class='fu'>str_detect</span><span class='op'>(</span><span class='va'>Town</span>, <span class='st'>"Divisions|Australia"</span><span class='op'>)</span><span class='op'>)</span>
 <span class='va'>votes</span>
 </code></pre>
 </div>
@@ -1729,6 +1729,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 10 Bennelong New South Wales Divisions No          43215
 # … with 590 more rows</code></pre>
 </div>
+<p>Special thanks to Karl, Shih-Yen, Mohit, and the other students in the advanced group for allowing me to use their blog submissions as a starting point for this demonstration!</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->

@@ -23,6 +23,7 @@
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
@@ -103,7 +104,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <meta property="og:type" content="article"/>
 <meta property="og:description" content="A comparison of interest rates vs GDP change vs inflation vs unemployment rates in the US from 1954 - 2017"/>
 <meta property="og:url" content="https://mrolfe.github.io/DACSS601August2021/posts/2021-08-18-interest-rate-inflation-and-unemployment-rates/"/>
-<meta property="og:image" content="https://mrolfe.github.io/DACSS601August2021/posts/2021-08-18-interest-rate-inflation-and-unemployment-rates/interest-rate-inflation-and-unemployment-rates_files/figure-html5/unnamed-chunk-7-1.png"/>
+<meta property="og:image" content="https://mrolfe.github.io/DACSS601August2021/posts/2021-08-18-interest-rate-inflation-and-unemployment-rates/interest-rate-inflation-and-unemployment-rates_files/figure-html5/unnamed-chunk-6-1.png"/>
 <meta property="og:image:width" content="1248"/>
 <meta property="og:image:height" content="768"/>
 <meta property="og:locale" content="en_US"/>
@@ -114,7 +115,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <meta property="twitter:title" content="Data Analytics and Computational Social Science: Interest Rate, Inflation, and Unemployment rates"/>
 <meta property="twitter:description" content="A comparison of interest rates vs GDP change vs inflation vs unemployment rates in the US from 1954 - 2017"/>
 <meta property="twitter:url" content="https://mrolfe.github.io/DACSS601August2021/posts/2021-08-18-interest-rate-inflation-and-unemployment-rates/"/>
-<meta property="twitter:image" content="https://mrolfe.github.io/DACSS601August2021/posts/2021-08-18-interest-rate-inflation-and-unemployment-rates/interest-rate-inflation-and-unemployment-rates_files/figure-html5/unnamed-chunk-7-1.png"/>
+<meta property="twitter:image" content="https://mrolfe.github.io/DACSS601August2021/posts/2021-08-18-interest-rate-inflation-and-unemployment-rates/interest-rate-inflation-and-unemployment-rates_files/figure-html5/unnamed-chunk-6-1.png"/>
 <meta property="twitter:image:width" content="1248"/>
 <meta property="twitter:image:height" content="768"/>
 <meta property="twitter:site" content="@UMassDACSS"/>
@@ -2394,27 +2395,16 @@ d-appendix d-footnote-list a.footnote-backlink {
 </div>
 
 <div class="d-article">
-<h1 id="my-packages">My Packages</h1>
-<div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://dplyr.tidyverse.org'>dplyr</a></span><span class='op'>)</span>
-<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://tidyverse.tidyverse.org'>tidyverse</a></span><span class='op'>)</span>
-<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://magrittr.tidyverse.org'>magrittr</a></span><span class='op'>)</span>
-<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://yihui.org/knitr/'>knitr</a></span><span class='op'>)</span>
-<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://readr.tidyverse.org'>readr</a></span><span class='op'>)</span>
-<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://readxl.tidyverse.org'>readxl</a></span><span class='op'>)</span>
-<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://ggplot2.tidyverse.org'>ggplot2</a></span><span class='op'>)</span>
-</code></pre>
-</div>
-</div>
-<h1 id="reading-in-my-data.-this-set-contains-monthly-federal-reserve-interest-rates-from-1954-2017.-it-also-contains-the-quarterly-inflation-rates-and-monthly-unemployment-rates.-i-downloaded-this-data-from-kaggle.-raw-data-can-be-found-here">Reading in my data. This set contains monthly Federal Reserve interest rates from 1954-2017. It also contains the quarterly inflation rates, and monthly unemployment rates. I downloaded this data from Kaggle. Raw data can be found <a href="https://www.kaggle.com/federalreserve/interest-rates">here</a></h1>
+<h1 id="reading-in-my-data.">Reading in my data.</h1>
+<p>This set contains monthly Federal Reserve interest rates from 1954-2017. It also contains the quarterly inflation rates, and monthly unemployment rates. I downloaded this data from Kaggle. Raw data can be found <a href="https://www.kaggle.com/federalreserve/interest-rates">here</a></p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>fed_rates</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://readr.tidyverse.org/reference/read_delim.html'>read_csv</a></span><span class='op'>(</span><span class='st'>"../../_data/FedFundsRate.csv"</span><span class='op'>)</span>
 </code></pre>
 </div>
 </div>
-<h1 id="changing-numeric-values-in-column-year-to-names-of-the-month.-i-want-to-simplify-the-data-set-by-being-able-to-see-the-names-of-the-month-instead-of-month-number.">Changing numeric values in column “Year” to names of the month. I want to simplify the data set by being able to see the names of the month instead of month number.</h1>
+<h1 id="fixing-dates">Fixing dates</h1>
+<p>Changing numeric values in column “Year” to names of the month. I want to simplify the data set by being able to see the names of the month instead of month number.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>fed_rates</span> <span class='op'>&lt;-</span> <span class='va'>fed_rates</span> <span class='op'>%&gt;%</span>
@@ -2435,7 +2425,8 @@ d-appendix d-footnote-list a.footnote-backlink {
 </code></pre>
 </div>
 </div>
-<h2 id="there-are-variables-in-the-fed_rates-data-set-that-i-am-not-concerned-with.-these-columns-are-the-fed-funds-target-rate-fed-funds-upper-target-rate-and-fed-funds-lower-target-rate.-taking-my-variables-from-10-to-7-by-removing-those-columns-and-reducing-noise-in-the-data.">There are variables in the fed_rates data set that I am not concerned with. These columns are the Fed Funds Target Rate, Fed Funds Upper Target Rate, and Fed Funds Lower Target Rate. Taking my variables from 10 to 7 by removing those columns and reducing noise in the data.</h2>
+<h2 id="remove-variables">Remove variables</h2>
+<p>There are variables in the fed_rates data set that I am not concerned with. These columns are the Fed Funds Target Rate, Fed Funds Upper Target Rate, and Fed Funds Lower Target Rate. Taking my variables from 10 to 7 by removing those columns and reducing noise in the data.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>fed_rates_new</span> <span class='op'>&lt;-</span> <span class='va'>fed_rates</span> <span class='op'>%&gt;%</span>
@@ -2460,7 +2451,8 @@ d-appendix d-footnote-list a.footnote-backlink {
 # … with 894 more rows, and 2 more variables:
 #   Unemployment Rate &lt;dbl&gt;, Inflation Rate &lt;dbl&gt;</code></pre>
 </div>
-<h2 id="filtering-by-quarter-to-make-viewing-quarterly-gdp-growth-rate-data-easier-to-track.-because-we-do-not-tend-to-see-wild-swings-in-monthly-data-in-regards-to-inflation-and-interest-rate-change.">Filtering by Quarter to make viewing quarterly GDP growth rate data easier to track. Because we do not tend to see wild swings in monthly data in regards to inflation and interest rate change.</h2>
+<h2 id="filtering-by-quarter">Filtering by Quarter</h2>
+<p>to make viewing quarterly GDP growth rate data easier to track. Because we do not tend to see wild swings in monthly data in regards to inflation and interest rate change.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>fed_rates_quarter</span> <span class='op'>&lt;-</span> <span class='va'>fed_rates_new</span> <span class='op'>%&gt;%</span>
@@ -2485,7 +2477,8 @@ d-appendix d-footnote-list a.footnote-backlink {
 # … with 285 more rows, and 2 more variables:
 #   Unemployment Rate &lt;dbl&gt;, Inflation Rate &lt;dbl&gt;</code></pre>
 </div>
-<h2 id="real-gdp-percent-change-over-time.-we-see-a-downward-annual-trend-since-1954-with-fairly-substantial-movement-in-gdp-percent-growth-quarterly.-the-highest-change-in-gdp-came-in-q2-april-of-1978-with-a-16-increase-qoq.">Real GDP (Percent Change) over time. We see a downward annual trend since 1954 with fairly substantial movement in GDP percent growth quarterly. The highest % change in GDP came in Q2 (April) of 1978 with a 16% increase QoQ.</h2>
+<h2 id="real-gdp-percent-change-over-time">Real GDP (Percent Change) over time</h2>
+<p>We see a downward annual trend since 1954 with fairly substantial movement in GDP percent growth quarterly. The highest % change in GDP came in Q2 (April) of 1978 with a 16% increase QoQ.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>summarise_GDP</span> <span class='op'>&lt;-</span> <span class='va'>fed_rates_quarter</span> 
@@ -2522,7 +2515,7 @@ d-appendix d-footnote-list a.footnote-backlink {
   <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_smooth.html'>geom_smooth</a></span><span class='op'>(</span><span class='op'>)</span>
 </code></pre>
 </div>
-<p><img src="interest-rate-inflation-and-unemployment-rates_files/figure-html5/unnamed-chunk-7-1.png" width="624" /></p>
+<p><img src="interest-rate-inflation-and-unemployment-rates_files/figure-html5/unnamed-chunk-6-1.png" width="624" /></p>
 </div>
 <h1 id="unemployment-rate-over-time">Unemployment rate over time</h1>
 <div class="layout-chunk" data-layout="l-body">
@@ -2532,7 +2525,7 @@ d-appendix d-footnote-list a.footnote-backlink {
   <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_smooth.html'>geom_smooth</a></span><span class='op'>(</span><span class='op'>)</span> 
 </code></pre>
 </div>
-<p><img src="interest-rate-inflation-and-unemployment-rates_files/figure-html5/unnamed-chunk-8-1.png" width="624" /></p>
+<p><img src="interest-rate-inflation-and-unemployment-rates_files/figure-html5/unnamed-chunk-7-1.png" width="624" /></p>
 </div>
 <h1 id="interest-rate-over-time">Interest Rate over time</h1>
 <div class="layout-chunk" data-layout="l-body">
@@ -2542,7 +2535,7 @@ d-appendix d-footnote-list a.footnote-backlink {
   <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_smooth.html'>geom_smooth</a></span><span class='op'>(</span><span class='op'>)</span>
 </code></pre>
 </div>
-<p><img src="interest-rate-inflation-and-unemployment-rates_files/figure-html5/unnamed-chunk-9-1.png" width="624" /></p>
+<p><img src="interest-rate-inflation-and-unemployment-rates_files/figure-html5/unnamed-chunk-8-1.png" width="624" /></p>
 </div>
 <h1 id="inflation-rate-over-time">Inflation Rate over time</h1>
 <div class="layout-chunk" data-layout="l-body">
@@ -2552,10 +2545,8 @@ d-appendix d-footnote-list a.footnote-backlink {
   <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_smooth.html'>geom_smooth</a></span><span class='op'>(</span><span class='op'>)</span>
 </code></pre>
 </div>
-<p><img src="interest-rate-inflation-and-unemployment-rates_files/figure-html5/unnamed-chunk-10-1.png" width="624" /></p>
+<p><img src="interest-rate-inflation-and-unemployment-rates_files/figure-html5/unnamed-chunk-9-1.png" width="624" /></p>
 </div>
-<p>Distill is a publication format for scientific and technical writing, native to the web.</p>
-<p>Learn more about using Distill at <a href="https://rstudio.github.io/distill" class="uri">https://rstudio.github.io/distill</a>.</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <div class="article-footer">

@@ -10,9 +10,10 @@ output:
 draft: yes
 ---
 
-# My Packages
 
-```{r}
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
 library(dplyr)
 library(tidyverse)
 library(magrittr)
@@ -22,13 +23,17 @@ library(readxl)
 library(ggplot2)
 ```
 
-# Reading in my data. This set contains monthly Federal Reserve interest rates from 1954-2017. It also contains the quarterly inflation rates, and monthly unemployment rates. I downloaded this data from Kaggle. Raw data can be found [here](https://www.kaggle.com/federalreserve/interest-rates)
+# Reading in my data. 
+
+This set contains monthly Federal Reserve interest rates from 1954-2017. It also contains the quarterly inflation rates, and monthly unemployment rates. I downloaded this data from Kaggle. Raw data can be found [here](https://www.kaggle.com/federalreserve/interest-rates)
 
 ```{r}
 fed_rates <- read_csv("../../_data/FedFundsRate.csv")
 ```
 
-# Changing numeric values in column "Year" to names of the month. I want to simplify the data set by being able to see the names of the month instead of month number. 
+# Fixing dates
+
+Changing numeric values in column "Year" to names of the month. I want to simplify the data set by being able to see the names of the month instead of month number. 
 
 ```{r}
 fed_rates <- fed_rates %>%
@@ -48,7 +53,9 @@ fed_rates <- fed_rates %>%
   )
 ```
 
-## There are variables in the fed_rates data set that I am not concerned with. These columns are the Fed Funds Target Rate, Fed Funds Upper Target Rate, and Fed Funds Lower Target Rate. Taking my variables from 10 to 7 by removing those columns and reducing noise in the data.
+## Remove variables
+
+There are variables in the fed_rates data set that I am not concerned with. These columns are the Fed Funds Target Rate, Fed Funds Upper Target Rate, and Fed Funds Lower Target Rate. Taking my variables from 10 to 7 by removing those columns and reducing noise in the data.
 
 ```{r}
 fed_rates_new <- fed_rates %>%
@@ -57,7 +64,9 @@ fed_rates_new <- fed_rates %>%
 fed_rates_new
 ```
 
-## Filtering by Quarter to make viewing quarterly GDP growth rate data easier to track. Because we do not tend to see wild swings in monthly data in regards to inflation and interest rate change. 
+## Filtering by Quarter 
+
+to make viewing quarterly GDP growth rate data easier to track. Because we do not tend to see wild swings in monthly data in regards to inflation and interest rate change. 
 
 ```{r}
 fed_rates_quarter <- fed_rates_new %>%
@@ -67,7 +76,9 @@ fed_rates_quarter
   
 ```
 
-## Real GDP (Percent Change) over time. We see a  downward annual trend since 1954 with fairly substantial movement in GDP percent growth quarterly. The highest % change in GDP came in Q2 (April) of 1978 with a 16% increase QoQ. 
+## Real GDP (Percent Change) over time
+
+We see a  downward annual trend since 1954 with fairly substantial movement in GDP percent growth quarterly. The highest % change in GDP came in Q2 (April) of 1978 with a 16% increase QoQ. 
 
 ```{r}
 summarise_GDP <- fed_rates_quarter 
@@ -80,8 +91,6 @@ ggplot(fed_rates_quarter, aes(`Year` , `Real GDP (Percent Change)`)) +
   geom_point() + 
   geom_smooth()
 ```
-
-
 
 
 # Unemployment rate over time  
@@ -108,17 +117,4 @@ ggplot(fed_rates_quarter, aes(`Year` , `Effective Federal Funds Rate`)) +
   geom_point() + 
   geom_smooth()
 ```
-
-
-
-
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
-```
-
-Distill is a publication format for scientific and technical writing, native to the web.
-
-Learn more about using Distill at <https://rstudio.github.io/distill>.
-
 
