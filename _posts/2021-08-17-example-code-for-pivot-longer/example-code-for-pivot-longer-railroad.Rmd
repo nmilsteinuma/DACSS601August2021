@@ -27,7 +27,7 @@ eggs
 
 Looking at the data, we can see that each *case* consists of a year-month combination (e.g., January 2004), while the *values* are the average price (in cents) of four different types of eggs (e.g., large_half_dozen, large_dozen, etc) But really, wouldn't it possibly make more sense to consider the case as a year-month-type combination, with a single price *value* for each case?
 
-## Pivot Longer - One Bew Category Variable
+## Pivot Longer - One New Category Variable
 
 To do this (and make our data easier to graph and analyze), we can pivot longer - changing our data from 120 rows with 6 variables (2 grouping and 4 values) to 480 rows of 4 variables (with 3 grouping variables and a single *price* value).
 
