@@ -1,0 +1,70 @@
+---
+title: "Fed Rates Over Time"
+author: "BL"
+date: "8/17/2021"
+output: html_document
+---
+
+#Packages I am using
+
+```{r}
+library(dplyr)
+library(tidyverse)
+library(magrittr)
+library(knitr)
+library(readr)
+library(readxl)
+library(ggplot2)
+```
+
+#Reading in my data. This set contains monthly Federal Reserve interest rates from 1954-2017. It also contains the quarterly inflation rates, and monthly unemployment rates. I downloaded this data from Kaggle. Raw data can be found [here](https://www.kaggle.com/federalreserve/interest-rates)
+
+```{r}
+fed_rates <- read_csv("C:/Users/Benja/Documents/GitHub/DACSS601August2021/_data/FedFundsRate.csv")
+```
+
+#Changing numeric values to names of the month 
+
+```{r}
+fed_rates <- fed_rates %>%
+  mutate(Month = case_when(
+         Month == 1 ~ "January",
+         Month == 2 ~ "February",
+         Month == 3 ~ "March",
+         Month == 4 ~ "April",
+         Month == 5 ~ "May",
+         Month == 6 ~ "June",
+         Month == 7 ~ "July",
+         Month == 8 ~ "August", 
+         Month == 9 ~ "September",
+         Month == 10 ~ "October",
+         Month == 11 ~ "November",
+         Month == 12 ~ "December")
+  )
+         
+```
+
+#Selecting the data I want to focus on 
+
+```{r}
+fed_rates_new <- fed_rates %>%
+  select("Year" , "Month" ,	"Day" , "Effective Federal Funds Rate" ,	"Real GDP (Percent Change)",	"Unemployment Rate" ,	"Inflation Rate")
+
+fed_rates_new
+```
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
