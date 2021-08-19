@@ -29,7 +29,7 @@
       <description>Two examples of reading in Excel Tables with
 the advanced data sets.</description>
       <category>example code</category>
-      <category>data cleaning]</category>
+      <category>data cleaning</category>
       <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-18-reading-in-tabular-data</guid>
       <pubDate>Wed, 18 Aug 2021 00:00:00 +0000</pubDate>
     </item>
@@ -50,6 +50,15 @@ the advanced data sets.</description>
       <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-18-sathvikirisdatahw2</guid>
       <pubDate>Wed, 18 Aug 2021 00:00:00 +0000</pubDate>
       <media:content url="https://mrolfe.github.io/DACSS601August2021/posts/2021-08-18-sathvikirisdatahw2/sathvik_iris_data_hw2_files/figure-html5/unnamed-chunk-6-1.png" medium="image" type="image/png" width="1248" height="768"/>
+    </item>
+    <item>
+      <title>Ankit_HW2</title>
+      <dc:creator>Ankit Kumar</dc:creator>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-18-ankithw2</link>
+      <description>A short description of the IRIS dataset.</description>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-18-ankithw2</guid>
+      <pubDate>Wed, 18 Aug 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://mrolfe.github.io/DACSS601August2021/posts/2021-08-18-ankithw2/ankithw2_files/figure-html5/unnamed-chunk-4-1.png" medium="image" type="image/png" width="1248" height="768"/>
     </item>
     <item>
       <title>Railroad Employment data</title>

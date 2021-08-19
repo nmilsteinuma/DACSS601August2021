@@ -1,13 +1,13 @@
 ---
-title: "Ankit_HW2"
+title: Ankit_HW2
 description: |
   A short description of the IRIS dataset.
 author: Ankit Kumar
 date: 08-18-2021
 output:
   distill::distill_article:
-    self_contained: false
-draft: true
+    self_contained: no
+draft: yes
 ---
 
 
