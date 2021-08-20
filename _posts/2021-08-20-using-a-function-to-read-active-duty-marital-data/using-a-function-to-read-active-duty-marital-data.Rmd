@@ -44,33 +44,43 @@ We can see a few things from this example sheet. First, we will need to skip 8 o
 
 Our goal is to recover cases that have these 6 (or really 5, if we collapse parent and spouse variables as we don't have complete information) grouping variables to identify the *case* and the single value (count of active duty employees who fall into each of the resulting subcategories.)
 
-Looking back at the original excel sheet, we can see that we will need to not just skip the top rows, we will also need to delete several columns, and also rename variables in order to make it easy to separate out the three pieces of information contained in the column names. First, I create a vector with column names (to make it easier to reuse later in the functional programming) then I read in the data and inspect it to see if the columns worked as intended.
+Looking back at the original excel sheet, we can see that we will need to not just skip the top rows, we will also need to delete several columns, and also rename variables in order to make it easy to separate out the three pieces of information contained in the column names. First, I create a vector with column names (to make it easier to reuse later in the functional programming), then I read in the data and inspect it to see if the columns worked as intended.
 
 ```{r, message=FALSE}
-marital <-c("d", "payGrade_payLevel",
-            "single_nokids_male", "single_nokids_female", "d",
-            "single_kids_male", "single_kids_female", "d",
-            "married_military_male", "married_military_female", "d",
-            "married_civilian_male", "married_civilian_female", "d",
-            rep("d", 3))
+col_names_all <- c(" ", "pay_grade","single_withoutchildren_male",
+              "single_withoutchildren_female",
+              "single_withoutchildren_total",
+              "single_withchildren_male",
+              "single_withchildren_female",
+              "single_withchildren_total",
+              "married_jointservice_male",
+              "married_jointservice_female",
+              "married_jointservice_total",
+              "married_civilian_female",
+              "married_civilian_male",
+              "married_civilian_total",
+              "married_male_total",
+              "married_female_total",
+              "married_total_total")
 read_excel("../../_data/ActiveDuty_MaritalStatus.xls", 
            skip=8,
            col_names = marital
            )
 ```
+  
 I can see that the variable names worked well, so this time I will read in the data and omit the original header row, and also filter out the various "TOTAL" rows that we don't need to keep.
-
-```{r, message=FALSE}
-military<-read_excel("../../_data/ActiveDuty_MaritalStatus.xls", 
-           skip=9,
-           col_names = marital
-           )%>%
-  select(!starts_with("d"))%>%
-  filter(str_detect(payGrade_payLevel, "TOTAL", negate=TRUE))
-military
-```
-
+  
 It looks like this worked well! Now we just need to pivot_longer with 3 columns (similar to what we did in the Tabular Data example). Then we will separate out the information in the `payGrade_payLevel` variable and do a quick mutate to make paygrade easier to remember.
+
+Now, let's get the names of the excel sheets, using `readxl`'s `excel_sheets()` function.
+  
+```{r, message=FALSE}
+sheets <- excel_sheets(file_path)
+sheets
+```
+  
+  
+  
 
 ```{r}
 military_long <-military %>%
@@ -95,27 +105,31 @@ This all looks like it works well. So now we will go on to creating a function w
 We will call our new function `read_military`, and we will basically use the exact same commands as above. The big difference is that we will have a placeholder name (or argument) for the data sheet that will be passed to the new function.
 
 ```{r}
-read_military<-function(sheet_name){
-  read_excel("../../_data/ActiveDuty_MaritalStatus.xls", 
+read_military <- function(sheet_name){
+  data <- read_excel(path = `file_path`,
              sheet = sheet_name,
-             skip=9,
-             col_names = marital
-             )%>%
-  mutate("branch"=sheet_name) %>%
-  select(!starts_with("d"))%>%
-  filter(str_detect(payGrade_payLevel, "TOTAL", negate=TRUE))%>%
-  pivot_longer(cols = contains(c("male", "female")),
-               names_to = c("Marital", "Other", "Gender"),
-               names_sep = "_",
-               values_to = "count")%>%
-  separate(payGrade_payLevel, 
-           into = c("payGrade", "payLevel"),
-           sep="-")%>%
-  mutate(payGrade = case_when(
-    payGrade == "E" ~ "Enlisted",
-    payGrade == "O" ~ "Officer",
-    payGrade == "W" ~ "Warrant Officer"
-  ))
+             trim_ws = TRUE,
+             col_names = col_names_all,
+             skip=9) %>% 
+    mutate("branch"=sheet_name) %>%
+    select(-c(` `)) %>% # immediately remove out blank column
+    select(c(pay_grade,!contains("total"))) %>% # remove columns with the word total
+    filter(str_detect(pay_grade, regex("total",ignore_case = TRUE),negate = T)) %>%
+    pivot_longer(cols = !contains(c("pay_grade","branch")), # these columns can remain as is
+               names_to = "status", values_to = "count") %>% 
+    separate(col=pay_grade, into=c("enlisted","pay_grade"),
+             sep="-") %>% 
+    separate(col=status, into = c("relationship", "family_status","gender"),
+           sep = "_") %>%
+    mutate(
+      enlisted=
+        case_when(
+          enlisted=="E" ~ "Enlisted",
+          enlisted=="O" ~ "Officer",
+          enlisted=="W" ~ "Warrant Officer"
+        )
+    )
+  return(data)
 }
 
 ```
@@ -123,9 +137,6 @@ read_military<-function(sheet_name){
 We now have a function that is customized to read in the mmilitary active duty marital status sheets. We just need to use purrr - a library or package that is part of tidyverse but which may need to be installed and loaded on its own - to iterate through the list of sheets in the workbook.
 
 ```{r}
-excel_sheets("../../_data/ActiveDuty_MaritalStatus.xls")
-
-map_dfr(
-  excel_sheets("../../_data/ActiveDuty_MaritalStatus.xls")[2:5],
-  read_military)
+data_list <- purrr::map(sheets, read_mar_sheets)
+data_list
 ```
