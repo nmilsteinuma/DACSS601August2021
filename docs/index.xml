@@ -12,7 +12,18 @@
       <link>https://mrolfe.github.io/DACSS601August2021/</link>
     </image>
     <generator>Distill</generator>
-    <lastBuildDate>Thu, 19 Aug 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 20 Aug 2021 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Using A Function to Read Active Duty Marital Data</title>
+      <dc:creator>Sean Conway and Meredith Rolfe</dc:creator>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-20-using-a-function-to-read-active-duty-marital-data</link>
+      <description>This is the example code to use a new custom function to read in multiple sheets of data about Active Duty members of the military and marital status.</description>
+      <category>example code</category>
+      <category>cleaning data</category>
+      <category>programming functions</category>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-20-using-a-function-to-read-active-duty-marital-data</guid>
+      <pubDate>Fri, 20 Aug 2021 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>RAILROAD-COUNTY-TRACY</title>
       <dc:creator>Erin-Tracy</dc:creator>
@@ -135,6 +146,17 @@ the advanced data sets.</description>
       <pubDate>Mon, 16 Aug 2021 00:00:00 +0000</pubDate>
     </item>
     <item>
+      <title>Saulo's Homeworks</title>
+      <dc:creator>Saulo DePaula</dc:creator>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-16-saulo-homework-two</link>
+      <description>Feeble attempts at data science.</description>
+      <category>saulo</category>
+      <category>homeworks</category>
+      <category>read data</category>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-16-saulo-homework-two</guid>
+      <pubDate>Mon, 16 Aug 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
       <title>Zoe Hotel Bookings Dataset</title>
       <dc:creator>Zoe Bean</dc:creator>
       <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-15-zoe-hotel-bookings-dataset</link>
@@ -250,16 +272,6 @@ the advanced data sets.</description>
       <pubDate>Wed, 11 Aug 2021 00:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>Post 1 HMWK 1</title>
-      <dc:creator>Annie McGrew</dc:creator>
-      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-post-1-hmwk-1</link>
-      <description>This is my post for the first homework</description>
-      <category>homework 1</category>
-      <category>Annie McGrew</category>
-      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-post-1-hmwk-1</guid>
-      <pubDate>Wed, 11 Aug 2021 00:00:00 +0000</pubDate>
-    </item>
-    <item>
       <title>Jason Wierzbowski - Exploring Eggs</title>
       <dc:creator>Jason Wierzbowski</dc:creator>
       <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-17-jason-wierzbowski-exploring-eggs</link>
@@ -275,6 +287,14 @@ the advanced data sets.</description>
       <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-18-rhyslongeggs</guid>
       <pubDate>Wed, 11 Aug 2021 00:00:00 +0000</pubDate>
       <media:content url="https://mrolfe.github.io/DACSS601August2021/posts/2021-08-18-rhyslongeggs/rhyslongeggs_files/figure-html5/unnamed-chunk-1-1.png" medium="image" type="image/png" width="1248" height="768"/>
+    </item>
+    <item>
+      <title>Saulo Homework One</title>
+      <dc:creator>Saulo DePaula</dc:creator>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-saulo-homework-one</link>
+      <description>A short description of the post.</description>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-saulo-homework-one</guid>
+      <pubDate>Wed, 11 Aug 2021 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>iris</title>

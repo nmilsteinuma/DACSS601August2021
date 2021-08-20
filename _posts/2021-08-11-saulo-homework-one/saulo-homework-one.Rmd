@@ -1,13 +1,13 @@
 ---
-title: "Saulo Homework One"
+title: Saulo Homework One
 description: |
   A short description of the post.
-Saulo DePaula
+author: Saulo DePaula
 date: 08-11-2021
 output:
   distill::distill_article:
-    self_contained: false
-draft: true
+    self_contained: no
+draft: yes
 ---
 
 
