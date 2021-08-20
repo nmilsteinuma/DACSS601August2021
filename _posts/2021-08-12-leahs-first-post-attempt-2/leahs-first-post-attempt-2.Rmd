@@ -1,13 +1,13 @@
 ---
-title: "Leah's first post: Attempt 4"
+title: "Leah's first post: Attempt 2"
 description: |
   My first blog post.
 author:
-  Leah Dion
+  -Leah Dion
 date: 08-12-2021
 categories:
-  ruminating
-  random
+  -ruminating
+  -random
 output:
   distill::distill_article:
     self_contained: false
@@ -32,13 +32,13 @@ Below is a scatter plot of 250 randomly generated data points.
 
 ```{r setup, include=TRUE}
 knitr::opts_chunk$set(echo = TRUE)
-#set seed to reproduce results
+library(tidyverse)
 set.seed(327)
-#randomly generate 250 int from 1-100
-X <- sample.int(100, 250, replace=TRUE) 
-#randomly generate 250 int from 1-100
+X <- sample.int(100, 250, replace=TRUE)
 Y <- sample.int(100, 250, replace=TRUE)
-#scatter plot of X, Y
 plot(X, Y, xlab="X Samples", ylab="Y Samples",
      pch = 16, col = "red")
 ```
+
+
+

@@ -1,13 +1,13 @@
 ---
-title: "Leah's first post: Attempt 4"
+title: "Leah's first post: Attempt 3"
 description: |
   My first blog post.
 author:
   Leah Dion
 date: 08-12-2021
 categories:
-  ruminating
-  random
+  .ruminating
+  .random
 output:
   distill::distill_article:
     self_contained: false
@@ -42,3 +42,7 @@ Y <- sample.int(100, 250, replace=TRUE)
 plot(X, Y, xlab="X Samples", ylab="Y Samples",
      pch = 16, col = "red")
 ```
+
+
+
+
