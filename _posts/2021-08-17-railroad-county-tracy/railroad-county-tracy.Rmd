@@ -1,0 +1,247 @@
+---
+title: "RAILROAD-COUNTY-TRACY"
+description: Homework assignment 1, 2 and 3. Loading data into an R Markdown file, Railroad Employment Data.
+author: Erin-Tracy
+date: 2021-08-19
+output:
+  distill::distill_article:
+    self_contained: false
+draft: true
+---
+
+**HOMEWORK 2**
+  
+Total Railroad Employment by State and County 2012 breaks down US railroad employment numbers in 2012 by state and county. This dataset explores railroads. 
+
+It has `r nrow(data)` 2930 observations and `r ncol(data)`3 variables.
+
+The three variables are state, county and total employees. I chose to specifically study counties with a very large number of railroad employees. Separately, I also looked into railroad employee numbers just in the New England states.  
+
+Source
+
+The dataset is sourced from (https://catalog.data.gov/dataset/total-railroad-employment-by-state-and-county-2012/resource/5a0b2831-23b9-4ce9-82e9-87a7d8f2c5d8)
+
+*For now, Echo is TRUE, for final version change to FALSE*
+```{r setup, include=TRUE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library("tidyverse")
+library("readr")
+library("ggplot2")
+library("dplyr")
+knitr::opts_chunk$set(fig.width = 5, fig.asp = 1/3)
+
+```
+
+**HOMEWORK 1**
+*Here I am reading in my CSV file.*
+```{r}
+data<-read.csv("../../_data/railroad_2012_clean_county.csv")
+
+#Head
+head(data)
+#Tail
+tail(data)
+#Dimensions
+dim(data)
+#Column Names
+colnames(data)
+
+```
+
+
+
+**HOMEWORK 3**
+
+*Experimenting with Data Transformation*
+
+Initially I didn't understand this data. I thought that running the count code by county would return to me the number of railroads in each county. Then I reread the description about what this dataset is and realized it's not about number of railroads, just number of railroad employees and their geographic location. The code count(data,county) is actually particularly useless because all it does is return the number of times that a county name repeats itself across the country. For example, 12 different states have an "Adams County" that has Railroad employees. 
+
+I'm keeping some of the less useful code here for practice, hopefully with an accurate description of what it actually is. I did not run count(data,county) since it takes up a lot of space. 
+
+```{r}
+#count(data,county)
+
+#Count of Counties by State that have Railroad Employees
+count(data,state)
+
+#Among Counties with Railroad Employees, what is the average number of employees in each county 
+summarise(data,avg=mean(total_employees))
+
+#Among Counties with Railroad Employees, what is the average number of employees in each county that has railroad employees, by state
+data %>%
+  group_by(state) %>%
+  summarise(avg=mean(total_employees))
+
+```
+
+**Experimenting with prop.table**
+*From this data I learned that just under 2% of railroad employees in the US (and the included Canadian county) are in Colorado.* 
+```{r}
+#Distribution of Railroad Employees across the US (%)
+data%>%
+  select(state)%>%
+  table()%>%
+  prop.table()*100
+```
+
+**Experimenting with Filter and Arrange**
+*I created a subset of data that includes counties that have 1000 or more railroad employees. I named it large_railroadcounties. There are 27 counties with 1000 or more railroad employees.*
+```{r}
+#Filter out counties that have 1000 or more railroad employees
+filter(data, total_employees>=1000)
+
+#Reassign large railroad counties
+large_railroadcounties<- filter(data,total_employees>=1000)
+
+#Head
+head(large_railroadcounties)
+
+#Count
+count(large_railroadcounties)
+
+#Arrange by Total Employees 
+arrange(large_railroadcounties, desc(total_employees), state, county)
+
+```
+
+**Experimenting with Select**
+*These are the counties and states in which there are 1000 or more railroad employees in 1 county.*
+```{r}
+select(large_railroadcounties,"state", "county")
+```
+**Experimenting with Filter, Vector, Piping, and Group by**
+```{r}
+#Created subset of data that is just New England states, rename that group "new_england"
+new_england <- filter(data, state %in% c("NH", "VT", "CT", "MA", "RI", "ME"))
+
+#Among New England Counties with Railroad Employees, what is the average number of employees in each county 
+summarise(new_england, avg=mean(total_employees))
+
+#Count of New England Counties by State that have Railroad Employees
+count(new_england,state)
+
+#Among New England Counties with Railroad Employees, what is the average number of employees in each county that has railroad employees, by state
+new_england %>%
+  group_by(state) %>%
+  summarise(avg=mean(total_employees))
+
+```
+
+**Experimenting with Advanced Functions**
+*Working with Renaming and Pivot_longer. I want to get more familiar with pivot longer, but I don't think there are enough variables in this dataset to really experiment with it.* 
+```{r}
+#rename
+data<-rename(data,employees = total_employees)
+colnames(data)
+
+#new_england<-rename(new_england,employees = total_employees)
+colnames(new_england)
+
+#relocate()
+
+#across()/c_across()
+
+#pivot_longer()/pivot_wider()
+#results are lengthy and not useful
+#data%>%
+  #pivot_longer(cols=employees,
+               #names_to="Type",
+               #values_to="numberemployees")
+            
+#purrr::map()
+
+#lapply()
+
+```
+
+**Experimenting with Advanced Functions Cont.**
+```{r}
+#case_when()
+#Assign the words Large, medium and small to specific numeric values for number of employees
+data<-data%>%
+  mutate(Railroad_size = case_when(
+         employees >= 1000 ~ "Large",
+         employees >= 500 & employees < 1000 ~ "Medium",
+         employees < 500 ~ "Small"))
+
+#See how many counties from full dataset have a small, medium and large amount of railroad employees
+table(select(data, Railroad_size))
+
+#See how many counties in New England have a small, medium or large amount of railroad employees
+new_england<-new_england%>%
+  mutate(Railroad_size = case_when(
+         total_employees >= 1000 ~ "Large",
+         total_employees >= 500 & total_employees < 1000 ~ "Medium",
+         total_employees < 500 ~ "Small"))
+
+table(select(new_england, Railroad_size))
+
+
+#Use crosstabs to which new england state have counties with a small, medium and large amount of railroad employees
+xtabs(~state+ Railroad_size,new_england)
+
+```
+
+
+**Experimenting with ggplot, boxplot, labels**
+*Connecticut has an outlier. Connecticut has 1 county with an especially large number of railroad employees.* 
+```{r}
+#Boxplot for New England State Counties
+ggplot(new_england,aes(state,total_employees))+geom_boxplot()+
+labs(title = "Railroad Employee County Counts by State, NE", y = "Total Employees", x = "State") 
+```
+*Same data, just shown differently*
+```{r}
+#Geompoints for New England State Counties
+ggplot(new_england,aes(state,total_employees))+
+  geom_point()+
+  geom_smooth()+
+  labs(title = "Railroad Employee County Counts by State, NE", y = "Total Employees", x = "State") 
+
+```
+**Experimenting with ggplot and fill**
+
+I would love to use fill, but it doesn't make sense for this dataset. It doesn't make sense because my third variable (county) is basically different for every state. This would be much more useful if that variable was something that had valuables that were applicable to all states. 
+
+```{r}
+#Geomplot for New England States with County filled (Two Ways)
+#ggplot(new_england,aes(state, fill=county))+ geom_bar()+
+  #theme_bw()+
+  #labs(title="New England States Railroad Employee Counts by State and County", y="Number of Employees", x= "State")
+
+#ggplot(data=new_england)+
+  #geom_bar(mapping=aes(x=state, fill=county))
+  #theme_bw()+
+  #labs(title="New England States Railroad Employee Counts by State and County", y="Number of Employees", x= "State")
+
+```
+
+
+**Experimenting with geompoint, with different dataset** 
+
+*Illinois has 1 county that has over 8000 railroad employees*
+```{r}
+ggplot(data=large_railroadcounties)+
+  geom_point(mapping=aes(x=state, y=total_employees))+
+  labs(title = "States with counties with 1000+ Railroad Employees", y = "Total Employees", x = "State") 
+
+```
+
+
+
+```
+
+Saving this code shared by Larri
+#blackturnout <- blackturnout %>%
+  #mutate(candidateRename = recode(candidate, `1` = "co-ethnic", `0` = "not co-ethnic"))
+
+
+
+Distill is a publication format for scientific and technical writing, native to the web.
+
+Learn more about using Distill at <https://rstudio.github.io/distill>.
+
+
+
+
