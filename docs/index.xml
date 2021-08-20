@@ -23,6 +23,15 @@
       <media:content url="https://mrolfe.github.io/DACSS601August2021/posts/2021-08-17-railroad-county-tracy/railroad-county-tracy_files/figure-html5/unnamed-chunk-9-1.png" medium="image" type="image/png" width="960" height="320"/>
     </item>
     <item>
+      <title>Ankit_HW2</title>
+      <dc:creator>Ankit Kumar</dc:creator>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-18-ankithw2</link>
+      <description>A short description of the IRIS dataset.</description>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-18-ankithw2</guid>
+      <pubDate>Wed, 18 Aug 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://mrolfe.github.io/DACSS601August2021/posts/2021-08-18-ankithw2/ankithw2_files/figure-html5/unnamed-chunk-4-1.png" medium="image" type="image/png" width="1248" height="768"/>
+    </item>
+    <item>
       <title>Interest Rate, Inflation, and Unemployment rates</title>
       <dc:creator>Ben Lewis</dc:creator>
       <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-18-interest-rate-inflation-and-unemployment-rates</link>
@@ -59,15 +68,6 @@ the advanced data sets.</description>
       <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-18-sathvikirisdatahw2</guid>
       <pubDate>Wed, 18 Aug 2021 00:00:00 +0000</pubDate>
       <media:content url="https://mrolfe.github.io/DACSS601August2021/posts/2021-08-18-sathvikirisdatahw2/sathvik_iris_data_hw2_files/figure-html5/unnamed-chunk-6-1.png" medium="image" type="image/png" width="1248" height="768"/>
-    </item>
-    <item>
-      <title>Ankit_HW2</title>
-      <dc:creator>Ankit Kumar</dc:creator>
-      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-18-ankithw2</link>
-      <description>A short description of the IRIS dataset.</description>
-      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-18-ankithw2</guid>
-      <pubDate>Wed, 18 Aug 2021 00:00:00 +0000</pubDate>
-      <media:content url="https://mrolfe.github.io/DACSS601August2021/posts/2021-08-18-ankithw2/ankithw2_files/figure-html5/unnamed-chunk-4-1.png" medium="image" type="image/png" width="1248" height="768"/>
     </item>
     <item>
       <title>Railroad Employment data</title>
@@ -148,6 +148,14 @@ the advanced data sets.</description>
       <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-13-ishas-blog-post</link>
       <description>Running Blog Post for Course Homeworks</description>
       <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-13-ishas-blog-post</guid>
+      <pubDate>Fri, 13 Aug 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Australian Marriage</title>
+      <dc:creator>Nathaniel Ross</dc:creator>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-19-nathanielreadindata</link>
+      <description>Statistics About Australian Marriage</description>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-19-nathanielreadindata</guid>
       <pubDate>Fri, 13 Aug 2021 00:00:00 +0000</pubDate>
     </item>
     <item>
