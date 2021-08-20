@@ -23,6 +23,7 @@
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
@@ -2408,8 +2409,8 @@ d-appendix d-footnote-list a.footnote-backlink {
            col_names <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Town"</span>, <span class='st'>"Yes"</span>, <span class='st'>"d"</span>, <span class='st'>"No"</span>, <span class='fu'><a href='https://rdrr.io/r/base/rep.html'>rep</a></span><span class='op'>(</span><span class='st'>"d"</span>, <span class='fl'>6</span><span class='op'>)</span>, <span class='st'>"Illegible"</span>, <span class='st'>"d"</span>, <span class='st'>"No Response"</span>, <span class='fu'><a href='https://rdrr.io/r/base/rep.html'>rep</a></span><span class='op'>(</span><span class='st'>"d"</span>, <span class='fl'>3</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span><span class='op'>%&gt;%</span>
   <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='op'>!</span><span class='fu'><a href='https://tidyselect.r-lib.org/reference/starts_with.html'>starts_with</a></span><span class='op'>(</span><span class='st'>"d"</span><span class='op'>)</span><span class='op'>)</span><span class='op'>%&gt;%</span>
   <span class='fu'>drop_na</span><span class='op'>(</span><span class='va'>Town</span><span class='op'>)</span><span class='op'>%&gt;%</span>
-  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='op'>!</span><span class='fu'>str_detect</span><span class='op'>(</span><span class='va'>Town</span>, <span class='st'>"(Total)"</span><span class='op'>)</span><span class='op'>)</span><span class='op'>%&gt;%</span>
-  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='op'>!</span><span class='fu'>str_starts</span><span class='op'>(</span><span class='va'>Town</span>, <span class='st'>"\\("</span><span class='op'>)</span><span class='op'>)</span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='op'>!</span><span class='fu'><a href='https://stringr.tidyverse.org/reference/str_detect.html'>str_detect</a></span><span class='op'>(</span><span class='va'>Town</span>, <span class='st'>"(Total)"</span><span class='op'>)</span><span class='op'>)</span><span class='op'>%&gt;%</span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='op'>!</span><span class='fu'><a href='https://stringr.tidyverse.org/reference/str_starts.html'>str_starts</a></span><span class='op'>(</span><span class='va'>Town</span>, <span class='st'>"\\("</span><span class='op'>)</span><span class='op'>)</span>
 </code></pre>
 </div>
 </div>
@@ -2419,7 +2420,7 @@ d-appendix d-footnote-list a.footnote-backlink {
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>votes</span><span class='op'>&lt;-</span> <span class='va'>votes</span><span class='op'>%&gt;%</span>
   <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>Divisions <span class='op'>=</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/case_when.html'>case_when</a></span><span class='op'>(</span>
-    <span class='fu'>str_ends</span><span class='op'>(</span><span class='va'>Town</span>, <span class='st'>"Divisions"</span><span class='op'>)</span> <span class='op'>~</span> <span class='va'>Town</span>,
+    <span class='fu'><a href='https://stringr.tidyverse.org/reference/str_starts.html'>str_ends</a></span><span class='op'>(</span><span class='va'>Town</span>, <span class='st'>"Divisions"</span><span class='op'>)</span> <span class='op'>~</span> <span class='va'>Town</span>,
     <span class='cn'>TRUE</span> <span class='op'>~</span> <span class='cn'>NA_character_</span>
   <span class='op'>)</span><span class='op'>)</span>
 
@@ -2427,7 +2428,7 @@ d-appendix d-footnote-list a.footnote-backlink {
   <span class='va'>votes</span><span class='op'>$</span><span class='va'>Divisions</span><span class='op'>[</span><span class='va'>i</span><span class='op'>]</span><span class='op'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/base/ifelse.html'>ifelse</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/NA.html'>is.na</a></span><span class='op'>(</span><span class='va'>votes</span><span class='op'>$</span><span class='va'>Divisions</span><span class='op'>[</span><span class='va'>i</span><span class='op'>]</span><span class='op'>)</span>,<span class='va'>votes</span><span class='op'>$</span><span class='va'>Divisions</span><span class='op'>[</span><span class='va'>i</span><span class='op'>-</span><span class='fl'>1</span><span class='op'>]</span>, <span class='va'>votes</span><span class='op'>$</span><span class='va'>Divisions</span><span class='op'>[</span><span class='va'>i</span><span class='op'>]</span><span class='op'>)</span>
 <span class='op'>}</span>
 
-<span class='va'>votes</span><span class='op'>&lt;-</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>votes</span>,<span class='op'>!</span><span class='fu'>str_detect</span><span class='op'>(</span><span class='va'>Town</span>, <span class='st'>"Divisions|Australia"</span><span class='op'>)</span><span class='op'>)</span>
+<span class='va'>votes</span><span class='op'>&lt;-</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>votes</span>,<span class='op'>!</span><span class='fu'><a href='https://stringr.tidyverse.org/reference/str_detect.html'>str_detect</a></span><span class='op'>(</span><span class='va'>Town</span>, <span class='st'>"Divisions|Australia"</span><span class='op'>)</span><span class='op'>)</span>
 </code></pre>
 </div>
 </div>

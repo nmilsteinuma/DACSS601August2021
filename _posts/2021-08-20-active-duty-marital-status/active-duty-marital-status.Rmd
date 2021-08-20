@@ -1,13 +1,13 @@
 ---
-title: "Active Duty Marital Status"
+title: Active Duty Marital Status
 description: |
   A short description of the post.
-Abhinav Kumar
+name: Abhinav Kumar
 date: 08-20-2021
 output:
   distill::distill_article:
-    self_contained: false
-draft: true
+    self_contained: no
+draft: yes
 ---
 
 

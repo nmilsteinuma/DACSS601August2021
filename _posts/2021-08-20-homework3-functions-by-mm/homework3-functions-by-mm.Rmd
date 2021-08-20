@@ -1,13 +1,13 @@
 ---
-title: "Homework3: Functions by MM"
+title: 'Homework3: Functions by MM'
 description: |
   A short description of the post.
-Michelle Manning
+author: Michelle Manning
 date: 08-20-2021
 output:
   distill::distill_article:
-    self_contained: false
-draft: true
+    self_contained: no
+draft: yes
 ---
 First, I loaded in the packages and files I needed.I am using the poultry data set for this project.
 
@@ -15,7 +15,7 @@ First, I loaded in the packages and files I needed.I am using the poultry data s
 library(blogbuilder)
 library(distill)
 library(tidyverse)
-poultry <- read.csv(file="poultry_tidy.csv")
+poultry <- read.csv(file="../../_data/poultry_tidy.csv")
 library(usethis)
 ```
 

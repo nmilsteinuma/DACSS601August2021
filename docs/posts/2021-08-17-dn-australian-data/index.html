@@ -23,6 +23,7 @@
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
@@ -2404,7 +2405,7 @@ d-appendix d-footnote-list a.footnote-backlink {
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>base_marriage_data</span> <span class='op'>&lt;-</span> <span class='va'>base_marriage_data</span><span class='op'>%&gt;%</span>
   <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>County <span class='op'>=</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/case_when.html'>case_when</a></span><span class='op'>(</span>
-    <span class='fu'>str_ends</span><span class='op'>(</span><span class='va'>Town</span>, <span class='st'>"Divisions"</span><span class='op'>)</span> <span class='op'>~</span> <span class='va'>Town</span>, 
+    <span class='fu'><a href='https://stringr.tidyverse.org/reference/str_starts.html'>str_ends</a></span><span class='op'>(</span><span class='va'>Town</span>, <span class='st'>"Divisions"</span><span class='op'>)</span> <span class='op'>~</span> <span class='va'>Town</span>, 
     <span class='cn'>TRUE</span> <span class='op'>~</span> <span class='cn'>NA_character_</span><span class='op'>)</span><span class='op'>)</span><span class='op'>%&gt;%</span>
 <span class='co'># Because I cannot get the .before or .after arguments to work with mutate(), I am using the relocate() function to move the County column before the Town column so we can maintain a descending order of complexity in governmental organizations</span>
   <span class='fu'><a href='https://dplyr.tidyverse.org/reference/relocate.html'>relocate</a></span><span class='op'>(</span><span class='va'>County</span>, .before <span class='op'>=</span> <span class='va'>Town</span><span class='op'>)</span>
@@ -2423,15 +2424,15 @@ d-appendix d-footnote-list a.footnote-backlink {
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>tidier_marriage_data</span> <span class='op'>&lt;-</span> <span class='va'>tidy_marriage_data</span><span class='op'>%&gt;%</span><span class='fu'>drop_na</span><span class='op'>(</span><span class='va'>Town</span>, <span class='va'>Yes</span><span class='op'>)</span><span class='op'>%&gt;%</span>
-  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='op'>!</span><span class='fu'>str_detect</span><span class='op'>(</span><span class='va'>Town</span>, <span class='st'>"(Total)"</span><span class='op'>)</span><span class='op'>)</span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='op'>!</span><span class='fu'><a href='https://stringr.tidyverse.org/reference/str_detect.html'>str_detect</a></span><span class='op'>(</span><span class='va'>Town</span>, <span class='st'>"(Total)"</span><span class='op'>)</span><span class='op'>)</span>
 </code></pre>
 </div>
 </div>
 <p>As an extra step to tidy the data, we can remove “Divisions” in the County column as this variable is now describing the county itself, not the child-towns.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>tidiest_marriage_data</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span><span class='va'>tidier_marriage_data</span>, County <span class='op'>=</span> <span class='fu'>str_remove</span><span class='op'>(</span><span class='va'>County</span>, <span class='st'>" Divisions"</span><span class='op'>)</span><span class='op'>)</span><span class='op'>%&gt;%</span>
-  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>Town <span class='op'>=</span> <span class='fu'>str_remove</span><span class='op'>(</span><span class='va'>Town</span>, <span class='st'>"\\([cde]\\)"</span><span class='op'>)</span><span class='op'>)</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>tidiest_marriage_data</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span><span class='va'>tidier_marriage_data</span>, County <span class='op'>=</span> <span class='fu'><a href='https://stringr.tidyverse.org/reference/str_remove.html'>str_remove</a></span><span class='op'>(</span><span class='va'>County</span>, <span class='st'>" Divisions"</span><span class='op'>)</span><span class='op'>)</span><span class='op'>%&gt;%</span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>Town <span class='op'>=</span> <span class='fu'><a href='https://stringr.tidyverse.org/reference/str_remove.html'>str_remove</a></span><span class='op'>(</span><span class='va'>Town</span>, <span class='st'>"\\([cde]\\)"</span><span class='op'>)</span><span class='op'>)</span>
   <span class='fu'>view</span><span class='op'>(</span><span class='va'>tidiest_marriage_data</span><span class='op'>)</span>
 </code></pre>
 </div>
