@@ -1,11 +1,14 @@
 ---
 title: Reading in Tabular Data
 description: |
-  A short description of the post.
+  Two examples of reading in Excel Tables with
+  the advanced data sets.
 author:
 - name: Meredith Rolfe
-  url: {}
 date: 08-18-2021
+categories:
+- example code
+- data cleaning
 output:
   distill::distill_article:
     self_contained: no

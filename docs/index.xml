@@ -26,7 +26,10 @@
       <title>Reading in Tabular Data</title>
       <dc:creator>Meredith Rolfe</dc:creator>
       <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-18-reading-in-tabular-data</link>
-      <description>A short description of the post.</description>
+      <description>Two examples of reading in Excel Tables with
+the advanced data sets.</description>
+      <category>example code</category>
+      <category>data cleaning</category>
       <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-18-reading-in-tabular-data</guid>
       <pubDate>Wed, 18 Aug 2021 00:00:00 +0000</pubDate>
     </item>
@@ -49,6 +52,15 @@
       <media:content url="https://mrolfe.github.io/DACSS601August2021/posts/2021-08-18-sathvikirisdatahw2/sathvik_iris_data_hw2_files/figure-html5/unnamed-chunk-6-1.png" medium="image" type="image/png" width="1248" height="768"/>
     </item>
     <item>
+      <title>Ankit_HW2</title>
+      <dc:creator>Ankit Kumar</dc:creator>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-18-ankithw2</link>
+      <description>A short description of the IRIS dataset.</description>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-18-ankithw2</guid>
+      <pubDate>Wed, 18 Aug 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://mrolfe.github.io/DACSS601August2021/posts/2021-08-18-ankithw2/ankithw2_files/figure-html5/unnamed-chunk-4-1.png" medium="image" type="image/png" width="1248" height="768"/>
+    </item>
+    <item>
       <title>Railroad Employment data</title>
       <dc:creator>Mohit-Arora</dc:creator>
       <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-16-railroad-employment-data</link>
@@ -69,6 +81,8 @@
       <dc:creator>Meredith Rolfe</dc:creator>
       <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-17-example-code-for-pivot-longer</link>
       <description>I'm sharing some example code for pivot_longer using the eggs data. Enjoy!</description>
+      <category>example code</category>
+      <category>data cleaning</category>
       <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-17-example-code-for-pivot-longer</guid>
       <pubDate>Tue, 17 Aug 2021 00:00:00 +0000</pubDate>
     </item>
