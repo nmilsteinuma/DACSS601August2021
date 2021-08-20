@@ -12,7 +12,16 @@
       <link>https://mrolfe.github.io/DACSS601August2021/</link>
     </image>
     <generator>Distill</generator>
-    <lastBuildDate>Wed, 18 Aug 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 19 Aug 2021 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>RAILROAD-COUNTY-TRACY</title>
+      <dc:creator>Erin-Tracy</dc:creator>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-17-railroad-county-tracy</link>
+      <description>Homework assignment 1, 2 and 3. Loading data into an R Markdown file, Railroad Employment Data.</description>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-17-railroad-county-tracy</guid>
+      <pubDate>Thu, 19 Aug 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://mrolfe.github.io/DACSS601August2021/posts/2021-08-17-railroad-county-tracy/railroad-county-tracy_files/figure-html5/unnamed-chunk-9-1.png" medium="image" type="image/png" width="960" height="320"/>
+    </item>
     <item>
       <title>Interest Rate, Inflation, and Unemployment rates</title>
       <dc:creator>Ben Lewis</dc:creator>
@@ -116,17 +125,6 @@ the advanced data sets.</description>
       <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-17-noahhw3</guid>
       <pubDate>Tue, 17 Aug 2021 00:00:00 +0000</pubDate>
       <media:content url="https://mrolfe.github.io/DACSS601August2021/posts/2021-08-17-noahhw3/noahhw3_files/figure-html5/unnamed-chunk-6-1.png" medium="image" type="image/png" width="1248" height="768"/>
-    </item>
-    <item>
-      <title>RAILROAD-COUNTY-TRACY</title>
-      <dc:creator>Erin-Tracy</dc:creator>
-      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-17-railroad-county-tracy</link>
-      <description>**HOMEWORK 2**
-
-**Data breaking down US railroad employment numbers in 2012 by state and county. Data includes three variables: state, county and total employees. 2930 observations. Total number of employees ranges from 1 to over 3000. Specifically analyzing two subsets of data: large railroads (1000+ employees) and separately railroads in New England.**</description>
-      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-17-railroad-county-tracy</guid>
-      <pubDate>Tue, 17 Aug 2021 00:00:00 +0000</pubDate>
-      <media:content url="https://mrolfe.github.io/DACSS601August2021/posts/2021-08-17-railroad-county-tracy/railroad-county-tracy_files/figure-html5/unnamed-chunk-8-1.png" medium="image" type="image/png" width="960" height="320"/>
     </item>
     <item>
       <title>Hanae- Homework 3</title>

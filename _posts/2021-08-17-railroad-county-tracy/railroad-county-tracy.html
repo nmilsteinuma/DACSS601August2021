@@ -45,7 +45,7 @@
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","draft"]}},"value":[{"type":"character","attributes":{},"value":["RAILROAD-COUNTY-TRACY"]},{"type":"character","attributes":{},"value":["Homework assignment 1, 2 and 3. Loading data into an R Markdown file, Railroad Employment Data."]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Erin-Tracy"]}]}]},{"type":"character","attributes":{},"value":["2021-08-19"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"logical","attributes":{},"value":[true]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","draft"]}},"value":[{"type":"character","attributes":{},"value":["RAILROAD-COUNTY-TRACY"]},{"type":"character","attributes":{},"value":["Homework assignment 1, 2 and 3. Loading data into an R Markdown file, Railroad Employment Data."]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Erin-Tracy"]}]}]},{"type":"character","attributes":{},"value":["2021-08-19"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"logical","attributes":{},"value":[false]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   
@@ -1368,7 +1368,7 @@
   </script>
 
   <!--/radix_placeholder_distill-->
-  <script src="railroad-county-tracy_files/header-attrs-2.9/header-attrs.js"></script>
+  <script src="railroad-county-tracy_files/header-attrs-2.10/header-attrs.js"></script>
   <script src="railroad-county-tracy_files/jquery-1.11.3/jquery.min.js"></script>
   <script src="railroad-county-tracy_files/popper-2.6.0/popper.min.js"></script>
   <link href="railroad-county-tracy_files/tippy-6.2.7/tippy.css" rel="stylesheet" />
@@ -1389,7 +1389,7 @@
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"RAILROAD-COUNTY-TRACY","description":"Homework assignment 1, 2 and 3. Loading data into an R Markdown file, Railroad Employment Data.","authors":[{"author":"Erin-Tracy","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-08-19T00:00:00.000-04:00","citationText":"Erin-Tracy, 2021"}
+{"title":"RAILROAD-COUNTY-TRACY","description":"Homework assignment 1, 2 and 3. Loading data into an R Markdown file, Railroad Employment Data.","authors":[{"author":"Erin-Tracy","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-08-19T00:00:00.000+00:00","citationText":"Erin-Tracy, 2021"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -1415,7 +1415,7 @@
 <div class="d-article">
 <p><strong>HOMEWORK 2</strong></p>
 <p>Total Railroad Employment by State and County 2012 breaks down US railroad employment numbers in 2012 by state and county. This dataset explores railroads.</p>
-<p>It has 2930 observations and 3 variables.</p>
+<p>It has 120 2930 observations and 63 variables.</p>
 <p>The three variables are state, county and total employees. I chose to specifically study counties with a very large number of railroad employees. Separately, I also looked into railroad employee numbers just in the New England states.</p>
 <p>Source</p>
 <p>The dataset is sourced from (<a href="https://catalog.data.gov/dataset/total-railroad-employment-by-state-and-county-2012/resource/5a0b2831-23b9-4ce9-82e9-87a7d8f2c5d8" class="uri">https://catalog.data.gov/dataset/total-railroad-employment-by-state-and-county-2012/resource/5a0b2831-23b9-4ce9-82e9-87a7d8f2c5d8</a>)</p>
@@ -1553,7 +1553,7 @@
   <span class='fu'><a href='https://dplyr.tidyverse.org/reference/summarise.html'>summarise</a></span><span class='op'>(</span>avg<span class='op'>=</span><span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>total_employees</span><span class='op'>)</span><span class='op'>)</span>
 </code></pre>
 </div>
-<pre><code># A tibble: 53 x 2
+<pre><code># A tibble: 53 × 2
    state   avg
    &lt;chr&gt; &lt;dbl&gt;
  1 AE      2  
@@ -1566,7 +1566,7 @@
  8 CO     64.0
  9 CT    324  
 10 DC    279  
-# ... with 43 more rows</code></pre>
+# … with 43 more rows</code></pre>
 </div>
 <strong>Experimenting with prop.table</strong> <em>From this data I learned that just under 2% of railroad employees in the US (and the included Canadian county) are in Colorado.</em>
 <div class="layout-chunk" data-layout="l-body">
@@ -1755,7 +1755,7 @@
   <span class='fu'><a href='https://dplyr.tidyverse.org/reference/summarise.html'>summarise</a></span><span class='op'>(</span>avg<span class='op'>=</span><span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>total_employees</span><span class='op'>)</span><span class='op'>)</span>
 </code></pre>
 </div>
-<pre><code># A tibble: 6 x 2
+<pre><code># A tibble: 6 × 2
   state   avg
   &lt;chr&gt; &lt;dbl&gt;
 1 CT    324  

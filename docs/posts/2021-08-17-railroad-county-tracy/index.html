@@ -18,92 +18,27 @@
  <!--radix_placeholder_import_source-->
  <!--/radix_placeholder_import_source-->
 
-<style type="text/css">code{white-space: pre;}</style>
-<style type="text/css" data-origin="pandoc">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span.al { color: #ad0000; } /* Alert */
-code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { color: #20794d; } /* Attribute */
-code span.bn { color: #ad0000; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007ba5; } /* ControlFlow */
-code span.ch { color: #20794d; } /* Char */
-code span.cn { color: #8f5902; } /* Constant */
-code span.co { color: #5e5e5e; } /* Comment */
-code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
-code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
-code span.dt { color: #ad0000; } /* DataType */
-code span.dv { color: #ad0000; } /* DecVal */
-code span.er { color: #ad0000; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #ad0000; } /* Float */
-code span.fu { color: #4758ab; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #5e5e5e; } /* Information */
-code span.kw { color: #007ba5; } /* Keyword */
-code span.op { color: #5e5e5e; } /* Operator */
-code span.ot { color: #007ba5; } /* Other */
-code span.pp { color: #ad0000; } /* Preprocessor */
-code span.sc { color: #20794d; } /* SpecialChar */
-code span.ss { color: #20794d; } /* SpecialString */
-code span.st { color: #20794d; } /* String */
-code span.va { color: #111111; } /* Variable */
-code span.vs { color: #20794d; } /* VerbatimString */
-code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
-</style>
 
   <!--radix_placeholder_meta_tags-->
 <title>Data Analytics and Computational Social Science: RAILROAD-COUNTY-TRACY</title>
 
-<meta property="description" itemprop="description" content="**HOMEWORK 2**&#10;&#10;**Data breaking down US railroad employment numbers in 2012 by state and county. Data includes three variables: state, county and total employees. 2930 observations. Total number of employees ranges from 1 to over 3000. Specifically analyzing two subsets of data: large railroads (1000+ employees) and separately railroads in New England.**"/>
+<meta property="description" itemprop="description" content="Homework assignment 1, 2 and 3. Loading data into an R Markdown file, Railroad Employment Data."/>
 
 <link rel="canonical" href="https://mrolfe.github.io/DACSS601August2021/posts/2021-08-17-railroad-county-tracy/"/>
 <link rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/"/>
 <link rel="icon" type="image/png" href="../../images/DACSS_Round_Network.png"/>
 
 <!--  https://schema.org/Article -->
-<meta property="article:published" itemprop="datePublished" content="2021-08-17"/>
-<meta property="article:created" itemprop="dateCreated" content="2021-08-17"/>
+<meta property="article:published" itemprop="datePublished" content="2021-08-19"/>
+<meta property="article:created" itemprop="dateCreated" content="2021-08-19"/>
 <meta name="article:author" content="Erin-Tracy"/>
 
 <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
 <meta property="og:title" content="Data Analytics and Computational Social Science: RAILROAD-COUNTY-TRACY"/>
 <meta property="og:type" content="article"/>
-<meta property="og:description" content="**HOMEWORK 2**&#10;&#10;**Data breaking down US railroad employment numbers in 2012 by state and county. Data includes three variables: state, county and total employees. 2930 observations. Total number of employees ranges from 1 to over 3000. Specifically analyzing two subsets of data: large railroads (1000+ employees) and separately railroads in New England.**"/>
+<meta property="og:description" content="Homework assignment 1, 2 and 3. Loading data into an R Markdown file, Railroad Employment Data."/>
 <meta property="og:url" content="https://mrolfe.github.io/DACSS601August2021/posts/2021-08-17-railroad-county-tracy/"/>
-<meta property="og:image" content="https://mrolfe.github.io/DACSS601August2021/posts/2021-08-17-railroad-county-tracy/railroad-county-tracy_files/figure-html5/unnamed-chunk-8-1.png"/>
+<meta property="og:image" content="https://mrolfe.github.io/DACSS601August2021/posts/2021-08-17-railroad-county-tracy/railroad-county-tracy_files/figure-html5/unnamed-chunk-9-1.png"/>
 <meta property="og:image:width" content="960"/>
 <meta property="og:image:height" content="320"/>
 <meta property="og:locale" content="en_US"/>
@@ -112,9 +47,9 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--  https://dev.twitter.com/cards/types/summary -->
 <meta property="twitter:card" content="summary_large_image"/>
 <meta property="twitter:title" content="Data Analytics and Computational Social Science: RAILROAD-COUNTY-TRACY"/>
-<meta property="twitter:description" content="**HOMEWORK 2**&#10;&#10;**Data breaking down US railroad employment numbers in 2012 by state and county. Data includes three variables: state, county and total employees. 2930 observations. Total number of employees ranges from 1 to over 3000. Specifically analyzing two subsets of data: large railroads (1000+ employees) and separately railroads in New England.**"/>
+<meta property="twitter:description" content="Homework assignment 1, 2 and 3. Loading data into an R Markdown file, Railroad Employment Data."/>
 <meta property="twitter:url" content="https://mrolfe.github.io/DACSS601August2021/posts/2021-08-17-railroad-county-tracy/"/>
-<meta property="twitter:image" content="https://mrolfe.github.io/DACSS601August2021/posts/2021-08-17-railroad-county-tracy/railroad-county-tracy_files/figure-html5/unnamed-chunk-8-1.png"/>
+<meta property="twitter:image" content="https://mrolfe.github.io/DACSS601August2021/posts/2021-08-17-railroad-county-tracy/railroad-county-tracy_files/figure-html5/unnamed-chunk-9-1.png"/>
 <meta property="twitter:image:width" content="960"/>
 <meta property="twitter:image:height" content="320"/>
 <meta property="twitter:site" content="@UMassDACSS"/>
@@ -124,19 +59,19 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <meta name="citation_title" content="Data Analytics and Computational Social Science: RAILROAD-COUNTY-TRACY"/>
 <meta name="citation_fulltext_html_url" content="https://mrolfe.github.io/DACSS601August2021/posts/2021-08-17-railroad-county-tracy/"/>
 <meta name="citation_fulltext_world_readable" content=""/>
-<meta name="citation_online_date" content="2021/08/17"/>
-<meta name="citation_publication_date" content="2021/08/17"/>
+<meta name="citation_online_date" content="2021/08/19"/>
+<meta name="citation_publication_date" content="2021/08/19"/>
 <meta name="citation_author" content="Erin-Tracy"/>
 <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
 <script type="text/json" id="radix-rmarkdown-metadata">
-{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["creative_commons","title","description","author","date","output","draft","citation_url","canonical_url"]}},"value":[{"type":"character","attributes":{},"value":["CC BY-NC"]},{"type":"character","attributes":{},"value":["RAILROAD-COUNTY-TRACY"]},{"type":"character","attributes":{},"value":["**HOMEWORK 2**\n\n**Data breaking down US railroad employment numbers in 2012 by state and county. Data includes three variables: state, county and total employees. 2930 observations. Total number of employees ranges from 1 to over 3000. Specifically analyzing two subsets of data: large railroads (1000+ employees) and separately railroads in New England.**"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Erin-Tracy"]}]}]},{"type":"character","attributes":{},"value":["2021-08-17"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"logical","attributes":{},"value":[false]},{"type":"character","attributes":{},"value":["https://mrolfe.github.io/DACSS601August2021/posts/2021-08-17-railroad-county-tracy/"]},{"type":"character","attributes":{},"value":["https://mrolfe.github.io/DACSS601August2021/posts/2021-08-17-railroad-county-tracy/"]}]}
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["creative_commons","title","description","author","date","output","draft","citation_url","canonical_url"]}},"value":[{"type":"character","attributes":{},"value":["CC BY-NC"]},{"type":"character","attributes":{},"value":["RAILROAD-COUNTY-TRACY"]},{"type":"character","attributes":{},"value":["Homework assignment 1, 2 and 3. Loading data into an R Markdown file, Railroad Employment Data."]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Erin-Tracy"]}]}]},{"type":"character","attributes":{},"value":["2021-08-19"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"logical","attributes":{},"value":[false]},{"type":"character","attributes":{},"value":["https://mrolfe.github.io/DACSS601August2021/posts/2021-08-17-railroad-county-tracy/"]},{"type":"character","attributes":{},"value":["https://mrolfe.github.io/DACSS601August2021/posts/2021-08-17-railroad-county-tracy/"]}]}
 </script>
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["railroad-county-tracy_files/anchor-4.2.2/anchor.min.js","railroad-county-tracy_files/bowser-1.9.3/bowser.min.js","railroad-county-tracy_files/distill-2.2.21/template.v2.js","railroad-county-tracy_files/figure-html5/unnamed-chunk-10-1.png","railroad-county-tracy_files/figure-html5/unnamed-chunk-10-2.png","railroad-county-tracy_files/figure-html5/unnamed-chunk-11-1.png","railroad-county-tracy_files/figure-html5/unnamed-chunk-8-1.png","railroad-county-tracy_files/figure-html5/unnamed-chunk-9-1.png","railroad-county-tracy_files/header-attrs-2.10/header-attrs.js","railroad-county-tracy_files/header-attrs-2.9/header-attrs.js","railroad-county-tracy_files/jquery-1.11.3/jquery.min.js","railroad-county-tracy_files/popper-2.6.0/popper.min.js","railroad-county-tracy_files/tippy-6.2.7/tippy-bundle.umd.min.js","railroad-county-tracy_files/tippy-6.2.7/tippy-light-border.css","railroad-county-tracy_files/tippy-6.2.7/tippy.css","railroad-county-tracy_files/tippy-6.2.7/tippy.umd.min.js","railroad-county-tracy_files/webcomponents-2.0.0/webcomponents.js"]}
+  {"type":"character","attributes":{},"value":["railroad-county-tracy_files/anchor-4.2.2/anchor.min.js","railroad-county-tracy_files/bowser-1.9.3/bowser.min.js","railroad-county-tracy_files/distill-2.2.21/template.v2.js","railroad-county-tracy_files/figure-html5/unnamed-chunk-10-1.png","railroad-county-tracy_files/figure-html5/unnamed-chunk-10-2.png","railroad-county-tracy_files/figure-html5/unnamed-chunk-11-1.png","railroad-county-tracy_files/figure-html5/unnamed-chunk-12-1.png","railroad-county-tracy_files/figure-html5/unnamed-chunk-13-1.png","railroad-county-tracy_files/figure-html5/unnamed-chunk-7-1.png","railroad-county-tracy_files/figure-html5/unnamed-chunk-8-1.png","railroad-county-tracy_files/figure-html5/unnamed-chunk-9-1.png","railroad-county-tracy_files/header-attrs-2.9/header-attrs.js","railroad-county-tracy_files/jquery-1.11.3/jquery.min.js","railroad-county-tracy_files/popper-2.6.0/popper.min.js","railroad-county-tracy_files/tippy-6.2.7/tippy-bundle.umd.min.js","railroad-county-tracy_files/tippy-6.2.7/tippy-light-border.css","railroad-county-tracy_files/tippy-6.2.7/tippy.css","railroad-county-tracy_files/tippy-6.2.7/tippy.umd.min.js","railroad-county-tracy_files/webcomponents-2.0.0/webcomponents.js"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 <meta name="distill:offset" content="../.."/>
@@ -2350,7 +2285,7 @@ d-appendix d-footnote-list a.footnote-backlink {
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"RAILROAD-COUNTY-TRACY","description":"**HOMEWORK 2**\n\n**Data breaking down US railroad employment numbers in 2012 by state and county. Data includes three variables: state, county and total employees. 2930 observations. Total number of employees ranges from 1 to over 3000. Specifically analyzing two subsets of data: large railroads (1000+ employees) and separately railroads in New England.**","authors":[{"author":"Erin-Tracy","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-08-17T00:00:00.000+00:00","citationText":"Erin-Tracy, 2021"}
+{"title":"RAILROAD-COUNTY-TRACY","description":"Homework assignment 1, 2 and 3. Loading data into an R Markdown file, Railroad Employment Data.","authors":[{"author":"Erin-Tracy","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-08-19T00:00:00.000+00:00","citationText":"Erin-Tracy, 2021"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2383,20 +2318,24 @@ d-appendix d-footnote-list a.footnote-backlink {
 <h1>RAILROAD-COUNTY-TRACY</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-<p><p><strong>HOMEWORK 2</strong></p>
-<p><strong>Data breaking down US railroad employment numbers in 2012 by state and county. Data includes three variables: state, county and total employees. 2930 observations. Total number of employees ranges from 1 to over 3000. Specifically analyzing two subsets of data: large railroads (1000+ employees) and separately railroads in New England.</strong></p></p>
+<p>Homework assignment 1, 2 and 3. Loading data into an R Markdown file, Railroad Employment Data.</p>
 </div>
 
 <div class="d-byline">
   
   Erin-Tracy
   
-<br/>2021-08-17
+<br/>2021-08-19
 </div>
 
 <div class="d-article">
-<p>#<em>QUESTION- WHY WON’T SOURCE URL APPEAR IN DESCRIPTION?</em></p>
-#<strong>For now, Echo is TRUE, may want to go back later and change to FALSE</strong>
+<p><strong>HOMEWORK 2</strong></p>
+<p>Total Railroad Employment by State and County 2012 breaks down US railroad employment numbers in 2012 by state and county. This dataset explores railroads.</p>
+<p>It has 120 2930 observations and 63 variables.</p>
+<p>The three variables are state, county and total employees. I chose to specifically study counties with a very large number of railroad employees. Separately, I also looked into railroad employee numbers just in the New England states.</p>
+<p>Source</p>
+<p>The dataset is sourced from (<a href="https://catalog.data.gov/dataset/total-railroad-employment-by-state-and-county-2012/resource/5a0b2831-23b9-4ce9-82e9-87a7d8f2c5d8" class="uri">https://catalog.data.gov/dataset/total-railroad-employment-by-state-and-county-2012/resource/5a0b2831-23b9-4ce9-82e9-87a7d8f2c5d8</a>)</p>
+<em>For now, Echo is TRUE, for final version change to FALSE</em>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>knitr</span><span class='fu'>::</span><span class='va'><a href='https://rdrr.io/pkg/knitr/man/opts_chunk.html'>opts_chunk</a></span><span class='op'>$</span><span class='fu'>set</span><span class='op'>(</span>echo <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
@@ -2409,7 +2348,7 @@ d-appendix d-footnote-list a.footnote-backlink {
 </code></pre>
 </div>
 </div>
-#<strong>HOMEWORK 1</strong> # <strong>Here I am reading in my CSV file.</strong>
+<strong>HOMEWORK 1</strong> <em>Here I am reading in my CSV file.</em>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>data</span><span class='op'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/utils/read.table.html'>read.csv</a></span><span class='op'>(</span><span class='st'>"../../_data/railroad_2012_clean_county.csv"</span><span class='op'>)</span>
@@ -2450,18 +2389,15 @@ d-appendix d-footnote-list a.footnote-backlink {
 </div>
 <pre><code>[1] &quot;state&quot;           &quot;county&quot;          &quot;total_employees&quot;</code></pre>
 </div>
-#<strong>HOMEWORK 3: Experimenting with Data Transformation</strong> #<em>Specifically determining average number of railroad employees with Summarise, count of railroads per state and average number of railroad employees by state.</em><br />
-
+<p><strong>HOMEWORK 3</strong></p>
+<p><em>Experimenting with Data Transformation</em></p>
+<p>Initially I didn’t understand this data. I thought that running the count code by county would return to me the number of railroads in each county. Then I reread the description about what this dataset is and realized it’s not about number of railroads, just number of railroad employees and their geographic location. The code count(data,county) is actually particularly useless because all it does is return the number of times that a county name repeats itself across the country. For example, 12 different states have an “Adams County” that has Railroad employees.</p>
+<p>I’m keeping some of the less useful code here for practice, hopefully with an accurate description of what it actually is. I did not run count(data,county) since it takes up a lot of space.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#Average of Railroad Employees for complete dataset</span>
-<span class='fu'><a href='https://dplyr.tidyverse.org/reference/summarise.html'>summarise</a></span><span class='op'>(</span><span class='va'>data</span>,avg<span class='op'>=</span><span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>total_employees</span><span class='op'>)</span><span class='op'>)</span>
-</code></pre>
-</div>
-<pre><code>       avg
-1 87.17816</code></pre>
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#Count of Railroads by State</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#count(data,county)</span>
+
+<span class='co'>#Count of Counties by State that have Railroad Employees</span>
 <span class='fu'><a href='https://dplyr.tidyverse.org/reference/count.html'>count</a></span><span class='op'>(</span><span class='va'>data</span>,<span class='va'>state</span><span class='op'>)</span>
 </code></pre>
 </div>
@@ -2520,7 +2456,14 @@ d-appendix d-footnote-list a.footnote-backlink {
 52    WV  53
 53    WY  22</code></pre>
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#Average of Employees per Railroad in each State</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#Among Counties with Railroad Employees, what is the average number of employees in each county </span>
+<span class='fu'><a href='https://dplyr.tidyverse.org/reference/summarise.html'>summarise</a></span><span class='op'>(</span><span class='va'>data</span>,avg<span class='op'>=</span><span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>total_employees</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>       avg
+1 87.17816</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#Among Counties with Railroad Employees, what is the average number of employees in each county that has railroad employees, by state</span>
 <span class='va'>data</span> <span class='op'>%&gt;%</span>
   <span class='fu'><a href='https://dplyr.tidyverse.org/reference/group_by.html'>group_by</a></span><span class='op'>(</span><span class='va'>state</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
   <span class='fu'><a href='https://dplyr.tidyverse.org/reference/summarise.html'>summarise</a></span><span class='op'>(</span>avg<span class='op'>=</span><span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>total_employees</span><span class='op'>)</span><span class='op'>)</span>
@@ -2541,11 +2484,10 @@ d-appendix d-footnote-list a.footnote-backlink {
 10 DC    279  
 # … with 43 more rows</code></pre>
 </div>
-#<strong>Experimenting with prop.table</strong>
+<strong>Experimenting with prop.table</strong> <em>From this data I learned that just under 2% of railroad employees in the US (and the included Canadian county) are in Colorado.</em>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#Percentage of Railroads by State</span>
-<span class='co'>#Confirm I understand this correctly</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#Distribution of Railroad Employees across the US (%)</span>
 <span class='va'>data</span><span class='op'>%&gt;%</span>
   <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>state</span><span class='op'>)</span><span class='op'>%&gt;%</span>
   <span class='fu'><a href='https://rdrr.io/r/base/table.html'>table</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>%&gt;%</span>
@@ -2572,11 +2514,11 @@ d-appendix d-footnote-list a.footnote-backlink {
         VT         WA         WI         WV         WY 
 0.47781570 1.33105802 2.35494881 1.80887372 0.75085324 </code></pre>
 </div>
-#<strong>HOMEWORK 3: Experimenting with Filter and Arrange</strong> #<em>Specifically pulling only railroads with 1000+ employees, naming that group “Large Railroads”</em>
+<strong>Experimenting with Filter and Arrange</strong> <em>I created a subset of data that includes counties that have 1000 or more railroad employees. I named it large_railroadcounties. There are 27 counties with 1000 or more railroad employees.</em>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#Filter out large railroads</span>
-<span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>data</span>,<span class='va'>total_employees</span><span class='op'>&gt;=</span><span class='fl'>1000</span><span class='op'>)</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#Filter out counties that have 1000 or more railroad employees</span>
+<span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>data</span>, <span class='va'>total_employees</span><span class='op'>&gt;=</span><span class='fl'>1000</span><span class='op'>)</span>
 </code></pre>
 </div>
 <pre><code>   state           county total_employees
@@ -2608,11 +2550,11 @@ d-appendix d-footnote-list a.footnote-backlink {
 26    VA INDEPENDENT CITY            3249
 27    WA             KING            1039</code></pre>
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#Reassign large railroads</span>
-<span class='va'>large_railroads</span><span class='op'>&lt;-</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>data</span>,<span class='va'>total_employees</span><span class='op'>&gt;=</span><span class='fl'>1000</span><span class='op'>)</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#Reassign large railroad counties</span>
+<span class='va'>large_railroadcounties</span><span class='op'>&lt;-</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>data</span>,<span class='va'>total_employees</span><span class='op'>&gt;=</span><span class='fl'>1000</span><span class='op'>)</span>
 
 <span class='co'>#Head</span>
-<span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='va'>large_railroads</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='va'>large_railroadcounties</span><span class='op'>)</span>
 </code></pre>
 </div>
 <pre><code>  state         county total_employees
@@ -2624,14 +2566,14 @@ d-appendix d-footnote-list a.footnote-backlink {
 6    FL          DUVAL            3073</code></pre>
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#Count</span>
-<span class='fu'><a href='https://dplyr.tidyverse.org/reference/count.html'>count</a></span><span class='op'>(</span><span class='va'>large_railroads</span><span class='op'>)</span>
+<span class='fu'><a href='https://dplyr.tidyverse.org/reference/count.html'>count</a></span><span class='op'>(</span><span class='va'>large_railroadcounties</span><span class='op'>)</span>
 </code></pre>
 </div>
 <pre><code>   n
 1 27</code></pre>
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#Arrange by Total Employees </span>
-<span class='fu'><a href='https://dplyr.tidyverse.org/reference/arrange.html'>arrange</a></span><span class='op'>(</span><span class='va'>large_railroads</span>, <span class='fu'><a href='https://dplyr.tidyverse.org/reference/desc.html'>desc</a></span><span class='op'>(</span><span class='va'>total_employees</span><span class='op'>)</span>, <span class='va'>state</span>, <span class='va'>county</span><span class='op'>)</span>
+<span class='fu'><a href='https://dplyr.tidyverse.org/reference/arrange.html'>arrange</a></span><span class='op'>(</span><span class='va'>large_railroadcounties</span>, <span class='fu'><a href='https://dplyr.tidyverse.org/reference/desc.html'>desc</a></span><span class='op'>(</span><span class='va'>total_employees</span><span class='op'>)</span>, <span class='va'>state</span>, <span class='va'>county</span><span class='op'>)</span>
 </code></pre>
 </div>
 <pre><code>   state           county total_employees
@@ -2663,11 +2605,10 @@ d-appendix d-footnote-list a.footnote-backlink {
 26    NY      WESTCHESTER            1040
 27    WA             KING            1039</code></pre>
 </div>
-#<strong>HOMEWORK 3: Experimenting with Select</strong>
+<strong>Experimenting with Select</strong> <em>These are the counties and states in which there are 1000 or more railroad employees in 1 county.</em>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#Large Railroads (1000+ employees)are located in these counties/states</span>
-<span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>large_railroads</span>,<span class='st'>"state"</span>, <span class='st'>"county"</span><span class='op'>)</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>large_railroadcounties</span>,<span class='st'>"state"</span>, <span class='st'>"county"</span><span class='op'>)</span>
 </code></pre>
 </div>
 <pre><code>   state           county
@@ -2699,20 +2640,20 @@ d-appendix d-footnote-list a.footnote-backlink {
 26    VA INDEPENDENT CITY
 27    WA             KING</code></pre>
 </div>
-#<strong>HOMEWORK 3: Experimenting with Filter, Vector, Piping, and Group by</strong>
+<strong>Experimenting with Filter, Vector, Piping, and Group by</strong>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#Created subset of data that is just New England states, rename that group "new_england"</span>
 <span class='va'>new_england</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>data</span>, <span class='va'>state</span> <span class='op'>%in%</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"NH"</span>, <span class='st'>"VT"</span>, <span class='st'>"CT"</span>, <span class='st'>"MA"</span>, <span class='st'>"RI"</span>, <span class='st'>"ME"</span><span class='op'>)</span><span class='op'>)</span>
 
-<span class='co'>#Average number of employees per railroad based on New England States only</span>
+<span class='co'>#Among New England Counties with Railroad Employees, what is the average number of employees in each county </span>
 <span class='fu'><a href='https://dplyr.tidyverse.org/reference/summarise.html'>summarise</a></span><span class='op'>(</span><span class='va'>new_england</span>, avg<span class='op'>=</span><span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>total_employees</span><span class='op'>)</span><span class='op'>)</span>
 </code></pre>
 </div>
 <pre><code>       avg
 1 119.4462</code></pre>
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#Count of railroads by state and then by county for New England States only</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#Count of New England Counties by State that have Railroad Employees</span>
 <span class='fu'><a href='https://dplyr.tidyverse.org/reference/count.html'>count</a></span><span class='op'>(</span><span class='va'>new_england</span>,<span class='va'>state</span><span class='op'>)</span>
 </code></pre>
 </div>
@@ -2724,69 +2665,7 @@ d-appendix d-footnote-list a.footnote-backlink {
 5    RI  5
 6    VT 14</code></pre>
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://dplyr.tidyverse.org/reference/count.html'>count</a></span><span class='op'>(</span><span class='va'>new_england</span>,<span class='va'>county</span><span class='op'>)</span>
-</code></pre>
-</div>
-<pre><code>         county n
-1       ADDISON 1
-2  ANDROSCOGGIN 1
-3     AROOSTOOK 1
-4    BARNSTABLE 1
-5       BELKNAP 1
-6    BENNINGTON 1
-7     BERKSHIRE 1
-8       BRISTOL 2
-9     CALEDONIA 1
-10      CARROLL 1
-11     CHESHIRE 1
-12   CHITTENDEN 1
-13         COOS 1
-14   CUMBERLAND 1
-15        ESSEX 2
-16    FAIRFIELD 1
-17     FRANKLIN 3
-18      GRAFTON 1
-19   GRAND ISLE 1
-20      HAMPDEN 1
-21    HAMPSHIRE 1
-22      HANCOCK 1
-23     HARTFORD 1
-24 HILLSBOROUGH 1
-25     KENNEBEC 1
-26         KENT 1
-27         KNOX 1
-28     LAMOILLE 1
-29      LINCOLN 1
-30   LITCHFIELD 1
-31    MERRIMACK 1
-32    MIDDLESEX 2
-33    NEW HAVEN 1
-34   NEW LONDON 1
-35      NEWPORT 1
-36      NORFOLK 1
-37       ORANGE 1
-38      ORLEANS 1
-39       OXFORD 1
-40    PENOBSCOT 1
-41  PISCATAQUIS 1
-42     PLYMOUTH 1
-43   PROVIDENCE 1
-44   ROCKINGHAM 1
-45      RUTLAND 1
-46    SAGADAHOC 1
-47     SOMERSET 1
-48    STRAFFORD 1
-49      SUFFOLK 1
-50     SULLIVAN 1
-51      TOLLAND 1
-52        WALDO 1
-53   WASHINGTON 3
-54      WINDHAM 2
-55      WINDSOR 1
-56    WORCESTER 1
-57         YORK 1</code></pre>
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#Average number of employees per railroad per state</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#Among New England Counties with Railroad Employees, what is the average number of employees in each county that has railroad employees, by state</span>
 <span class='va'>new_england</span> <span class='op'>%&gt;%</span>
   <span class='fu'><a href='https://dplyr.tidyverse.org/reference/group_by.html'>group_by</a></span><span class='op'>(</span><span class='va'>state</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
   <span class='fu'><a href='https://dplyr.tidyverse.org/reference/summarise.html'>summarise</a></span><span class='op'>(</span>avg<span class='op'>=</span><span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>total_employees</span><span class='op'>)</span><span class='op'>)</span>
@@ -2802,93 +2681,109 @@ d-appendix d-footnote-list a.footnote-backlink {
 5 RI     97.4
 6 VT     18.5</code></pre>
 </div>
-#<strong>Experimenting with Crosstabs</strong>
+<strong>Experimenting with Advanced Functions</strong> <em>Working with Renaming and Pivot_longer. I want to get more familiar with pivot longer, but I don’t think there are enough variables in this dataset to really experiment with it.</em>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#This is not pretty, I'd like to revisit using ranges</span>
-<span class='fu'><a href='https://rdrr.io/r/stats/xtabs.html'>xtabs</a></span><span class='op'>(</span><span class='op'>~</span><span class='va'>total_employees</span> <span class='op'>+</span> <span class='va'>state</span>,<span class='va'>new_england</span><span class='op'>)</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#rename</span>
+<span class='va'>data</span><span class='op'>&lt;-</span><span class='fu'><a href='https://dplyr.tidyverse.org/reference/rename.html'>rename</a></span><span class='op'>(</span><span class='va'>data</span>,employees <span class='op'>=</span> <span class='va'>total_employees</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>colnames</a></span><span class='op'>(</span><span class='va'>data</span><span class='op'>)</span>
 </code></pre>
 </div>
-<pre><code>               state
-total_employees CT MA ME NH RI VT
-           2     0  0  1  1  0  0
-           3     0  0  1  0  0  2
-           4     0  0  0  0  0  2
-           5     0  0  1  0  0  1
-           7     0  0  1  2  0  0
-           8     0  0  1  0  1  2
-           9     0  0  0  1  0  1
-           10    0  0  0  0  0  2
-           11    0  0  1  0  1  0
-           12    0  0  0  1  0  0
-           13    0  0  0  0  0  1
-           17    0  0  1  0  0  0
-           19    0  0  0  1  0  0
-           22    0  0  1  0  0  0
-           26    1  0  0  0  0  0
-           27    0  0  0  1  0  0
-           28    0  0  0  1  0  0
-           36    0  0  1  0  0  0
-           40    0  0  0  0  0  1
-           44    0  1  0  0  0  0
-           47    0  0  1  0  0  0
-           48    0  0  0  0  1  0
-           50    0  1  0  0  0  0
-           57    1  0  1  0  0  0
-           59    0  0  0  0  0  1
-           66    1  0  0  0  0  0
-           67    0  0  1  0  0  0
-           68    0  1  0  0  0  0
-           71    0  0  1  0  0  0
-           75    0  0  1  0  0  0
-           83    0  0  0  0  0  1
-           102   0  0  0  0  1  0
-           109   0  0  1  0  0  0
-           113   1  1  0  0  0  0
-           117   0  0  1  0  0  0
-           136   0  0  0  1  0  0
-           137   1  0  0  0  0  0
-           146   1  0  0  1  0  0
-           202   0  1  0  0  0  0
-           232   0  1  0  0  0  0
-           310   0  1  0  0  0  0
-           314   0  1  0  0  0  0
-           318   0  0  0  0  1  0
-           386   0  1  0  0  0  0
-           429   0  1  0  0  0  0
-           486   1  0  0  0  0  0
-           558   0  1  0  0  0  0
-           673   0  1  0  0  0  0
-           1561  1  0  0  0  0  0</code></pre>
-</div>
-#<strong>Experimenting with ggplot, boxplot, WORK ON THIS SOME MORE! NEED LABELS</strong>
-<div class="layout-chunk" data-layout="l-body">
+<pre><code>[1] &quot;state&quot;     &quot;county&quot;    &quot;employees&quot;</code></pre>
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#Boxplot for New England States</span>
-<span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='va'>new_england</span>,<span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span><span class='va'>state</span>,<span class='va'>total_employees</span><span class='op'>)</span><span class='op'>)</span><span class='op'>+</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_boxplot.html'>geom_boxplot</a></span><span class='op'>(</span><span class='op'>)</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#new_england&lt;-rename(new_england,employees = total_employees)</span>
+<span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>colnames</a></span><span class='op'>(</span><span class='va'>new_england</span><span class='op'>)</span>
 </code></pre>
 </div>
-<p><img src="railroad-county-tracy_files/figure-html5/unnamed-chunk-8-1.png" width="480" /></p>
+<pre><code>[1] &quot;state&quot;           &quot;county&quot;          &quot;total_employees&quot;</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#relocate()</span>
+
+<span class='co'>#across()/c_across()</span>
+
+<span class='co'>#pivot_longer()/pivot_wider()</span>
+<span class='co'>#results are lengthy and not useful</span>
+<span class='co'>#data%&gt;%</span>
+  <span class='co'>#pivot_longer(cols=employees,</span>
+               <span class='co'>#names_to="Type",</span>
+               <span class='co'>#values_to="numberemployees")</span>
+            
+<span class='co'>#purrr::map()</span>
+
+<span class='co'>#lapply()</span>
+</code></pre>
 </div>
-#<strong>Experimenting with ggplot, geom_point, WORK ON THIS SOME MORE!</strong>
+</div>
+<strong>Experimenting with Advanced Functions Cont.</strong>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#Geompoints for New England States</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#case_when()</span>
+<span class='co'>#Assign the words Large, medium and small to specific numeric values for number of employees</span>
+<span class='va'>data</span><span class='op'>&lt;-</span><span class='va'>data</span><span class='op'>%&gt;%</span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>Railroad_size <span class='op'>=</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/case_when.html'>case_when</a></span><span class='op'>(</span>
+         <span class='va'>employees</span> <span class='op'>&gt;=</span> <span class='fl'>1000</span> <span class='op'>~</span> <span class='st'>"Large"</span>,
+         <span class='va'>employees</span> <span class='op'>&gt;=</span> <span class='fl'>500</span> <span class='op'>&amp;</span> <span class='va'>employees</span> <span class='op'>&lt;</span> <span class='fl'>1000</span> <span class='op'>~</span> <span class='st'>"Medium"</span>,
+         <span class='va'>employees</span> <span class='op'>&lt;</span> <span class='fl'>500</span> <span class='op'>~</span> <span class='st'>"Small"</span><span class='op'>)</span><span class='op'>)</span>
+
+<span class='co'>#See how many counties from full dataset have a small, medium and large amount of railroad employees</span>
+<span class='fu'><a href='https://rdrr.io/r/base/table.html'>table</a></span><span class='op'>(</span><span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>data</span>, <span class='va'>Railroad_size</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>
+ Large Medium  Small 
+    27     65   2838 </code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#See how many counties in New England have a small, medium or large amount of railroad employees</span>
+<span class='va'>new_england</span><span class='op'>&lt;-</span><span class='va'>new_england</span><span class='op'>%&gt;%</span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>Railroad_size <span class='op'>=</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/case_when.html'>case_when</a></span><span class='op'>(</span>
+         <span class='va'>total_employees</span> <span class='op'>&gt;=</span> <span class='fl'>1000</span> <span class='op'>~</span> <span class='st'>"Large"</span>,
+         <span class='va'>total_employees</span> <span class='op'>&gt;=</span> <span class='fl'>500</span> <span class='op'>&amp;</span> <span class='va'>total_employees</span> <span class='op'>&lt;</span> <span class='fl'>1000</span> <span class='op'>~</span> <span class='st'>"Medium"</span>,
+         <span class='va'>total_employees</span> <span class='op'>&lt;</span> <span class='fl'>500</span> <span class='op'>~</span> <span class='st'>"Small"</span><span class='op'>)</span><span class='op'>)</span>
+
+<span class='fu'><a href='https://rdrr.io/r/base/table.html'>table</a></span><span class='op'>(</span><span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>new_england</span>, <span class='va'>Railroad_size</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>
+ Large Medium  Small 
+     1      2     62 </code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#Use crosstabs to which new england state have counties with a small, medium and large amount of railroad employees</span>
+<span class='fu'><a href='https://rdrr.io/r/stats/xtabs.html'>xtabs</a></span><span class='op'>(</span><span class='op'>~</span><span class='va'>state</span><span class='op'>+</span> <span class='va'>Railroad_size</span>,<span class='va'>new_england</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>     Railroad_size
+state Large Medium Small
+   CT     1      0     7
+   MA     0      2    10
+   ME     0      0    16
+   NH     0      0    10
+   RI     0      0     5
+   VT     0      0    14</code></pre>
+</div>
+<strong>Experimenting with ggplot, boxplot, labels</strong> <em>Connecticut has an outlier. Connecticut has 1 county with an especially large number of railroad employees.</em>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#Boxplot for New England State Counties</span>
+<span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='va'>new_england</span>,<span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span><span class='va'>state</span>,<span class='va'>total_employees</span><span class='op'>)</span><span class='op'>)</span><span class='op'>+</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_boxplot.html'>geom_boxplot</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>+</span>
+<span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span>title <span class='op'>=</span> <span class='st'>"Railroad Employee County Counts by State, NE"</span>, y <span class='op'>=</span> <span class='st'>"Total Employees"</span>, x <span class='op'>=</span> <span class='st'>"State"</span><span class='op'>)</span> 
+</code></pre>
+</div>
+<p><img src="railroad-county-tracy_files/figure-html5/unnamed-chunk-9-1.png" width="480" /></p>
+</div>
+<em>Same data, just shown differently</em>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#Geompoints for New England State Counties</span>
 <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='va'>new_england</span>,<span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span><span class='va'>state</span>,<span class='va'>total_employees</span><span class='op'>)</span><span class='op'>)</span><span class='op'>+</span>
   <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>+</span>
   <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_smooth.html'>geom_smooth</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>+</span>
-  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span>title <span class='op'>=</span> <span class='st'>"Railroad Employee Counts by State"</span>, y <span class='op'>=</span> <span class='st'>"Total Employees"</span>, x <span class='op'>=</span> <span class='st'>"State"</span><span class='op'>)</span> 
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span>title <span class='op'>=</span> <span class='st'>"Railroad Employee County Counts by State, NE"</span>, y <span class='op'>=</span> <span class='st'>"Total Employees"</span>, x <span class='op'>=</span> <span class='st'>"State"</span><span class='op'>)</span> 
 </code></pre>
 </div>
-<img src="railroad-county-tracy_files/figure-html5/unnamed-chunk-9-1.png" width="480" />
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#Unfinished</span>
-<span class='co'>#ggplot(data=new_england)+</span>
-  <span class='co'>#geom_point(mapping=aes(x=county, y=total_employees))+</span>
-</code></pre>
+<p><img src="railroad-county-tracy_files/figure-html5/unnamed-chunk-10-1.png" width="480" /></p>
 </div>
-</div>
-#<strong>Experimenting with ggplot and fill</strong> #<em>QUESTION- CAN I MAKE KEY SMALLER AND GRAPH LARGER?</em>
+<p><strong>Experimenting with ggplot and fill</strong></p>
+<p>I would love to use fill, but it doesn’t make sense for this dataset. It doesn’t make sense because my third variable (county) is basically different for every state. This would be much more useful if that variable was something that had valuables that were applicable to all states.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#Geomplot for New England States with County filled (Two Ways)</span>
@@ -2900,43 +2795,35 @@ total_employees CT MA ME NH RI VT
   <span class='co'>#geom_bar(mapping=aes(x=state, fill=county))</span>
   <span class='co'>#theme_bw()+</span>
   <span class='co'>#labs(title="New England States Railroad Employee Counts by State and County", y="Number of Employees", x= "State")</span>
-
-<span class='co'>#Removed Code, Very Messy for Now</span>
 </code></pre>
 </div>
 </div>
-#<strong>Experimenting with geompoint, with different dataset</strong>
+<p><strong>Experimenting with geompoint, with different dataset</strong></p>
+<em>Illinois has 1 county that has over 8000 railroad employees</em>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span>data<span class='op'>=</span><span class='va'>large_railroads</span><span class='op'>)</span><span class='op'>+</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span>data<span class='op'>=</span><span class='va'>large_railroadcounties</span><span class='op'>)</span><span class='op'>+</span>
   <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span><span class='op'>(</span>mapping<span class='op'>=</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x<span class='op'>=</span><span class='va'>state</span>, y<span class='op'>=</span><span class='va'>total_employees</span><span class='op'>)</span><span class='op'>)</span><span class='op'>+</span>
-  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span>title <span class='op'>=</span> <span class='st'>"Railroads with 1000+ Employees"</span>, y <span class='op'>=</span> <span class='st'>"Total Employees"</span>, x <span class='op'>=</span> <span class='st'>"State"</span><span class='op'>)</span> 
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span>title <span class='op'>=</span> <span class='st'>"States with counties with 1000+ Railroad Employees"</span>, y <span class='op'>=</span> <span class='st'>"Total Employees"</span>, x <span class='op'>=</span> <span class='st'>"State"</span><span class='op'>)</span> 
 </code></pre>
 </div>
-<p><img src="railroad-county-tracy_files/figure-html5/unnamed-chunk-11-1.png" width="480" /></p>
+<p><img src="railroad-county-tracy_files/figure-html5/unnamed-chunk-12-1.png" width="480" /></p>
 </div>
-#<strong>Experimenting with Advanced Functions for HW3</strong>
-<div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#rename()</span>
+<pre><code>
+Saving this code shared by Larri
+#blackturnout &lt;- blackturnout %&gt;%
+  #mutate(candidateRename = recode(candidate, `1` = &quot;co-ethnic&quot;, `0` = &quot;not co-ethnic&quot;))
 
-<span class='co'>#case_when()</span>
 
-<span class='co'>#relocate()</span>
 
-<span class='co'>#across()/c_across()</span>
+Distill is a publication format for scientific and technical writing, native to the web.
 
-<span class='co'>#pivot_longer()/pivot_wider()</span>
+Learn more about using Distill at &lt;https://rstudio.github.io/distill&gt;.
 
-<span class='co'>#purrr::map()</span>
 
-<span class='co'>#lapply()</span>
-</code></pre>
-</div>
-</div>
-<p>Distill is a publication format for scientific and technical writing, native to the web.</p>
-<p>Learn more about using Distill at <a href="https://rstudio.github.io/distill" class="uri">https://rstudio.github.io/distill</a>.</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+
+
+```{.r .distill-force-highlighting-css}</code></pre>
 <!--radix_placeholder_article_footer-->
 <div class="article-footer">
   <p class="social_footer">
@@ -2985,7 +2872,7 @@ var disqus_config = function () {
   <p>Text and figures are licensed under Creative Commons Attribution <a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>. The figures that have been reused from other sources don't fall under this license and can be recognized by a note in their caption: "Figure from ...".</p>
   <h3 id="citation">Citation</h3>
   <p>For attribution, please cite this work as</p>
-  <pre class="citation-appendix short">Erin-Tracy (2021, Aug. 17). Data Analytics and Computational Social Science: RAILROAD-COUNTY-TRACY. Retrieved from https://mrolfe.github.io/DACSS601August2021/posts/2021-08-17-railroad-county-tracy/</pre>
+  <pre class="citation-appendix short">Erin-Tracy (2021, Aug. 19). Data Analytics and Computational Social Science: RAILROAD-COUNTY-TRACY. Retrieved from https://mrolfe.github.io/DACSS601August2021/posts/2021-08-17-railroad-county-tracy/</pre>
   <p>BibTeX citation</p>
   <pre class="citation-appendix long">@misc{erin-tracy2021railroad-county-tracy,
   author = {Erin-Tracy, },
