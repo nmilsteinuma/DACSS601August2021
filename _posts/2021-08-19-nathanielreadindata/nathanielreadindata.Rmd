@@ -1,6 +1,7 @@
 ---
 title: Australian Marriage
-description: Statistics About Australian Marriage
+description: |
+  Statistics About Australian Marriage
 author:
 - name: Nathaniel Ross
   url: {}

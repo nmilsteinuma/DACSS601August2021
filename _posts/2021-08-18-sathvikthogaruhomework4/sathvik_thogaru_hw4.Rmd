@@ -1,13 +1,13 @@
 ---
-title: "sathvik_thogaru_homework4"
+title: sathvik_thogaru_homework4
 description: |
- hotel_bookings Dataset
+  hotel_bookings Dataset
 author: sathvik_thogaru
 date: 08-18-2021
 output:
   distill::distill_article:
-    self_contained: false
-draft: true
+    self_contained: no
+draft: yes
 ---
 
 
