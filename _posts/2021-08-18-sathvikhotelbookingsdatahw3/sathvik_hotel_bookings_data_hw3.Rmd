@@ -215,3 +215,41 @@ plot +
           "July", "August", "September", "October", "November", "December"))
 
 ```
+
+
+
+
+Q) which months are the busiest?
+
+```{r}
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

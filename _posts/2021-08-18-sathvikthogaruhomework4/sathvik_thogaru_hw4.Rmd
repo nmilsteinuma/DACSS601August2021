@@ -1,0 +1,183 @@
+---
+title: "sathvik_thogaru_homework4"
+description: |
+ hotel_bookings Dataset
+author: sathvik_thogaru
+date: 08-18-2021
+output:
+  distill::distill_article:
+    self_contained: false
+draft: true
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Importing data
+This data set contains a single file which compares various booking information between hotels.
+
+```{r}
+library(skimr)
+library(lubridate)
+library(tidyverse)
+```
+
+importing the data and reading the top 5 rows 
+
+```{r}
+hotel_bookings <- read_csv("../../_data/hotel_bookings.csv")
+head(hotel_bookings)
+```
+
+
+skim() is used to for getting summary statistics about variables in dataframe,tibbles,datatablesand vectors. It is mostly used with grouped dataframes
+(source: https://cran.r-project.org/web/packages/skimr/vignettes/skimr.html)
+
+
+```{r}
+skim(hotel_bookings)
+```
+
+from the above summary statistics we can see there are a total of 119390 rows and 32 columns in the hotel_bookings dataset. 13 character variables, 18 numeric variables, and 1 date variable. there are a total of 4 missing values in the children variable. for the analysis now i will be using hotel, market segment, stays_in_weekend_nights and stays_in_week_nights.
+
+## Varaible Description
+
+hotel variable: type of hotel booked\
+market segment : Market segment designation. In categories, the term “TA” means “Travel Agents” and “TO” means “Tour Operators”\
+stays_in_weekend_nights : guest stayed at the hotel in weekend nights\
+stays_in_week_nights : guest stayed at the hotel in week nights\
+I am using the select() from the dplyr package which comes with tidyverse package and the piping for selecting columns
+
+
+```{r}
+(df <- hotel_bookings %>% 
+  select(hotel,stays_in_weekend_nights,stays_in_week_nights,market_segment))
+```
+
+```{r}
+unique(df$hotel)
+unique(df$market_segment)
+```
+
+```{r}
+resort_hotel <- filter(df, hotel == "Resort Hotel") 
+city_hotel <- filter(df, hotel =="City Hotel") 
+```
+
+
+bookings in different market segments
+
+
+
+city hotel
+
+```{r}
+(city_hotel_market_segment <- city_hotel %>% 
+  count(market_segment))
+
+
+(ggplot(city_hotel_market_segment, aes(market_segment,n))+
+geom_histogram(fill = "indianred", stat = "identity") + 
+labs(title = "City Market segment") + 
+    theme(plot.title = element_text(size = 14, hjust = 0.5, face = "bold")))
+```
+
+resort hotel
+
+```{r}
+(resort_hotel_market_segment <- resort_hotel %>% 
+  count(market_segment))
+
+
+(ggplot(resort_hotel_market_segment, aes(market_segment,n))+
+geom_histogram(fill = "indianred", stat = "identity") + 
+labs(title = "Resort_Market segment") + 
+theme(plot.title = element_text(size = 14, hjust = 0.5, face = "bold")))
+```
+
+
+```{r}
+(df %>% group_by(hotel,market_segment) %>% count(market_segment))
+```
+
+```{r}
+(ggplot(df, aes(hotel)) + 
+  geom_histogram(fill = "indianred", stat = "count") + 
+  labs(title = "Market segment") + 
+    theme(plot.title = element_text(size = 14, hjust = 0.5, face = "bold"))+
+  facet_wrap(vars(market_segment), scales = "free_y"))
+```
+
+
+how many number of days do people stay in the hotel?
+
+Resort hotel
+
+```{r}
+
+resort_hotel$total_nights <- resort_hotel$stays_in_weekend_nights + resort_hotel$stays_in_week_nights
+city_hotel$total_nights <- city_hotel$stays_in_weekend_nights + city_hotel$stays_in_week_nights
+
+
+  
+resort_number_of_days_guests_stay_data <- resort_hotel %>% 
+  group_by(total_nights) %>% 
+  count()
+
+resort_number_of_days_guests_stay_data$relative_no_of_bookings <- resort_number_of_days_guests_stay_data$n/sum(resort_number_of_days_guests_stay_data$n)*100
+
+  
+city_number_of_days_guests_stay_data <- city_hotel %>% 
+  group_by(total_nights) %>% 
+  count()
+
+city_number_of_days_guests_stay_data$relative_no_of_bookings <- city_number_of_days_guests_stay_data$n/sum(city_number_of_days_guests_stay_data$n)*100
+
+
+
+
+```
+
+```{r}
+(plot1<-ggplot(resort_number_of_days_guests_stay_data, aes(total_nights,relative_no_of_bookings))+
+   geom_bar(stat = "identity", fill="indianred"))+
+  labs(x = "no of nights stayed at the hotel", y = "Guests[%]", title = "length of stay at the resort hotel")+
+    theme(plot.title = element_text(size = 14, hjust = 0.5, face = "bold"))+
+  xlim(c(0,30))
+
+
+```
+
+
+
+
+```{r}
+(plot1<-ggplot(city_number_of_days_guests_stay_data, aes(total_nights,relative_no_of_bookings))+
+   geom_bar(stat = "identity", fill="indianred"))+
+  labs(x = "no of nights stayed at the hotel", y = "Guests[%]", title = "length of stay at the city hotel")+
+    theme(plot.title = element_text(size = 14, hjust = 0.5, face = "bold"))+
+  xlim(c(0,20))
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
