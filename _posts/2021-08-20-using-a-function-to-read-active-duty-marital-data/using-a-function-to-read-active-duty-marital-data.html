@@ -23,7 +23,6 @@
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
@@ -111,12 +110,12 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","categories","output","draft"]}},"value":[{"type":"character","attributes":{},"value":["Using A Function to Read Active Duty Marital Data"]},{"type":"character","attributes":{},"value":["This is the example code to use a new custom function to read in multiple sheets of data about Active Duty members of the military and marital status.\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Sean Conway and Meredith Rolfe"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":[]}},"value":[]}]}]},{"type":"character","attributes":{},"value":["08-20-2021"]},{"type":"character","attributes":{},"value":["example code","cleaning data","programming functions"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"logical","attributes":{},"value":[false]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","categories","output","draft"]}},"value":[{"type":"character","attributes":{},"value":["Using A Function to Read Active Duty Marital Data"]},{"type":"character","attributes":{},"value":["This is the example code to use a new custom function to read in multiple sheets of data about Active Duty members of the military and marital status.\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Sean Conway and Meredith Rolfe"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":[]}},"value":[]}]}]},{"type":"character","attributes":{},"value":["08-20-2021"]},{"type":"character","attributes":{},"value":["example code","cleaning data","programming functions"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"logical","attributes":{},"value":[true]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["dod_marital.png"]}
+  {"type":"character","attributes":{},"value":["dod_marital.png","using-a-function-to-read-active-duty-marital-data_files/anchor-4.2.2/anchor.min.js","using-a-function-to-read-active-duty-marital-data_files/bowser-1.9.3/bowser.min.js","using-a-function-to-read-active-duty-marital-data_files/distill-2.2.21/template.v2.js","using-a-function-to-read-active-duty-marital-data_files/header-attrs-2.10/header-attrs.js","using-a-function-to-read-active-duty-marital-data_files/jquery-1.11.3/jquery.min.js","using-a-function-to-read-active-duty-marital-data_files/popper-2.6.0/popper.min.js","using-a-function-to-read-active-duty-marital-data_files/tippy-6.2.7/tippy-bundle.umd.min.js","using-a-function-to-read-active-duty-marital-data_files/tippy-6.2.7/tippy-light-border.css","using-a-function-to-read-active-duty-marital-data_files/tippy-6.2.7/tippy.css","using-a-function-to-read-active-duty-marital-data_files/tippy-6.2.7/tippy.umd.min.js","using-a-function-to-read-active-duty-marital-data_files/webcomponents-2.0.0/webcomponents.js"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -1535,8 +1534,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
            skip<span class='op'>=</span><span class='fl'>9</span>,
            col_names <span class='op'>=</span> <span class='va'>marital</span>
            <span class='op'>)</span><span class='op'>%&gt;%</span>
-  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='op'>!</span><span class='fu'><a href='https://tidyselect.r-lib.org/reference/starts_with.html'>starts_with</a></span><span class='op'>(</span><span class='st'>"d"</span><span class='op'>)</span><span class='op'>)</span><span class='op'>%&gt;%</span>
-  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='fu'>str_detect</span><span class='op'>(</span><span class='va'>payGrade_payLevel</span>, <span class='st'>"TOTAL"</span>, negate<span class='op'>=</span><span class='cn'>TRUE</span><span class='op'>)</span><span class='op'>)</span>
+  <span class='fu'>select</span><span class='op'>(</span><span class='op'>!</span><span class='fu'>starts_with</span><span class='op'>(</span><span class='st'>"d"</span><span class='op'>)</span><span class='op'>)</span><span class='op'>%&gt;%</span>
+  <span class='fu'><a href='https://rdrr.io/r/stats/filter.html'>filter</a></span><span class='op'>(</span><span class='fu'>str_detect</span><span class='op'>(</span><span class='va'>payGrade_payLevel</span>, <span class='st'>"TOTAL"</span>, negate<span class='op'>=</span><span class='cn'>TRUE</span><span class='op'>)</span><span class='op'>)</span>
 <span class='va'>military</span>
 </code></pre>
 </div>
@@ -1569,7 +1568,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <span class='fu'>separate</span><span class='op'>(</span><span class='va'>payGrade_payLevel</span>, 
            into <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"payGrade"</span>, <span class='st'>"payLevel"</span><span class='op'>)</span>,
            sep<span class='op'>=</span><span class='st'>"-"</span><span class='op'>)</span><span class='op'>%&gt;%</span>
-  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>payGrade <span class='op'>=</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/case_when.html'>case_when</a></span><span class='op'>(</span>
+  <span class='fu'>mutate</span><span class='op'>(</span>payGrade <span class='op'>=</span> <span class='fu'>case_when</span><span class='op'>(</span>
     <span class='va'>payGrade</span> <span class='op'>==</span> <span class='st'>"E"</span> <span class='op'>~</span> <span class='st'>"Enlisted"</span>,
     <span class='va'>payGrade</span> <span class='op'>==</span> <span class='st'>"O"</span> <span class='op'>~</span> <span class='st'>"Officer"</span>,
     <span class='va'>payGrade</span> <span class='op'>==</span> <span class='st'>"W"</span> <span class='op'>~</span> <span class='st'>"Warrant Officer"</span>
@@ -1595,6 +1594,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <p>This all looks like it works well. So now we will go on to creating a function with the steps, then applying it to multiple sheets.</p>
 <h2 id="create-a-new-function">Create a new function</h2>
 <p>We will call our new function <code>read_military</code>, and we will basically use the exact same commands as above. The big difference is that we will have a placeholder name (or argument) for the data sheet that will be passed to the new function.</p>
+<p>Next we have to use <code>read_excel()</code>, but we have to specify a number of arguments. We first specify the <code>path</code> (note - <code>file_path</code> is a variable that I created ahead of time to be specific to my computer. Yours will be different). Next, we specify <code>sheet</code>, the number of the sheet we wish to read in (we can also specify the sheet name). We also need to manually specify <code>col_names</code> from our <code>marital</code> vector that we created above.</p>
+<p><code>mutate()</code> creates a new column called <code>branch</code>, which comes from our sheet name. <code>select(!starts_with("d"))</code> removes all columns that start with <code>"d"</code>. We also filter out the word “Total” from <code>payGrade_payLevel</code>. <code>pivot_longer()</code></p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>read_military</span><span class='op'>&lt;-</span><span class='kw'>function</span><span class='op'>(</span><span class='va'>sheet_name</span><span class='op'>)</span><span class='op'>{</span>
@@ -1603,17 +1604,17 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
              skip<span class='op'>=</span><span class='fl'>9</span>,
              col_names <span class='op'>=</span> <span class='va'>marital</span>
              <span class='op'>)</span><span class='op'>%&gt;%</span>
-  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span><span class='st'>"branch"</span><span class='op'>=</span><span class='va'>sheet_name</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
-  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='op'>!</span><span class='fu'><a href='https://tidyselect.r-lib.org/reference/starts_with.html'>starts_with</a></span><span class='op'>(</span><span class='st'>"d"</span><span class='op'>)</span><span class='op'>)</span><span class='op'>%&gt;%</span>
-  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='fu'>str_detect</span><span class='op'>(</span><span class='va'>payGrade_payLevel</span>, <span class='st'>"TOTAL"</span>, negate<span class='op'>=</span><span class='cn'>TRUE</span><span class='op'>)</span><span class='op'>)</span><span class='op'>%&gt;%</span>
-  <span class='fu'>pivot_longer</span><span class='op'>(</span>cols <span class='op'>=</span> <span class='fu'><a href='https://tidyselect.r-lib.org/reference/starts_with.html'>contains</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"male"</span>, <span class='st'>"female"</span><span class='op'>)</span><span class='op'>)</span>,
+  <span class='fu'>mutate</span><span class='op'>(</span><span class='st'>"branch"</span><span class='op'>=</span><span class='va'>sheet_name</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+  <span class='fu'>select</span><span class='op'>(</span><span class='op'>!</span><span class='fu'>starts_with</span><span class='op'>(</span><span class='st'>"d"</span><span class='op'>)</span><span class='op'>)</span><span class='op'>%&gt;%</span>
+  <span class='fu'><a href='https://rdrr.io/r/stats/filter.html'>filter</a></span><span class='op'>(</span><span class='fu'>str_detect</span><span class='op'>(</span><span class='va'>payGrade_payLevel</span>, <span class='st'>"TOTAL"</span>, negate<span class='op'>=</span><span class='cn'>TRUE</span><span class='op'>)</span><span class='op'>)</span><span class='op'>%&gt;%</span>
+  <span class='fu'>pivot_longer</span><span class='op'>(</span>cols <span class='op'>=</span> <span class='fu'>contains</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"male"</span>, <span class='st'>"female"</span><span class='op'>)</span><span class='op'>)</span>,
                names_to <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Marital"</span>, <span class='st'>"Other"</span>, <span class='st'>"Gender"</span><span class='op'>)</span>,
                names_sep <span class='op'>=</span> <span class='st'>"_"</span>,
                values_to <span class='op'>=</span> <span class='st'>"count"</span><span class='op'>)</span><span class='op'>%&gt;%</span>
   <span class='fu'>separate</span><span class='op'>(</span><span class='va'>payGrade_payLevel</span>, 
            into <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"payGrade"</span>, <span class='st'>"payLevel"</span><span class='op'>)</span>,
            sep<span class='op'>=</span><span class='st'>"-"</span><span class='op'>)</span><span class='op'>%&gt;%</span>
-  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>payGrade <span class='op'>=</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/case_when.html'>case_when</a></span><span class='op'>(</span>
+  <span class='fu'>mutate</span><span class='op'>(</span>payGrade <span class='op'>=</span> <span class='fu'>case_when</span><span class='op'>(</span>
     <span class='va'>payGrade</span> <span class='op'>==</span> <span class='st'>"E"</span> <span class='op'>~</span> <span class='st'>"Enlisted"</span>,
     <span class='va'>payGrade</span> <span class='op'>==</span> <span class='st'>"O"</span> <span class='op'>~</span> <span class='st'>"Officer"</span>,
     <span class='va'>payGrade</span> <span class='op'>==</span> <span class='st'>"W"</span> <span class='op'>~</span> <span class='st'>"Warrant Officer"</span>
@@ -1622,7 +1623,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </code></pre>
 </div>
 </div>
-<p>We now have a function that is customized to read in the mmilitary active duty marital status sheets. We just need to use purrr - a library or package that is part of tidyverse but which may need to be installed and loaded on its own - to iterate through the list of sheets in the workbook.</p>
+<p>We now have a function that is customized to read in the mmilitary active duty marital status sheets. We just need to use <code>purrr</code> - a package that is part of tidyverse but which may need to be installed and loaded on its own - to iterate through the list of sheets in the workbook.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://readxl.tidyverse.org/reference/excel_sheets.html'>excel_sheets</a></span><span class='op'>(</span><span class='st'>"../../_data/ActiveDuty_MaritalStatus.xls"</span><span class='op'>)</span>
