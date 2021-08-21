@@ -116,7 +116,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["saulo-homework-two_files/anchor-4.2.2/anchor.min.js","saulo-homework-two_files/bowser-1.9.3/bowser.min.js","saulo-homework-two_files/distill-2.2.21/template.v2.js","saulo-homework-two_files/header-attrs-2.10/header-attrs.js","saulo-homework-two_files/jquery-1.11.3/jquery.min.js","saulo-homework-two_files/popper-2.6.0/popper.min.js","saulo-homework-two_files/tippy-6.2.7/tippy-bundle.umd.min.js","saulo-homework-two_files/tippy-6.2.7/tippy-light-border.css","saulo-homework-two_files/tippy-6.2.7/tippy.css","saulo-homework-two_files/tippy-6.2.7/tippy.umd.min.js","saulo-homework-two_files/webcomponents-2.0.0/webcomponents.js"]}
+  {"type":"character","attributes":{},"value":["saulo-homework-two_files/anchor-4.2.2/anchor.min.js","saulo-homework-two_files/bowser-1.9.3/bowser.min.js","saulo-homework-two_files/distill-2.2.21/template.v2.js","saulo-homework-two_files/figure-html5/unnamed-chunk-10-1.png","saulo-homework-two_files/figure-html5/unnamed-chunk-15-1.png","saulo-homework-two_files/figure-html5/unnamed-chunk-16-1.png","saulo-homework-two_files/figure-html5/unnamed-chunk-17-1.png","saulo-homework-two_files/header-attrs-2.10/header-attrs.js","saulo-homework-two_files/jquery-1.11.3/jquery.min.js","saulo-homework-two_files/popper-2.6.0/popper.min.js","saulo-homework-two_files/tippy-6.2.7/tippy-bundle.umd.min.js","saulo-homework-two_files/tippy-6.2.7/tippy-light-border.css","saulo-homework-two_files/tippy-6.2.7/tippy.css","saulo-homework-two_files/tippy-6.2.7/tippy.umd.min.js","saulo-homework-two_files/webcomponents-2.0.0/webcomponents.js"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -1486,84 +1486,506 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h1 id="homework-two">Homework Two</h1>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>marriage</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/utils/read.table.html'>read.csv</a></span><span class='op'>(</span><span class='st'>"/Users/SauloDePaula/Documentos/Documents/School/Grad School/PhD/DACSS 601 (Data Science Fundamentals)/RStudio/DACSS601August2021/australian_marriage_tidy.csv"</span><span class='op'>)</span>
-<span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='va'>marriage</span><span class='op'>)</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>eggs</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/utils/read.table.html'>read.csv</a></span><span class='op'>(</span>file<span class='op'>=</span><span class='st'>"/Users/SauloDePaula/Documentos/Documents/School/Grad School/PhD/DACSS 601 (Data Science Fundamentals)/RStudio/DACSS601August2021/eggs_tidy.csv"</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='va'>eggs</span><span class='op'>)</span>
 </code></pre>
 </div>
-<pre><code>        territory resp   count percent
-1 New South Wales  yes 2374362    57.8
-2 New South Wales   no 1736838    42.2
-3        Victoria  yes 2145629    64.9
-4        Victoria   no 1161098    35.1
-5      Queensland  yes 1487060    60.7
-6      Queensland   no  961015    39.3</code></pre>
+<pre><code>     month year large_half_dozen large_dozen extra_large_half_dozen
+1  January 2004            126.0     230.000                  132.0
+2 February 2004            128.5     226.250                  134.5
+3    March 2004            131.0     225.000                  137.0
+4    April 2004            131.0     225.000                  137.0
+5      May 2004            131.0     225.000                  137.0
+6     June 2004            133.5     231.375                  137.0
+  extra_large_dozen
+1             230.0
+2             230.0
+3             230.0
+4             234.5
+5             236.0
+6             241.0</code></pre>
 </div>
 <h1 id="homework-three">Homework Three</h1>
 <h3 id="select">Select</h3>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://tidyverse.tidyverse.org'>tidyverse</a></span><span class='op'>)</span>
-<span class='fu'>select</span><span class='op'>(</span><span class='va'>marriage</span>, <span class='st'>"territory"</span><span class='op'>)</span>
+<span class='fu'>select</span><span class='op'>(</span><span class='va'>eggs</span>, <span class='st'>"month"</span><span class='op'>)</span>
 </code></pre>
 </div>
-<pre><code>                         territory
-1                  New South Wales
-2                  New South Wales
-3                         Victoria
-4                         Victoria
-5                       Queensland
-6                       Queensland
-7                  South Australia
-8                  South Australia
-9                Western Australia
-10               Western Australia
-11                        Tasmania
-12                        Tasmania
-13           Northern Territory(b)
-14           Northern Territory(b)
-15 Australian Capital Territory(c)
-16 Australian Capital Territory(c)</code></pre>
+<pre><code>        month
+1     January
+2    February
+3       March
+4       April
+5         May
+6        June
+7        July
+8      August
+9   September
+10    October
+11   November
+12   December
+13    January
+14   February
+15      March
+16      April
+17        May
+18       June
+19       July
+20     August
+21  September
+22    October
+23   November
+24   December
+25    January
+26   February
+27      March
+28      April
+29        May
+30       June
+31       July
+32     August
+33  September
+34    October
+35   November
+36   December
+37    January
+38   February
+39      March
+40      April
+41        May
+42       June
+43       July
+44     August
+45  September
+46    October
+47   November
+48   December
+49    January
+50   February
+51      March
+52      April
+53        May
+54       June
+55       July
+56     August
+57  September
+58    October
+59   November
+60   December
+61    January
+62   February
+63      March
+64      April
+65        May
+66       June
+67       July
+68     August
+69  September
+70    October
+71   November
+72   December
+73    January
+74   February
+75      March
+76      April
+77        May
+78       June
+79       July
+80     August
+81  September
+82    October
+83   November
+84   December
+85    January
+86   February
+87      March
+88      April
+89        May
+90       June
+91       July
+92     August
+93  September
+94    October
+95   November
+96   December
+97    January
+98   February
+99      March
+100     April
+101       May
+102      June
+103      July
+104    August
+105 September
+106   October
+107  November
+108  December
+109   January
+110  February
+111     March
+112     April
+113       May
+114      June
+115      July
+116    August
+117 September
+118   October
+119  November
+120  December</code></pre>
 </div>
 <h3 id="filter">Filter</h3>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://tidyverse.tidyverse.org'>tidyverse</a></span><span class='op'>)</span>
-<span class='fu'><a href='https://rdrr.io/r/stats/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>marriage</span>, <span class='va'>`territory`</span> <span class='op'>==</span> <span class='st'>"Victoria"</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/stats/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>eggs</span>, <span class='va'>`month`</span> <span class='op'>==</span> <span class='st'>"January"</span><span class='op'>)</span>
 </code></pre>
 </div>
-<pre><code>  territory resp   count percent
-1  Victoria  yes 2145629    64.9
-2  Victoria   no 1161098    35.1</code></pre>
+<pre><code>     month year large_half_dozen large_dozen extra_large_half_dozen
+1  January 2004            126.0       230.0                 132.00
+2  January 2005            128.5       233.5                 135.50
+3  January 2006            128.5       233.5                 135.50
+4  January 2007            128.5       233.5                 135.50
+5  January 2008            132.0       237.0                 139.00
+6  January 2009            174.5       277.5                 185.50
+7  January 2010            174.5       271.5                 185.50
+8  January 2011            174.5       267.5                 185.50
+9  January 2012            174.5       267.5                 185.50
+10 January 2013            178.0       267.5                 188.13
+   extra_large_dozen
+1              230.0
+2              241.0
+3              241.0
+4              241.5
+5              245.0
+6              285.5
+7              285.5
+8              285.5
+9              285.5
+10             290.0</code></pre>
 </div>
 <h3 id="arrange">Arrange</h3>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://tidyverse.tidyverse.org'>tidyverse</a></span><span class='op'>)</span>
-<span class='fu'><a href='https://rdrr.io/r/stats/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>marriage</span>, <span class='va'>count</span> <span class='op'>&gt;</span> <span class='fl'>500000</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
-  <span class='fu'>arrange</span><span class='op'>(</span><span class='va'>count</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/stats/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>eggs</span>, <span class='va'>`large_half_dozen`</span> <span class='op'>&gt;</span> <span class='fl'>130</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+  <span class='fu'>arrange</span><span class='op'>(</span><span class='va'>`large_half_dozen`</span><span class='op'>)</span>
 </code></pre>
 </div>
-<pre><code>          territory resp   count percent
-1   South Australia  yes  592528    62.5
-2 Western Australia  yes  801575    63.7
-3        Queensland   no  961015    39.3
-4          Victoria   no 1161098    35.1
-5        Queensland  yes 1487060    60.7
-6   New South Wales   no 1736838    42.2
-7          Victoria  yes 2145629    64.9
-8   New South Wales  yes 2374362    57.8</code></pre>
+<pre><code>       month year large_half_dozen large_dozen extra_large_half_dozen
+1      March 2004          131.000     225.000                137.000
+2      April 2004          131.000     225.000                137.000
+3        May 2004          131.000     225.000                137.000
+4   February 2007          131.125     236.125                138.125
+5      March 2007          132.000     237.000                139.000
+6      April 2007          132.000     237.000                139.000
+7        May 2007          132.000     237.000                139.000
+8       June 2007          132.000     237.000                139.000
+9       July 2007          132.000     237.000                139.000
+10    August 2007          132.000     237.000                139.000
+11 September 2007          132.000     237.000                139.000
+12   October 2007          132.000     237.000                139.000
+13  November 2007          132.000     237.000                139.000
+14  December 2007          132.000     237.000                139.000
+15   January 2008          132.000     237.000                139.000
+16  February 2008          132.000     237.000                139.000
+17     March 2008          132.000     237.000                139.000
+18     April 2008          132.000     237.000                139.000
+19       May 2008          132.000     237.000                139.000
+20      June 2004          133.500     231.375                137.000
+21      July 2004          133.500     233.500                137.000
+22    August 2004          133.500     233.500                137.000
+23       May 2012          173.250     267.500                185.500
+24      June 2012          173.250     267.500                185.500
+25      July 2012          173.250     267.500                185.500
+26    August 2012          173.250     267.500                185.500
+27 September 2012          173.250     267.500                185.500
+28   October 2012          173.250     267.500                185.500
+29      June 2008          174.500     277.500                185.500
+30      July 2008          174.500     277.500                185.500
+31    August 2008          174.500     277.500                185.500
+32 September 2008          174.500     277.500                185.500
+33   October 2008          174.500     277.500                185.500
+34  November 2008          174.500     277.500                185.500
+35  December 2008          174.500     277.500                185.500
+36   January 2009          174.500     277.500                185.500
+37  February 2009          174.500     277.500                185.500
+38     March 2009          174.500     277.500                185.500
+39     April 2009          174.500     277.500                185.500
+40       May 2009          174.500     277.500                185.500
+41      June 2009          174.500     277.500                185.500
+42      July 2009          174.500     277.500                185.500
+43    August 2009          174.500     271.500                185.500
+44 September 2009          174.500     271.500                185.500
+45   October 2009          174.500     271.500                185.500
+46  November 2009          174.500     271.500                185.500
+47  December 2009          174.500     271.500                185.500
+48   January 2010          174.500     271.500                185.500
+49  February 2010          174.500     271.500                185.500
+50     March 2010          174.500     268.000                185.500
+51     April 2010          174.500     268.000                185.500
+52       May 2010          174.500     268.000                185.500
+53      June 2010          174.500     268.000                185.500
+54      July 2010          174.500     268.000                185.500
+55    August 2010          174.500     268.000                185.500
+56 September 2010          174.500     268.000                185.500
+57   October 2010          174.500     267.500                185.500
+58  November 2010          174.500     267.500                185.500
+59  December 2010          174.500     267.500                185.500
+60   January 2011          174.500     267.500                185.500
+61  February 2011          174.500     267.500                185.500
+62     March 2011          174.500     267.500                185.500
+63     April 2011          174.500     267.500                185.500
+64       May 2011          174.500     267.500                185.500
+65      June 2011          174.500     270.000                185.500
+66      July 2011          174.500     270.000                185.500
+67    August 2011          174.500     270.000                185.500
+68 September 2011          174.500     270.000                185.500
+69   October 2011          174.500     270.000                185.500
+70  November 2011          174.500     270.000                185.500
+71  December 2011          174.500     270.000                185.500
+72   January 2012          174.500     267.500                185.500
+73  February 2012          174.500     267.500                185.500
+74     March 2012          174.500     267.500                185.500
+75     April 2012          174.500     267.500                185.500
+76  November 2012          178.000     267.500                188.130
+77  December 2012          178.000     267.500                188.130
+78   January 2013          178.000     267.500                188.130
+79  February 2013          178.000     267.500                188.130
+80     March 2013          178.000     267.500                188.130
+81     April 2013          178.000     267.500                188.130
+82       May 2013          178.000     267.500                188.130
+83      June 2013          178.000     267.500                188.130
+84      July 2013          178.000     267.500                188.130
+85    August 2013          178.000     267.500                188.130
+86 September 2013          178.000     267.500                188.130
+87   October 2013          178.000     267.500                188.130
+88  November 2013          178.000     267.500                188.130
+89  December 2013          178.000     267.500                188.130
+   extra_large_dozen
+1            230.000
+2            234.500
+3            236.000
+4            244.125
+5            245.000
+6            245.000
+7            245.000
+8            245.000
+9            245.000
+10           245.000
+11           245.000
+12           245.000
+13           245.000
+14           245.000
+15           245.000
+16           245.000
+17           245.000
+18           245.000
+19           245.000
+20           241.000
+21           241.000
+22           241.000
+23           288.500
+24           288.500
+25           288.500
+26           288.500
+27           288.500
+28           288.500
+29           285.500
+30           285.500
+31           285.500
+32           285.500
+33           285.500
+34           285.500
+35           285.500
+36           285.500
+37           285.500
+38           285.500
+39           285.500
+40           285.500
+41           285.500
+42           285.500
+43           285.500
+44           285.500
+45           285.500
+46           285.500
+47           285.500
+48           285.500
+49           285.500
+50           285.500
+51           285.500
+52           285.500
+53           285.500
+54           285.500
+55           285.500
+56           285.500
+57           285.500
+58           285.500
+59           285.500
+60           285.500
+61           285.500
+62           285.500
+63           285.500
+64           285.500
+65           285.500
+66           285.500
+67           285.500
+68           285.500
+69           285.500
+70           285.500
+71           285.500
+72           285.500
+73           288.500
+74           288.500
+75           288.500
+76           290.000
+77           290.000
+78           290.000
+79           290.000
+80           290.000
+81           290.000
+82           290.000
+83           290.000
+84           290.000
+85           290.000
+86           290.000
+87           290.000
+88           290.000
+89           290.000</code></pre>
 </div>
 <h3 id="summarize">Summarize</h3>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://tidyverse.tidyverse.org'>tidyverse</a></span><span class='op'>)</span>
-<span class='fu'>summarize</span><span class='op'>(</span><span class='va'>marriage</span>, <span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>`count`</span><span class='op'>)</span><span class='op'>)</span>
+<span class='fu'>summarize</span><span class='op'>(</span><span class='va'>eggs</span>, <span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>`large_half_dozen`</span><span class='op'>)</span><span class='op'>)</span>
 </code></pre>
 </div>
-<pre><code>  mean(count)
-1    793202.1</code></pre>
+<pre><code>  mean(large_half_dozen)
+1               155.1656</code></pre>
 </div>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<h1 id="homework-four">Homework Four</h1>
+<h3 id="egg-data-for-large-half-dozens">Egg Data for Large Half Dozens</h3>
+<p>The following is a brief set of summary statistics from the eggs_tidy dataset, specifically looking at the price (in cents) per Large Half Dozen Eggs from January 2004 to December 2013. I have provided the mean, median, min, and max for this variable, along with a basic visualization. No data cleaning or recoding was necessary, given the provided dataset was sufficiently clean.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://tidyverse.tidyverse.org'>tidyverse</a></span><span class='op'>)</span>
+<span class='fu'>summarize</span><span class='op'>(</span><span class='va'>eggs</span>, <span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>`large_half_dozen`</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>  mean(large_half_dozen)
+1               155.1656</code></pre>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://tidyverse.tidyverse.org'>tidyverse</a></span><span class='op'>)</span>
+<span class='fu'>summarize</span><span class='op'>(</span><span class='va'>eggs</span>, <span class='fu'><a href='https://rdrr.io/r/stats/median.html'>median</a></span><span class='op'>(</span><span class='va'>`large_half_dozen`</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>  median(large_half_dozen)
+1                    174.5</code></pre>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://tidyverse.tidyverse.org'>tidyverse</a></span><span class='op'>)</span>
+<span class='fu'>summarize</span><span class='op'>(</span><span class='va'>eggs</span>, <span class='fu'><a href='https://rdrr.io/r/base/Extremes.html'>min</a></span><span class='op'>(</span><span class='va'>`large_half_dozen`</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>  min(large_half_dozen)
+1                   126</code></pre>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://tidyverse.tidyverse.org'>tidyverse</a></span><span class='op'>)</span>
+<span class='fu'>summarize</span><span class='op'>(</span><span class='va'>eggs</span>, <span class='fu'><a href='https://rdrr.io/r/base/Extremes.html'>max</a></span><span class='op'>(</span><span class='va'>`large_half_dozen`</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>  max(large_half_dozen)
+1                   178</code></pre>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://tidyverse.tidyverse.org'>tidyverse</a></span><span class='op'>)</span>
+<span class='fu'>ggplot</span><span class='op'>(</span><span class='va'>eggs</span>, <span class='fu'>aes</span><span class='op'>(</span><span class='va'>`large_half_dozen`</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span> <span class='fu'>geom_histogram</span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>theme_minimal</span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>labs</span><span class='op'>(</span>title <span class='op'>=</span> <span class='st'>"Large Half Dozen Egg Prices (in cents) | Jan. 2004 to Dec. 2013"</span>, y <span class='op'>=</span> <span class='st'>"Count of Occurances"</span>, x<span class='op'>=</span> <span class='st'>"Count of Eggs"</span><span class='op'>)</span>
+</code></pre>
+</div>
+<p><img src="saulo-homework-two_files/figure-html5/unnamed-chunk-10-1.png" width="624" /></p>
+</div>
+<h3 id="egg-data-for-large-dozens">Egg Data for Large Dozens</h3>
+<p>The following is a brief set of summary statistics from the eggs_tidy dataset, specifically looking at the price (in cents) per Large Dozen Eggs from January 2004 to December 2013. I have provided the mean, median, min, and max for this variable, along with a basic visualization. No data cleaning or recoding was necessary, given the provided dataset was sufficiently clean.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://tidyverse.tidyverse.org'>tidyverse</a></span><span class='op'>)</span>
+<span class='fu'>summarize</span><span class='op'>(</span><span class='va'>eggs</span>, <span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>`large_dozen`</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>  mean(large_dozen)
+1          254.1979</code></pre>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://tidyverse.tidyverse.org'>tidyverse</a></span><span class='op'>)</span>
+<span class='fu'>summarize</span><span class='op'>(</span><span class='va'>eggs</span>, <span class='fu'><a href='https://rdrr.io/r/stats/median.html'>median</a></span><span class='op'>(</span><span class='va'>`large_dozen`</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>  median(large_dozen)
+1               267.5</code></pre>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://tidyverse.tidyverse.org'>tidyverse</a></span><span class='op'>)</span>
+<span class='fu'>summarize</span><span class='op'>(</span><span class='va'>eggs</span>, <span class='fu'><a href='https://rdrr.io/r/base/Extremes.html'>min</a></span><span class='op'>(</span><span class='va'>`large_dozen`</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>  min(large_dozen)
+1              225</code></pre>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://tidyverse.tidyverse.org'>tidyverse</a></span><span class='op'>)</span>
+<span class='fu'>summarize</span><span class='op'>(</span><span class='va'>eggs</span>, <span class='fu'><a href='https://rdrr.io/r/base/Extremes.html'>max</a></span><span class='op'>(</span><span class='va'>`large_dozen`</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>  max(large_dozen)
+1            277.5</code></pre>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://tidyverse.tidyverse.org'>tidyverse</a></span><span class='op'>)</span>
+<span class='fu'>ggplot</span><span class='op'>(</span><span class='va'>eggs</span>, <span class='fu'>aes</span><span class='op'>(</span><span class='va'>`large_dozen`</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span> <span class='fu'>geom_histogram</span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>theme_minimal</span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>labs</span><span class='op'>(</span>title <span class='op'>=</span> <span class='st'>"Large Dozen Eggs (in cents) | Jan. 2004 to Dec. 2013"</span>, y <span class='op'>=</span> <span class='st'>"Count of Occurances"</span>, x<span class='op'>=</span> <span class='st'>"Count of Eggs"</span><span class='op'>)</span>
+</code></pre>
+</div>
+<p><img src="saulo-homework-two_files/figure-html5/unnamed-chunk-15-1.png" width="624" /></p>
+</div>
+<h1 id="homework-five">Homework Five</h1>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://tidyverse.tidyverse.org'>tidyverse</a></span><span class='op'>)</span>
+<span class='fu'>ggplot</span><span class='op'>(</span><span class='va'>eggs</span>, <span class='fu'>aes</span><span class='op'>(</span>x<span class='op'>=</span><span class='va'>`year`</span>, y<span class='op'>=</span><span class='va'>`large_half_dozen`</span>, col<span class='op'>=</span><span class='fu'>as_factor</span><span class='op'>(</span><span class='va'>`extra_large_half_dozen`</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span> 
+  <span class='fu'>geom_point</span><span class='op'>(</span><span class='op'>)</span>
+</code></pre>
+</div>
+<p><img src="saulo-homework-two_files/figure-html5/unnamed-chunk-16-1.png" width="624" /></p>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://tidyverse.tidyverse.org'>tidyverse</a></span><span class='op'>)</span>
+<span class='fu'>ggplot</span><span class='op'>(</span><span class='va'>eggs</span>, <span class='fu'>aes</span><span class='op'>(</span>x<span class='op'>=</span><span class='va'>`year`</span>, y<span class='op'>=</span><span class='va'>`large_dozen`</span>, col<span class='op'>=</span><span class='fu'>as_factor</span><span class='op'>(</span><span class='va'>`extra_large_dozen`</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span> 
+  <span class='fu'>geom_point</span><span class='op'>(</span><span class='op'>)</span>
+</code></pre>
+</div>
+<p><img src="saulo-homework-two_files/figure-html5/unnamed-chunk-17-1.png" width="624" /></p>
+</div>
+<ol type="1">
+<li><p><em>What these visualizations represent</em>: There is an equal relationship between the prices of <strong>Large Half Dozen</strong> and <strong>Extra Large Half Dozen</strong> eggs, as well as between the prices of <strong>Large Dozen</strong> and <strong>Extra Large Dozen</strong> eggs. Essentially, it appears they go up at the same rate over time; if the Large variation goes up, so too does the Extra Large variation.</p></li>
+<li><p><em>Why I chose this visualization approach, and what alternative approaches I considered but decided not to pursue</em>: These visualizations are very straightforward and clearly demonstrate the relationships between the Large and Extra Large egg variations. I attempted a histogram, but received a very lengthy error, which led me to feel content with the geom_point() option.</p></li>
+<li><p><em>What I wished, if anything, I could have executed but found limited capability to do</em>: It would have been nice to produce a larger visual that included month <em>and</em> year, to spread the points out even further, but I was unsure of how to do that. I also wish there were more data to utilize, such as the price of chickens, which would be interesting to compare to the price of eggs.</p></li>
+</ol>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
