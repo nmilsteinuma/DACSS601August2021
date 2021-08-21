@@ -1,0 +1,207 @@
+---
+title: "Noah Homework 4"
+description:  |  
+  This is the initial scaffloding for my final project and Homework Four.
+author:
+-name: Noah Milstein
+date: 08-19-2021
+output:
+  distill::distill_article:
+    self_contained: false
+draft: true
+---
+
+# Assignemnt
+
+1. Descriptions of the variables - how they were collected, any missing values, etc
+
+2. How you cleaned and coded the data, including a before/after comparison as needed
+
+3. summary descriptives of the recoded variables
+
+4. appropriate visualizations (not required)
+
+
+
+## My Data
+
+The dataset I chose for my final project relates to household debt in the United States, it comes from the New York Federal Reserve in quarterly data since 2003 and is reported in the trillions. I am very much interested in the increasing use of debt in the economy to inflate the value of a variety of sectors and give the impression of economic well being. Because of this is wanted to start by analyzing the FED data regarding the basic kinds of debt in comparison to one another and income to see how various forms of debt have been increasing.
+
+
+```{r, Echo=FALSE}
+
+library(readxl)
+library(tidyverse)
+library(sjmisc)
+library(ggplot2)
+library(dplyr)
+library(ggthemes)
+```
+
+```{r, Echo=FALSE}
+values_before_date_modification<-seq(1:74)
+
+total_debt_plus_comp_raw_NM <- read_excel("~/Desktop/DACSS601HW/DACSS601August2021/_data/total_debt_plus_comp_raw_NM.xlsx")
+
+GDP_FED_trills <- read_excel("~/Desktop/DACSS601HW/DACSS601August2021/_data/GDP_FED_NOAH.xls")
+
+```
+
+## My Variables
+ 
+The above code loads in the two datasets I will be using for this project. The first "total_debt_plus_comp_raw_NM" contains data from the federal reserve regarding cumulative debt in the united states in trillions of dollars. It is broken down into the Year and Quarter in which the observation was recored. It is subdivided into columns by Mortgage, HE Revolving, Auto Loan, Credit Card, Student Loan, Other, and Total debt.
+
+The second of the two datasets "GDP_FED_trills" contains yearly GDP data also broken down into quarterly data.
+
+```{r}
+GDP_Rows_Removed_to_Q4_2002<-GDP_FED_trills[-c(1:234),]
+
+# First unneeded observation not included in the debt sheet are removed from GDP
+
+GDP_Rows_Removed_to_Q4_2002<-GDP_Rows_Removed_to_Q4_2002[-c(1)]
+
+# Next the First column is removed because it does not contain data
+
+names(GDP_Rows_Removed_to_Q4_2002)[1] <- "Total_GDP_Billions"
+
+# After this I rename the column that has become the first one into "Total_GDP_Billions"
+
+GDP_Rows_Removed_to_Q4_2002$Quarters_Since_Q4_2002<-values_before_date_modification
+
+# Next to the GDP I add my sequence of number 
+#from 1 to 74 representing the number of quarters 
+#since Q4 2002 which is a bootstrap method of creating a time variable
+
+transform(GDP_Rows_Removed_to_Q4_2002,as.integer(GDP_Rows_Removed_to_Q4_2002$Total_GDP_Billions))
+
+
+
+GDP_Rows_Removed_to_Q4_2002_numeric <- transform(GDP_Rows_Removed_to_Q4_2002, Total_GDP_Billions = as.numeric(Total_GDP_Billions))
+
+# Next I convert the column "Total_GDP_Billions" into an integer as it was initally a character
+
+GDP_Rows_Removed_to_Q4_2002_trillions <- GDP_Rows_Removed_to_Q4_2002_numeric %>% mutate(Total_GDP_Trillions = Total_GDP_Billions/1000)
+
+# The final part of the section of data cleaning is to convert my GDP Data represented in billions into trillions by diving by 1000. This is because my debt data is in trillions and the smaller integers will be simpler to graph.
+
+```
+
+
+The lines of code above are the initial cleaning process for the Federal reserve GDP data. Because of the nature of the excel file it came in I had to remove the first 234 rows because they either contained no data, as in the case of the first 3 which just had descriptions and citations from the federal reserve, and the other because they represented data outside of the scope of the NY-FED data regarding debt. The Debt data only goes back to 2002, while the GDP data goes back to the 1980s.
+
+
+```{r}
+tdpcr_NM_Minus_2_rows<-total_debt_plus_comp_raw_NM[-c(1,2,3),]
+
+# The line above deletes the first 3 rows of text containing no observations from the dataset
+
+tdpcr_NM_Minus_2_rows<-tdpcr_NM_Minus_2_rows[-c(9)]
+
+#the line above deletes the 9th column which contains one box of text and no observations
+
+names(tdpcr_NM_Minus_2_rows)[1] <- "Year and Quarter"
+names(tdpcr_NM_Minus_2_rows)[2] <- "Mortgage"
+names(tdpcr_NM_Minus_2_rows)[3] <- "HE Revolving"
+names(tdpcr_NM_Minus_2_rows)[4] <- "Auto Loan"
+names(tdpcr_NM_Minus_2_rows)[5] <- "Credit Card"
+names(tdpcr_NM_Minus_2_rows)[6] <- "Student Loan"
+names(tdpcr_NM_Minus_2_rows)[7] <- "Other"
+names(tdpcr_NM_Minus_2_rows)[8] <- "Total"
+
+# The lines above create new replacement names for the lost variables from the row deletion 
+
+tdpcr_NM_Minus_2_rows$Quarters_Since_Q4_2002<-values_before_date_modification
+
+# The final line of code adds the list of 1 through 74 number representing the quarters since Q4 2002
+
+```
+
+The portion of code above involves the next step of my data cleaning with the Debt Spreadsheet. Like GDP the first few rows did not contain data and simply descriptive text from the Fed. In addition column 9 had descriptive text and needed to be deleted. This deletion necessitated that the columns also be renamed to their original category.
+
+
+```{r}
+complete_spreadsheet_GDP_Debt<-full_join(GDP_Rows_Removed_to_Q4_2002_trillions, tdpcr_NM_Minus_2_rows, by = "Quarters_Since_Q4_2002")
+
+complete_spreadsheet_GDP_Debt <- transform(complete_spreadsheet_GDP_Debt, Mortgage = as.numeric(Mortgage))
+
+complete_spreadsheet_GDP_Debt <- transform(complete_spreadsheet_GDP_Debt, HE.Revolving = as.numeric(HE.Revolving))
+
+complete_spreadsheet_GDP_Debt <- transform(complete_spreadsheet_GDP_Debt, Auto.Loan = as.numeric(Auto.Loan))
+
+complete_spreadsheet_GDP_Debt <- transform(complete_spreadsheet_GDP_Debt, Credit.Card=as.numeric(Credit.Card))
+
+complete_spreadsheet_GDP_Debt <- transform(complete_spreadsheet_GDP_Debt, Student.Loan=as.numeric(Student.Loan))
+
+complete_spreadsheet_GDP_Debt <- transform(complete_spreadsheet_GDP_Debt, Other=as.numeric(Other))
+
+complete_spreadsheet_GDP_Debt <- transform(complete_spreadsheet_GDP_Debt, Total=as.numeric(Total))
+
+```
+
+The code above changes each column's data from character to numeric values as the full_join caused the data to become exclusively defined as character variables.
+
+```{r}
+complete_spreadsheet_GDP_Debt %>%
+ggplot() +
+ geom_smooth(mapping=aes(x=Quarters_Since_Q4_2002,y=Student.Loan), color="blue4")+
+ geom_smooth(mapping=aes(x=Quarters_Since_Q4_2002,y=HE.Revolving),  color="springgreen")+ geom_smooth(mapping=aes(x=Quarters_Since_Q4_2002,y=Auto.Loan), color="rosybrown")+ geom_smooth(mapping=aes(x=Quarters_Since_Q4_2002,y=Credit.Card), color="red")+
+geom_smooth(mapping=aes(x=Quarters_Since_Q4_2002,y=Other), color="violetred")
+
+
+
+
+```
+
+
+```{r}
+complete_spreadsheet_GDP_Debt %>%
+ggplot() + 
+  geom_point(mapping=aes(x=Quarters_Since_Q4_2002, y=Total))+
+  geom_smooth(mapping=aes(x=Quarters_Since_Q4_2002, y=Total))+
+ geom_point(mapping=aes(x=Quarters_Since_Q4_2002, y=Student.Loan)) +  geom_smooth(mapping=aes(x=Quarters_Since_Q4_2002, y=Student.Loan))+
+ labs(title="Relationship Between Time and Student Loan Debt Compared to Total Debt", y= "Loan Volume (Trillions) ", x="Time Since Q1 2002 (Quarters)")
+ 
+```
+
+
+```{r}
+complete_spreadsheet_GDP_Debt %>%
+ggplot() +
+  geom_point(mapping=aes(x=Quarters_Since_Q4_2002, y=`Mortgage`)) +  
+  geom_point(mapping=aes(x=Quarters_Since_Q4_2002, y=`Total`))+
+  geom_smooth(mapping=aes(x=Quarters_Since_Q4_2002, y=`Mortgage`))+
+  geom_smooth(mapping=aes(x=Quarters_Since_Q4_2002, y=`Total`))+ labs(title="Relationship Between Time and Mortgage Debt Compared to Total Debt",  y= "Loan Volume (Trillions) ", x="Time Since Q1 2002 (Quarters)")
+ 
+```
+
+```{r}
+complete_spreadsheet_GDP_Debt %>%
+ggplot() +
+  geom_point(mapping=aes(x=Quarters_Since_Q4_2002, y=`Mortgage`)) +  
+   geom_smooth(mapping=aes(x=Quarters_Since_Q4_2002, y=`Mortgage`), color="orchid")+
+  geom_point(mapping=aes(x=Quarters_Since_Q4_2002, y=`Total`))+
+  geom_smooth(mapping=aes(x=Quarters_Since_Q4_2002, y=`Total`), color="blue")+
+  geom_point(mapping=aes(x=Quarters_Since_Q4_2002, y=`Credit.Card`))+
+  geom_smooth(mapping=aes(x=Quarters_Since_Q4_2002, y=`Credit.Card`), color="tomato")+
+    geom_point(mapping=aes(x=Quarters_Since_Q4_2002, y=`Student.Loan`)) +  
+   geom_smooth(mapping=aes(x=Quarters_Since_Q4_2002, y=`Student.Loan`), color="seagreen")+
+  labs(title="Relationship Between Time and Mortgage Debt Compared to Total Debt",  y= "Loan Volume (Trillions) ", x="Time Since Q1 2002 (Quarters)") +
+  theme_minimal()
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

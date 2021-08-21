@@ -1,0 +1,37 @@
+---
+title: "tryingtoloaddata"
+author: "Noah"
+date: "8/18/2021"
+output: pdf_document
+---
+
+```{r}
+library(readxl)
+library(tidyverse)
+library(sjmisc)
+library(ggplot2)
+```
+
+```{r}
+debt_in_trillions <- read_excel("_data/debt_in_trillions.xlsx")
+
+#debt_in_trillions <- debt_in_trillions %>% mutate(`Year and Quarter`= sub(":", "", `Year and Quarter`)) 
+#debt_in_trillions<-debt_in_trillions %>% mutate(`Year and Quarter`= sub("Q", "", `Year and Quarter`))
+values_before_date_modification<-seq(1:74)
+debt_in_trillions$Quarters_Since_Q4_2002<-values_before_date_modification
+debt_in_trillions
+
+```
+
+```{r}
+ggplot() +
+  geom_point(mapping=aes(x=Quarters_Since_Q4_2002, y=`Student Loan`), debt_in_trillions) +  
+  geom_point(mapping=aes(x=Quarters_Since_Q4_2002, y=`Total`), debt_in_trillions)+
+  geom_smooth(mapping=aes(x=Quarters_Since_Q4_2002, y=`Student Loan`), debt_in_trillions)+
+  geom_smooth(mapping=aes(x=Quarters_Since_Q4_2002, y=`Total`), debt_in_trillions)+ labs(title="Relationship Between Time and Student Loan Debt Compared to Total Debt",  y= "Loan Volume (Trillions) ", x="Time Since Q1 2002 (Quarters)")
+ 
+```
+
+
+
+

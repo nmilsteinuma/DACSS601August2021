@@ -1,0 +1,82 @@
+---
+title: "Untitled"
+author: "Noah"
+date: "8/19/2021"
+output: pdf_document
+---
+
+```{r, Echo=FALSE}
+
+library(readxl)
+library(tidyverse)
+library(sjmisc)
+library(ggplot2)
+library(dplyr)
+library(ggthemes)
+```
+
+```{r}
+total_debt_plus_comp_raw_NM <- read_excel("_data/total_debt_plus_comp_raw_NM.xlsx")
+total_debt_plus_comp_raw_NM
+```
+
+```{r}
+tdpcr_NM_Minus_2_rows<-total_debt_plus_comp_raw_NM[-c(1,2,3),]
+tdpcr_NM_Minus_2_rows<-tdpcr_NM_Minus_2_rows[-c(9)]
+tdpcr_NM_Minus_2_rows
+```
+
+```{r}
+names(tdpcr_NM_Minus_2_rows)[1] <- "Year and Quarter"
+names(tdpcr_NM_Minus_2_rows)[2] <- "Mortgage"
+names(tdpcr_NM_Minus_2_rows)[3] <- "HE Revolving"
+names(tdpcr_NM_Minus_2_rows)[4] <- "Auto Loan"
+names(tdpcr_NM_Minus_2_rows)[5] <- "Credit Card"
+names(tdpcr_NM_Minus_2_rows)[6] <- "Student Loan"
+names(tdpcr_NM_Minus_2_rows)[7] <- "Other"
+names(tdpcr_NM_Minus_2_rows)[8] <- "Total"
+
+values_before_date_modification<-seq(1:74)
+
+tdpcr_NM_Minus_2_rows$Quarters_Since_Q4_2002<-values_before_date_modification
+
+tdpcr_NM_Minus_2_rows
+```
+
+```{r}
+tdpcr_NM_Minus_2_rows %>%
+ggplot() +
+  geom_point(mapping=aes(x=Quarters_Since_Q4_2002, y=`Student Loan`), debt_in_trillions) +  
+   geom_smooth(mapping=aes(x=Quarters_Since_Q4_2002, y=`Student Loan`), debt_in_trillions)+
+  geom_point(mapping=aes(x=Quarters_Since_Q4_2002, y=`Total`), debt_in_trillions)+
+  geom_smooth(mapping=aes(x=Quarters_Since_Q4_2002, y=`Total`), debt_in_trillions)+ labs(title="Relationship Between Time and Student Loan Debt Compared to Total Debt",  y= "Loan Volume (Trillions) ", x="Time Since Q1 2002 (Quarters)")
+ 
+```
+
+```{r}
+tdpcr_NM_Minus_2_rows %>%
+ggplot() +
+  geom_point(mapping=aes(x=Quarters_Since_Q4_2002, y=`Mortgage`), debt_in_trillions) +  
+  geom_point(mapping=aes(x=Quarters_Since_Q4_2002, y=`Total`), debt_in_trillions)+
+  geom_smooth(mapping=aes(x=Quarters_Since_Q4_2002, y=`Mortgage`), debt_in_trillions)+
+  geom_smooth(mapping=aes(x=Quarters_Since_Q4_2002, y=`Total`), debt_in_trillions)+ labs(title="Relationship Between Time and Mortgage Debt Compared to Total Debt",  y= "Loan Volume (Trillions) ", x="Time Since Q1 2002 (Quarters)")
+ 
+```
+
+```{r}
+tdpcr_NM_Minus_2_rows %>%
+ggplot() +
+  geom_point(mapping=aes(x=Quarters_Since_Q4_2002, y=`Mortgage`), debt_in_trillions) +  
+   geom_smooth(mapping=aes(x=Quarters_Since_Q4_2002, y=`Mortgage`), debt_in_trillions, color="orchid")+
+  geom_point(mapping=aes(x=Quarters_Since_Q4_2002, y=`Total`), debt_in_trillions)+
+  geom_smooth(mapping=aes(x=Quarters_Since_Q4_2002, y=`Total`), debt_in_trillions, color="blue")+
+  geom_point(mapping=aes(x=Quarters_Since_Q4_2002, y=`Credit Card`), debt_in_trillions)+
+  geom_smooth(mapping=aes(x=Quarters_Since_Q4_2002, y=`Credit Card`), debt_in_trillions, color="tomato")+
+    geom_point(mapping=aes(x=Quarters_Since_Q4_2002, y=`Student Loan`), debt_in_trillions) +  
+   geom_smooth(mapping=aes(x=Quarters_Since_Q4_2002, y=`Student Loan`), debt_in_trillions, color="seagreen")+
+  labs(title="Relationship Between Time and Mortgage Debt Compared to Total Debt",  y= "Loan Volume (Trillions) ", x="Time Since Q1 2002 (Quarters)") +
+  theme_minimal()
+```
+
+
+

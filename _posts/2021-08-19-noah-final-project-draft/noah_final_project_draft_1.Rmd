@@ -1,0 +1,33 @@
+---
+title: "tryingtoloaddata"
+author: "Noah"
+date: "8/18/2021"
+output: pdf_document
+---
+
+```{r}
+library(readxl)
+```
+
+```{r}
+FRBNY_SCE_Public_Microdata_Complete_13_16 <- read_excel("_data/FRBNY-SCE-Public-Microdata-Complete-13-16.xlsx")
+```
+
+```{r}
+FRBNY_SCE_Public_Microdata_Complete_17_19 <- read_excel("_data/FRBNY-SCE-Public-Microdata-Complete-17-19.xlsx")
+```
+```{r}
+frbny_sce_public_microdata_complete_20_present <- read_excel("_data/frbny-sce-public-microdata-complete-20-present.xlsx")
+View(frbny_sce_public_microdata_complete_20_present)
+```
+```{r}
+library(dplyr)
+library(utils)
+?join()
+```
+
+```{r}
+first_and_second_join <- full_join(FRBNY_SCE_Public_Microdata_Complete_13_16,FRBNY_SCE_Public_Microdata_Complete_17_19)
+first_and_second_join 
+```
+
