@@ -1,0 +1,138 @@
+---
+title: "Saulo's Homeworks"
+description: |
+  Feeble attempts at data science.
+author:
+  - name: Saulo DePaula
+date: 08-16-2021
+categories:
+  - saulo
+  - homeworks
+  - read data
+output:
+  distill::distill_article:
+    self_contained: false
+draft: true
+---
+# Homework Two
+
+```{r}
+eggs <- read.csv(file="/Users/SauloDePaula/Documentos/Documents/School/Grad School/PhD/DACSS 601 (Data Science Fundamentals)/RStudio/DACSS601August2021/eggs_tidy.csv")
+head(eggs)
+```
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Homework Three
+
+### Select
+```{r}
+library(tidyverse)
+select(eggs, "month")
+```
+
+### Filter
+```{r}
+library(tidyverse)
+filter(eggs, `month` == "January")
+```
+
+### Arrange
+```{r}
+library(tidyverse)
+filter(eggs, `large_half_dozen` > 130) %>%
+  arrange(`large_half_dozen`)
+```
+
+### Summarize
+```{r}
+library(tidyverse)
+summarize(eggs, mean(`large_half_dozen`))
+```
+
+# Homework Four
+
+### Egg Data for Large Half Dozens
+The following is a brief set of summary statistics from the eggs_tidy dataset, specifically looking at the price (in cents) per Large Half Dozen Eggs from January 2004 to December 2013. I have provided the mean, median, min, and max for this variable, along with a basic visualization. No data cleaning or recoding was necessary, given the provided dataset was sufficiently clean. 
+
+```{r}
+library(tidyverse)
+summarize(eggs, mean(`large_half_dozen`))
+```
+
+```{r}
+library(tidyverse)
+summarize(eggs, median(`large_half_dozen`))
+```
+
+```{R}
+library(tidyverse)
+summarize(eggs, min(`large_half_dozen`))
+```
+
+```{R}
+library(tidyverse)
+summarize(eggs, max(`large_half_dozen`))
+```
+
+```{R}
+library(tidyverse)
+ggplot(eggs, aes(`large_half_dozen`)) + geom_histogram() +
+  theme_minimal() +
+  labs(title = "Large Half Dozen Egg Prices (in cents) | Jan. 2004 to Dec. 2013", y = "Count of Occurances", x= "Count of Eggs")
+```
+
+### Egg Data for Large Dozens
+The following is a brief set of summary statistics from the eggs_tidy dataset, specifically looking at the price (in cents) per Large Dozen Eggs from January 2004 to December 2013. I have provided the mean, median, min, and max for this variable, along with a basic visualization. No data cleaning or recoding was necessary, given the provided dataset was sufficiently clean. 
+
+```{r}
+library(tidyverse)
+summarize(eggs, mean(`large_dozen`))
+```
+
+```{r}
+library(tidyverse)
+summarize(eggs, median(`large_dozen`))
+```
+
+```{R}
+library(tidyverse)
+summarize(eggs, min(`large_dozen`))
+```
+
+```{R}
+library(tidyverse)
+summarize(eggs, max(`large_dozen`))
+```
+
+```{R}
+library(tidyverse)
+ggplot(eggs, aes(`large_dozen`)) + geom_histogram() +
+  theme_minimal() +
+  labs(title = "Large Dozen Eggs (in cents) | Jan. 2004 to Dec. 2013", y = "Count of Occurances", x= "Count of Eggs")
+```
+
+# Homework Five
+
+```{R}
+library(tidyverse)
+ggplot(eggs, aes(x=`year`, y=`large_half_dozen`, col=as_factor(`extra_large_half_dozen`))) + 
+  geom_point()
+```
+
+```{R}
+library(tidyverse)
+ggplot(eggs, aes(x=`year`, y=`large_dozen`, col=as_factor(`extra_large_dozen`))) + 
+  geom_point()
+```
+
+1. *What these visualizations represent*: 
+There is an equal relationship between the prices of **Large Half Dozen** and **Extra Large Half Dozen** eggs, as well as between the prices of **Large Dozen** and **Extra Large Dozen** eggs. Essentially, it appears they go up at the same rate over time; if the Large variation goes up, so too does the Extra Large variation.
+
+2. *Why I chose this visualization approach, and what alternative approaches I considered but decided not to pursue*: 
+These visualizations are very straightforward and clearly demonstrate the relationships between the Large and Extra Large egg variations. I attempted a histogram, but received a very lengthy error, which led me to feel content with the geom_point() option.
+
+3. *What I wished, if anything, I could have executed but found limited capability to do*:
+It would have been nice to produce a larger visual that included month *and* year, to spread the points out even further, but I was unsure of how to do that. I also wish there were more data to utilize, such as the price of chickens, which would be interesting to compare to the price of eggs.
