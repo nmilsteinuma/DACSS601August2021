@@ -1,13 +1,13 @@
 ---
-title: "SCHOOL-DISTRICT-DATA-TRACY"
+title: SCHOOL-DISTRICT-DATA-TRACY
 description: |
   Data Analysis of Massachusetts Public Schools' Class Size by Gender and Selected Populations for DACSS601 Final Project, HW4 and HW5
 Author: Erin-Tracy
 date: 08-19-2021
 output:
   distill::distill_article:
-    self_contained: false
-draft: true
+    self_contained: no
+draft: yes
 ---
 
 ```{r setup, include=TRUE}

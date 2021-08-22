@@ -1,23 +1,23 @@
 ---
-title: "Saulo's Homeworks"
+title: Saulo's Homeworks
 description: |
   Feeble attempts at data science.
 author:
-  - name: Saulo DePaula
+- name: Saulo DePaula
 date: 08-16-2021
 categories:
-  - saulo
-  - homeworks
-  - read data
+- saulo
+- homeworks
+- read data
 output:
   distill::distill_article:
-    self_contained: false
-draft: true
+    self_contained: no
+draft: yes
 ---
 # Homework Two
 
 ```{r}
-eggs <- read.csv(file="/Users/SauloDePaula/Documentos/Documents/School/Grad School/PhD/DACSS 601 (Data Science Fundamentals)/RStudio/DACSS601August2021/eggs_tidy.csv")
+eggs <- read.csv(file="../../_data/eggs_tidy.csv")
 head(eggs)
 ```
 

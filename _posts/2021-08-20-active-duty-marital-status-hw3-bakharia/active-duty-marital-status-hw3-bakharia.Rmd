@@ -1,13 +1,13 @@
 ---
-title: "Active Duty Marital Status HW3 - bakharia"
+title: Active Duty Marital Status HW3 - bakharia
 description: |
   This post contains data wrangling of the Active Duty Marital Status and some basic visualization of the output.
 author: Shubham Mishra
 date: 08-20-2021
 output:
   distill::distill_article:
-    self_contained: false
-draft: true
+    self_contained: no
+draft: yes
 ---
 
 

@@ -1,13 +1,13 @@
 ---
 title: R Notebook
 output: html_notebook
-draft: no
+draft: yes
 ---
 ```{r}
 library(tidyverse)
 ```
 ```{r}
-df = readxl::read_excel('../../_data/organiceggpoultry.xls', skip = 4, sheet = 'Data')
+df = readxl::read_excel('../../../_data/organiceggpoultry.xls', skip = 4, sheet = 'Data')
 df
 ```
 ```{r}
