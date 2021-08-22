@@ -1,0 +1,136 @@
+---
+title: Rhys_Long_Eggs
+description: |
+  This is a data set that includes records of how many cartons of eggs were sold every month in 2004-2013. I got this data from the Basic Data sets section of google classroom. This data set contains four variables.
+author: Rhys Long
+date: 08-11-2021
+output:
+  distill::distill_article:
+    self_contained: no
+draft: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Part 1: Full Dataset
+
+```{r}
+library(tidyverse)
+library(ggplot2)
+eggs_data <- read.csv(file = "../../_data/eggs_tidy.csv")
+tibble(eggs_data)
+ggplot(data = eggs_data, aes(year)) +
+  geom_point(mapping = aes(y=extra_large_dozen), color = 'magenta') +
+  geom_point(mapping = aes(y=large_dozen), color = 'purple') +
+  geom_point(mapping = aes(y=extra_large_half_dozen), color = 'blue') +
+  geom_point(mapping = aes(y=large_half_dozen), color = 'cyan') +
+  labs(title="Eggs Sales in 2004-2013", y="Eggs Sold", x="Year")
+```
+
+Part 2: Using Filter And Summarize
+
+```{r}
+first_third <- filter(eggs_data, year <= 2007)
+ggplot(data = first_third, aes(year)) +
+  geom_point(mapping = aes(y=extra_large_dozen), color = 'magenta') +
+  geom_point(mapping = aes(y=large_dozen), color = 'purple') +
+  geom_point(mapping = aes(y=extra_large_half_dozen), color = 'blue') +
+  geom_point(mapping = aes(y=large_half_dozen), color = 'cyan') +
+  labs(title="Eggs Sales in 2004-2007", y="Earnings", x="Year")
+
+summarize(first_third, max(extra_large_dozen), min(extra_large_dozen), median(extra_large_dozen), mean(extra_large_dozen))
+summarize(first_third, max(large_dozen), min(large_dozen), median(large_dozen), mean(large_dozen))
+summarize(first_third, max(extra_large_half_dozen), min(extra_large_half_dozen), median(extra_large_half_dozen), mean(extra_large_half_dozen))
+summarize(first_third, max(large_half_dozen), min(large_half_dozen), median(large_half_dozen), mean(large_half_dozen))
+```
+
+```{r}
+middle_third <- filter(eggs_data, year >= 2007 & year <=2010)
+ggplot(data = middle_third, aes(year)) +
+  geom_point(mapping = aes(y=extra_large_dozen), color = 'magenta') +
+  geom_point(mapping = aes(y=large_dozen), color = 'purple') +
+  geom_point(mapping = aes(y=extra_large_half_dozen), color = 'blue') +
+  geom_point(mapping = aes(y=large_half_dozen), color = 'cyan') +
+  labs(title="Eggs Sales in 2007-2010", y="Earnings", x="Year")
+
+summarize(middle_third, max(extra_large_dozen), min(extra_large_dozen), median(extra_large_dozen), mean(extra_large_dozen))
+summarize(middle_third, max(large_dozen), min(large_dozen), median(large_dozen), mean(large_dozen))
+summarize(middle_third, max(extra_large_half_dozen), min(extra_large_half_dozen), median(extra_large_half_dozen), mean(extra_large_half_dozen))
+summarize(middle_third, max(large_half_dozen), min(large_half_dozen), median(large_half_dozen), mean(large_half_dozen))
+```
+
+```{r}
+final_third <- filter(eggs_data, year >=2010)
+ggplot(data = final_third, aes(year)) +
+  geom_point(mapping = aes(y=extra_large_dozen), color = 'magenta') +
+  geom_point(mapping = aes(y=large_dozen), color = 'purple') +
+  geom_point(mapping = aes(y=extra_large_half_dozen), color = 'blue') +
+  geom_point(mapping = aes(y=large_half_dozen), color = 'cyan') +
+  labs(title="Eggs Sales in 2010-2013", y="Earnings", x="Year")
+
+summarize(final_third, max(extra_large_dozen), min(extra_large_dozen), median(extra_large_dozen), mean(extra_large_dozen))
+summarize(final_third, max(large_dozen), min(large_dozen), median(large_dozen), mean(large_dozen))
+summarize(final_third, max(extra_large_half_dozen), min(extra_large_half_dozen), median(extra_large_half_dozen), mean(extra_large_half_dozen))
+summarize(final_third, max(large_half_dozen), min(large_half_dozen), median(large_half_dozen), mean(large_half_dozen))
+```
+
+Part 3: Using Select, Slice, and Arrange
+
+```{r}
+eggs_data %>%
+  select(month, year, extra_large_dozen) %>%
+  arrange(desc(extra_large_dozen)) %>%
+  slice(1:10)
+ggplot(data = eggs_data, aes(year)) +
+  geom_point(mapping = aes(y=extra_large_dozen), color = 'magenta') +
+  labs(title="Extra Large Dozen Egg Sales in 2004-2013", y="Earnings", x="Year")
+```
+
+```{r}
+eggs_data %>%
+  select(month, year, large_dozen) %>%
+  arrange(desc(large_dozen)) %>%
+  slice(1:10)
+ggplot(data = eggs_data, aes(year)) +
+  geom_point(mapping = aes(y=large_dozen), color = 'purple') +
+  labs(title="Large Dozen Egg Sales in 2004-2013", y="Earnings", x="Year")
+```
+
+```{r}
+eggs_data %>%
+  select(month, year, extra_large_half_dozen) %>%
+  arrange(desc(extra_large_half_dozen)) %>%
+  slice(1:10)
+ggplot(data = eggs_data, aes(year)) +
+  geom_point(mapping = aes(y=extra_large_half_dozen), color = 'blue') +
+  labs(title="Extra Large Half Dozen Egg Sales in 2004-2013", y="Earnings", x="Year")
+```
+
+```{r}
+eggs_data %>%
+  select(month, year, large_half_dozen) %>%
+  arrange(desc(large_half_dozen)) %>%
+  slice(1:10)
+ggplot(data = eggs_data, aes(year)) +
+  geom_point(mapping = aes(y=large_half_dozen), color = 'cyan') +
+  labs(title="Large Half Dozen Egg Sales in 2004-2013", y="Earnings", x="Year")
+```
+
+Part 4: Using Rename, Pivot_Longer, and Mutate
+
+```{r}
+eggs_data %>%
+  rename("Month"=month, "Year"=year) %>%
+  pivot_longer(cols=large_half_dozen:extra_large_dozen,
+               names_to = c("Size", "Quantity"),
+               names_sep="arge_",
+               values_to = "Earnings")%>%
+  mutate(Size = case_when(
+    Size == 'l'~"Large",
+    Size == 'extra_l'~ "Extra Large")) %>%
+  mutate(Quantity=case_when(
+    Quantity == "half_dozen" ~ "Half Dozen",
+    Quantity == "dozen" ~ "Dozen"))
+```

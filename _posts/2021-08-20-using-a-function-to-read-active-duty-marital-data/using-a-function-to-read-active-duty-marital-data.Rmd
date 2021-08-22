@@ -1,0 +1,134 @@
+---
+title: Using A Function to Read Active Duty Marital Data
+description: |
+  This is the example code to use a new custom function to read in multiple sheets of data about Active Duty members of the military and marital status.
+author:
+- name: Sean Conway and Meredith Rolfe
+  url: {}
+date: 08-20-2021
+categories:
+- example code
+- cleaning data
+- programming functions
+output:
+  distill::distill_article:
+    self_contained: no
+draft: yes
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(readxl)
+```
+
+This is a quick piece of example code to read in the active duty marital status tables from Excel. This example code builds on the earlier examples of reading in Excel tables by creating a function and applying it to multiple sheets.
+
+## Cleaning a single sheet
+
+We will start off by cleaning a single sheet from the workbook, trying to create a set of generic functions that can be used to iterate through all sheets in the workbook to read them one after the other. To read the single sheet, follow the same process we followed in *Reading in Tabular Data."
+
+### Identify grouping variables and values to extract from the table
+
+Lets first look at an example sheet from the workbook.
+
+![Total DOD Active Duty Marital Sheet](dod_marital.png)
+
+We can see a few things from this example sheet. First, we will need to skip 8 or 9 rows - the data first appears in row 10. Second, the tabular cells represent count *values* that capture the number of employees falling into subcategories created by 6 distinct grouping values:
+  1) Pay Grade Type: Enlisted/Officer/Warrent Officer
+  2) Pay Grade Level: 1-10 (fewer for non-Enlisted)
+  3) Marital status: Married/Single
+  4) Parent: Kids/noKids (Single only)
+  5) Spouse affiliation: Civilian/Military (Married only)
+  6) Gender: Male/Female
+
+Our goal is to recover cases that have these 6 (or really 5, if we collapse parent and spouse variables as we don't have complete information) grouping variables to identify the *case* and the single value (count of active duty employees who fall into each of the resulting subcategories.)
+
+Looking back at the original excel sheet, we can see that we will need to not just skip the top rows, we will also need to delete several columns, and also rename variables in order to make it easy to separate out the three pieces of information contained in the column names. First, I create a vector with column names (to make it easier to reuse later in the functional programming) then I read in the data and inspect it to see if the columns worked as intended.
+
+```{r, message=FALSE}
+marital <-c("d", "payGrade_payLevel",
+            "single_nokids_male", "single_nokids_female", "d",
+            "single_kids_male", "single_kids_female", "d",
+            "married_military_male", "married_military_female", "d",
+            "married_civilian_male", "married_civilian_female", "d",
+            rep("d", 3))
+read_excel("../../_data/ActiveDuty_MaritalStatus.xls", 
+           skip=8,
+           col_names = marital
+           )
+```
+I can see that the variable names worked well, so this time I will read in the data and omit the original header row, and also filter out the various "TOTAL" rows that we don't need to keep.
+
+```{r, message=FALSE}
+military<-read_excel("../../_data/ActiveDuty_MaritalStatus.xls", 
+           skip=9,
+           col_names = marital
+           )%>%
+  select(!starts_with("d"))%>%
+  filter(str_detect(payGrade_payLevel, "TOTAL", negate=TRUE))
+military
+```
+
+It looks like this worked well! Now we just need to pivot_longer with 3 columns (similar to what we did in the Tabular Data example). Then we will separate out the information in the `payGrade_payLevel` variable and do a quick mutate to make paygrade easier to remember.
+
+```{r}
+military_long <-military %>%
+  pivot_longer(cols = -1,
+               names_to = c("Marital", "Other", "Gender"),
+               names_sep = "_",
+               values_to = "count")%>%
+  separate(payGrade_payLevel, 
+           into = c("payGrade", "payLevel"),
+           sep="-")%>%
+  mutate(payGrade = case_when(
+    payGrade == "E" ~ "Enlisted",
+    payGrade == "O" ~ "Officer",
+    payGrade == "W" ~ "Warrant Officer"
+  ))
+military_long
+```
+This all looks like it works well. So now we will go on to creating a function with the steps, then applying it to multiple sheets.
+
+## Create a new function
+
+We will call our new function `read_military`, and we will basically use the exact same commands as above. The big difference is that we will have a placeholder name (or argument) for the data sheet that will be passed to the new function.
+  
+Next we have to use `read_excel()`, but we have to specify a number of arguments. We first specify the `path` (note - `file_path` is a variable that I created ahead of time to be specific to my computer. Yours will be different). Next, we specify `sheet`, the number of the sheet we wish to read in (we can also specify the sheet name). We also need to manually specify `col_names` from our `marital` vector that we created above. 
+
+`mutate()` creates a new column called `branch`, which comes from our sheet name. `select(!starts_with("d"))` removes all columns that start with `"d"`. We also filter out the word "Total" from `payGrade_payLevel`. `pivot_longer()`  
+  
+```{r}
+read_military<-function(sheet_name){
+  read_excel("../../_data/ActiveDuty_MaritalStatus.xls", 
+             sheet = sheet_name,
+             skip=9,
+             col_names = marital
+             )%>%
+  mutate("branch"=sheet_name) %>%
+  select(!starts_with("d"))%>%
+  filter(str_detect(payGrade_payLevel, "TOTAL", negate=TRUE))%>%
+  pivot_longer(cols = contains(c("male", "female")),
+               names_to = c("Marital", "Other", "Gender"),
+               names_sep = "_",
+               values_to = "count")%>%
+  separate(payGrade_payLevel, 
+           into = c("payGrade", "payLevel"),
+           sep="-")%>%
+  mutate(payGrade = case_when(
+    payGrade == "E" ~ "Enlisted",
+    payGrade == "O" ~ "Officer",
+    payGrade == "W" ~ "Warrant Officer"
+  ))
+}
+```
+
+We now have a function that is customized to read in the mmilitary active duty marital status sheets. We just need to use `purrr` - a package that is part of tidyverse but which may need to be installed and loaded on its own - to iterate through the list of sheets in the workbook.
+
+```{r}
+excel_sheets("../../_data/ActiveDuty_MaritalStatus.xls")
+map_dfr(
+  excel_sheets("../../_data/ActiveDuty_MaritalStatus.xls")[2:5],
+  read_military)
+```

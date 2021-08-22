@@ -1,0 +1,72 @@
+---
+title: 'Homework3: Functions by MM'
+description: |
+  A short description of the post.
+author: Michelle Manning
+date: 08-20-2021
+output:
+  distill::distill_article:
+    self_contained: no
+draft: yes
+---
+First, I loaded in the packages and files I needed.I am using the poultry data set for this project.
+
+```{r set up, echo=TRUE}
+library(blogbuilder)
+library(distill)
+library(tidyverse)
+poultry <- read.csv(file="../../_data/poultry_tidy.csv")
+library(usethis)
+```
+
+I first used the functions select, filter, and arrange. I saved sumarize for when I ran the function group_by to highlight the function's use. After those, I used rename, case_when, across, pivot_longer and wider, purrr, and lapply.
+
+```{r, echo=TRUE}
+#Functions
+#select, filter, arrange
+poultry2 <- poultry %>% 
+  select(Product, Year, Price_Dollar) %>% 
+  filter(Product == "Whole") %>% 
+  arrange(Product, Price_Dollar, Year)
+head(poultry2)  
+head(poultry)
+#Optional Functions
+#group_by & summarize
+poultry_grouped <- poultry2 %>% 
+  group_by(Year)
+summarise(poultry_grouped, Year = mean(Year))
+#rename
+colnames(poultry2)
+poultry3 <- poultry2 %>%
+  rename(Price=Price_Dollar)
+#case_when  
+mean(poultry3$Price)
+poultry4 <- poultry2 %>%
+  mutate(Above.Below.Avg = case_when(Price_Dollar >= 2.305333 ~"Above Mean", TRUE ~ "Below Mean"))
+#across
+poultry5 <- poultry2 %>%
+  group_by(Year) %>%
+  summarise(across(starts_with("Price_Dollar"), list(mean = mean, sd = sd)))
+#Pivoting
+poultry_wider <- poultry %>% 
+  pivot_wider(names_from = "Product",values_from = "Price_Dollar")
+poultry_longer <- poultry_wider %>% 
+  pivot_longer(Whole:Thighs, names_to = "Product", values_to = "Price_Dollar")
+#purrr
+library(stringr)
+avg_fun <- function(x)
+purrr::map_dbl(poultry3, n_distinct)
+#lapply
+poultry_upper <- lapply(poultry2$Product, toupper)
+str(poultry_upper)
+```
+
+I decided to use ggplot to edify my knowledge of it. Here is the poultry's Product variable's price plotted by the month and year.
+
+```{r, echo=TRUE}
+#plotting
+ggplot(data = poultry, mapping = aes(x=Month, y = Price_Dollar, color = Product, group = Product))+ 
+  geom_point()+ 
+  geom_line() +
+  facet_grid(~Year)
+```

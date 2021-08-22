@@ -1,0 +1,51 @@
+---
+title: "Organic Egg Poultry Filtered"
+description: |
+  This post consists of all the plots obtained from the filtered data vs Index(Month-Year)
+name: Shubham Mishra
+date: 08-12-2021
+output:
+  distill::distill_article:
+    self_contained: false
+draft: true
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+```{r}
+library(tidyverse)
+```
+
+```{r}
+df <- read.csv("../../_data/organiceggpoultry_filtered.csv")
+names(df) <- c('Months', 'Year', 'Extra Large Dozen', 'Extra Large 1/2 Doz. 1/2 Dozen', 'Large Dozen', 'Large 1/2 Doz.', 'Whole', 'B/S Breast', 'Bone-in Breast', 'Whole Legs', 'Thighs', 'Index')
+df <- df[,c('Index','Months', 'Year', 'Extra Large Dozen', 'Extra Large 1/2 Doz. 1/2 Dozen', 'Large Dozen', 'Large 1/2 Doz.', 'Whole', 'B/S Breast', 'Bone-in Breast', 'Whole Legs', 'Thighs')]
+df$Index <- seq.Date(as.Date("2004-01-01"), length = 120, by = "1 month")
+```
+## Plots: ##
+
+### ###
+```{r}
+ggplot(data = df) + stat_smooth(aes(x = Index, y = `Extra Large Dozen`), method = "lm", formula = y ~ poly(x, 25), se = TRUE, color = 'sky blue') + geom_line(aes(x = Index, y = `Extra Large Dozen`)) + theme_minimal()
+```
+```{r}
+ggplot(data = df) + stat_smooth(aes(x = Index, y = `Large Dozen`), method = "lm", formula = y ~ poly(x, 25), se = TRUE, color = 'sky blue') + geom_line(aes(x = Index, y = `Large Dozen`)) + theme_minimal()
+```
+```{r}
+ggplot(data = df) + stat_smooth(aes(x = Index, y = `Large 1/2 Doz.`), method = "lm", formula = y ~ poly(x, 25), se = TRUE, color = 'sky blue') + geom_line(aes(x = Index, y = `Large 1/2 Doz.`)) + theme_minimal()
+```
+```{r}
+ggplot(data = df) + stat_smooth(aes(x = Index, y = `Whole`), method = "lm", formula = y ~ poly(x, 25), se = TRUE, color = 'sky blue') + geom_line(aes(x = Index, y = `Whole`)) + theme_minimal()
+```
+```{r}
+ggplot(data = df) + stat_smooth(aes(x = Index, y = `B/S Breast`), method = "lm", formula = y ~ poly(x, 25), se = TRUE, color = 'sky blue') + geom_line(aes(x = Index, y = `B/S Breast`)) + theme_minimal()
+```
+```{r}
+ggplot(data = df) + stat_smooth(aes(x = Index, y = `Bone-in Breast`), method = "lm", formula = y ~ poly(x, 25), se = TRUE, color = 'sky blue') + geom_line(aes(x = Index, y = `Bone-in Breast`)) + theme_minimal()
+```
+```{r}
+ggplot(data = df) + stat_smooth(aes(x = Index, y = `Thighs`), method = "lm", formula = y ~ poly(x, 25), se = TRUE, color = 'sky blue') + geom_line(aes(x = Index, y = `Thighs`)) + theme_minimal()
+```
+

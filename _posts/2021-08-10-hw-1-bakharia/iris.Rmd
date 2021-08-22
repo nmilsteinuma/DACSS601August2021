@@ -1,0 +1,26 @@
+---
+title: iris
+description: |
+  Here is the iris dataset.
+author:
+- name: bakharia
+date: 08-10-2021
+categories:
+- homework 1
+- iris
+- bakharia
+output:
+  distill::distill_article:
+    self_contained: no
+draft: yes
+---
+
+
+Here is a plot of the iris dataset:
+
+```{r}
+library(datasets)
+plot(iris)
+```
+
+

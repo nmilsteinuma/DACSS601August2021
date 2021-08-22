@@ -1,0 +1,95 @@
+---
+title: NoahHw3
+description: |
+  A short description of the post.
+author:
+- name: Noah Milstein
+date: 08-17-2021
+output:
+  distill::distill_article:
+    self_contained: no
+draft: yes
+---
+# Chicken Data In the code below I am loading all of the packages I will be using throughout this assignment 
+
+```{r} 
+library(tidyverse) 
+library(dplyr) 
+library(knitr) 
+library(readxl) 
+library(ggplot2) 
+library(broom) 
+
+```
+
+
+The code below is my file path for importing the data regarding chicken meat 
+prices in excel form 
+
+
+```{r} 
+poultry <- read_excel("../../_data/poultry_tidy.xlsx") 
+``` 
+
+## The Poultry The Poultry data is broken into 4 columns, Product which is the cut of chicken, Year and Month corresponding to each observation. Price_Dollar represents the price of each cut at a month and year. 
+
+```{r} 
+poultry 
+``` 
+
+
+Below is my initial data table manipulation which I did to get a specific product, in this case boneless breast with its price and the year in which that price was observed 
+
+```{r} 
+poultry %>% group_by(`Price_Dollar`)%>% 
+  
+# first line groups the data by the price in the 
+#Price_Dollar column so the data in the column is sorted into chunks of the same price. 
+  
+select(!(`Month`))%>% 
+  
+# This select function selects all columns except for the one called "Month" 
+  
+filter(Product=="B/S Breast") %>% 
+  
+# The line above selects only the Product in the 
+#"Product" column called "B/S Breast, or boneless chicken breast" 
+  
+arrange(desc(`Price_Dollar`)) %>% 
+
+# The above line sorts or arranges the column of 
+# Price in dollars or "Price_Dollar" in descending order 
+#starting above 7 dollars and going down closer to 6 dollars 
+rename(Chicken_Bonless_Breast_Price=Price_Dollar)
+
+# This above line renames the column 
+#"Price_Dollar" into column "Chicken_Boneless_Breast_Price" 
+# The line above takes the poultry data frame, it then finds the mean price in dollars and removes all N/A observations 
+``` 
+
+```{r} 
+summarise(poultry, mean(`Price_Dollar`, na.rm = TRUE)) 
+``` 
+
+The first line groups the data by the price in the Price_Dollar column so the data in the column is sorted into chunks of the same price. 
+
+The second line selects all columns except for the one called "Month" 
+
+The third line selects only the Product in the "Product" column called "B/S Breast, or boneless chicken breast" 
+
+The fourth line sorts or arranges the column of Price in dollars or "Price_Dollar" in descending order starting above 7 dollars and going down closer to 6 dollars This fifth line renames the column "Price_Dollar" into column "Chicken_Boneless_Breast_Price" 
+
+The final line of codes above takes the poultry data frame, it then finds the mean price in dollars and removes all N/A observations 
+
+
+```{r} 
+poultry %>% group_by(Year, Price_Dollar, Product) %>% ggplot() + geom_smooth(mapping=aes(y=Price_Dollar, x=Year, color=Product), na.rm=TRUE) 
+``` 
+
+# Poultry Plot Post and Conclusion 
+
+By Noah Milstein
+
+## Chicken Data Conclusion 
+
+The graph above suggests that the price of most chicken cuts remain relatively similar over time, however B/S Breast or boneless chicken breast appears to have increased in price over recent years. Thighs have also remained relatively similar

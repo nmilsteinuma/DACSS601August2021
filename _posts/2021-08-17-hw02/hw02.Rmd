@@ -1,0 +1,34 @@
+---
+title: HW02
+description: |
+  A short description of the post.
+author:
+- name: TMoraitis
+  url: {}
+date: 08-17-2021
+output:
+  distill::distill_article:
+    self_contained: no
+draft: yes
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r message=FALSE}
+#Loading Library
+library(tidyverse)
+```
+
+##Data
+
+```{r}
+poultry <- read_csv(file="../../_data/poultry_tidy.csv")
+head(poultry)
+```
+
+
+
+

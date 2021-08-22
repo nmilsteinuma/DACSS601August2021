@@ -1,0 +1,60 @@
+---
+title: Wrangling the Australian marriage law dataset
+description: |
+  A short description of the post.
+author: Karl Tacheron
+date: '2021-08-12'
+output:
+  distill::distill_article:
+    self_contained: no
+draft: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+The Australian Bureau of Statistics 2017 Marriage Law Postal survey contains data about a nationwide vote that took place by mail. The data has a few things making reading into a tibble difficult:
+
+ - Grouped information instead of individual observations where variables appear elsewhere
+ - Many extraneous & repeated calculated variables
+ - Multi-index data formatted visually into blocks
+ - Multi-index column names with confusing and unhelpful names
+ 
+To make this data usable we must transform its structure in both its column layout and its rows.
+
+We read in the Excel file's third sheet, cut it down to only the needed variables and rows, rename the columns, and remove NA values. We also remove rows that contain section totals.
+
+```{r}
+library(tidyverse)
+library(readxl)
+
+votes <- read_excel("../../_data/australian_marriage_law_postal_survey_2017_-_response_final.xls",
+           sheet="Table 2",
+           skip=7,
+           col_names = c("Town", "Yes", "d", "No", rep("d", 6), "Illegible", "d", "No Response", rep("d", 3)))%>%
+  select(!starts_with("d"))%>%
+  drop_na(Town)%>%
+  filter(!str_detect(Town, "(Total)"))%>%
+  filter(!str_starts(Town, "\\("))
+
+```
+
+The last step is more complicated. Each observation needs a variable for is administrative "division", but this is displayed at the top of each block. These junk rows listing the parent division names must be turned into a variable for each row. 
+
+We get the number of each row that contains `" Divisions"`.
+
+```{r}
+votes<- votes%>%
+  mutate(Divisions = case_when(
+    str_ends(Town, "Divisions") ~ Town,
+    TRUE ~ NA_character_
+  ))
+
+for(i in 1:length(votes$Divisions)){
+  votes$Divisions[i]<-ifelse(is.na(votes$Divisions[i]),votes$Divisions[i-1], votes$Divisions[i])
+}
+
+votes<- filter(votes,!str_detect(Town, "Divisions|Australia"))
+```
+
