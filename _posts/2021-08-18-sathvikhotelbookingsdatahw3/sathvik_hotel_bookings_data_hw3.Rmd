@@ -1,0 +1,255 @@
+---
+title: sathvik_hotel_bookings_data_hw3
+description: |
+  Hotel bookings Data
+author: sathvik_thogaru
+date: 08-18-2021
+output:
+  distill::distill_article:
+    self_contained: no
+draft: yes
+---
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Importing data
+This data set contains a single file which compares various booking information between hotels.
+
+```{r}
+library(skimr)
+library(lubridate)
+library(tidyverse)
+```
+
+```{r}
+hotel_bookings <- read_csv("../../_data/hotel_bookings.csv")
+head(hotel_bookings)
+```
+
+
+skim() is an alternative to summary(), quickly providing a broad overview of a data frame. It handles data of all types, dispatching a different set of summary functions based on the types of columns in the data frame.
+
+```{r}
+skim(hotel_bookings)
+```
+
+## Data Wrangling
+## tidying the data
+finding the na values in the dataframe( row and column) using which() 
+
+```{r}
+which(is.na(hotel_bookings), arr.ind=TRUE)
+```
+
+```{r}
+hotel_bookings[c(40601,40668,40680,41161),]
+```
+
+```{r}
+hotel_bookings <- filter(hotel_bookings, !is.na(children)) 
+```
+
+```{r}
+sum(is.na(hotel_bookings))
+```
+
+## transforming data and visualizing
+
+```{r}
+(hotel_bookings<-hotel_bookings %>% 
+  mutate(arrival_month = recode(arrival_date_month,"January"=1,"February"=2,"March"=3,"April"=4,"May"=5,"June"=6,"July"=7,"August"=8,"September"=9,"October"=10,"November"=11,"December"=12)))
+```
+
+
+```{r}
+(hotel_bookings <- hotel_bookings%>%
+  mutate(arrival_date = make_date(arrival_date_year,arrival_month,arrival_date_day_of_month)))
+```
+
+looking for type of hotels booked by guests
+
+```{r}
+(hotels_info<-data.frame(table(hotel_bookings$hotel)))
+```
+
+```{r}
+pie(hotels_info$Freq, labels=paste(hotels_info$Var1,sep = "=", hotels_info$Freq), main = "type of hotels booked by guests")
+```
+
+
+1. where do most of the guests come from?
+
+```{r}
+(guests_country_details <- hotel_bookings %>% 
+   group_by(country) %>% 
+   count() %>% 
+   ungroup() %>% 
+   arrange(desc(n)))
+```
+
+most guests by top country's
+
+```{r}
+ggplot(filter(guests_country_details, n>1500))+
+  geom_bar(aes(country, n), stat = "identity")+
+  labs(y="number of guests", title = "most guests by country's")+
+  coord_flip()
+```
+
+2. how much do guests pay for a room at each hotel?
+
+```{r}
+city_hotel_data<-filter(hotel_bookings, hotel_bookings$hotel=="City Hotel")
+resort_hotel_data<-filter(hotel_bookings, hotel_bookings$hotel=="Resort Hotel")
+```
+
+adr - average daily rate
+
+```{r}
+# city hotel
+sort(unique(city_hotel_data$reserved_room_type))
+# resort hotel
+sort(unique(resort_hotel_data$reserved_room_type))
+```
+
+## city hotel average guests per room type 
+
+```{r}
+(city_hotel_average_guests_per_room_type <- city_hotel_data %>% 
+   group_by(reserved_room_type) %>% 
+   summarise(guests_per_room_type = mean(adults+children)))
+
+```
+
+## city hotel average daily rate per room type
+
+```{r}
+(city_hotel_adr_per_room_type_data <- city_hotel_data %>% 
+   group_by(reserved_room_type) %>% 
+   summarise(adr_per_room_type = mean(adr)))
+```
+
+## resort hotel average guests per room type 
+
+```{r}
+(resort_average_guests_per_room_type <- resort_hotel_data %>% 
+   group_by(reserved_room_type) %>% 
+   summarise(guests_per_room_type = mean(adults+children)))
+
+```
+
+##resort hotel average daily rate per room type
+
+```{r}
+(resort_hotel_adr_per_room_type_data <- resort_hotel_data %>% 
+   group_by(reserved_room_type) %>% 
+   summarise(adr_per_room_type = mean(adr)))
+```
+
+## visualizing Average daily rate of reserved room type at city hotel and resort hotel
+
+```{r}
+ggplot(city_hotel_adr_per_room_type_data, aes(x=reserved_room_type, y= adr_per_room_type))+
+  geom_bar(stat = "identity",fill = "steelblue", width = .5)+
+  labs(x="reserved room type", y=" average daily rate per room", title = "Average daily rate of reserved room type at city hotel")+
+  theme(plot.title = element_text(size = 14, hjust = 0.5, face = "bold"))
+```
+
+```{r}
+ggplot(resort_hotel_adr_per_room_type_data, aes(x=reserved_room_type, y= adr_per_room_type))+
+  geom_bar(stat = "identity",fill = "steelblue", width = .5)+
+  labs(x="reserved room type", y=" average daily rate per room", title = "Average daily rate of reserved room type at resort hotel")+
+  theme(plot.title = element_text(size = 14, hjust = 0.5, face = "bold"))
+```
+
+ 3. how does the price per night varry in the year in each hotel?
+
+## city hotel
+
+```{r}
+city_room_prices_monthly <-select(city_hotel_data, arrival_date_month, adr)
+(city_room_prices_monthly <- city_room_prices_monthly %>%
+    group_by(arrival_date_month) %>%
+    summarise(mean_room_prices = mean(adr)) %>% 
+    ungroup() %>% 
+  arrange(desc(mean_room_prices)))
+```
+
+```{r}
+plot <- ggplot(city_room_prices_monthly)+
+  geom_bar(aes(arrival_date_month, mean_room_prices),stat = "identity")+
+  labs(x="arrival_date_month", y=" mean_room_prices", title = "mean room prices over the year at city hotel")+
+  theme(plot.title = element_text(size = 14, hjust = 0.5, face = "bold"))
+  
+
+plot +
+  scale_x_discrete(limits = c("January", "February", "March", "April", "May", "June", 
+          "July", "August", "September", "October", "November", "December"))
+```
+
+## resort hotel
+
+```{r}
+resort_room_prices_monthly <-select(resort_hotel_data, arrival_date_month, adr)
+(resort_room_prices_monthly <- resort_room_prices_monthly %>%
+    group_by(arrival_date_month) %>%
+    summarise(mean_room_prices = mean(adr)) %>% 
+    ungroup() %>% 
+  arrange(desc(mean_room_prices)))
+
+```
+
+```{r}
+plot <- ggplot(resort_room_prices_monthly)+
+  geom_bar(aes(arrival_date_month, mean_room_prices),stat = "identity")+
+  labs(x="arrival_date_month", y=" mean_room_prices", title = "mean room prices over the year at resort hotel")+
+  theme(plot.title = element_text(size = 14, hjust = 0.5, face = "bold"))
+  
+
+plot +
+  scale_x_discrete(limits = c("January", "February", "March", "April", "May", "June", 
+          "July", "August", "September", "October", "November", "December"))
+
+```
+
+
+
+
+Q) which months are the busiest?
+
+```{r}
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

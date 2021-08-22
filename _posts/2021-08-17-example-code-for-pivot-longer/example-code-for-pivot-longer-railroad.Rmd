@@ -1,0 +1,64 @@
+---
+title: Example Code for Pivot Longer
+description: |
+  I'm sharing some example code for pivot_longer using the eggs data. Enjoy!
+author:
+- name: Meredith Rolfe
+  url: {}
+date: 08-17-2021
+categories:
+- example code
+- data cleaning
+output:
+  distill::distill_article:
+    self_contained: no
+draft: yes
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+```
+
+This is example code for using the pivot functions in R. Several of the government data sources include tabular data that really need to be pivoted into a dataset in which a "case" is some combination of the grouping variables (the rows and columns in the table) alongside the appropriate statistical value(s) in the table (e.g., counts or average costs). Lets start with the easy to read in eggs_tidy.csv just so we can focus on the pivoting function.
+
+```{r}
+eggs<-read_csv("../../_data/eggs_tidy.csv", show_col_types = FALSE)
+eggs
+```
+
+Looking at the data, we can see that each *case* consists of a year-month combination (e.g., January 2004), while the *values* are the average price (in cents) of four different types of eggs (e.g., large_half_dozen, large_dozen, etc) But really, wouldn't it possibly make more sense to consider the case as a year-month-type combination, with a single price *value* for each case?
+
+## Pivot Longer - One New Category Variable
+
+To do this (and make our data easier to graph and analyze), we can pivot longer - changing our data from 120 rows with 6 variables (2 grouping and 4 values) to 480 rows of 4 variables (with 3 grouping variables and a single *price* value).
+
+```{r}
+eggs%>%
+  pivot_longer(cols=large_half_dozen:extra_large_dozen, 
+               names_to = "eggType",
+               values_to = "avgPrice"
+  )
+```
+
+Well, that was super easy. But wait, what if you are interested in egg *size* - you want to know how much more expensive extra-large eggs are compared to large eggs. Right now, that will be annoying, as you will have to keep sorting out the egg *quantity* - whether the price is for a half_dozen or a dozen eggs. Wouldn't it be nice if we didn't have a long egg *type* column with both *size* and *quantity* squashed into a single categorical variable? It would be so useful to have a new dataset with 4 grouping variables (year, month, size, and quantity) and the same value (price). 
+
+## Pivot Longer - Two New Category Variables
+
+So, once again we want to use pivot longer, but we will be adding **two** new category variables (for a total of 4) and this will cut the number of rows in half (to 240). But how in the world can we let R know what we want it to do?? Thankfully, someone named the egg *types* (column-names) pretty systematically, but how can use this to our advantage? Working with patterns in the names_sep option of the pivot functions makes it pretty easy (well, except our variable names have more than one underscore, so we have to sort of hack this part by also using mutate on the resulting category labels.)
+
+
+```{r}
+eggs%>%
+  pivot_longer(cols=large_half_dozen:extra_large_dozen,
+               names_to = c("size", "quantity"),
+               names_sep="arge_",
+               values_to = "price"
+  ) %>%
+  mutate(size = case_when(
+    size == "l" ~ "Large",
+    size == "extra_l" ~ "Extra Large"
+  ))
+```
+

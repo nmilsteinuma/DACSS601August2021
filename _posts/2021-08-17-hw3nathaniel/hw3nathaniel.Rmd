@@ -1,0 +1,25 @@
+---
+title: HW3Nathaniel
+description: Reading in marriage data
+date: 08-17-2021
+output:
+  distill::distill_article:
+    self_contained: no
+draft: yes
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(readr)
+library(readxl)
+library(tidyverse)
+```
+
+
+
+```{r, include = TRUE}
+#reading in data and printing column names#
+Aus_Marriage <- read.csv("../../_data/australian_marriage_tidy.csv")
+
+```

@@ -1,0 +1,176 @@
+---
+title: Reading in Tabular Data
+description: |
+  Two examples of reading in Excel Tables with
+  the advanced data sets.
+author:
+- name: Meredith Rolfe
+date: 08-18-2021
+categories:
+- example code
+- data cleaning
+output:
+  distill::distill_article:
+    self_contained: no
+draft: yes
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(readxl)
+
+```
+
+This post will take a closer look at some tools that can be used to read in tabular data (i.e., tables) that are often published based on government sources or by other organizations. Tabular data is often made available in Excel format (.xls or .xlsx) and is formatted for ease of reading - but this can make it tricky to read into R and reshape into a usable dataset.
+
+Reading in tabular data will follow the same general work flow or work process regardless of formatting differences. We will work through the steps in detail below, but here is an overview. Note that not every step is needed for every file.
+
+  1. Identify *grouping variables* and *values* to extract from the table
+  2. Identify formatting issues that need to be addressed or eliminated
+  3. Column issues usually addressed during data read-in
+  4. Row issues usually addressed using `filter` (and `stringr` package)
+  5. Create or `mutate` new variables as required, using `separate`, pivot_longer`, etc
+  
+## Railroad data
+
+The railroad data set is a fairly straightforward formatted table published by the Railroad Retirement Board. The *value* variable is a count of the number of employees in each *county* and *state* combination. 
+
+![Railroad Employment](railroad.png)
+Looking at the excel file, we can see that there are only a few issues:
+  1. There are three rows at the top of the sheet that are not needed
+  2. There are blank columns that are not needed.
+  3. There are Total rows for each state that are not needed
+
+### Skipping title rows
+
+For the first issue, we use the "skip" option on `read_excel` from the `readxl` package to skip the rows at the top. 
+
+```{r}
+read_excel("../../_data/StateCounty2012.xls",
+                     skip = 3)
+```
+
+### Removing empty columns
+
+For the second issue, I name the blank columns "delete" to make is easy to remove the unwanted columns. I then use `select` (with the ! sign to designate the complement or NOT) to select columns we wish to keep in the dataset - the rest are removed. Note that I skip 4 rows this time as I do not need the original header row. 
+
+There are other approaches you could use for this task (e.g., remove all columns that have no valid volues), but hard coding of variable names and types during data read in is not considered a violation of best practices and - if used strategically - can often make later data cleaning much easier.
+
+```{r}
+
+read_excel("../../_data/StateCounty2012.xls",
+                     skip = 4,
+                     col_names= c("State", "delete", "County", "delete", "Employees"))%>%
+  select(!contains("delete"))
+
+```
+
+### Filtering "total" rows
+
+For the third issue, we are going to use `filter` to identify (and drop the rows that have the word "Total" in the State column). `str_detect` can be used to find specific rows within a column that have the designated "pattern",  while the "!" designates the complement of the selected rows (i.e., those without the "pattern" we are searching for.) 
+
+The `str_detect` command is from the `stringr` package, and is a powerful and easy to use implementation of grep and regex in the tidyverse - the base R functions (grep, gsub, etc) are classic but far more difficult to use, particularly for those not in practice. Be sure to explore the `stringr` package on your own.
+
+```{r}
+railroad<-read_excel("../../_data/StateCounty2012.xls",
+                     skip = 4,
+                     col_names= c("State", "delete", "County", "delete", "Employees"))%>%
+  select(!contains("delete"))%>%
+  filter(!str_detect(State, "Total"))
+railroad
+```
+
+### Remove any table notes
+
+Tables often have notes in the last few table rows. You can check table limits and use this information during data read-in to not read the notes by setting the `n-max` option at the total number of rows to read, or less commonly, the `range` option to specify the spreadsheet range in standard excel naming (e.g., "B4:R142"). If you didn't handle this on read in, you can use the `tail` command to check for notes and either `tail` or `head` to keep only the rows that you need.
+
+```{r}
+tail(railroad, 10)
+
+#remove the last two observations
+railroad <-head(railroad, -2)
+
+tail(railroad, 10)
+```
+
+### Regenerating grouped totals
+
+And that is all it takes! The data are now ready for analysis. For example, suppose we wished to recover the information about state totals. This is easy to do using `group_by`.
+
+```{r}
+railroad%>%
+  group_by(State)%>%
+  summarise(`State Employees` = sum(Employees))
+```
+
+## Australian Marriage Data
+
+This is another government published tabular data source. In 2017, Australia conducted a postal survey to gauge citizens' opinions towards same sex marriage. The survey questions was straightforward: "Should the law be changed to allow same-sex couples to marry?" Here is a quick image showing the original table format. 
+
+![Australian Marriage Data](australiandata.png)
+While similar in some respect to the State Railroad data above, the Australian survey data are clearly more complex in several respects.
+  - There are two values (vote count and percentage) in the dataset
+  - The values appear to be redundent (percentage is easy to recover from vote count data)
+  - There may be other redundant information in 
+  - Grouped information instead of individual observations where variables appear elsewhere
+  - Redundent vvariables (Total:Response Clear on the left and ResponeClear)
+ 
+### Identify desired data structure
+
+If we decide to temporarily ignore the proportions data (as suggested above) and the "totals" columns, we can identify four potentially distinct pieces of information in addition to the vote count columns: County, Division, response(yes, no, response unclear, and non-responding) and vote count. Our goal is to create this desirable data set.
+
+### Repeating steps from above
+
+We will once again use `skip` and col_names to read in the data, `select` to get rid of unneeded columns, and `filter` to get rid of unneeded rows. We also use the `drop_na` function to filter unwanted rows.
+
+```{r}
+votes <- read_excel("../../_data/australian_marriage_law_postal_survey_2017_-_response_final.xls",
+           sheet="Table 2",
+           skip=7,
+           col_names = c("Town", "Yes", "d", "No", rep("d", 6), "Illegible", "d", "No Response", rep("d", 3)))%>%
+  select(!starts_with("d"))%>%
+  drop_na(Town)%>%
+  filter(!str_detect(Town, "(Total)"))%>%
+  filter(!str_starts(Town, "\\("))
+
+votes
+```
+
+At this point, you can see we are REALLY close. We have yes and no variable plus illegible and no response. That said, tthe current step is more complicated. Each observation (county) needs a variable for  administrative "division", but this is displayed at the top of each block. 
+
+The following code uses case_when to make a new "Divisions" variables with an entry (e.g., New South Wales Division) where there is a Division name in the town column, and otherwise create just an empty space.
+
+At that point, the following loop (with seq_along) can be used to fill in empty spaces with the most recent Divisions name, and then filter out rows with only the title information.
+
+```{r}
+votes<- votes%>%
+  mutate(Divisions = case_when(
+    str_ends(Town, "Divisions") ~ Town,
+    TRUE ~ NA_character_
+  ))
+
+for(i in seq_along(votes$Divisions)){
+  votes$Divisions[i]<-ifelse(is.na(votes$Divisions[i]),votes$Divisions[i-1], votes$Divisions[i])
+}
+
+votes<- filter(votes,!str_detect(Town, "Divisions|Australia"))
+votes
+```
+
+### Pivot_longer to recover structure
+
+Supposed we wanted to create a stacked bar chart to compare the % who votes Yes to the people who either said No or didn't vote. The easiest way is to pivot longer into the original data format: State, Division, surveyResponse, count.
+
+```{r}
+votes%>%
+  pivot_longer(
+    cols = Yes:`No Response`,
+    names_to = "Response",
+    values_to = "Count"
+  )
+```
+
+Special thanks to Karl, Shih-Yen, Mohit, and the other students in the advanced group for allowing me to use their blog submissions as a starting point for this demonstration!
+

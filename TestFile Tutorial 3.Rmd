@@ -1,0 +1,38 @@
+---
+title: "Test File"
+author: "Saulo DePaula"
+date: "8/11/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Introduction
+We can do basic arithmetic very easily in R. Let's start with addition.
+
+## Adddition
+You can use R as a calculator to do addition, using `+` the same way you would on a standard calculator.
+```{r addition}
+4+4
+8+9
+```
+
+## Subtraction
+```{r subtraction}
+10-8
+9-6
+```
+
+## Multiplication
+``` {r multiplication}
+5*3
+4*2
+```
+
+## Division
+``` {r division}
+9/3
+40/6
+```

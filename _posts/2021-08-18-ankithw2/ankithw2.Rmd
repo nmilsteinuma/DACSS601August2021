@@ -1,0 +1,34 @@
+---
+title: Ankit_HW2
+description: |
+  A short description of the IRIS dataset.
+author: Ankit Kumar
+date: 08-18-2021
+output:
+  distill::distill_article:
+    self_contained: no
+draft: yes
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r}
+library(datasets)
+data(iris)
+summary(iris)
+```
+```{r}
+#structure of the dataset
+str(iris)
+```
+```{r}
+# column names of IRIS dataset
+names(iris)
+```
+```{r}
+plot(iris)
+```
+

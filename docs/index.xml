@@ -1,18 +1,127 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
   <channel>
-    <title>Data Analytics and Computational Social Science</title>
+    <title/>
     <link>https://mrolfe.github.io/DACSS601August2021/</link>
     <atom:link href="https://mrolfe.github.io/DACSS601August2021/index.xml" rel="self" type="application/rss+xml"/>
     <description>This is a DACSS course website for student work offered at UMass Amherst.
 </description>
     <image>
-      <title>Data Analytics and Computational Social Science</title>
+      <title/>
       <url>https://mrolfe.github.io/DACSS601August2021/images/DACSS_Round_Network.png</url>
       <link>https://mrolfe.github.io/DACSS601August2021/</link>
     </image>
     <generator>Distill</generator>
-    <lastBuildDate>Tue, 17 Aug 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 20 Aug 2021 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Using A Function to Read Active Duty Marital Data</title>
+      <dc:creator>Sean Conway and Meredith Rolfe</dc:creator>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-20-using-a-function-to-read-active-duty-marital-data</link>
+      <description>This is the example code to use a new custom function to read in multiple sheets of data about Active Duty members of the military and marital status.</description>
+      <category>example code</category>
+      <category>cleaning data</category>
+      <category>programming functions</category>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-20-using-a-function-to-read-active-duty-marital-data</guid>
+      <pubDate>Fri, 20 Aug 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Active Duty Marital Status</title>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-20-active-duty-marital-status</link>
+      <description>A short description of the post.</description>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-20-active-duty-marital-status</guid>
+      <pubDate>Fri, 20 Aug 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Homework3: Functions by MM</title>
+      <dc:creator>Michelle Manning</dc:creator>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-20-homework3-functions-by-mm</link>
+      <description>A short description of the post.</description>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-20-homework3-functions-by-mm</guid>
+      <pubDate>Fri, 20 Aug 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://mrolfe.github.io/DACSS601August2021/posts/2021-08-20-homework3-functions-by-mm/homework3-functions-by-mm_files/figure-html5/unnamed-chunk-2-1.png" medium="image" type="image/png" width="1248" height="768"/>
+    </item>
+    <item>
+      <title>Active Duty Marital Status HW3 - bakharia</title>
+      <dc:creator>Shubham Mishra</dc:creator>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-20-active-duty-marital-status-hw3-bakharia</link>
+      <description>This post contains data wrangling of the Active Duty Marital Status and some basic visualization of the output.</description>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-20-active-duty-marital-status-hw3-bakharia</guid>
+      <pubDate>Fri, 20 Aug 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://mrolfe.github.io/DACSS601August2021/posts/2021-08-20-active-duty-marital-status-hw3-bakharia/active-duty-marital-status-hw3-bakharia_files/figure-html5/unnamed-chunk-5-1.png" medium="image" type="image/png" width="1248" height="768"/>
+    </item>
+    <item>
+      <title>RAILROAD-COUNTY-TRACY</title>
+      <dc:creator>Erin-Tracy</dc:creator>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-17-railroad-county-tracy</link>
+      <description>Homework assignment 1, 2 and 3. Loading data into an R Markdown file, Railroad Employment Data.</description>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-17-railroad-county-tracy</guid>
+      <pubDate>Thu, 19 Aug 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://mrolfe.github.io/DACSS601August2021/posts/2021-08-17-railroad-county-tracy/railroad-county-tracy_files/figure-html5/unnamed-chunk-9-1.png" medium="image" type="image/png" width="960" height="320"/>
+    </item>
+    <item>
+      <title>SCHOOL-DISTRICT-DATA-TRACY</title>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-19-school-district-data-tracy</link>
+      <description>Data Analysis of Massachusetts Public Schools' Class Size by Gender and Selected Populations for DACSS601 Final Project, HW4 and HW5</description>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-19-school-district-data-tracy</guid>
+      <pubDate>Thu, 19 Aug 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://mrolfe.github.io/DACSS601August2021/posts/2021-08-19-school-district-data-tracy/school-district-data-tracy_files/figure-html5/unnamed-chunk-3-1.png" medium="image" type="image/png" width="960" height="320"/>
+    </item>
+    <item>
+      <title>Ankit_HW2</title>
+      <dc:creator>Ankit Kumar</dc:creator>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-18-ankithw2</link>
+      <description>A short description of the IRIS dataset.</description>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-18-ankithw2</guid>
+      <pubDate>Wed, 18 Aug 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://mrolfe.github.io/DACSS601August2021/posts/2021-08-18-ankithw2/ankithw2_files/figure-html5/unnamed-chunk-4-1.png" medium="image" type="image/png" width="1248" height="768"/>
+    </item>
+    <item>
+      <title>Interest Rate, Inflation, and Unemployment rates</title>
+      <dc:creator>Ben Lewis</dc:creator>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-18-interest-rate-inflation-and-unemployment-rates</link>
+      <description>A comparison of interest rates vs GDP change vs inflation vs unemployment rates in the US from 1954 - 2017</description>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-18-interest-rate-inflation-and-unemployment-rates</guid>
+      <pubDate>Wed, 18 Aug 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://mrolfe.github.io/DACSS601August2021/posts/2021-08-18-interest-rate-inflation-and-unemployment-rates/interest-rate-inflation-and-unemployment-rates_files/figure-html5/unnamed-chunk-6-1.png" medium="image" type="image/png" width="1248" height="768"/>
+    </item>
+    <item>
+      <title>Reading in Tabular Data</title>
+      <dc:creator>Meredith Rolfe</dc:creator>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-18-reading-in-tabular-data</link>
+      <description>Two examples of reading in Excel Tables with
+the advanced data sets.</description>
+      <category>example code</category>
+      <category>data cleaning</category>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-18-reading-in-tabular-data</guid>
+      <pubDate>Wed, 18 Aug 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>sathvik_hotel_bookings_data_hw3</title>
+      <dc:creator>sathvik_thogaru</dc:creator>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-18-sathvikhotelbookingsdatahw3</link>
+      <description>Hotel bookings Data</description>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-18-sathvikhotelbookingsdatahw3</guid>
+      <pubDate>Wed, 18 Aug 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://mrolfe.github.io/DACSS601August2021/posts/2021-08-18-sathvikhotelbookingsdatahw3/sathvik_hotel_bookings_data_hw3_files/figure-html5/unnamed-chunk-11-1.png" medium="image" type="image/png" width="1248" height="768"/>
+    </item>
+    <item>
+      <title>sathvik_iris_data_hw2</title>
+      <dc:creator>sathvik_thogaru</dc:creator>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-18-sathvikirisdatahw2</link>
+      <description>the Iris dataset</description>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-18-sathvikirisdatahw2</guid>
+      <pubDate>Wed, 18 Aug 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://mrolfe.github.io/DACSS601August2021/posts/2021-08-18-sathvikirisdatahw2/sathvik_iris_data_hw2_files/figure-html5/unnamed-chunk-6-1.png" medium="image" type="image/png" width="1248" height="768"/>
+    </item>
+    <item>
+      <title>sathvik_thogaru_homework4</title>
+      <dc:creator>sathvik_thogaru</dc:creator>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-18-sathvikthogaruhomework4</link>
+      <description>hotel_bookings Dataset</description>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-18-sathvikthogaruhomework4</guid>
+      <pubDate>Wed, 18 Aug 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://mrolfe.github.io/DACSS601August2021/posts/2021-08-18-sathvikthogaruhomework4/sathvik_thogaru_hw4_files/figure-html5/unnamed-chunk-7-1.png" medium="image" type="image/png" width="1248" height="768"/>
+    </item>
     <item>
       <title>Railroad Employment data</title>
       <dc:creator>Mohit-Arora</dc:creator>
@@ -20,6 +129,75 @@
       <description>Reading in the railroad dataset</description>
       <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-16-railroad-employment-data</guid>
       <pubDate>Tue, 17 Aug 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>DN Australian Data</title>
+      <dc:creator>Dana Nestor</dc:creator>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-17-dn-australian-data</link>
+      <description>A short description of the post.</description>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-17-dn-australian-data</guid>
+      <pubDate>Tue, 17 Aug 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Example Code for Pivot Longer</title>
+      <dc:creator>Meredith Rolfe</dc:creator>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-17-example-code-for-pivot-longer</link>
+      <description>I'm sharing some example code for pivot_longer using the eggs data. Enjoy!</description>
+      <category>example code</category>
+      <category>data cleaning</category>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-17-example-code-for-pivot-longer</guid>
+      <pubDate>Tue, 17 Aug 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>HW02</title>
+      <dc:creator>TMoraitis</dc:creator>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-17-hw02</link>
+      <description>A short description of the post.</description>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-17-hw02</guid>
+      <pubDate>Tue, 17 Aug 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>HW03</title>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-17-hw03</link>
+      <description>This is my submission of HW3</description>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-17-hw03</guid>
+      <pubDate>Tue, 17 Aug 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>HW3Nathaniel</title>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-17-hw3nathaniel</link>
+      <description>Reading in marriage data</description>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-17-hw3nathaniel</guid>
+      <pubDate>Tue, 17 Aug 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>NoahHw3</title>
+      <dc:creator>Noah Milstein</dc:creator>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-17-noahhw3</link>
+      <description>A short description of the post.</description>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-17-noahhw3</guid>
+      <pubDate>Tue, 17 Aug 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://mrolfe.github.io/DACSS601August2021/posts/2021-08-17-noahhw3/noahhw3_files/figure-html5/unnamed-chunk-6-1.png" medium="image" type="image/png" width="1248" height="768"/>
+    </item>
+    <item>
+      <title>Hanae- Homework 3</title>
+      <dc:creator>Hanae Bouazza</dc:creator>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-16-hanae-homework-3</link>
+      <description>This is my submission of Homework 3.</description>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-16-hanae-homework-3</guid>
+      <pubDate>Mon, 16 Aug 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Saulo's Homeworks</title>
+      <dc:creator>Saulo DePaula</dc:creator>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-16-saulo-homework-two</link>
+      <description>Feeble attempts at data science.</description>
+      <category>saulo</category>
+      <category>homeworks</category>
+      <category>read data</category>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-16-saulo-homework-two</guid>
+      <pubDate>Mon, 16 Aug 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://mrolfe.github.io/DACSS601August2021/posts/2021-08-16-saulo-homework-two/saulo-homework-two_files/figure-html5/unnamed-chunk-10-1.png" medium="image" type="image/png" width="1248" height="768"/>
     </item>
     <item>
       <title>Zoe Hotel Bookings Dataset</title>
@@ -38,12 +216,12 @@
       <pubDate>Fri, 13 Aug 2021 00:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>Wrangling the Australian marriage law dataset</title>
-      <dc:creator>Karl Tacheron</dc:creator>
-      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-12-wrangling-the-australian-marriage-law-dataset</link>
-      <description>A short description of the post.</description>
-      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-12-wrangling-the-australian-marriage-law-dataset</guid>
-      <pubDate>Thu, 12 Aug 2021 00:00:00 +0000</pubDate>
+      <title>Australian Marriage</title>
+      <dc:creator>Nathaniel Ross</dc:creator>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-19-nathanielreadindata</link>
+      <description>Statistics About Australian Marriage</description>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-19-nathanielreadindata</guid>
+      <pubDate>Fri, 13 Aug 2021 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>Alligator Food</title>
@@ -61,6 +239,22 @@
       <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-12-leahs-first-post-attempt-4</guid>
       <pubDate>Thu, 12 Aug 2021 00:00:00 +0000</pubDate>
       <media:content url="https://mrolfe.github.io/DACSS601August2021/posts/2021-08-12-leahs-first-post-attempt-4/leahs-first-post-attempt-4_files/figure-html5/setup-1.png" medium="image" type="image/png" width="1248" height="768"/>
+    </item>
+    <item>
+      <title>Wrangling the Australian marriage law dataset</title>
+      <dc:creator>Karl Tacheron</dc:creator>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-12-wrangling-the-australian-marriage-law-dataset</link>
+      <description>A short description of the post.</description>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-12-wrangling-the-australian-marriage-law-dataset</guid>
+      <pubDate>Thu, 12 Aug 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Organic Egg Poultry Filtered</title>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-12-organic-egg-poultry-filtered_hw2_bakahria</link>
+      <description>This post consists of all the plots obtained from the filtered data vs Index(Month-Year)</description>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-12-organic-egg-poultry-filtered_hw2_bakahria</guid>
+      <pubDate>Thu, 12 Aug 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://mrolfe.github.io/DACSS601August2021/posts/2021-08-12-organic-egg-poultry-filtered_hw2_bakahria/organic-egg-poultry-filtered_files/figure-html5/unnamed-chunk-3-1.png" medium="image" type="image/png" width="1248" height="768"/>
     </item>
     <item>
       <title>2012 US Railroad Employment</title>
@@ -96,6 +290,15 @@
       <pubDate>Wed, 11 Aug 2021 00:00:00 +0000</pubDate>
     </item>
     <item>
+      <title>Arbitrary</title>
+      <dc:creator>Abhinav Kumar</dc:creator>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-iris</link>
+      <description>My life in DACSS and with MAX :)</description>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-iris</guid>
+      <pubDate>Wed, 11 Aug 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-iris/Abhinav_files/figure-html5/unnamed-chunk-1-1.png" medium="image" type="image/png" width="1248" height="768"/>
+    </item>
+    <item>
       <title>Larri Miller - Exploring Australian Marriage</title>
       <dc:creator>Larri Miller</dc:creator>
       <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-larri-miller-exploring-australian-marriage</link>
@@ -120,6 +323,31 @@
       <pubDate>Wed, 11 Aug 2021 00:00:00 +0000</pubDate>
     </item>
     <item>
+      <title>Jason Wierzbowski - Exploring Eggs</title>
+      <dc:creator>Jason Wierzbowski</dc:creator>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-17-jason-wierzbowski-exploring-eggs</link>
+      <description>A data set about eggs.</description>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-17-jason-wierzbowski-exploring-eggs</guid>
+      <pubDate>Wed, 11 Aug 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Rhys_Long_Eggs</title>
+      <dc:creator>Rhys Long</dc:creator>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-18-rhyslongeggs</link>
+      <description>This is a data set that includes records of how many cartons of eggs were sold every month in 2004-2013. I got this data from the Basic Data sets section of google classroom. This data set contains four variables.</description>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-18-rhyslongeggs</guid>
+      <pubDate>Wed, 11 Aug 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://mrolfe.github.io/DACSS601August2021/posts/2021-08-18-rhyslongeggs/rhyslongeggs_files/figure-html5/unnamed-chunk-1-1.png" medium="image" type="image/png" width="1248" height="768"/>
+    </item>
+    <item>
+      <title>Saulo Homework One</title>
+      <dc:creator>Saulo DePaula</dc:creator>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-saulo-homework-one</link>
+      <description>A short description of the post.</description>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-saulo-homework-one</guid>
+      <pubDate>Wed, 11 Aug 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
       <title>Post 1 HMWK 1</title>
       <dc:creator>Annie McGrew</dc:creator>
       <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-post-1-hmwk-1</link>
@@ -128,15 +356,6 @@
       <category>Annie McGrew</category>
       <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-post-1-hmwk-1</guid>
       <pubDate>Wed, 11 Aug 2021 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Arbitrary</title>
-      <dc:creator>Abhinav Kumar</dc:creator>
-      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-iris</link>
-      <description>My life in DACSS and with MAX :)</description>
-      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-iris</guid>
-      <pubDate>Wed, 11 Aug 2021 00:00:00 +0000</pubDate>
-      <media:content url="https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-iris/Abhinav_files/figure-html5/unnamed-chunk-1-1.png" medium="image" type="image/png" width="1248" height="768"/>
     </item>
     <item>
       <title>iris</title>
@@ -231,6 +450,18 @@
       <description>my first post</description>
       <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-zoes-post</guid>
       <pubDate>Tue, 10 Aug 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>iris</title>
+      <dc:creator>bakharia</dc:creator>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-hw-1-bakharia</link>
+      <description>Here is the iris dataset.</description>
+      <category>homework 1</category>
+      <category>iris</category>
+      <category>bakharia</category>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-hw-1-bakharia</guid>
+      <pubDate>Tue, 10 Aug 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-hw-1-bakharia/iris_files/figure-html5/unnamed-chunk-1-1.png" medium="image" type="image/png" width="1248" height="768"/>
     </item>
     <item>
       <title>Still Learning the GitHib Workflow</title>

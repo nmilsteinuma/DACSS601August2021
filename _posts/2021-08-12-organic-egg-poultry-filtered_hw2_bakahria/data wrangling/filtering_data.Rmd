@@ -1,0 +1,86 @@
+---
+title: R Notebook
+output: html_notebook
+draft: yes
+---
+```{r}
+library(tidyverse)
+```
+```{r}
+df = readxl::read_excel('../../../_data/organiceggpoultry.xls', skip = 4, sheet = 'Data')
+df
+```
+```{r}
+names(df) <- c('Months', 'Extra Large Dozen', 'Extra Large 1/2 Doz. 1/2 Dozen', 'Large Dozen', 'Large 1/2 Doz.', 'Empty', 'Whole', 'B/S Breast', 'Bone-in Breast', 'Whole Legs', 'Thighs')
+
+print(names(df))
+```
+```{r}
+dplyr::select(df, -Empty)
+df
+```
+```{r}
+loop <- c(1:120)
+li = c()
+year <-  0
+for(i in loop){
+  if (substr(unlist(split(df$Months[i], " ")), 1, 3) == "Jan"){
+    year <- substr(unlist(split(df$Months[i], " ")), 5, 8)
+    li <- c(li, year)
+    df$Months[i] <- "January"
+  }
+  else{
+    li <- c(li, year)
+  }
+  if(df$`Bone-in Breast`[i] == "too few"){
+    df$`Bone-in Breast`[i] <- NaN
+  }
+  if (df$Thighs[i] == 'too few'){
+    df$Thighs[i] <- NaN
+  }
+}
+```
+
+```{r}
+df$Year <- li
+df <- df[,c('Months', 'Year', 'Extra Large Dozen', 'Extra Large 1/2 Doz. 1/2 Dozen', 'Large Dozen', 'Large 1/2 Doz.', 'Whole', 'B/S Breast', 'Bone-in Breast', 'Whole Legs', 'Thighs')]
+df
+```
+```{r}
+index <- c()
+for (i in loop){
+  index <- c(index, paste(substr(df$Months[i],1,3),substr(df$Year[i], 3,4)))
+}
+df$index <- index
+df
+```
+```{r}
+library(ggplot2)
+```
+
+```{r}
+ggplot(data = df, aes(x = index, y = `Extra Large Dozen`, group = 1)) + geom_line() + geom_point()
+```
+```{r}
+ggplot(data = df, aes(x = index, y = `Large Dozen`, group = 1)) + geom_line() + geom_point()
+```
+```{r}
+ggplot(data = df, aes(x = index, y = `Large 1/2 Doz.`, group = 1)) + geom_line() + geom_point()
+```
+```{r}
+ggplot(data = df, aes(x = index, y = `Whole`, group = 1)) + geom_line() + geom_point()
+```
+```{r}
+ggplot(data = df, aes(x = index, y = `B/S Breast`, group = 1)) + geom_line() + geom_point()
+```
+```{r}
+ggplot(data = df, aes(x = index, y = `Bone-in Breast`, group = 1)) + geom_line() + geom_point()
+```
+```{r}
+ggplot(data = df, aes(x = index, y = `Thighs`, group = 1)) + geom_line() + geom_point()
+```
+```{r}
+# Writing of csv file
+## write.csv(df, 'D:/R project/DACSS601August2021/_posts/2021-08-12-organic-egg-poultry-filtered_bakahria/data wrangling/organiceggpoultry_filtered.csv', row.names = FALSE)
+```
+

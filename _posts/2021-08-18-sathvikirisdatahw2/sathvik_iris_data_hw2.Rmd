@@ -1,0 +1,52 @@
+---
+title: sathvik_iris_data_hw2
+description: the Iris dataset
+author: sathvik_thogaru
+date: 08-18-2021
+output:
+  distill::distill_article:
+    self_contained: no
+draft: yes
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+loading the iris dataset from the datasets package and running summary statistics on the iris data
+
+```{r}
+library(datasets)
+summary(iris)
+```
+
+finding the column nammes of the data
+
+```{r}
+colnames(iris)
+```
+dim()is used to find the dimensions of the data
+
+```{r}
+dim(iris)
+```
+
+skim() is an alternative to summary(), quickly providing a broad overview of a data frame. It handles data of all types, dispatching a different set of summary functions based on the types of columns in the data frame.
+
+```{r}
+skimr::skim(iris)
+```
+there are 4 numeric variables and 1 factor variable which is the species. there are a total of 3 unique species in the iris
+
+```{r}
+unique(iris$Species)
+```
+the three species are setosa, versicolor and virginica
+
+ploting iris 
+
+```{r}
+plot(iris)
+```
+

@@ -1,0 +1,112 @@
+---
+title: Active Duty Marital Status HW3 - bakharia
+description: |
+  This post contains data wrangling of the Active Duty Marital Status and some basic visualization of the output.
+author: Shubham Mishra
+date: 08-20-2021
+output:
+  distill::distill_article:
+    self_contained: no
+draft: yes
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+**MILITARY DATASET**
+
+*Loading Libraries*
+
+
+```{r, echo=TRUE}
+library(tidyverse)
+```
+
+*Defining the function to read the dataset and return a dataframe based on the name of the sheet in the excel file*
+```{r, echo=TRUE}
+# SNC -> SINGLE NO CHILD; SC <- SINGLE WITH CHILD; JSM <- JOINT SERVICE MARRIAGE; CVM <- CIVILLIAN MARRIAGE; _M <- MALE; _F <- FEMALE; _T <- TOTAL
+df <- function(x){
+  temp <- readxl:: read_excel("../../_data/ActiveDuty_MaritalStatus.xls",
+                              sheet = sprintf("%s", x),
+                              col_names = c("d", "Pay Grade", "SNC_M", "SNC_F", "SNC_T", "SC_M", "SC_F", "SC_T", "JSM_M", "JSM_F", "JSM_T", "CVM_M", "CVM_F",                                                                 "CVM_T", "Total_M", "Total_F", "Total_T")
+                                               ) %>%
+                              filter(! str_detect(`Pay Grade`,"TOTAL")) %>%
+                              select(! starts_with("d")) %>%
+                              cbind(Branch = sprintf("%s", x)
+                              )
+  return (temp)
+}
+```
+
+
+*Reading all the sheets[Airforce, Marine, Navy, Army] from the excel file*
+```{r, echo=TRUE}
+
+AirForce_MaritalStatus <- df("AirForce")
+
+MarineCorps_MaritalStatus <- df("MarineCorps")
+  
+Navy_MaritalStatus <- df("Navy")
+
+Army_MaritalStatus <- df("Army")
+  
+```
+
+
+*In the code chunk below, the 4 dataframes are combined by row(as they have the same col names) and then filtered to removed the Total and '_T' columns. Using Regex expressions the Pay Grade is broken down into two new columns: Grade and Type. The columns in the combined dataframe are reordered to prepare it for pivot. The pivot_longer function clubs all the columns(SNC, SC, JSM, CVM) and their names and values are stored in Status and Enrolled respectively. The values stored in the Status Columns are them further used to extract gender and store it in a seperate col(Gender). Based on the values in the Status column values are stored in Plan indicating whether the individuals have subscribed to a Single or Family Plan (SNC_M | SNC_F == Single else Family). At the end the Status column is changed to Single or Family depending on the value (SNC or SC == Single)*
+```{r, echo=TRUE}
+
+Combined_MaritalStatus <- dplyr::bind_rows(AirForce_MaritalStatus, MarineCorps_MaritalStatus, Navy_MaritalStatus, Army_MaritalStatus) %>%
+  arrange(`Pay Grade`) %>%
+  select(! contains("_T")) %>%
+  mutate(Grade = str_extract(`Pay Grade`, '[^-]*$'), Type = str_extract(`Pay Grade`, '^[^-]*[^ -]')) %>%
+  select(! contains("Pay")) %>%
+  select(! contains("Total"))
+Combined_MaritalStatus <- Combined_MaritalStatus[,c("Type", "Grade", "Branch", "SNC_M", "SNC_F", "SC_M", "SC_F", "JSM_M", "JSM_F", "CVM_M", "CVM_F")] %>% #Reordering
+## pivot (newer functions longer and wider), name_palette
+  pivot_longer(SNC_M:CVM_F, values_to = "Enrolled", names_to = "Status") %>%
+  mutate(
+    Plan = ifelse(as.character(Status) == "SNC_M" | as.character(Status) == "SNC_F" , "Single", "Family"), 
+    Gender = str_extract(as.character(Status), "[^_]*$"),
+    Status = ifelse(str_detect(as.character(Status), "S"), "Single", "Married"),
+    Enrolled = as.numeric(Enrolled)
+    ) %>%
+  filter(! Enrolled == 0)
+```
+
+*Depicts the number of males and females in all the categories*
+```{r, echo=TRUE}
+Combined_MaritalStatus %>%
+  #mutate(Enrolled = log2(Enrolled)) %>%
+  ggplot(aes(x = Gender, y = Enrolled, fill = Gender)) + 
+  geom_bar(stat = "identity")+
+  facet_wrap(vars(Type)) +
+  scale_fill_hue(c = 40) +
+  labs(title = "Type vs Gender Enrolled") +
+  theme_minimal()
+```
+
+
+*It is observed that in the female category that there are more Single Parents*
+```{r, echo=TRUE}
+Combined_MaritalStatus %>%
+  #mutate(Enrolled = log2(Enrolled)) %>%
+  ggplot(aes(x = Gender, y = Enrolled, fill = Gender)) + 
+  geom_bar(stat = "identity")+
+  facet_wrap(vars(Status)) +
+  scale_fill_hue(c = 40) +
+  labs(title = "Type vs Marital Status Enrolled") +
+  theme_minimal()
+
+Combined_MaritalStatus %>%
+  #mutate(Enrolled = log2(Enrolled)) %>%
+  ggplot(aes(x = Gender, y = Enrolled, fill = Gender)) + 
+  geom_bar(stat = "identity")+
+  facet_wrap(vars(Plan)) +
+  scale_fill_hue(c = 40) +
+  labs(title = "Type vs Status Enrolled") +
+  theme_minimal()
+```
+
