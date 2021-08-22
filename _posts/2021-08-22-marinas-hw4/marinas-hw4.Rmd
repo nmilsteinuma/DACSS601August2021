@@ -1,0 +1,170 @@
+---
+title: "Marina's HW4"
+description: |
+  Getting started with the final project & descriptive statistics
+author:
+  - name: Marina
+date: 08-22-2021
+output:
+  distill::distill_article:
+    self_contained: false
+draft: true
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+The requirements for this homework are to:
+
+* Select at least two variables of interest from the dataset
+* Provide a basic description of the variables
+* Clean and recode as needed
+* Present summary descriptive statistics of the recoded variables
+
+For this homework, I'll be using data published by the federal government on the use of Lifeline. I'll include a more thorough description of the dataset in my final project.
+
+### Step 1: load libraries
+```{r Load Libraries, echo=TRUE, message = FALSE}
+#Actually Necessary
+  library(RSocrata)
+  library(tidyverse)
+#To play around with formatting
+  library(knitr) #Trying this out for tables
+  library(kableExtra)
+```
+
+### Step 2: read in the data
+
+I'll be bringing in the data using the Socrata Open Data API.
+
+```{r Load data, echo=TRUE, include=TRUE}
+
+df <- read.socrata("https://opendata.usac.org/resource/tfxa-gt3x.json")
+dim(df)
+
+```
+
+The dataset is currently huge as it contains multiple years of data for every US state and territory. We will narrow it down to Massachusetts observations starting from 2018.
+
+```{r Initial filter, echo=TRUE, include=TRUE}
+df <- filter(df, state == "MA" & support_year >= 2018)
+glimpse(df)  
+```
+### Step 3: pick variables to explore and clean
+For this HW, I'm going to focus on `sac_name`, `disbursement_year`, `support_year` and `subscriber_count`.
+
+`sac_name` refers to the name of the companies offering Lifeline service in Massachusetts. 
+
+```{r Providers table}
+table(df$sac_name, df$disbursement_year) %>% 
+    kbl(caption = "Companies offering service in Massachusetts each year") %>%
+    kable_paper("hover", full_width = F)
+```
+With the addition of Westfield Gas & Electric, we have a total of 6 companies offering service in the state as of 2021. Because there is no company ID included in the dataset, we need to use their names to identify them.
+
+However, their names have been known to change through time. For clarity and readability, we will be changing their names, building in an assumption that the total number of providers is 6-- if the number changes, that means it's worth looking into the data first before moving forward.
+
+```{r Rename Companies, echo=TRUE, include=TRUE}
+#Rename companies, but only if the total number of companies is 6
+  #(otherwise there might have been name changes that I'd have to
+  #account for)
+  if (length(unique(df$sac_name)) == 6) {
+  df <- df %>%
+        mutate(sac_name = str_to_title(sac_name)) %>%
+        mutate(provider = case_when(
+              startsWith(sac_name, "City") ~ 'Westfield',
+              startsWith(sac_name, "Global") ~ 'StandUp Wireless/Global Connection',
+              startsWith(sac_name, "Granby") ~ 'Granby',
+              startsWith(sac_name, "Tracfone") ~ 'Tracfone/Safelink',
+              startsWith(sac_name, "Verizon") ~ 'Verizon',
+              startsWith(sac_name, "Virgin") ~ 'Assurance/Virgin/T-Mobile'
+              ))
+    }  else {
+      print("There has been a change in the number of unique companies")
+    }
+  
+  #Confirm it worked
+  print(unique(df$provider))
+```
+Next, we explore `disbursement_year` and `support_year`. `support_year` represents the year where the company provided service, and for which it's entitled to receive financial support. `disbursement_year` represents the year in which said support was actually disbursement and given to the company. 
+
+```{r Compare disbursement vs. support year, echo=TRUE, include=TRUE}
+ xtabs(~ disbursement_year + support_year, df)
+```
+Surprisingly, disbursement and support years do not match 1:1. This is because companies make corrections to their claimed support amounts months, and even years, after the fact. 
+
+Because of this, the number of subscribers that one company claims to have served in a specific time period can end up changing over time. Hence, one specific support period for one specific company may present as more than one observation:
+
+```{r View one example, echo=TRUE, include=TRUE}
+df %>%
+  filter(provider == "Tracfone/Safelink" &
+           support_year == "2019" &
+           support_month == "7") %>%
+  select(provider, 
+         disbursement_date = disbursement_month_date_format,
+         support_date = support_month_date_format,
+         service_type,
+         subscriber_count)
+```
+
+```{r Remove scientific notation, echo=FALSE}
+options(scipen = 999)
+```
+
+
+Here, we see that in August 2019, Tracfone was disbursed funds for `r (41994 + 7 + 113)` subscribers it claimed to serve in July 2019. A year later, in July 2020, Tracfone submitted a correction of -3 voice subscribers, which would bring the actual total to `r (41994 + 7 + 113 - 3)`.
+
+In order to tidy up these corrections, we'll need to flatten the dataset to add up all claims of support across different disbursement dates. But first, let's try to view the amount of corrections present.
+
+```{r View corrections, echo=TRUE, include=TRUE}
+df %>%
+  ggplot(aes(x = support_month_date_format, 
+             y = disbursement_month_date_format)) +
+  geom_point() +
+  xlab("Support Date") +
+  ylab("Disbursement Date")
+```
+Earlier years have  more corrections-- it might be worth looking into whether the adjustments follow any patterns.
+
+### Step 4: flatten the dataset
+```{r Aggregate subscriber data, echo=TRUE, include=TRUE}
+  
+  subscribers <- df %>%
+                  filter(!submission_type == "ADJUSTMENT") %>% #Exclude fin. adj. rows
+                  select(provider, 
+                         support_year,
+                         support_month = support_month_date_format,
+                         technology_type,
+                         service_type,
+                         subscriber_count) %>%
+                  group_by(provider,
+                           support_year,
+                           support_month,
+                           technology_type,
+                           service_type) %>%
+                  summarise(subscriber_count = sum(as.numeric(subscriber_count)))
+```
+
+By aggregating subscriber counts across various corrections, we've gone from `r nrow(df)` to `r nrow(subscribers)` rows.
+
+### Step 5: present summary descriptives
+Let's take a look at how many subscribers each company has claimed to serve, on average, each year.
+
+```{r Descriptives, echo=TRUE, include=TRUE}
+subscribers %>%
+  ungroup() %>%
+  select(provider,
+         support_year,
+         subscriber_count) %>%
+  group_by(provider, support_year) %>%
+  summarise(mean_subscribers = mean(subscriber_count)) %>%
+  mutate(mean_subscribers = round(mean_subscribers, 2)) %>%
+  pivot_wider(id_cols = provider,
+              names_from = support_year,
+              values_from = mean_subscribers) %>%
+    kbl(caption = "Average subscribers per year") %>%
+    kable_paper("hover", full_width = F)
+```
+
