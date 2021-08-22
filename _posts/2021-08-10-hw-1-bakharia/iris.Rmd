@@ -1,18 +1,18 @@
 ---
-title: "iris"
+title: iris
 description: |
   Here is the iris dataset.
 author:
-  - name: bakharia
+- name: bakharia
 date: 08-10-2021
 categories:
-  - homework 1
-  - iris
-  - bakharia
+- homework 1
+- iris
+- bakharia
 output:
   distill::distill_article:
-    self_contained: false
-draft: true
+    self_contained: no
+draft: yes
 ---
 
 

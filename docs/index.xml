@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
   <channel>
-    <title>Data Analytics and Computational Social Science</title>
+    <title/>
     <link>https://mrolfe.github.io/DACSS601August2021/</link>
     <atom:link href="https://mrolfe.github.io/DACSS601August2021/index.xml" rel="self" type="application/rss+xml"/>
     <description>This is a DACSS course website for student work offered at UMass Amherst.
 </description>
     <image>
-      <title>Data Analytics and Computational Social Science</title>
+      <title/>
       <url>https://mrolfe.github.io/DACSS601August2021/images/DACSS_Round_Network.png</url>
       <link>https://mrolfe.github.io/DACSS601August2021/</link>
     </image>
@@ -424,6 +424,18 @@ the advanced data sets.</description>
       <description>my first post</description>
       <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-zoes-post</guid>
       <pubDate>Tue, 10 Aug 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>iris</title>
+      <dc:creator>bakharia</dc:creator>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-hw-1-bakharia</link>
+      <description>Here is the iris dataset.</description>
+      <category>homework 1</category>
+      <category>iris</category>
+      <category>bakharia</category>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-hw-1-bakharia</guid>
+      <pubDate>Tue, 10 Aug 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-hw-1-bakharia/iris_files/figure-html5/unnamed-chunk-1-1.png" medium="image" type="image/png" width="1248" height="768"/>
     </item>
     <item>
       <title>Still Learning the GitHib Workflow</title>

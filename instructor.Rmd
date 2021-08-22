@@ -1,15 +1,14 @@
 ---
-title: "Meredith Rolfe"
-image: "users/Rolfe.jpeg"
 links:
-  - label: GitHub
-    url: "https://github.com/mrolfe/"
-  - label: DACSS
-    url: "https://www.umass.edu/sbs/data-analytics-and-computational-social-science-program"
-  - label: Email
-    url: "mailto:mrolfe@umass.edu"
-output:
-  postcards::trestles
+- label: GitHub
+  url: https://github.com/mrolfe/
+- label: DACSS
+  url: https://www.umass.edu/sbs/data-analytics-and-computational-social-science-program
+- label: Email
+  url: mailto:mrolfe@umass.edu
+output: postcards::trestles
+title: ''
+image: https://drive.google.com/uc?export=view&id=NA
 ---
  
 Meredith holds a BA Comparative Area Studies from Duke University, and an MA and PhD in Political Science from the University of Chicago. She is currently an Associate Professor of Political Science at University of Massachusetts Amherst and the Program Director of the Data Analytics and Computational Social Science (DACSS). She was previously hold positions as a Postdoctoral Prize Fellow in Sociology at Oxford University and Lecturer in Public Management at the London School of Economics.
