@@ -1693,7 +1693,96 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 5    23     0     0     0     1       168       173   Elementary
 6    18     0     0     1     1       251       224         High</code></pre>
 </div>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<h3 id="arranging-some-data">Arranging Some Data</h3>
+<p>It may be useful to be the top several rows for certain columns, in this script, we look at the top 6 schools ordered based on their student to teacher ratio.</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre><code>                                SCH_NAME STABR GSLO GSHI G01 G02 G03
+1                      MARMOT SCHOOL K-8    ND   KG   08   0   0   0
+2 Kalamazoo Area Math and Science Center    MI   09   12  NA  NA  NA
+3          Woodruff Career &amp; Tech Center    IL   05   12  NA  NA  NA
+4                        South Fork High    CA   09   12  NA  NA  NA
+5             Snohomish Detention Center    WA   06   12  NA  NA  NA
+6                      Cold Springs High    CA   09   12  NA  NA  NA
+  G04 G05 G06 G07 G08 G09 G10 G11 G12 TOTAL AM HI BL WH HP TR   FTE
+1   0   0   0   1   2  NA  NA  NA  NA     3  3  0  0  0  0  0 16.00
+2  NA  NA  NA  NA  NA   1   0   1   0     2  0  0  0  2  0  0  9.50
+3  NA  NA  NA  NA  NA   1  NA   1   1     3 NA NA  3 NA NA NA 10.00
+4  NA  NA  NA  NA  NA   0   0   0   1     1  1  0  0  0  0  0  2.00
+5  NA  NA   0   0   0   0   0   1   0     1  0  0  0  1  0  0  2.00
+6  NA  NA  NA  NA  NA   0   1   0   0     1  0  0  0  1  0  0  1.57
+  STUTERATIO AMALM AMALF ASALM ASALF HIALM HIALF BLALM BLALF WHALM
+1       0.19     1     2     0     0     0     0     0     0     0
+2       0.21     0     0     0     0     0     0     0     0     1
+3       0.30    NA    NA    NA    NA    NA    NA     2     1    NA
+4       0.50     1     0     0     0     0     0     0     0     0
+5       0.50     0     0     0     0     0     0     0     0     1
+6       0.64     0     0     0     0     0     0     0     0     1
+  WHALF HPALM HPALF TRALM TRALF TOTMENROL TOTFENROL SCHOOL_LEVEL
+1     0     0     0     0     0         1         2   Elementary
+2     1     0     0     0     0         1         1         High
+3    NA    NA    NA    NA    NA         2         1         High
+4     0     0     0     0     0         1         0         High
+5     0     0     0     0     0         1         0         High
+6     0     0     0     0     0         1         0         High</code></pre>
+</div>
+<p>And now we look at the bottom 6 schools with the highest student-teacher ratio.</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre><code>                                             SCH_NAME STABR GSLO GSHI
+59238                      RIVER CITY SCIENCE ACADEMY    FL   06   12
+59239                     DUVAL CHARTER AT BAYMEADOWS    FL   KG   08
+59240        Pathways Early College Innovation School    MA   11   12
+59241             ENERGIZED FOR EXCELLENCE ACADEMY EL    TX   KG   05
+59242 Gateway to College at Holyoke Community College    MA   10   12
+59243                          The Gateway to College    MA   09   12
+      G01 G02 G03 G04 G05 G06 G07 G08 G09 G10 G11 G12 TOTAL AM   HI
+59238  NA  NA  NA  NA  NA 150 152 142 137 147 114 100   942  7  155
+59239 138 132 133 130 125 154 153 156  NA  NA  NA  NA  1252  7  176
+59240  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA  17  19    36  0    2
+59241 315 310 286 285 281  NA  NA  NA  NA  NA  NA  NA  1802  6 1585
+59242  NA  NA  NA  NA  NA  NA  NA  NA  NA   6  11   9    26  0   12
+59243  NA  NA  NA  NA  NA  NA  NA  NA  40  NA  17  26    83  0   15
+       BL  WH HP TR  FTE STUTERATIO AMALM AMALF ASALM ASALF HIALM
+59238 202 483  1 45 1.00        942     7     0    18    31    82
+59239 287 564  5 63 1.00       1252     2     5    75    75    88
+59240   0  30  0  2 0.02       1800     0     0     0     2     1
+59241 191   9  0  0 1.00       1802     5     1     2     9   788
+59242   8   6  0  0 0.01       2600     0     0     0     0     4
+59243   1  63  0  3 0.02       4150     0     0     0     1     4
+      HIALF BLALM BLALF WHALM WHALF HPALM HPALF TRALM TRALF TOTMENROL
+59238    73   100   102   265   218     1     0    21    24       494
+59239    88   152   135   284   280     3     2    37    26       641
+59240     1     0     0     8    22     0     0     1     1        10
+59241   797   102    89     4     5     0     0     0     0       901
+59242     8     5     3     1     5     0     0     0     0        10
+59243    11     0     1    28    35     0     0     0     3        32
+      TOTFENROL SCHOOL_LEVEL
+59238       448         High
+59239       611   Elementary
+59240        26         High
+59241       901   Elementary
+59242        16         High
+59243        51         High</code></pre>
+</div>
+<h3 id="summary-data">Summary Data</h3>
+<p>Now let’s take a look at some summary of the dataset in terms of its student-teacher ratio in each state.</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre><code># A tibble: 53 x 3
+# Groups:   STABR [53]
+   STABR AvgRatio SDRatio
+   &lt;chr&gt;    &lt;dbl&gt;   &lt;dbl&gt;
+ 1 AK        16.9    8.97
+ 2 AL        18.2    3.48
+ 3 AR        13.2    2.83
+ 4 AZ        19.1    4.90
+ 5 CA        23.7    9.99
+ 6 CO        16.6    4.83
+ 7 CT        13.7   26.4 
+ 8 DC        20.9   30.3 
+ 9 DE        14.9    2.63
+10 FL        21.0   50.2 
+# ... with 43 more rows</code></pre>
+</div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

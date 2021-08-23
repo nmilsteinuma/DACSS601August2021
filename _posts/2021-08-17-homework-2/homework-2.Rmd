@@ -43,10 +43,11 @@ The data is definitely unclean, let's filter out some stuff so that we have more
 
 ```{r echo = FALSE}
 data_clean <- data %>%
+  filter(!is.na(TOTAL) & TOTAL > 0 & !is.na(FTE) & FTE > 0) %>%
   filter(SCHOOL_TYPE_TEXT == "Regular school" & VIRTUAL == "Not a virtual school") %>%
   filter(SCHOOL_LEVEL == "High" | SCHOOL_LEVEL == "Middle" | SCHOOL_LEVEL == "Elementary") %>%
   filter((is.na(G13) | G13 == 0) & (is.na(PK) | PK == 0)) %>%
-  filter(!is.na(STABR) && !is.na(SCH_NAME)) 
+  filter(!is.na(STABR) & !is.na(SCH_NAME)) 
 head(data_clean)
 ```
 
@@ -61,5 +62,35 @@ data_sub <- data_clean %>%
   select(SCH_NAME, STABR, GSLO, GSHI, G01, G02, G03, G04, G05, G06, G07, G08, G09, G10, G11, G12, TOTAL, AM, HI, BL, WH, HP, TR, FTE, STUTERATIO, AMALM, AMALF, ASALM, ASALF, HIALM, HIALF, BLALM, BLALF, WHALM, WHALF, HPALM, HPALF, TRALM, TRALF, TOTMENROL, TOTFENROL, SCHOOL_LEVEL)
 head(data_sub)
 ```
+
+### Arranging Some Data
+
+It may be useful to be the top several rows for certain columns, in this script, we look at the top 6 schools ordered based on their student to teacher ratio.
+
+```{r echo = FALSE}
+data_stuteratio <- data_sub %>%
+  arrange(STUTERATIO, by_group = TRUE)
+head(data_stuteratio)
+```
+ And now we look at the bottom 6 schools with the highest student-teacher ratio.
+
+```{r echo = FALSE}
+data_stuteratio <- data_sub %>%
+  arrange(STUTERATIO)
+tail(data_stuteratio)
+```
+
+### Summary Data
+
+Now let's take a look at some summary of the dataset in terms of its student-teacher ratio in each state.
+
+```{r echo = FALSE}
+data_stats <- data_sub %>%
+  group_by(STABR) %>%
+  summarise(STABR = STABR, AvgRatio = mean(STUTERATIO), SDRatio = sd(STUTERATIO))
+data_summary <- distinct(data_stats)
+data_summary
+```
+
 
 
