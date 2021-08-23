@@ -1,0 +1,65 @@
+---
+title: "School Characteristics"
+description: "Blog posts about School Characteristics"
+author: "Joey Wolpert"
+date: 08-17-2021
+output:
+  distill::distill_article:
+    self_contained: false
+draft: true
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library("tidyverse")
+library("readr")
+library("ggplot2")
+library("dplyr")
+```
+
+# Homework 2
+
+Let's read in the data and see what it looks like:
+
+```{r echo = FALSE}
+data <- read.csv("C:/Users/wolpe/DACSS601August2021/_data/Public_School_Characteristics_2017-18.csv")
+head(data)
+```
+
+### What's in the data?
+
+This dataset looks at the characteristics of various public schools across the United States. Among the variables in the dataset are identifying characteristics such as the name of the school, its school district, and its location; there are also several quantitative variables such as the number of students in each grade, as well as the overall number of students broken down in categories such as race and gender.
+
+### The numbers of the data
+
+The data has 79 total columns and just over 100,000 rows. It is unlikely that all of this info will be useful, so in the next section we can see if the data can be cleaned and subset to be more useful to the project.
+
+# Homework 3
+
+### Cleaning Data
+
+The data is definitely unclean, let's filter out some stuff so that we have more complete data.
+
+```{r echo = FALSE}
+data_clean <- data %>%
+  filter(SCHOOL_TYPE_TEXT == "Regular school" & VIRTUAL == "Not a virtual school") %>%
+  filter(SCHOOL_LEVEL == "High" | SCHOOL_LEVEL == "Middle" | SCHOOL_LEVEL == "Elementary") %>%
+  filter((is.na(G13) | G13 == 0) & (is.na(PK) | PK == 0)) %>%
+  filter(!is.na(STABR) && !is.na(SCH_NAME)) 
+head(data_clean)
+```
+
+With filtering, we now have a subset of the original data that will be much more useful for analysis. The schools were filtered to include only regular, non-virtual schools at the elementary, middle, and high school levels. It also removed any schools that had students younger than kindergarten (PK) or those past their senior year of high school (G13).
+
+### Subsetting Columns
+
+Now let's subset the columns in the dataset to only include those that interest this project.
+
+```{r echo = FALSE}
+data_sub <- data_clean %>%
+  select(SCH_NAME, STABR, GSLO, GSHI, G01, G02, G03, G04, G05, G06, G07, G08, G09, G10, G11, G12, TOTAL, AM, HI, BL, WH, HP, TR, FTE, STUTERATIO, AMALM, AMALF, ASALM, ASALF, HIALM, HIALF, BLALM, BLALF, WHALM, WHALF, HPALM, HPALF, TRALM, TRALF, TOTMENROL, TOTFENROL, SCHOOL_LEVEL)
+head(data_sub)
+```
+
+
