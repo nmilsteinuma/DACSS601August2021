@@ -1,0 +1,38 @@
+---
+title: "Zoe Hotel Bookings Dataset"
+description: |
+  An intodution to the hotel dataset
+author: Zoe Bean
+date: 08-15-2021
+output:
+  distill::distill_article:
+    self_contained: false
+draft: true
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+I will be processing a dataset about hotel bookings from 2015 to 2017. First, I import the dataset, which requires the tidyverse package to be loaded.
+
+```{r import}
+library(tidyverse)
+hotel_data=read_csv("../../_data/hotel_bookings.csv")
+```
+
+Next, I use head() to give an example of what the dataset looks like.
+
+```{r show}
+head(hotel_data)
+```
+
+To find out how many rows are in the dataset, I use dim()
+
+```{r dim}
+dim(hotel_data)
+```
+
+This means that there are 119390 rows and 32 columns. This is important since the number of rows tells us how many hotel bookings there are in this dataset, and the columns tell us how many pieces of data are available per booking.

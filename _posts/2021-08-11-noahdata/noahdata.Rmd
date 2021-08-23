@@ -1,0 +1,48 @@
+---
+title: Noah_Chicken_Data
+description: |
+  Included is a brief analysis of chicken data with a plot between year and the average price of each cut of chicken.
+author:
+- name: Noah Milstein
+  url: http://umass.edu/sbs/dacss
+date: 08-11-2021
+output:
+  distill::distill_article:
+    self_contained: no
+draft: yes
+---
+
+
+```{r, echo=FALSE}
+library(tidyverse)
+library(knitr)
+library(readxl)
+library(ggplot2)
+```
+
+```{r}
+poultry <- read_csv("../../_data/eggs_tidy.csv")
+```
+
+```{r}
+poultry 
+```
+
+Note: This code isn't running because the variables you are using aren't in the original csv that I found - but this might be because you are using the poultry file not the eggs file. Sorry I couldn't get it to work - Meredith
+
+```{r}
+#poultry %>% group_by(year, Price_Dollar, Product) %>% ggplot() +
+#  geom_line(mapping=aes(y=Price_Dollar, x=Year, color=Product), na.rm=TRUE)
+```
+
+## Chicken Data Conclusion
+
+The graph above suggests that the price of most chicken cuts remain relatively similar over time, however B/S Breast or boneless chicken breast appears to have increased in price over recent years. Thighs have also remained relatively similar
+
+*Noah Milstein*
+
+
+
+
+
+
