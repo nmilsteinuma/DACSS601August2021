@@ -2,8 +2,8 @@
 title: "Isha's Blog Post"
 description: "Running Blog Post for Course Homeworks"
 author: Isha Akshita Mahajan
-date: 08-13-2021
-output:
+date: 08-16-2021
+output: 
   distill::distill_article:
     self_contained: false
 draft: true
@@ -15,7 +15,7 @@ draft: true
 Hello Everybody! My name is Isha and I am starting the DACSS program this summer. I am from India and completed my bachelors in journalism and political science from UMass. I am excited to meet everyone this fall and delve into the world of data and social science. 
 ---
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
 library(dplyr)
 ```
@@ -23,7 +23,7 @@ library(dplyr)
 ##Homework 2 
 
 ```{r}
-marriage_data <- read_csv('/Users/isha/Desktop/DACSS601August2021/_data/australian_marriage_tidy.csv')
+marriage_data <- read_csv('../../_data/australian_marriage_tidy.csv')
 head(marriage_data)
 ```
 
