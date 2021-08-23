@@ -1,7 +1,7 @@
 ---
 title: "Rhys_Long_Eggs"
 description: |
-  This is a data set that includes records of how many cartons of eggs were sold every month in 2004-2013. I got this data from the Basic Data sets section of google classroom. This data set contains four variables.
+  This is a dataset from a company that sells eggs. The data in this dataset provides a record of the company's monthly earnigns from January 2004 to December 2013.
   
 author: Rhys Long
 date: 08-11-2021
@@ -15,123 +15,135 @@ draft: true
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-Part 1: Full Dataset
+Below is the uncleaned dataset. Even though this dataset has six columns, there are only three variables. The variables are the date when the data was collected, the size of the eggs that were sold, and the quantity of eggs sold per carton.
 
 ```{r}
 library(tidyverse)
 library(ggplot2)
 eggs_data <- read.csv(file = "../../_data/eggs_tidy.csv")
 tibble(eggs_data)
-ggplot(data = eggs_data, aes(year)) +
-  geom_point(mapping = aes(y=extra_large_dozen), color = 'magenta') +
-  geom_point(mapping = aes(y=large_dozen), color = 'purple') +
-  geom_point(mapping = aes(y=extra_large_half_dozen), color = 'blue') +
-  geom_point(mapping = aes(y=large_half_dozen), color = 'cyan') +
-  labs(title="Eggs Sales in 2004-2013", y="Eggs Sold", x="Year")
 ```
-
-Part 2: Using Filter And Summarize
+In order to show the accurate amount of columns in my data, I first used the unify() function to put month and year into the same column that I labeled as "Date". 
 
 ```{r}
-first_third <- filter(eggs_data, year <= 2007)
-ggplot(data = first_third, aes(year)) +
-  geom_point(mapping = aes(y=extra_large_dozen), color = 'magenta') +
-  geom_point(mapping = aes(y=large_dozen), color = 'purple') +
-  geom_point(mapping = aes(y=extra_large_half_dozen), color = 'blue') +
-  geom_point(mapping = aes(y=large_half_dozen), color = 'cyan') +
-  labs(title="Eggs Sales in 2004-2007", y="Earnings", x="Year")
-
-summarize(first_third, max(extra_large_dozen), min(extra_large_dozen), median(extra_large_dozen), mean(extra_large_dozen))
-summarize(first_third, max(large_dozen), min(large_dozen), median(large_dozen), mean(large_dozen))
-summarize(first_third, max(extra_large_half_dozen), min(extra_large_half_dozen), median(extra_large_half_dozen), mean(extra_large_half_dozen))
-summarize(first_third, max(large_half_dozen), min(large_half_dozen), median(large_half_dozen), mean(large_half_dozen))
+library(tidyverse)
+unite(eggs_data, "Date", month:year) %>%
+  as.tibble(eggs_data)
 ```
 
-```{r}
-middle_third <- filter(eggs_data, year >= 2007 & year <=2010)
-ggplot(data = middle_third, aes(year)) +
-  geom_point(mapping = aes(y=extra_large_dozen), color = 'magenta') +
-  geom_point(mapping = aes(y=large_dozen), color = 'purple') +
-  geom_point(mapping = aes(y=extra_large_half_dozen), color = 'blue') +
-  geom_point(mapping = aes(y=large_half_dozen), color = 'cyan') +
-  labs(title="Eggs Sales in 2007-2010", y="Earnings", x="Year")
-
-summarize(middle_third, max(extra_large_dozen), min(extra_large_dozen), median(extra_large_dozen), mean(extra_large_dozen))
-summarize(middle_third, max(large_dozen), min(large_dozen), median(large_dozen), mean(large_dozen))
-summarize(middle_third, max(extra_large_half_dozen), min(extra_large_half_dozen), median(extra_large_half_dozen), mean(extra_large_half_dozen))
-summarize(middle_third, max(large_half_dozen), min(large_half_dozen), median(large_half_dozen), mean(large_half_dozen))
-```
+Next, I used the pivot_longer function in order to condense the large_half_dozen, large_dozen, extra_large_half_dozen, and extra_large_dozen columns into one "Size" column and one "Quantity" column.
 
 ```{r}
-final_third <- filter(eggs_data, year >=2010)
-ggplot(data = final_third, aes(year)) +
-  geom_point(mapping = aes(y=extra_large_dozen), color = 'magenta') +
-  geom_point(mapping = aes(y=large_dozen), color = 'purple') +
-  geom_point(mapping = aes(y=extra_large_half_dozen), color = 'blue') +
-  geom_point(mapping = aes(y=large_half_dozen), color = 'cyan') +
-  labs(title="Eggs Sales in 2010-2013", y="Earnings", x="Year")
-
-summarize(final_third, max(extra_large_dozen), min(extra_large_dozen), median(extra_large_dozen), mean(extra_large_dozen))
-summarize(final_third, max(large_dozen), min(large_dozen), median(large_dozen), mean(large_dozen))
-summarize(final_third, max(extra_large_half_dozen), min(extra_large_half_dozen), median(extra_large_half_dozen), mean(extra_large_half_dozen))
-summarize(final_third, max(large_half_dozen), min(large_half_dozen), median(large_half_dozen), mean(large_half_dozen))
-```
-
-Part 3: Using Select, Slice, and Arrange
-
-```{r}
-eggs_data %>%
-  select(month, year, extra_large_dozen) %>%
-  arrange(desc(extra_large_dozen)) %>%
-  slice(1:10)
-ggplot(data = eggs_data, aes(year)) +
-  geom_point(mapping = aes(y=extra_large_dozen), color = 'magenta') +
-  labs(title="Extra Large Dozen Egg Sales in 2004-2013", y="Earnings", x="Year")
-```
-
-```{r}
-eggs_data %>%
-  select(month, year, large_dozen) %>%
-  arrange(desc(large_dozen)) %>%
-  slice(1:10)
-ggplot(data = eggs_data, aes(year)) +
-  geom_point(mapping = aes(y=large_dozen), color = 'purple') +
-  labs(title="Large Dozen Egg Sales in 2004-2013", y="Earnings", x="Year")
-```
-
-```{r}
-eggs_data %>%
-  select(month, year, extra_large_half_dozen) %>%
-  arrange(desc(extra_large_half_dozen)) %>%
-  slice(1:10)
-ggplot(data = eggs_data, aes(year)) +
-  geom_point(mapping = aes(y=extra_large_half_dozen), color = 'blue') +
-  labs(title="Extra Large Half Dozen Egg Sales in 2004-2013", y="Earnings", x="Year")
-```
-
-```{r}
-eggs_data %>%
-  select(month, year, large_half_dozen) %>%
-  arrange(desc(large_half_dozen)) %>%
-  slice(1:10)
-ggplot(data = eggs_data, aes(year)) +
-  geom_point(mapping = aes(y=large_half_dozen), color = 'cyan') +
-  labs(title="Large Half Dozen Egg Sales in 2004-2013", y="Earnings", x="Year")
-```
-
-Part 4: Using Rename, Pivot_Longer, and Mutate
-
-```{r}
-eggs_data %>%
-  rename("Month"=month, "Year"=year) %>%
+  unite(eggs_data, "Date", month:year) %>%
   pivot_longer(cols=large_half_dozen:extra_large_dozen,
                names_to = c("Size", "Quantity"),
                names_sep="arge_",
-               values_to = "Earnings")%>%
+               values_to = "Earnings")
+```
+
+After creating an "Egg Size" column and one "Eggs Per Carton" column, the "Egg Size" labels said "l" and "extra_l", so I had to use mutate() to fix the labels.
+
+```{r}
+library(tidyverse)
+  unite(eggs_data, "Date", month:year) %>%
+  pivot_longer(cols=large_half_dozen:extra_large_dozen,
+               names_to = c("Size", "Quantity"),
+               names_sep = "arge_",
+               values_to = "Earnings") %>%
   mutate(Size = case_when(
     Size == 'l'~"Large",
     Size == 'extra_l'~ "Extra Large")) %>%
   mutate(Quantity=case_when(
     Quantity == "half_dozen" ~ "Half Dozen",
-    Quantity == "dozen" ~ "Dozen"))
+    Quantity == "dozen" ~ "Dozen")) 
 ```
+After reformatting the data to show the correct number of variables, I decided to use filter("Earnings" != 0) to remove any missing data.
+
+```{r}
+unite(eggs_data, "Date", month:year) %>%
+  pivot_longer(cols=large_half_dozen:extra_large_dozen,
+               names_to = c("Size", "Quantity"),
+               names_sep = "arge_",
+               values_to = "Earnings") %>%
+  mutate(Size = case_when(
+    Size == 'l'~"Large",
+    Size == 'extra_l'~ "Extra Large")) %>%
+  mutate(Quantity=case_when(
+    Quantity == "half_dozen" ~ "Half Dozen",
+    Quantity == "dozen" ~ "Dozen")) %>%
+  filter("Earnings" != 0)
+```
+
+After reformatting my data, I decided to analyze how size impacts earnings. First, I filtered out extra large egg data so I could focus on finding the central tendencies of the large egg data.
+
+```{r}
+unite(eggs_data, "Date", month:year) %>%
+  pivot_longer(cols=large_half_dozen:extra_large_dozen,
+               names_to = c("Size", "Quantity"),
+               names_sep = "arge_",
+               values_to = "Earnings") %>%
+  mutate(Size = case_when(
+    Size == 'l'~"Large",
+    Size == 'extra_l'~ "Extra Large")) %>%
+  mutate(Quantity=case_when(
+    Quantity == "half_dozen" ~ "Half Dozen",
+    Quantity == "dozen" ~ "Dozen")) %>%
+  filter(Size != "Extra Large")
+```
+
+After filtering out the extra large egg data, I used summarize() to find the central tendencies of large egg earnings.
+
+```{r}
+unite(eggs_data, "Date", month:year) %>%
+  pivot_longer(cols=large_half_dozen:extra_large_dozen,
+               names_to = c("Size", "Quantity"),
+               names_sep = "arge_",
+               values_to = "Earnings") %>%
+  mutate(Size = case_when(
+    Size == 'l'~"Large",
+    Size == 'extra_l'~ "Extra Large")) %>%
+  mutate(Quantity=case_when(
+    Quantity == "half_dozen" ~ "Half Dozen",
+    Quantity == "dozen" ~ "Dozen")) %>%
+  filter(Size != "Extra Large") %>%
+  summarize("Large Minimum"=min(Earnings), "Large Median"=median(Earnings), "Large Mean"=mean(Earnings), "Large Maximum"=max(Earnings))
+```
+
+To find the central tendencies of extra large egg earnings, I copied and pasted the code from the previous step and replaced "Size != 'Extra Large'" with "Size == 'Extra Large'".
+
+```{r}
+unite(eggs_data, "Date", month:year) %>%
+  pivot_longer(cols=large_half_dozen:extra_large_dozen,
+               names_to = c("Size", "Quantity"),
+               names_sep = "arge_",
+               values_to = "Earnings") %>%
+  mutate(Size = case_when(
+    Size == 'l'~"Large",
+    Size == 'extra_l'~ "Extra Large")) %>%
+  mutate(Quantity=case_when(
+    Quantity == "half_dozen" ~ "Half Dozen",
+    Quantity == "dozen" ~ "Dozen")) %>%
+  filter(Size == "Extra Large") %>%
+  summarize("Extra Large Minimum"=min(Earnings), "Extra Large Median"=median(Earnings), "Extra Large Mean"=mean(Earnings), "Extra Large Maximum"=max(Earnings))
+```
+
+After finding the central tendencies of the large vs extra large egg earnings, I made a box plot to provide a visual representation of the central tendencies.
+
+```{r}
+library(tidyverse)
+unite(eggs_data, "Date", month:year) %>%
+  pivot_longer(cols=large_half_dozen:extra_large_dozen,
+               names_to = c("Size", "Quantity"),
+               names_sep = "arge_",
+               values_to = "Earnings") %>%
+  mutate(Size = case_when(
+    Size == 'l'~"Large",
+    Size == 'extra_l'~ "Extra Large")) %>%
+  mutate(Quantity=case_when(
+    Quantity == "half_dozen" ~ "Half Dozen",
+    Quantity == "dozen" ~ "Dozen")) %>%
+  ggplot(aes(Size, Earnings)) +
+  geom_boxplot() + labs(title = "Extra Large vs Large Egg Earnings")
+```
+
+According to the boxplot above, the extra large egg earnings were slightly higher than the large egg earnings, but not by a lot.
