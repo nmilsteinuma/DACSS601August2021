@@ -1,0 +1,73 @@
+---
+title: "Final Project"
+description: |
+  Baby steps
+author: "Isha Akshita Mahajan"
+date: 08-19-2021
+output: 
+  distill::distill_article:
+    self_contained: false
+draft: true
+---
+
+#Code Setup
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(tidyverse)
+library(ggplot2)
+library(dplyr)
+library(haven)
+
+#load stata package and get information on variable columns 
+data<- read_stata("../../_data/stata.DTA")
+
+
+#load csv file and rename columns
+csv<-read_csv("../../_data/abc_poll_2021.csv") %>% rename(
+  "education"= "ppeduc5",
+  "age"="ppage",
+  "education_category"="ppeducat",
+  "gender"="ppgender",                              
+  "race_and_ethnicity"="ppethm",                     
+  "household_size"="pphhsize",
+  "household_income"= "ppinc7",
+  "marital_status"="ppmarit5",
+  "msa_status"="ppmsacat",
+  "region_of_residence"="ppreg4",
+  "living_ownership_status"="pprent",
+  "state"="ppstaten",
+  "work_status"="PPWORKA",
+  "employement_status"= "ppemploy")
+```
+
+
+#Data Description
+
+
+```{r}
+
+```
+
+#Data Questions
+
+>1.a Do you approve or disapprove of the way Joe Biden is handling...the response to the coronavirus(COVID-19)?
+>1.b Do you approve or disapprove of the way Joe Biden is handling...immigration and the situation at the United States-Mexico border?
+>1.c Do you approve or disapprove of the way Joe Biden is handling...the economic recovery?
+>1.d Do you approve or disapprove of the way Joe Biden is handling...the withdrawal of United States troops from Afghanistan?
+>1.e Do you approve or disapprove of the way Joe Biden is handling...gun violence?
+>1.f Do you approve or disapprove of the way Joe Biden is handling...crime?
+>2 How concerned are you that you or someone you know will be infected with the coronavirus?...
+>3 Have you personally received at least one dose of a coronavirus vaccine, or not?
+>4 How would you rate the job Joe Biden is doing keeping his campaign promises?....
+>5 Thinking about the next 12 months, would you say you feel optimistic or pessimistic about the way things are going in this country?
+
+#Exploratory Analysis 
+
+
+```{r}
+frequnecy_analysis<- csv %>% 
+  count(state)
+```
+
+
+
