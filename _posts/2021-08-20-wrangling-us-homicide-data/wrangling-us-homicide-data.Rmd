@@ -1,0 +1,30 @@
+---
+title: "Wrangling U.S. homicide data"
+description: |
+  Importing and wrangling U.S. homicide data for Homework 3.
+author:
+  Leah Dion
+date: 08-20-2021
+categories:
+  .homework 3
+  .wrangling
+output:
+  distill::distill_article:
+    self_contained: false
+draft: true
+---
+
+Loading packages necessary for wrangling:
+
+```{r setup, include=TRUE}
+knitr::opts_chunk$set(echo = FALSE)
+library(tidyverse)
+library(dplyr)
+```
+
+Importing the data and assigning it to variable homi:
+
+```{r}
+homi <- read.csv("/Users/leahleahleah/Documents/Data/homicides.csv")
+head(homi)
+```
