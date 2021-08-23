@@ -1,0 +1,50 @@
+---
+title: "Marina's HW3"
+description: |
+  Basic data wrangling
+author:
+  - name: Marina
+date: 08-22-2021
+output:
+  distill::distill_article:
+    self_contained: false
+draft: true
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+The requirement for HW3 is to read in data and perform basic data wrangling operations.
+
+I'll bring in something from the existing _data folder in my fork and hope it works out with the pull request (fingers crossed).
+
+### Step 1: Load libraries and read in a dataset
+```{r Load libraries and read in data, include=TRUE, echo=TRUE}
+library(dplyr)
+library(tidyr)
+df <- read.csv(file="../../_data/hotel_bookings.csv")
+```
+
+### Step 2: Take a quick peek at the dataset
+```{r Quick peek, include=TRUE, echo=TRUE}
+glimpse(df)
+```
+### Step 3: Apply required functions
+```{r Use dplyr, include=TRUE, echo=TRUE}
+
+df %>%
+  filter(is_canceled == 0) %>% # Exclude canceled bookings
+  select(hotel_type = hotel,
+         arrival_date_year,
+         adults) %>%
+  group_by(hotel_type, arrival_date_year) %>%
+  summarise(mean_adults = mean(adults)) %>%
+  arrange(hotel_type, arrival_date_year) %>%
+  pivot_wider(id_cols = hotel_type,
+              names_from = arrival_date_year,
+              values_from = mean_adults)
+
+```
+Looking at completed (non-canceled) bookings and splitting them by hotel type, we can see that over time, the mean number of adults checking in to city hotels has slightly increased, while the opposite is true in resort hotels.
