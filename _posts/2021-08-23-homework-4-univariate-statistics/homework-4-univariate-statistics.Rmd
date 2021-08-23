@@ -1,0 +1,242 @@
+---
+title: "Homework 4 - Univariate Statistics"
+description: |
+  This dataset is named Active Duty Marital Status (ADMS). This dataset has been published by government of United States for public usage. It has count details of singles,   single parents, and married resources of the 4 branches of the defence department for the month of April 2010.
+author: Abhinav Kumar
+date: 08-23-2021
+output:
+  distill::distill_article:
+    self_contained: false
+draft: true
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+*Task:
+
+You must select at least two variables of interest from your dataset, provide a basic description of the variables, clean and recode as needed, and present descriptive statistics and any visualizations. Your R Markdown document should include:
+
+1. Descriptions of the variables - how they were collected, any missing values, etc
+2. How you cleaned and coded the data, including a before/after comparison as needed
+3. summary descriptives of the recoded variables
+4. appropriate visualizations (not required)
+
+My Strategy:
+
+1. As in Homework 3, I have already wrnagled the date and explained through documentation how I cleaned and prepared it, I will not be documenting the same steps for 
+   redundancy sake.
+   
+2. As majority of the variables in the dataset are categorical, there is very limited univariate statistical analysis that could be done over it.
+
+3. I will use table and xtabs function to draw Univariate Insights
+
+4. Will be using dim() and str() functions to show the dimensions before and after wrnagling the data.*
+
+```{r}
+library(tidyverse)
+library(readxl)
+library(stringr)
+```
+
+*Invoking the requisite libraries here to wrangle and cleanse the data.*
+```{r}
+
+data <- ("C:/Users/Abhinavkumar.DESKTOP-JP9HSBL/Desktop/DACSS Summer/ActiveDuty_MaritalStatus.xls")
+
+sheet_name <-  excel_sheets(data)
+
+data_adms <-  map_df(sheet_name, ~ read_excel(data, skip = 8, sheet = .x, col_names = c("d", "Pay_Grade", "Single_NoKids_Male", "Single_NoKids_Female", "t", "Single_WithKids_Male", "Single_WithKids_Female", "t", "Married_JointService_Male", "Married_JointService_Female", "t", "Married_Civilian_Male", "Married_Civilian_Female", rep("t", 4))) %>%
+           mutate("Defence_Wing" = .x))
+  
+```
+*The dataset "data_adms" has 148 obervatiosn/rows and 18 columns/variables*
+```{r}
+dim(data_adms)
+```
+```{r}
+str(data_adms)
+```
+*The original raw data was in ".xls" format with 5 sheets. After importaning the data using purrr::map_df function, all the sheets have been statcked on top of another* *starting from sheet 1 to sheet 5, converting it to a single data frame. This has introduced a column and few rows with "NA" values. *
+
+*Feature Set Description:*
+
+*1) Pay_Grade                    : This gives the information whether resource is Enlisted, Officer, or Warranted category reource across grades 1 to 10 ofthe                                                 defence forces.*
+                      
+*2) Single_NoKids_Male           : Charatcetr feature with details of male defence resource who is single and does not have children*
+
+*3) Single_NoKids_Female         : Character feature with details of male defence resource who is single and does not have children*
+
+*4) t...5                        : Charatcer feature giving the aggregate value of singles (male/female) with no children*
+
+*5) Single_WithKids_Male         : Character feature with details of male defence resource who is single and has children*
+
+*6) Single_WithKids_Female       : Character feature with details of female defence resource who is single and has children*
+
+*7) t...8                        : Charatcer feature giving the aggregate value of singles (male/female) with children*
+
+*8) Married_JointService_Male    : Character feature with details of male defence resource who is married to another defence resource in service*
+
+*9) Married_JointService_Female  : Character feature with details of female defence resource who is married to another defence resource in service*
+
+*10) t...11                      : Character feature giving the aggregate value of defence resources (male/female) married within defence force services*
+
+*11) Married_Civilian_Male       : Character feature giving the details of male defence resource married to a civilian (not within defence forces)*
+
+*12) Married_Civilian_female     : Character feature giving the details of female defence resource married to a civilian (not within defence forces)*
+
+*13) t...14                      : Character feature giving the aggregate value of the defence resources married to civilians.*
+
+*14) t...15                      : Aggregate of all the Males in the dataset across categories*
+
+*15) t...16                      : Aggregate of all the Females in the dataset across categories*
+
+*16) t...17                      : Aggregate of the males and females across categories*
+
+*17) Defence_Wing                : Character feature giving outdetails to which arm of defence the resorce beloangs to (AirForce|MarineCorps|Navy|Army)*
+
+*The first column "d" has got populated with "NA" values which reading the data from all the sheets of ".xls" document. It has no use for our analysis and will be dropped. Similarly the aggregate columns do not have any use and will be dropped. Within "Defence_Wing" *
+```{r}
+
+apply(data_adms, 2, function(x) any(is.na(x)))
+
+```
+*Here we are checkig for NA values. All the features have NA values and will be dropped for the dataset.*
+```{r}
+
+data_adms <-  data_adms %>%
+  select( "Pay_Grade" : "Single_NoKids_Female", "Single_WithKids_Male", "Single_WithKids_Female", "Married_JointService_Male", 
+          "Married_JointService_Female", "Married_Civilian_Male", "Married_Civilian_Female",  "Defence_Wing") %>%
+  na.omit() %>%
+  filter(str_detect(Pay_Grade, "TOTAL", negate = T)) %>%
+  filter(str_detect(Pay_Grade, "Pay Grade", negate = T)) %>%
+  filter(str_detect(Defence_Wing, "TotalDoD", negate = T))%>%
+  relocate(Defence_Wing) %>% 
+  separate(col = Pay_Grade, into = c("Pay_Grade_Class","Pay_Grade"), sep="-") %>%
+  mutate(Pay_Grade_Class = case_when(
+    startsWith(Pay_Grade_Class, "E") ~ "Enlisted",
+    startsWith(Pay_Grade_Class, "O") ~ "Officer",
+    startsWith(Pay_Grade_Class, "W") ~ "Warrant")) %>%
+  pivot_longer("Single_NoKids_Male" : "Married_Civilian_Female", names_to = "Status", values_to = "Count") %>%
+  separate(col = Status, into = c("Marital_Status", "Family_Details", "Gender"))
+
+
+```
+
+```{r}
+dim(data_adms)
+str(data_adms)
+```
+*After cleasing the data, the dimension of the dataframe is 720 observations/rows and 7 columns/features.*
+*All the features are treated as charactes by R. However, the "Count" feature is numeric. So we will coerce it to a numeric class.*
+```{r}
+
+data_adms$Count <- as.numeric(data_adms$Count)
+
+str(data_adms)
+```
+*Finally all variables are in order. *
+
+1) Defence_Wing                : Character feature giving outdetails to which arm of defence the resorce beloangs to (AirForce|MarineCorps|Navy|Army)
+
+2) Pay_Grade_Class             : Categorical feature with 3 classes to give details whether the defence resource is Elisted|Officer|Warranted
+
+3) Pay_Grade                   : Categorical feature with 10 classes contaning details of grades from 1 to 10
+
+4) Marital_Status              : Categorical feature 2 classes (Single | Married)
+
+5) Family_Details              : Categorical feature with 4 classes (NoKids | WithKids | JointService | Civilian)
+
+6) Gender                      : Categorical festure with 2 classes (Female | Male)
+
+7) Count                      : Numerical feature with count values of defence personnels under each category*
+```{r}
+
+summary(data_adms)
+
+```
+*We only have "Count" feature as numerical. Hence "summarize"or "summarize_all" function can we used on it to get descriptives but wouldnot be very meaningful untill and unless studied in conjunction to other features. Will use other functions such as "xtabs" to explore the data.*
+
+```{r}
+
+#y = data_adms[, c(1:ncol(data_adms) - 1)]
+
+lapply(data_adms[ , (c(1 : ncol(data_adms)) - 1)], table)
+
+```
+*Descriptives:*
+
+*Here I have converted the data frame to a list of columns using "lapply" function and converted all the columns to the tables except for "Count" column. *
+
+*1) In the dataset distribution of Males and Females is equal. *
+
+*2) In the data Army and MarieCorpshave the highest frequency followed by Navy and the Airforce.*
+
+*3) Majority of the defence personnels belong to "Officer" category followed by "Enlisted" and ""Warrant" category.*
+
+*4) Distribution of defence personnels under "Maritus_Status" is exactly the same as "Gender" with the count under each category being 360.*
+
+*5) Distribution across all 4 categories of "Family_Status" is equal with count under each category being 180.*
+
+
+
+```{r}
+xtabs(~ Defence_Wing + Pay_Grade_Class + Pay_Grade, data_adms)
+```
+*Here, I am trying to analyze the distributuon of defence resources across the 3 categories of "Enlisted", "Officer", and "Warrant" at all the 10 levels of "Pay_Grade".*
+
+*1) Pay_Grade(1)   : Except for "AirForce" and "Navy" under "Warrant" category the distriution of defence resources is equal with 8 personnels at the corss *
+                    *section of"Defence_Wing" and "Pay_Grade_Class" categories.*
+
+*2) Pay_Grade(2)   : Except for "AirForce" under "Warrant" category the distriution of defence resources is equal with 8 personnels at the corss section of *
+                    *"Defence_Wing" and "Pay_Grade_Class" categories.*
+
+*3) Pay_Grade(3)   : Except for "Warrant" under "AirForce" all other categories across the four defence wings have equal distribution of defence resources with 8                               personnels at the cross section of "Defence_Wing" and "Pay_Grade_Class" categories.* 
+                    
+*4) Pay_Grade(4)   : Except for "Warrant" under "AirForce" all other categories across the four defence wings have equal distribution of defence resources with 8 personnels                    at the cross section of "Defence_Wing" and "Pay_Grade_Class" categories.*
+
+*5) Pay_Grade(5)   : Except for "Warrant" under "AirForce" all other categories across the four defence wings have equal distribution of defence resources with 8 personnels                     at the cross section of "Defence_Wing" and "Pay_Grade_Class" categories.*
+                    
+*6) Pay_Grade(6)   : Except for "Warrant" under "AirForce" all other categories across the four defence wings have equal distribution of defence resources with 8 personnels                    at the cross section of "Defence_Wing" and "Pay_Grade_Class" categories.*
+                    
+*7) Pay_Grade(7)   : There are no defence personbels listed for "Warrant" across the 4 categories of "Defence_Wing". For the rest distribution is equal with 8 personnels                     at the cross section of "Defence_Wing" and "Pay_Grade_Class" categories*
+                    
+*8) Pay_Grade(8)   : There are no defence personbels listed for "Warrant" across the 4 categories of "Defence_Wing". For the rest distribution is equal with 8 personnels                     at the cross section of "Defence_Wing" and "Pay_Grade_Class" categories*
+
+*9) Pay_Grade(9)   : There are no defence personbels listed for "Warrant" across the 4 categories of "Defence_Wing". For the rest distribution is equal with 8 personnels                     at the cross section of "Defence_Wing" and "Pay_Grade_Class" categories*
+                    
+*10) Pay_Grade(10) : This category only has "Officers" listed across the 4 wings of defence with 8 personnels each.*
+
+```{r}
+
+xtabs(~ Defence_Wing + Family_Details + Gender + Marital_Status + Pay_Grade_Class, data_adms)
+
+```
+*Here I have used "xtabs" function to generate cross tables for "Defence_Wing" against "Family_Details" keeping "Gender", "Marital_Status", and "Pay_Grade_Class" as constants across categories to understand the distribution of personnels across 4 classes of "Family_Details" defence wing wise.
+
+1) Married female and male personnels under "Enlisted" category are equally distributed across Civilian Marriage and Joint Service Marriage with 9 personnels across 4  
+   defence wings each however there no single females or males with kids or without kids.
+
+2) The distribution of single male and female personnels is 9 each across the 4 wings of defence under "Enlisted" category with and without kids.
+
+3) Under "Officer" category married males are equally distribted across Civilian Marriage and Joint Service Marriage with 10 personnels each. However, there are no married 
+   females listed.
+   
+   For Single males and females with and without kids the distribution of personnels is same with 10 each across the 4 categories of defence wing.
+
+4) Under "Warrant" category there are only married males with equal distribution under "Army" and "MarineCorps" with 5 each and 4 personels each under Navy for for both   
+   classes of marriage.
+   
+   For Single males and females the distribution across with and without kids is same for Army and MarineCorps with 5 each and 4 each under Navy.
+   
+   Interestingly there are no personnels losted under "Warrnat" category
+   
+   
+   
+As the majority variables in the dataset are categorical, there is very limited Univariate analysis that could be done. Hence, I will stop my analysis here for Homerwork 4 purposes. *
+
+
+
