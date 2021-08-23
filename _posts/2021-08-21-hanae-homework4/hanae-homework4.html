@@ -116,7 +116,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["hanae-homework4_files/anchor-4.2.2/anchor.min.js","hanae-homework4_files/bowser-1.9.3/bowser.min.js","hanae-homework4_files/distill-2.2.21/template.v2.js","hanae-homework4_files/figure-html5/unnamed-chunk-2-1.png","hanae-homework4_files/figure-html5/unnamed-chunk-4-1.png","hanae-homework4_files/figure-html5/unnamed-chunk-4-2.png","hanae-homework4_files/header-attrs-2.10/header-attrs.js","hanae-homework4_files/jquery-1.11.3/jquery.min.js","hanae-homework4_files/popper-2.6.0/popper.min.js","hanae-homework4_files/tippy-6.2.7/tippy-bundle.umd.min.js","hanae-homework4_files/tippy-6.2.7/tippy-light-border.css","hanae-homework4_files/tippy-6.2.7/tippy.css","hanae-homework4_files/tippy-6.2.7/tippy.umd.min.js","hanae-homework4_files/webcomponents-2.0.0/webcomponents.js"]}
+  {"type":"character","attributes":{},"value":["hanae-homework4_files/anchor-4.2.2/anchor.min.js","hanae-homework4_files/bowser-1.9.3/bowser.min.js","hanae-homework4_files/distill-2.2.21/template.v2.js","hanae-homework4_files/figure-html5/unnamed-chunk-2-1.png","hanae-homework4_files/figure-html5/unnamed-chunk-4-1.png","hanae-homework4_files/figure-html5/unnamed-chunk-4-2.png","hanae-homework4_files/figure-html5/unnamed-chunk-6-1.png","hanae-homework4_files/figure-html5/unnamed-chunk-6-2.png","hanae-homework4_files/header-attrs-2.10/header-attrs.js","hanae-homework4_files/jquery-1.11.3/jquery.min.js","hanae-homework4_files/popper-2.6.0/popper.min.js","hanae-homework4_files/tippy-6.2.7/tippy-bundle.umd.min.js","hanae-homework4_files/tippy-6.2.7/tippy-light-border.css","hanae-homework4_files/tippy-6.2.7/tippy.css","hanae-homework4_files/tippy-6.2.7/tippy.umd.min.js","hanae-homework4_files/webcomponents-2.0.0/webcomponents.js"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -1480,9 +1480,9 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 <div class="d-article">
 <p>For this homework, I chose to work with a data set about tourism in Europe that I downloaded from Eurostat, the statistical office of the European Union which provides statistics and data on European countries. As seen below, the data set shows a monthly breakdown of nights spent at tourist accommodation establishments of European countries between January 2019 and June 2021.</p>
-<figure>
-<img src="../../images/Hanae/Eurotourismbeforecleaning.jpg" alt="before cleaning" /><figcaption aria-hidden="true">before cleaning</figcaption>
-</figure>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="hanae-homework4_files/figure-html5/unnamed-chunk-2-1.png" width="624" /></p>
+</div>
 <p>The original data set contains 45 sheets. The first and second sheets summarize the data. The remaining 43 sheets represent statistics about different types of touristic establishments. Each sheet contains 31 columns. The first column shows the names of the countries and the remaining 30 columns show the dates. Each cell contains the count of the nights spent by tourists. I chose to work with sheet 1 and sheet 16 only. The type of touristic establishment displayed in these two sheets is the most general one (more specifically “Hotels; holiday and other short-stay accommodation; camping grounds, recreational vehicle parks and trailer parks”). Both sheets also have the same unit of measure (number). The difference between them is that in Sheet 1 we find information about tourists coming from a country that is foreign to the reporting country and in Sheet 16 the information shown is about tourists coming from the reporting country itself.</p>
 <p>Note that there are some missing values in the data. Every time there is a missing value you will see “:” in the corresponding cell. The cell to its right might have the letter “c” in it which stands for “confidential”. We also find “u” and “e” next to some cells with values throughout the data set. These stand for “low reliability” and “estimated” respectively.</p>
 <p>To clean the data, I start by loading the necessary libraries.</p>
@@ -1635,7 +1635,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <span class='fu'>ggplot</span><span class='op'>(</span><span class='va'>tourismClean</span>, <span class='fu'>aes</span><span class='op'>(</span><span class='va'>Dates</span>, <span class='va'>Nights</span><span class='op'>)</span><span class='op'>)</span><span class='op'>+</span><span class='fu'>geom_point</span><span class='op'>(</span><span class='op'>)</span><span class='op'>+</span><span class='fu'>facet_wrap</span><span class='op'>(</span><span class='fu'>vars</span><span class='op'>(</span><span class='va'>Countries</span><span class='op'>)</span><span class='op'>)</span>
 </code></pre>
 </div>
-<img src="hanae-homework4_files/figure-html5/unnamed-chunk-4-1.png" width="624" />
+<img src="hanae-homework4_files/figure-html5/unnamed-chunk-6-1.png" width="624" />
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#graph data for Spain, France, Italy and Greece showing only tourists visiting from a foreign country</span>
 <span class='va'>tourismClean</span><span class='op'>%&gt;%</span>
@@ -1644,7 +1644,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <span class='fu'>ggplot</span><span class='op'>(</span><span class='fu'>aes</span><span class='op'>(</span><span class='va'>Dates</span>, <span class='va'>Nights</span><span class='op'>)</span><span class='op'>)</span><span class='op'>+</span><span class='fu'>theme_bw</span><span class='op'>(</span><span class='op'>)</span><span class='op'>+</span><span class='fu'>geom_line</span><span class='op'>(</span><span class='op'>)</span><span class='op'>+</span><span class='fu'>facet_wrap</span><span class='op'>(</span><span class='fu'>vars</span><span class='op'>(</span><span class='va'>Countries</span><span class='op'>)</span>, scales <span class='op'>=</span> <span class='st'>"free_y"</span><span class='op'>)</span>
 </code></pre>
 </div>
-<p><img src="hanae-homework4_files/figure-html5/unnamed-chunk-4-2.png" width="624" /></p>
+<p><img src="hanae-homework4_files/figure-html5/unnamed-chunk-6-2.png" width="624" /></p>
 </div>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->

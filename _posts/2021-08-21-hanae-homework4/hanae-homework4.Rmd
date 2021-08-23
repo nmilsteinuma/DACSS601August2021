@@ -9,11 +9,17 @@ output:
     self_contained: false
 draft: true
 ---
+```{r include=FALSE}
+library(png)
+library(grid)
+image<-readPNG("../../images/Hanae/Eurotourismbeforecleaning.png")
+```
 For this homework, I chose to work with a data set about tourism in Europe that I downloaded from Eurostat, the statistical office of the European Union which provides statistics and data on European countries. As seen below, the data set shows a monthly breakdown of nights spent at tourist accommodation establishments of European countries between January 2019 and June 2021.
 
 
-![before cleaning](../../images/Hanae/Eurotourismbeforecleaning.jpg)
-
+```{r echo=FALSE}
+grid.raster(image)
+```
 
 The original data set contains 45 sheets. The first and second sheets summarize the data. The remaining 43 sheets represent statistics about different types of touristic establishments. Each sheet contains 31 columns. The first column shows the names of the countries and the remaining 30 columns show the dates. Each cell contains the count of the nights spent by tourists. I chose to work with sheet 1 and sheet 16 only. The type of touristic establishment displayed in these  two sheets is the most general one (more specifically "Hotels; holiday and other short-stay accommodation; camping grounds, recreational vehicle parks and trailer parks"). Both sheets also have the same unit of measure (number). The difference between them is that in Sheet 1 we find information about tourists coming from a country that is foreign to the reporting country and in Sheet 16 the information shown is about tourists coming from the reporting country itself.
 
@@ -76,10 +82,12 @@ read_tourism<-function(sheet_name){
     Origin == "Sheet 16" ~ "Reporting country"
   ))%>%
 #Since my data goes from 2019 to 2021 let's just rename "Germany (until 1990 former territory of the FRG)" Germany
-  mutate(Countries = case_when(
-    Countries == "Germany (until 1990 former territory of the FRG)" ~ "Germany", 
-    TRUE ~ Countries
-  ))%>%
+    mutate(recode(Countries, `Germany (until 1990 former territory of the FRG)`= "Germany"))%>%
+#we can do the same thing using mutate() and case_when():
+  # mutate(Countries = case_when(
+  #   Countries == "Germany (until 1990 former territory of the FRG)" ~ "Germany", 
+  #   TRUE ~ Countries
+  # ))%>%
 #and replace : by NAs
   mutate(Nights = case_when(
     Nights == ":" ~ "NA", 
@@ -136,6 +144,7 @@ ggplot(tourismClean, aes(Dates, Nights))+geom_point()+facet_wrap(vars(Countries)
 tourismClean%>%
   filter(grepl('Spain|France|Italy|Greece', Countries))%>%
   filter(Origin=="Foreign country")%>%
-ggplot(aes(Dates, Nights))+theme_bw()+geom_line()+facet_wrap(vars(Countries), scales = "free_y")
+ggplot(aes(Dates, Nights))+labs(y="Number of nights spent in a touristic establishment")+scale_y_continuous(labels = scales::number)+
+theme_bw()+geom_area()+facet_wrap(vars(Countries))
 
 ```
