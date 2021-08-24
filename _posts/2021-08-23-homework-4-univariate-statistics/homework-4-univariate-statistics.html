@@ -111,7 +111,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","draft"]}},"value":[{"type":"character","attributes":{},"value":["Homework 4 - Univariate Statistics"]},{"type":"character","attributes":{},"value":["This dataset is named Active Duty Marital Status (ADMS). This dataset has been published by government of United States for public usage. It has count details of singles,   single parents, and married resources of the 4 branches of the defence department for the month of April 2010.\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Abhinav Kumar"]}]}]},{"type":"character","attributes":{},"value":["08-23-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"logical","attributes":{},"value":[true]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","draft"]}},"value":[{"type":"character","attributes":{},"value":["Homework 4 - Univariate Statistics"]},{"type":"character","attributes":{},"value":["This dataset is named Active Duty Marital Status (ADMS). This dataset has been published by government of United States for public usage. It has count details of singles,   single parents, and married resources of the 4 branches of the defence department for the month of April 2010.\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Abhinav Kumar"]}]}]},{"type":"character","attributes":{},"value":["08-23-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"logical","attributes":{},"value":[false]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   
@@ -1455,7 +1455,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Homework 4 - Univariate Statistics","description":"This dataset is named Active Duty Marital Status (ADMS). This dataset has been published by government of United States for public usage. It has count details of singles,   single parents, and married resources of the 4 branches of the defence department for the month of April 2010.","authors":[{"author":"Abhinav Kumar","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-08-23T00:00:00.000+05:30","citationText":"Kumar, 2021"}
+{"title":"Homework 4 - Univariate Statistics","description":"This dataset is named Active Duty Marital Status (ADMS). This dataset has been published by government of United States for public usage. It has count details of singles,   single parents, and married resources of the 4 branches of the defence department for the month of April 2010.","authors":[{"author":"Abhinav Kumar","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-08-23T00:00:00.000+00:00","citationText":"Kumar, 2021"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -1505,12 +1505,12 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <em>Invoking the requisite libraries here to wrangle and cleanse the data.</em>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>data</span> <span class='op'>&lt;-</span> <span class='op'>(</span><span class='st'>"C:/Users/Abhinavkumar.DESKTOP-JP9HSBL/Desktop/DACSS Summer/ActiveDuty_MaritalStatus.xls"</span><span class='op'>)</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>data</span> <span class='op'>&lt;-</span> <span class='op'>(</span><span class='st'>"../../_data/ActiveDuty_MaritalStatus.xls"</span><span class='op'>)</span>
 
 <span class='va'>sheet_name</span> <span class='op'>&lt;-</span>  <span class='fu'><a href='https://readxl.tidyverse.org/reference/excel_sheets.html'>excel_sheets</a></span><span class='op'>(</span><span class='va'>data</span><span class='op'>)</span>
 
 <span class='va'>data_adms</span> <span class='op'>&lt;-</span>  <span class='fu'>map_df</span><span class='op'>(</span><span class='va'>sheet_name</span>, <span class='op'>~</span> <span class='fu'><a href='https://readxl.tidyverse.org/reference/read_excel.html'>read_excel</a></span><span class='op'>(</span><span class='va'>data</span>, skip <span class='op'>=</span> <span class='fl'>8</span>, sheet <span class='op'>=</span> <span class='va'>.x</span>, col_names <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"d"</span>, <span class='st'>"Pay_Grade"</span>, <span class='st'>"Single_NoKids_Male"</span>, <span class='st'>"Single_NoKids_Female"</span>, <span class='st'>"t"</span>, <span class='st'>"Single_WithKids_Male"</span>, <span class='st'>"Single_WithKids_Female"</span>, <span class='st'>"t"</span>, <span class='st'>"Married_JointService_Male"</span>, <span class='st'>"Married_JointService_Female"</span>, <span class='st'>"t"</span>, <span class='st'>"Married_Civilian_Male"</span>, <span class='st'>"Married_Civilian_Female"</span>, <span class='fu'><a href='https://rdrr.io/r/base/rep.html'>rep</a></span><span class='op'>(</span><span class='st'>"t"</span>, <span class='fl'>4</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
-           <span class='fu'>mutate</span><span class='op'>(</span><span class='st'>"Defence_Wing"</span> <span class='op'>=</span> <span class='va'>.x</span><span class='op'>)</span><span class='op'>)</span>
+           <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span><span class='st'>"Defence_Wing"</span> <span class='op'>=</span> <span class='va'>.x</span><span class='op'>)</span><span class='op'>)</span>
 </code></pre>
 </div>
 </div>
@@ -1527,7 +1527,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/utils/str.html'>str</a></span><span class='op'>(</span><span class='va'>data_adms</span><span class='op'>)</span>
 </code></pre>
 </div>
-<pre><code>tibble [148 x 18] (S3: tbl_df/tbl/data.frame)
+<pre><code>tibble [148 × 18] (S3: tbl_df/tbl/data.frame)
  $ d                          : chr [1:148] NA NA NA NA ...
  $ Pay_Grade                  : chr [1:148] &quot;Pay Grade&quot; &quot;E-1&quot; &quot;E-2&quot; &quot;E-3&quot; ...
  $ Single_NoKids_Male         : chr [1:148] &quot;Male&quot; &quot;31229&quot; &quot;53094&quot; &quot;131091&quot; ...
@@ -1595,20 +1595,20 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>data_adms</span> <span class='op'>&lt;-</span>  <span class='va'>data_adms</span> <span class='op'>%&gt;%</span>
-  <span class='fu'>select</span><span class='op'>(</span> <span class='st'>"Pay_Grade"</span> <span class='op'>:</span> <span class='st'>"Single_NoKids_Female"</span>, <span class='st'>"Single_WithKids_Male"</span>, <span class='st'>"Single_WithKids_Female"</span>, <span class='st'>"Married_JointService_Male"</span>, 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span> <span class='st'>"Pay_Grade"</span> <span class='op'>:</span> <span class='st'>"Single_NoKids_Female"</span>, <span class='st'>"Single_WithKids_Male"</span>, <span class='st'>"Single_WithKids_Female"</span>, <span class='st'>"Married_JointService_Male"</span>, 
           <span class='st'>"Married_JointService_Female"</span>, <span class='st'>"Married_Civilian_Male"</span>, <span class='st'>"Married_Civilian_Female"</span>,  <span class='st'>"Defence_Wing"</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
   <span class='fu'><a href='https://rdrr.io/r/stats/na.fail.html'>na.omit</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
-  <span class='fu'><a href='https://rdrr.io/r/stats/filter.html'>filter</a></span><span class='op'>(</span><span class='fu'><a href='https://stringr.tidyverse.org/reference/str_detect.html'>str_detect</a></span><span class='op'>(</span><span class='va'>Pay_Grade</span>, <span class='st'>"TOTAL"</span>, negate <span class='op'>=</span> <span class='cn'>T</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
-  <span class='fu'><a href='https://rdrr.io/r/stats/filter.html'>filter</a></span><span class='op'>(</span><span class='fu'><a href='https://stringr.tidyverse.org/reference/str_detect.html'>str_detect</a></span><span class='op'>(</span><span class='va'>Pay_Grade</span>, <span class='st'>"Pay Grade"</span>, negate <span class='op'>=</span> <span class='cn'>T</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
-  <span class='fu'><a href='https://rdrr.io/r/stats/filter.html'>filter</a></span><span class='op'>(</span><span class='fu'><a href='https://stringr.tidyverse.org/reference/str_detect.html'>str_detect</a></span><span class='op'>(</span><span class='va'>Defence_Wing</span>, <span class='st'>"TotalDoD"</span>, negate <span class='op'>=</span> <span class='cn'>T</span><span class='op'>)</span><span class='op'>)</span><span class='op'>%&gt;%</span>
-  <span class='fu'>relocate</span><span class='op'>(</span><span class='va'>Defence_Wing</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
-  <span class='fu'>separate</span><span class='op'>(</span>col <span class='op'>=</span> <span class='va'>Pay_Grade</span>, into <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Pay_Grade_Class"</span>,<span class='st'>"Pay_Grade"</span><span class='op'>)</span>, sep<span class='op'>=</span><span class='st'>"-"</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
-  <span class='fu'>mutate</span><span class='op'>(</span>Pay_Grade_Class <span class='op'>=</span> <span class='fu'>case_when</span><span class='op'>(</span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='fu'><a href='https://stringr.tidyverse.org/reference/str_detect.html'>str_detect</a></span><span class='op'>(</span><span class='va'>Pay_Grade</span>, <span class='st'>"TOTAL"</span>, negate <span class='op'>=</span> <span class='cn'>T</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='fu'><a href='https://stringr.tidyverse.org/reference/str_detect.html'>str_detect</a></span><span class='op'>(</span><span class='va'>Pay_Grade</span>, <span class='st'>"Pay Grade"</span>, negate <span class='op'>=</span> <span class='cn'>T</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='fu'><a href='https://stringr.tidyverse.org/reference/str_detect.html'>str_detect</a></span><span class='op'>(</span><span class='va'>Defence_Wing</span>, <span class='st'>"TotalDoD"</span>, negate <span class='op'>=</span> <span class='cn'>T</span><span class='op'>)</span><span class='op'>)</span><span class='op'>%&gt;%</span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/relocate.html'>relocate</a></span><span class='op'>(</span><span class='va'>Defence_Wing</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'><a href='https://tidyr.tidyverse.org/reference/separate.html'>separate</a></span><span class='op'>(</span>col <span class='op'>=</span> <span class='va'>Pay_Grade</span>, into <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Pay_Grade_Class"</span>,<span class='st'>"Pay_Grade"</span><span class='op'>)</span>, sep<span class='op'>=</span><span class='st'>"-"</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>Pay_Grade_Class <span class='op'>=</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/case_when.html'>case_when</a></span><span class='op'>(</span>
     <span class='fu'><a href='https://rdrr.io/r/base/startsWith.html'>startsWith</a></span><span class='op'>(</span><span class='va'>Pay_Grade_Class</span>, <span class='st'>"E"</span><span class='op'>)</span> <span class='op'>~</span> <span class='st'>"Enlisted"</span>,
     <span class='fu'><a href='https://rdrr.io/r/base/startsWith.html'>startsWith</a></span><span class='op'>(</span><span class='va'>Pay_Grade_Class</span>, <span class='st'>"O"</span><span class='op'>)</span> <span class='op'>~</span> <span class='st'>"Officer"</span>,
     <span class='fu'><a href='https://rdrr.io/r/base/startsWith.html'>startsWith</a></span><span class='op'>(</span><span class='va'>Pay_Grade_Class</span>, <span class='st'>"W"</span><span class='op'>)</span> <span class='op'>~</span> <span class='st'>"Warrant"</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
-  <span class='fu'>pivot_longer</span><span class='op'>(</span><span class='st'>"Single_NoKids_Male"</span> <span class='op'>:</span> <span class='st'>"Married_Civilian_Female"</span>, names_to <span class='op'>=</span> <span class='st'>"Status"</span>, values_to <span class='op'>=</span> <span class='st'>"Count"</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
-  <span class='fu'>separate</span><span class='op'>(</span>col <span class='op'>=</span> <span class='va'>Status</span>, into <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Marital_Status"</span>, <span class='st'>"Family_Details"</span>, <span class='st'>"Gender"</span><span class='op'>)</span><span class='op'>)</span>
+  <span class='fu'><a href='https://tidyr.tidyverse.org/reference/pivot_longer.html'>pivot_longer</a></span><span class='op'>(</span><span class='st'>"Single_NoKids_Male"</span> <span class='op'>:</span> <span class='st'>"Married_Civilian_Female"</span>, names_to <span class='op'>=</span> <span class='st'>"Status"</span>, values_to <span class='op'>=</span> <span class='st'>"Count"</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+  <span class='fu'><a href='https://tidyr.tidyverse.org/reference/separate.html'>separate</a></span><span class='op'>(</span>col <span class='op'>=</span> <span class='va'>Status</span>, into <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Marital_Status"</span>, <span class='st'>"Family_Details"</span>, <span class='st'>"Gender"</span><span class='op'>)</span><span class='op'>)</span>
 </code></pre>
 </div>
 </div>
@@ -1622,7 +1622,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/utils/str.html'>str</a></span><span class='op'>(</span><span class='va'>data_adms</span><span class='op'>)</span>
 </code></pre>
 </div>
-<pre><code>tibble [720 x 7] (S3: tbl_df/tbl/data.frame)
+<pre><code>tibble [720 × 7] (S3: tbl_df/tbl/data.frame)
  $ Defence_Wing   : chr [1:720] &quot;AirForce&quot; &quot;AirForce&quot; &quot;AirForce&quot; &quot;AirForce&quot; ...
  $ Pay_Grade_Class: chr [1:720] &quot;Enlisted&quot; &quot;Enlisted&quot; &quot;Enlisted&quot; &quot;Enlisted&quot; ...
  $ Pay_Grade      : chr [1:720] &quot;1&quot; &quot;1&quot; &quot;1&quot; &quot;1&quot; ...
@@ -1639,7 +1639,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <span class='fu'><a href='https://rdrr.io/r/utils/str.html'>str</a></span><span class='op'>(</span><span class='va'>data_adms</span><span class='op'>)</span>
 </code></pre>
 </div>
-<pre><code>tibble [720 x 7] (S3: tbl_df/tbl/data.frame)
+<pre><code>tibble [720 × 7] (S3: tbl_df/tbl/data.frame)
  $ Defence_Wing   : chr [1:720] &quot;AirForce&quot; &quot;AirForce&quot; &quot;AirForce&quot; &quot;AirForce&quot; ...
  $ Pay_Grade_Class: chr [1:720] &quot;Enlisted&quot; &quot;Enlisted&quot; &quot;Enlisted&quot; &quot;Enlisted&quot; ...
  $ Pay_Grade      : chr [1:720] &quot;1&quot; &quot;1&quot; &quot;1&quot; &quot;1&quot; ...

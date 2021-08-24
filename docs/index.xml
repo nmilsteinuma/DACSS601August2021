@@ -12,7 +12,15 @@
       <link>https://mrolfe.github.io/DACSS601August2021/</link>
     </image>
     <generator>Distill</generator>
-    <lastBuildDate>Sun, 22 Aug 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 23 Aug 2021 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Homework 4 - Univariate Statistics</title>
+      <dc:creator>Abhinav Kumar</dc:creator>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-23-homework-4-univariate-statistics</link>
+      <description>This dataset is named Active Duty Marital Status (ADMS). This dataset has been published by government of United States for public usage. It has count details of singles,   single parents, and married resources of the 4 branches of the defence department for the month of April 2010.</description>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-23-homework-4-univariate-statistics</guid>
+      <pubDate>Mon, 23 Aug 2021 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Marina's HW3</title>
       <dc:creator>Marina</dc:creator>
@@ -28,6 +36,7 @@
       <description>Getting started with the final project &amp; descriptive statistics</description>
       <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-22-marinas-hw4</guid>
       <pubDate>Sun, 22 Aug 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://mrolfe.github.io/DACSS601August2021/posts/2021-08-22-marinas-hw4/marinas-hw4_files/figure-html5/View corrections-1.png" medium="image" type="image/png" width="1248" height="768"/>
     </item>
     <item>
       <title>Active Duty Marital Status HW3 - bakharia</title>
@@ -281,7 +290,7 @@ the advanced data sets.</description>
       <category>.ruminating .random</category>
       <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-random</guid>
       <pubDate>Thu, 12 Aug 2021 00:00:00 +0000</pubDate>
-      <media:content url="https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-random/leahs-first-post-attempt-4_files/figure-html5/setup-1.png" medium="image" type="image/png" width="1248" height="768"/>
+      <media:content url="https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-random/random_files/figure-html5/setup-1.png" medium="image" type="image/png" width="1248" height="768"/>
     </item>
     <item>
       <title>Alligator Food</title>
