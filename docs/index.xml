@@ -14,15 +14,13 @@
     <generator>Distill</generator>
     <lastBuildDate>Fri, 20 Aug 2021 00:00:00 +0000</lastBuildDate>
     <item>
-      <title>Using A Function to Read Active Duty Marital Data</title>
-      <dc:creator>Sean Conway and Meredith Rolfe</dc:creator>
-      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-20-using-a-function-to-read-active-duty-marital-data</link>
-      <description>This is the example code to use a new custom function to read in multiple sheets of data about Active Duty members of the military and marital status.</description>
-      <category>example code</category>
-      <category>cleaning data</category>
-      <category>programming functions</category>
-      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-20-using-a-function-to-read-active-duty-marital-data</guid>
+      <title>Active Duty Marital Status HW3 - bakharia</title>
+      <dc:creator>Shubham Mishra</dc:creator>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-20-active-duty-marital-status-hw3-bakharia</link>
+      <description>This post contains data wrangling of the Active Duty Marital Status and some basic visualization of the output.</description>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-20-active-duty-marital-status-hw3-bakharia</guid>
       <pubDate>Fri, 20 Aug 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://mrolfe.github.io/DACSS601August2021/posts/2021-08-20-active-duty-marital-status-hw3-bakharia/active-duty-marital-status-hw3-bakharia_files/figure-html5/unnamed-chunk-5-1.png" medium="image" type="image/png" width="1248" height="768"/>
     </item>
     <item>
       <title>Active Duty Marital Status</title>
@@ -41,13 +39,15 @@
       <media:content url="https://mrolfe.github.io/DACSS601August2021/posts/2021-08-20-homework3-functions-by-mm/homework3-functions-by-mm_files/figure-html5/unnamed-chunk-2-1.png" medium="image" type="image/png" width="1248" height="768"/>
     </item>
     <item>
-      <title>Active Duty Marital Status HW3 - bakharia</title>
-      <dc:creator>Shubham Mishra</dc:creator>
-      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-20-active-duty-marital-status-hw3-bakharia</link>
-      <description>This post contains data wrangling of the Active Duty Marital Status and some basic visualization of the output.</description>
-      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-20-active-duty-marital-status-hw3-bakharia</guid>
+      <title>Using A Function to Read Active Duty Marital Data</title>
+      <dc:creator>Sean Conway and Meredith Rolfe</dc:creator>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-20-using-a-function-to-read-active-duty-marital-data</link>
+      <description>This is the example code to use a new custom function to read in multiple sheets of data about Active Duty members of the military and marital status.</description>
+      <category>example code</category>
+      <category>cleaning data</category>
+      <category>programming functions</category>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-20-using-a-function-to-read-active-duty-marital-data</guid>
       <pubDate>Fri, 20 Aug 2021 00:00:00 +0000</pubDate>
-      <media:content url="https://mrolfe.github.io/DACSS601August2021/posts/2021-08-20-active-duty-marital-status-hw3-bakharia/active-duty-marital-status-hw3-bakharia_files/figure-html5/unnamed-chunk-5-1.png" medium="image" type="image/png" width="1248" height="768"/>
     </item>
     <item>
       <title>RAILROAD-COUNTY-TRACY</title>
@@ -224,28 +224,20 @@ the advanced data sets.</description>
       <pubDate>Fri, 13 Aug 2021 00:00:00 +0000</pubDate>
     </item>
     <item>
+      <title>Leah's first post: Attempt 4</title>
+      <dc:creator>Leah Dion</dc:creator>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-random</link>
+      <description>My first blog post.</description>
+      <category>.ruminating .random</category>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-random</guid>
+      <pubDate>Thu, 12 Aug 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-random/leahs-first-post-attempt-4_files/figure-html5/setup-1.png" medium="image" type="image/png" width="1248" height="768"/>
+    </item>
+    <item>
       <title>Alligator Food</title>
       <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-12-alligator-food</link>
       <description>The diet of Alligators throughout several different lakes. Data has the lake, sex of alligator, size of food, and species of animal used for food.</description>
       <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-12-alligator-food</guid>
-      <pubDate>Thu, 12 Aug 2021 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Leah's first post: Attempt 4</title>
-      <dc:creator>Leah Dion</dc:creator>
-      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-12-leahs-first-post-attempt-4</link>
-      <description>My first blog post.</description>
-      <category>.ruminating .random</category>
-      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-12-leahs-first-post-attempt-4</guid>
-      <pubDate>Thu, 12 Aug 2021 00:00:00 +0000</pubDate>
-      <media:content url="https://mrolfe.github.io/DACSS601August2021/posts/2021-08-12-leahs-first-post-attempt-4/leahs-first-post-attempt-4_files/figure-html5/setup-1.png" medium="image" type="image/png" width="1248" height="768"/>
-    </item>
-    <item>
-      <title>Wrangling the Australian marriage law dataset</title>
-      <dc:creator>Karl Tacheron</dc:creator>
-      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-12-wrangling-the-australian-marriage-law-dataset</link>
-      <description>A short description of the post.</description>
-      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-12-wrangling-the-australian-marriage-law-dataset</guid>
       <pubDate>Thu, 12 Aug 2021 00:00:00 +0000</pubDate>
     </item>
     <item>
@@ -255,6 +247,14 @@ the advanced data sets.</description>
       <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-12-organic-egg-poultry-filtered_hw2_bakahria</guid>
       <pubDate>Thu, 12 Aug 2021 00:00:00 +0000</pubDate>
       <media:content url="https://mrolfe.github.io/DACSS601August2021/posts/2021-08-12-organic-egg-poultry-filtered_hw2_bakahria/organic-egg-poultry-filtered_files/figure-html5/unnamed-chunk-3-1.png" medium="image" type="image/png" width="1248" height="768"/>
+    </item>
+    <item>
+      <title>Wrangling the Australian marriage law dataset</title>
+      <dc:creator>Karl Tacheron</dc:creator>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-12-wrangling-the-australian-marriage-law-dataset</link>
+      <description>A short description of the post.</description>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-12-wrangling-the-australian-marriage-law-dataset</guid>
+      <pubDate>Thu, 12 Aug 2021 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>2012 US Railroad Employment</title>
@@ -323,21 +323,14 @@ the advanced data sets.</description>
       <pubDate>Wed, 11 Aug 2021 00:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>Jason Wierzbowski - Exploring Eggs</title>
-      <dc:creator>Jason Wierzbowski</dc:creator>
-      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-17-jason-wierzbowski-exploring-eggs</link>
-      <description>A data set about eggs.</description>
-      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-17-jason-wierzbowski-exploring-eggs</guid>
+      <title>Post 1 HMWK 1</title>
+      <dc:creator>Annie McGrew</dc:creator>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-post-1-hmwk-1</link>
+      <description>This is my post for the first homework</description>
+      <category>homework 1</category>
+      <category>Annie McGrew</category>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-post-1-hmwk-1</guid>
       <pubDate>Wed, 11 Aug 2021 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Rhys_Long_Eggs</title>
-      <dc:creator>Rhys Long</dc:creator>
-      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-18-rhyslongeggs</link>
-      <description>This is a data set that includes records of how many cartons of eggs were sold every month in 2004-2013. I got this data from the Basic Data sets section of google classroom. This data set contains four variables.</description>
-      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-18-rhyslongeggs</guid>
-      <pubDate>Wed, 11 Aug 2021 00:00:00 +0000</pubDate>
-      <media:content url="https://mrolfe.github.io/DACSS601August2021/posts/2021-08-18-rhyslongeggs/rhyslongeggs_files/figure-html5/unnamed-chunk-1-1.png" medium="image" type="image/png" width="1248" height="768"/>
     </item>
     <item>
       <title>Saulo Homework One</title>
@@ -348,13 +341,11 @@ the advanced data sets.</description>
       <pubDate>Wed, 11 Aug 2021 00:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>Post 1 HMWK 1</title>
-      <dc:creator>Annie McGrew</dc:creator>
-      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-post-1-hmwk-1</link>
-      <description>This is my post for the first homework</description>
-      <category>homework 1</category>
-      <category>Annie McGrew</category>
-      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-11-post-1-hmwk-1</guid>
+      <title>Jason Wierzbowski - Exploring Eggs</title>
+      <dc:creator>Jason Wierzbowski</dc:creator>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-17-jason-wierzbowski-exploring-eggs</link>
+      <description>A data set about eggs.</description>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-17-jason-wierzbowski-exploring-eggs</guid>
       <pubDate>Wed, 11 Aug 2021 00:00:00 +0000</pubDate>
     </item>
     <item>
@@ -380,6 +371,18 @@ the advanced data sets.</description>
       <description>Homework 1</description>
       <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-homework-1</guid>
       <pubDate>Tue, 10 Aug 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>iris</title>
+      <dc:creator>bakharia</dc:creator>
+      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-hw-1-bakharia</link>
+      <description>Here is the iris dataset.</description>
+      <category>homework 1</category>
+      <category>iris</category>
+      <category>bakharia</category>
+      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-hw-1-bakharia</guid>
+      <pubDate>Tue, 10 Aug 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-hw-1-bakharia/iris_files/figure-html5/unnamed-chunk-1-1.png" medium="image" type="image/png" width="1248" height="768"/>
     </item>
     <item>
       <title>HW01</title>
@@ -450,18 +453,6 @@ the advanced data sets.</description>
       <description>my first post</description>
       <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-zoes-post</guid>
       <pubDate>Tue, 10 Aug 2021 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>iris</title>
-      <dc:creator>bakharia</dc:creator>
-      <link>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-hw-1-bakharia</link>
-      <description>Here is the iris dataset.</description>
-      <category>homework 1</category>
-      <category>iris</category>
-      <category>bakharia</category>
-      <guid>https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-hw-1-bakharia</guid>
-      <pubDate>Tue, 10 Aug 2021 00:00:00 +0000</pubDate>
-      <media:content url="https://mrolfe.github.io/DACSS601August2021/posts/2021-08-10-hw-1-bakharia/iris_files/figure-html5/unnamed-chunk-1-1.png" medium="image" type="image/png" width="1248" height="768"/>
     </item>
     <item>
       <title>Still Learning the GitHib Workflow</title>
