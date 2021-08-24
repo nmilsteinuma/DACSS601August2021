@@ -81,8 +81,8 @@ read_tourism<-function(sheet_name){
     Origin == "Sheet 1" ~ "Foreign country",
     Origin == "Sheet 16" ~ "Reporting country"
   ))%>%
-#Since my data goes from 2019 to 2021 let's just rename "Germany (until 1990 former territory of the FRG)" Germany
-    mutate(recode(Countries, `Germany (until 1990 former territory of the FRG)`= "Germany"))%>%
+#Since my data goes from 2019 to 2021 let's just rename "Germany (until 1990 former territory of the FRG)" as Germany and Kosovo (under United Nations Security Council Resolution 1244/99) as Kosovo
+    mutate(Countries=recode(Countries, `Germany (until 1990 former territory of the FRG)`= "Germany", `Kosovo (under United Nations Security Council Resolution 1244/99)` = "Kosovo"))%>%
 #we can do the same thing using mutate() and case_when():
   # mutate(Countries = case_when(
   #   Countries == "Germany (until 1990 former territory of the FRG)" ~ "Germany", 
