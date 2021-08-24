@@ -92,8 +92,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 
   <!--  https://schema.org/Article -->
-  <meta property="article:published" itemprop="datePublished" content="2021-08-13"/>
-  <meta property="article:created" itemprop="dateCreated" content="2021-08-13"/>
+  <meta property="article:published" itemprop="datePublished" content="2021-08-16"/>
+  <meta property="article:created" itemprop="dateCreated" content="2021-08-16"/>
   <meta name="article:author" content="Isha Akshita Mahajan"/>
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
@@ -111,7 +111,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","draft"]}},"value":[{"type":"character","attributes":{},"value":["Isha's Blog Post"]},{"type":"character","attributes":{},"value":["Running Blog Post for Course Homeworks"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Isha Akshita Mahajan"]}]}]},{"type":"character","attributes":{},"value":["08-13-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"logical","attributes":{},"value":[false]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","draft"]}},"value":[{"type":"character","attributes":{},"value":["Isha's Blog Post"]},{"type":"character","attributes":{},"value":["Running Blog Post for Course Homeworks"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Isha Akshita Mahajan"]}]}]},{"type":"character","attributes":{},"value":["08-16-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"logical","attributes":{},"value":[false]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   
@@ -1455,7 +1455,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Isha's Blog Post","description":"Running Blog Post for Course Homeworks","authors":[{"author":"Isha Akshita Mahajan","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-08-13T00:00:00.000+00:00","citationText":"Mahajan, 2021"}
+{"title":"Isha's Blog Post","description":"Running Blog Post for Course Homeworks","authors":[{"author":"Isha Akshita Mahajan","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-08-16T00:00:00.000+00:00","citationText":"Mahajan, 2021"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -1475,7 +1475,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   
   Isha Akshita Mahajan
   
-<br/>08-13-2021
+<br/>08-16-2021
 </div>
 
 <div class="d-article">
@@ -1483,6 +1483,11 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h2 id="hello-everybody-my-name-is-isha-and-i-am-starting-the-dacss-program-this-summer.-i-am-from-india-and-completed-my-bachelors-in-journalism-and-political-science-from-umass.-i-am-excited-to-meet-everyone-this-fall-and-delve-into-the-world-of-data-and-social-science.">Hello Everybody! My name is Isha and I am starting the DACSS program this summer. I am from India and completed my bachelors in journalism and political science from UMass. I am excited to meet everyone this fall and delve into the world of data and social science.</h2>
 <p>##Homework 2</p>
 <div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>marriage_data</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://readr.tidyverse.org/reference/read_delim.html'>read_csv</a></span><span class='op'>(</span><span class='st'>'../../_data/australian_marriage_tidy.csv'</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='va'>marriage_data</span><span class='op'>)</span>
+</code></pre>
+</div>
 <pre><code># A tibble: 6 × 4
   territory       resp    count percent
   &lt;chr&gt;           &lt;chr&gt;   &lt;dbl&gt;   &lt;dbl&gt;
@@ -1500,19 +1505,33 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <p>How can you arrange your dataset by territory?</p>
 </blockquote>
 <div class="layout-chunk" data-layout="l-body">
-
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>data_summary</span> <span class='op'>&lt;-</span> <span class='va'>marriage_data</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/group_by.html'>group_by</a></span><span class='op'>(</span><span class='va'>territory</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/summarise.html'>summarise</a></span><span class='op'>(</span><span class='va'>count</span>,<span class='va'>resp</span><span class='op'>)</span>
+</code></pre>
+</div>
 </div>
 <blockquote>
 <p>Which Territory had the highest population count who voted yes to the law allowing same-sex couples to marry.</p>
 </blockquote>
 <div class="layout-chunk" data-layout="l-body">
-
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>yes_voters</span> <span class='op'>&lt;-</span><span class='va'>marriage_data</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>resp</span><span class='op'>==</span><span class='st'>"yes"</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/arrange.html'>arrange</a></span><span class='op'>(</span><span class='op'>-</span><span class='va'>count</span><span class='op'>)</span> 
+</code></pre>
+</div>
 </div>
 <blockquote>
 <p>Rename the resp column to response.</p>
 </blockquote>
 <div class="layout-chunk" data-layout="l-body">
-
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>marriage_data</span> <span class='op'>&lt;-</span> <span class='va'>marriage_data</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/rename.html'>rename</a></span><span class='op'>(</span>response <span class='op'>=</span> <span class='va'>resp</span><span class='op'>)</span>
+</code></pre>
+</div>
 </div>
 <p>Distill is a publication format for scientific and technical writing, native to the web.</p>
 <p>Learn more about using Distill at <a href="https://rstudio.github.io/distill" class="uri">https://rstudio.github.io/distill</a>.</p>

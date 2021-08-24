@@ -1,14 +1,14 @@
 ---
-title: "Marina's HW3"
+title: Marina's HW3
 description: |
   Basic data wrangling
 author:
-  - name: Marina
+- name: Marina
 date: 08-22-2021
 output:
   distill::distill_article:
-    self_contained: false
-draft: true
+    self_contained: no
+draft: yes
 ---
 
 

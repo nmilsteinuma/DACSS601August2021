@@ -1,13 +1,13 @@
 ---
-title: "Final Project"
+title: Final Project
 description: |
   Baby steps
-author: "Isha Akshita Mahajan"
+author: Isha Akshita Mahajan
 date: 08-19-2021
-output: 
+output:
   distill::distill_article:
-    self_contained: false
-draft: true
+    self_contained: no
+draft: yes
 ---
 
 #Code Setup

@@ -111,12 +111,12 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","categories","output","draft"]}},"value":[{"type":"character","attributes":{},"value":["Wrangling U.S. homicide data"]},{"type":"character","attributes":{},"value":["Importing and wrangling U.S. homicide data for Homework 3.\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Leah Dion"]}]}]},{"type":"character","attributes":{},"value":["08-20-2021"]},{"type":"character","attributes":{},"value":[".homework 3 .wrangling"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"logical","attributes":{},"value":[true]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","categories","output","draft"]}},"value":[{"type":"character","attributes":{},"value":["Wrangling U.S. homicide data"]},{"type":"character","attributes":{},"value":["Importing and wrangling U.S. homicide data for Homework 3.\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Leah Dion"]}]}]},{"type":"character","attributes":{},"value":["08-20-2021"]},{"type":"character","attributes":{},"value":[".homework 3 .wrangling"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"logical","attributes":{},"value":[false]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"NULL"}
+  {"type":"character","attributes":{},"value":["wrangling-us-homicide-data_files/anchor-4.2.2/anchor.min.js","wrangling-us-homicide-data_files/bowser-1.9.3/bowser.min.js","wrangling-us-homicide-data_files/distill-2.2.21/template.v2.js","wrangling-us-homicide-data_files/header-attrs-2.10/header-attrs.js","wrangling-us-homicide-data_files/jquery-1.11.3/jquery.min.js","wrangling-us-homicide-data_files/popper-2.6.0/popper.min.js","wrangling-us-homicide-data_files/tippy-6.2.7/tippy-bundle.umd.min.js","wrangling-us-homicide-data_files/tippy-6.2.7/tippy-light-border.css","wrangling-us-homicide-data_files/tippy-6.2.7/tippy.css","wrangling-us-homicide-data_files/tippy-6.2.7/tippy.umd.min.js","wrangling-us-homicide-data_files/webcomponents-2.0.0/webcomponents.js"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -1492,51 +1492,13 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </div>
 </div>
 <p>Importing the data and assigning it to variable homi:</p>
+<p><strong>you will need to fill in the direct URL to the dataset you wish to use, similar to what I did with the executions data.</strong></p>
+<p>If you are using Kaggle data, you may need to use the API/R Package to access it directly. <a href="https://github.com/mkearney/kaggler" class="uri">https://github.com/mkearney/kaggler</a></p>
+<p>If that doesn’t work, there is another workaround for accessing datasets from Kaggle or other URL sources: <a href="https://stackoverflow.com/questions/55272909/read-dataset-from-kaggle" class="uri">https://stackoverflow.com/questions/55272909/read-dataset-from-kaggle</a></p>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code>  Record.ID Agency.Code Agency.Name      Agency.Type      City  State
-1         1     AK00101   Anchorage Municipal Police Anchorage Alaska
-2         2     AK00101   Anchorage Municipal Police Anchorage Alaska
-3         3     AK00101   Anchorage Municipal Police Anchorage Alaska
-4         4     AK00101   Anchorage Municipal Police Anchorage Alaska
-5         5     AK00101   Anchorage Municipal Police Anchorage Alaska
-6         6     AK00101   Anchorage Municipal Police Anchorage Alaska
-  Year   Month Incident             Crime.Type Crime.Solved
-1 1980 January        1 Murder or Manslaughter          Yes
-2 1980   March        1 Murder or Manslaughter          Yes
-3 1980   March        2 Murder or Manslaughter           No
-4 1980   April        1 Murder or Manslaughter          Yes
-5 1980   April        2 Murder or Manslaughter           No
-6 1980     May        1 Murder or Manslaughter          Yes
-  Victim.Sex Victim.Age                   Victim.Race
-1       Male         14 Native American/Alaska Native
-2       Male         43                         White
-3     Female         30 Native American/Alaska Native
-4       Male         43                         White
-5     Female         30 Native American/Alaska Native
-6       Male         30                         White
-  Victim.Ethnicity Perpetrator.Sex Perpetrator.Age
-1          Unknown            Male              15
-2          Unknown            Male              42
-3          Unknown         Unknown               0
-4          Unknown            Male              42
-5          Unknown         Unknown               0
-6          Unknown            Male              36
-               Perpetrator.Race Perpetrator.Ethnicity Relationship
-1 Native American/Alaska Native               Unknown Acquaintance
-2                         White               Unknown Acquaintance
-3                       Unknown               Unknown      Unknown
-4                         White               Unknown Acquaintance
-5                       Unknown               Unknown      Unknown
-6                         White               Unknown Acquaintance
-         Weapon Victim.Count Perpetrator.Count Record.Source
-1  Blunt Object            0                 0           FBI
-2 Strangulation            0                 0           FBI
-3       Unknown            0                 0           FBI
-4 Strangulation            0                 0           FBI
-5       Unknown            0                 1           FBI
-6         Rifle            0                 0           FBI</code></pre>
+
 </div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

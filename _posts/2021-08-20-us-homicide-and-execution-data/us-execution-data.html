@@ -111,7 +111,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","categories","output","draft"]}},"value":[{"type":"character","attributes":{},"value":["U.S. execution data"]},{"type":"character","attributes":{},"value":["Importing and describing data for Homework 2.\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Leah Dion"]}]}]},{"type":"character","attributes":{},"value":["08-20-2021"]},{"type":"character","attributes":{},"value":[".homework 2 .importing data"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"logical","attributes":{},"value":[true]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","categories","output","draft"]}},"value":[{"type":"character","attributes":{},"value":["U.S. execution data"]},{"type":"character","attributes":{},"value":["Importing and describing data for Homework 2.\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Leah Dion"]}]}]},{"type":"character","attributes":{},"value":["08-20-2021"]},{"type":"character","attributes":{},"value":[".homework 2 .importing data"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"logical","attributes":{},"value":[false]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   
@@ -1495,43 +1495,142 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <p>Reading in the file, assigning it to variable exec, and displaying the first ten rows:</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>exec</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/utils/read.table.html'>read.csv</a></span><span class='op'>(</span><span class='st'>"/Users/leahleahleah/Documents/Data/executions.csv"</span><span class='op'>)</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>exec</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/utils/read.table.html'>read.csv</a></span><span class='op'>(</span><span class='st'>"https://docs.google.com/spreadsheets/d/e/2PACX-1vQDMoiJXVldahXzL4S037MGb7DgZMfeqfrR-zYtDJ_U-Sd6FS35W7WU_6N8pXBOm9NOBGIM8BEui37x/pub?gid=0&amp;single=true&amp;output=csv"</span><span class='op'>)</span>
 <span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='va'>exec</span>, <span class='fl'>10</span><span class='op'>)</span>
 </code></pre>
 </div>
-<pre><code>         Date            Name Age  Sex  Race  Crime Victim.Count
-1  01/17/1977    Gary Gilmore  36 Male White Murder            1
-2  05/25/1979 John Spenkelink  30 Male White Murder            1
-3  10/22/1979    Jesse Bishop  46 Male White Murder            1
-4  03/09/1981     Steven Judy  24 Male White Murder            4
-5  08/10/1982   Frank Coppola  38 Male White Murder            1
-6  12/07/1982  Charlie Brooks  40 Male Black Murder            1
-7  04/22/1983      John Evans  33 Male White Murder            1
-8  09/02/1983     Jimmy  Gray  34 Male White Murder            1
-9  11/30/1983 Robert Sullivan  36 Male White Murder            1
-10 12/14/1983 Robert Williams  31 Male Black Murder            1
-         Victim.Sex Victim.Race                  County State  Region
-1              Male       White                    Utah    UT    West
-2              Male       White                    Leon    FL   South
-3              Male       White                   Clark    NV    West
-4  2 Male, 2 Female       White                  Marion    IN Midwest
-5              Male       White       Newport News City    VA   South
-6              Male       White                 Tarrant    TX   South
-7              Male       White                  Mobile    AL   South
-8            Female       White                 Jackson    MS   South
-9              Male       White              Miami-Dade    FL   South
-10             Male       Black East Baton Rouge Parish    LA   South
-             Method Juvenile Volunteer Federal Foreign.National
-1      Firing Squad       No       Yes      No               No
-2     Electrocution       No        No      No               No
-3       Gas Chamber       No       Yes      No               No
-4     Electrocution       No       Yes      No               No
-5     Electrocution       No       Yes      No               No
-6  Lethal Injection       No        No      No               No
-7     Electrocution       No        No      No               No
-8       Gas Chamber       No        No      No               No
-9     Electrocution       No        No      No               No
-10    Electrocution       No        No      No               No</code></pre>
+<pre><code>   Execution. Execution.Date First.Name  Last.Name Middle.Name.s.
+1           1     01/17/1977       Gary    Gilmore           Mark
+2           2     05/25/1979       John Spenkelink               
+3           3     10/22/1979      Jesse     Bishop               
+4           4     03/09/1981     Steven       Judy               
+5           5     08/10/1982      Frank    Coppola               
+6           6     12/07/1982    Charlie     Brooks               
+7           7     04/22/1983       John      Evans               
+8           8     09/02/1983      Jimmy       Gray            Lee
+9           9     11/30/1983     Robert   Sullivan               
+10         10     12/14/1983     Robert   Williams          Wayne
+   Suffix  Race  Sex  Region       State                  County
+1         White Male    West        Utah             Utah County
+2         White Male   South     Florida             Leon County
+3         White Male    West      Nevada            Clark County
+4         White Male Midwest     Indiana           Morgan County
+5         White Male   South    Virginia       Newport News city
+6         Black Male   South       Texas          Tarrant County
+7         White Male   South     Alabama           Mobile County
+8         White Male   South Mississippi          Jackson County
+9         White Male   South     Florida       Miami-Dade County
+10        Black Male   South   Louisiana East Baton Rouge Parish
+   Foreign.National Execution.Method Execution.Volunteer
+1                no     Firing Squad                 yes
+2                no    Electrocution                  no
+3                no              Gas                 yes
+4                no    Electrocution                 yes
+5                no    Electrocution                 yes
+6                no Lethal Injection                  no
+7                no    Electrocution                  no
+8                no              Gas                  no
+9                no    Electrocution                  no
+10               no    Electrocution                  no
+   Number.of.Victims Number.of.White.Male.Victims
+1                  1                            1
+2                  1                            1
+3                  1                            1
+4                  4                            2
+5                  1                            1
+6                  1                            1
+7                  1                            1
+8                  1                            0
+9                  1                            1
+10                 1                            0
+   Number.of.Black.Male.Victims Number.of.Latino.Male.Victims
+1                             0                             0
+2                             0                             0
+3                             0                             0
+4                             0                             0
+5                             0                             0
+6                             0                             0
+7                             0                             0
+8                             0                             0
+9                             0                             0
+10                            1                             0
+   Number.of.Asian.Male.Victims
+1                             0
+2                             0
+3                             0
+4                             0
+5                             0
+6                             0
+7                             0
+8                             0
+9                             0
+10                            0
+   Number.of.Native.American.Male.Victims
+1                                       0
+2                                       0
+3                                       0
+4                                       0
+5                                       0
+6                                       0
+7                                       0
+8                                       0
+9                                       0
+10                                      0
+   Number.of.Other.Race.Male.Victims Number.of.White.Female.Victims
+1                                  0                              0
+2                                  0                              0
+3                                  0                              0
+4                                  0                              2
+5                                  0                              0
+6                                  0                              0
+7                                  0                              0
+8                                  0                              1
+9                                  0                              0
+10                                 0                              0
+   Number.of.Black.Female.Victims Number.of.Latino.Female.Victims
+1                               0                               0
+2                               0                               0
+3                               0                               0
+4                               0                               0
+5                               0                               0
+6                               0                               0
+7                               0                               0
+8                               0                               0
+9                               0                               0
+10                              0                               0
+   Number.of.Asian.Female.Victims
+1                               0
+2                               0
+3                               0
+4                               0
+5                               0
+6                               0
+7                               0
+8                               0
+9                               0
+10                              0
+   Number.of.Native.American.Female.Victims
+1                                         0
+2                                         0
+3                                         0
+4                                         0
+5                                         0
+6                                         0
+7                                         0
+8                                         0
+9                                         0
+10                                        0
+   Number.of.Other.Race.Female.Victims
+1                                    0
+2                                    0
+3                                    0
+4                                    0
+5                                    0
+6                                    0
+7                                    0
+8                                    0
+9                                    0
+10                                   0</code></pre>
 </div>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->

@@ -1,13 +1,13 @@
 ---
-title: "Homework 4 - Univariate Statistics"
+title: Homework 4 - Univariate Statistics
 description: |
   This dataset is named Active Duty Marital Status (ADMS). This dataset has been published by government of United States for public usage. It has count details of singles,   single parents, and married resources of the 4 branches of the defence department for the month of April 2010.
 author: Abhinav Kumar
 date: 08-23-2021
 output:
   distill::distill_article:
-    self_contained: false
-draft: true
+    self_contained: no
+draft: no
 ---
 
 

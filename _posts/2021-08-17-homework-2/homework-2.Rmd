@@ -1,12 +1,12 @@
 ---
-title: "School Characteristics"
-description: "Blog posts about School Characteristics"
-author: "Joey Wolpert"
+title: School Characteristics
+description: Blog posts about School Characteristics
+author: Joey Wolpert
 date: 08-17-2021
 output:
   distill::distill_article:
-    self_contained: false
-draft: true
+    self_contained: no
+draft: yes
 ---
 
 
@@ -23,7 +23,7 @@ library("dplyr")
 Let's read in the data and see what it looks like:
 
 ```{r echo = FALSE}
-data <- read.csv("C:/Users/wolpe/DACSS601August2021/_data/Public_School_Characteristics_2017-18.csv")
+data <- read.csv("../../_data/Public_School_Characteristics_2017-18.csv")
 head(data)
 ```
 

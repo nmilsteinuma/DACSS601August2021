@@ -1,14 +1,14 @@
 ---
-title: "Marina's HW4"
+title: Marina's HW4
 description: |
   Getting started with the final project & descriptive statistics
 author:
-  - name: Marina
+- name: Marina
 date: 08-22-2021
 output:
   distill::distill_article:
-    self_contained: false
-draft: true
+    self_contained: no
+draft: yes
 ---
 
 

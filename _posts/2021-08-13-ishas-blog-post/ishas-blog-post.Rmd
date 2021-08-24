@@ -3,7 +3,7 @@ title: Isha's Blog Post
 description: Running Blog Post for Course Homeworks
 author: Isha Akshita Mahajan
 date: 08-16-2021
-output: 
+output:
   distill::distill_article:
     self_contained: no
 draft: yes

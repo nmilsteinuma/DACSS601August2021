@@ -111,7 +111,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","draft"]}},"value":[{"type":"character","attributes":{},"value":["Marina's HW4"]},{"type":"character","attributes":{},"value":["Getting started with the final project & descriptive statistics\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Marina"]}]}]},{"type":"character","attributes":{},"value":["08-22-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"logical","attributes":{},"value":[true]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","draft"]}},"value":[{"type":"character","attributes":{},"value":["Marina's HW4"]},{"type":"character","attributes":{},"value":["Getting started with the final project & descriptive statistics\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Marina"]}]}]},{"type":"character","attributes":{},"value":["08-22-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"logical","attributes":{},"value":[false]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   
@@ -1457,7 +1457,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Marina's HW4","description":"Getting started with the final project & descriptive statistics","authors":[{"author":"Marina","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-08-22T00:00:00.000-04:00","citationText":"Marina, 2021"}
+{"title":"Marina's HW4","description":"Getting started with the final project & descriptive statistics","authors":[{"author":"Marina","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-08-22T00:00:00.000+00:00","citationText":"Marina, 2021"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -1513,29 +1513,29 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <p>The dataset is currently huge as it contains multiple years of data for every US state and territory. We will narrow it down to Massachusetts observations starting from 2018.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>df</span>, <span class='va'>state</span> <span class='op'>==</span> <span class='st'>"MA"</span> <span class='op'>&amp;</span> <span class='va'>support_year</span> <span class='op'>&gt;=</span> <span class='fl'>2018</span><span class='op'>)</span>
-<span class='fu'>glimpse</span><span class='op'>(</span><span class='va'>df</span><span class='op'>)</span>  
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>df</span>, <span class='va'>state</span> <span class='op'>==</span> <span class='st'>"MA"</span> <span class='op'>&amp;</span> <span class='va'>support_year</span> <span class='op'>&gt;=</span> <span class='fl'>2018</span><span class='op'>)</span>
+<span class='fu'><a href='https://pillar.r-lib.org/reference/glimpse.html'>glimpse</a></span><span class='op'>(</span><span class='va'>df</span><span class='op'>)</span>  
 </code></pre>
 </div>
 <pre><code>Rows: 906
 Columns: 17
-$ state                          &lt;chr&gt; &quot;MA&quot;, &quot;MA&quot;, &quot;MA&quot;, &quot;MA&quot;, &quot;MA&quot;,~
-$ sac                            &lt;chr&gt; &quot;115112&quot;, &quot;115112&quot;, &quot;115112&quot;,~
-$ sac_name                       &lt;chr&gt; &quot;VERIZON NEW ENGLAND - MA&quot;, &quot;~
-$ disbursement_year              &lt;chr&gt; &quot;2018&quot;, &quot;2018&quot;, &quot;2018&quot;, &quot;2018~
-$ disbursement_month             &lt;chr&gt; &quot;4&quot;, &quot;2&quot;, &quot;4&quot;, &quot;3&quot;, &quot;6&quot;, &quot;11&quot;~
-$ disbursement_month_date_format &lt;dttm&gt; 2018-04-01, 2018-02-01, 2018~
-$ support_year                   &lt;chr&gt; &quot;2018&quot;, &quot;2018&quot;, &quot;2018&quot;, &quot;2018~
-$ support_month                  &lt;chr&gt; &quot;3&quot;, &quot;1&quot;, &quot;2&quot;, &quot;2&quot;, &quot;5&quot;, &quot;10&quot;~
-$ support_month_date_format      &lt;dttm&gt; 2018-03-01, 2018-01-01, 2018~
-$ support_type                   &lt;chr&gt; &quot;TRIBAL&quot;, &quot;TRIBAL&quot;, &quot;TRIBAL&quot;,~
-$ provider_type                  &lt;chr&gt; &quot;ILEC&quot;, &quot;ILEC&quot;, &quot;ILEC&quot;, &quot;ILEC~
-$ technology_type                &lt;chr&gt; &quot;WIRELINE&quot;, &quot;WIRELINE&quot;, &quot;WIRE~
-$ service_type                   &lt;chr&gt; &quot;VOICE&quot;, &quot;VOICE&quot;, &quot;VOICE&quot;, &quot;V~
-$ submission_type                &lt;chr&gt; &quot;CLAIM&quot;, &quot;CLAIM&quot;, &quot;CLAIM&quot;, &quot;C~
-$ disbursement_type              &lt;chr&gt; &quot;LIFELINE&quot;, &quot;LIFELINE&quot;, &quot;LIFE~
-$ subscriber_count               &lt;chr&gt; &quot;1&quot;, &quot;1&quot;, &quot;1&quot;, &quot;8&quot;, &quot;7&quot;, &quot;7&quot;,~
-$ disbursement_amount            &lt;chr&gt; &quot;9&quot;, &quot;9&quot;, &quot;9&quot;, &quot;74&quot;, &quot;65&quot;, &quot;6~</code></pre>
+$ state                          &lt;chr&gt; &quot;MA&quot;, &quot;MA&quot;, &quot;MA&quot;, &quot;MA&quot;, &quot;MA&quot;,…
+$ sac                            &lt;chr&gt; &quot;115112&quot;, &quot;115112&quot;, &quot;115112&quot;,…
+$ sac_name                       &lt;chr&gt; &quot;VERIZON NEW ENGLAND - MA&quot;, &quot;…
+$ disbursement_year              &lt;chr&gt; &quot;2018&quot;, &quot;2018&quot;, &quot;2018&quot;, &quot;2018…
+$ disbursement_month             &lt;chr&gt; &quot;4&quot;, &quot;2&quot;, &quot;4&quot;, &quot;3&quot;, &quot;6&quot;, &quot;11&quot;…
+$ disbursement_month_date_format &lt;dttm&gt; 2018-04-01, 2018-02-01, 2018…
+$ support_year                   &lt;chr&gt; &quot;2018&quot;, &quot;2018&quot;, &quot;2018&quot;, &quot;2018…
+$ support_month                  &lt;chr&gt; &quot;3&quot;, &quot;1&quot;, &quot;2&quot;, &quot;2&quot;, &quot;5&quot;, &quot;10&quot;…
+$ support_month_date_format      &lt;dttm&gt; 2018-03-01, 2018-01-01, 2018…
+$ support_type                   &lt;chr&gt; &quot;TRIBAL&quot;, &quot;TRIBAL&quot;, &quot;TRIBAL&quot;,…
+$ provider_type                  &lt;chr&gt; &quot;ILEC&quot;, &quot;ILEC&quot;, &quot;ILEC&quot;, &quot;ILEC…
+$ technology_type                &lt;chr&gt; &quot;WIRELINE&quot;, &quot;WIRELINE&quot;, &quot;WIRE…
+$ service_type                   &lt;chr&gt; &quot;VOICE&quot;, &quot;VOICE&quot;, &quot;VOICE&quot;, &quot;V…
+$ submission_type                &lt;chr&gt; &quot;CLAIM&quot;, &quot;CLAIM&quot;, &quot;CLAIM&quot;, &quot;C…
+$ disbursement_type              &lt;chr&gt; &quot;LIFELINE&quot;, &quot;LIFELINE&quot;, &quot;LIFE…
+$ subscriber_count               &lt;chr&gt; &quot;1&quot;, &quot;1&quot;, &quot;1&quot;, &quot;8&quot;, &quot;7&quot;, &quot;7&quot;,…
+$ disbursement_amount            &lt;chr&gt; &quot;9&quot;, &quot;9&quot;, &quot;9&quot;, &quot;74&quot;, &quot;65&quot;, &quot;6…</code></pre>
 </div>
 <h3 id="step-3-pick-variables-to-explore-and-clean">Step 3: pick variables to explore and clean</h3>
 <p>For this HW, I’m going to focus on <code>sac_name</code>, <code>disbursement_year</code>, <code>support_year</code> and <code>subscriber_count</code>.</p>
@@ -1678,8 +1678,8 @@ VIRGIN MOBILE USA, LP - MA
   <span class='co'>#account for)</span>
   <span class='kw'>if</span> <span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/length.html'>length</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/unique.html'>unique</a></span><span class='op'>(</span><span class='va'>df</span><span class='op'>$</span><span class='va'>sac_name</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>==</span> <span class='fl'>6</span><span class='op'>)</span> <span class='op'>{</span>
   <span class='va'>df</span> <span class='op'>&lt;-</span> <span class='va'>df</span> <span class='op'>%&gt;%</span>
-        <span class='fu'>mutate</span><span class='op'>(</span>sac_name <span class='op'>=</span> <span class='fu'>str_to_title</span><span class='op'>(</span><span class='va'>sac_name</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
-        <span class='fu'>mutate</span><span class='op'>(</span>provider <span class='op'>=</span> <span class='fu'>case_when</span><span class='op'>(</span>
+        <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>sac_name <span class='op'>=</span> <span class='fu'><a href='https://stringr.tidyverse.org/reference/case.html'>str_to_title</a></span><span class='op'>(</span><span class='va'>sac_name</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+        <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>provider <span class='op'>=</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/case_when.html'>case_when</a></span><span class='op'>(</span>
               <span class='fu'><a href='https://rdrr.io/r/base/startsWith.html'>startsWith</a></span><span class='op'>(</span><span class='va'>sac_name</span>, <span class='st'>"City"</span><span class='op'>)</span> <span class='op'>~</span> <span class='st'>'Westfield'</span>,
               <span class='fu'><a href='https://rdrr.io/r/base/startsWith.html'>startsWith</a></span><span class='op'>(</span><span class='va'>sac_name</span>, <span class='st'>"Global"</span><span class='op'>)</span> <span class='op'>~</span> <span class='st'>'StandUp Wireless/Global Connection'</span>,
               <span class='fu'><a href='https://rdrr.io/r/base/startsWith.html'>startsWith</a></span><span class='op'>(</span><span class='va'>sac_name</span>, <span class='st'>"Granby"</span><span class='op'>)</span> <span class='op'>~</span> <span class='st'>'Granby'</span>,
@@ -1688,11 +1688,11 @@ VIRGIN MOBILE USA, LP - MA
               <span class='fu'><a href='https://rdrr.io/r/base/startsWith.html'>startsWith</a></span><span class='op'>(</span><span class='va'>sac_name</span>, <span class='st'>"Virgin"</span><span class='op'>)</span> <span class='op'>~</span> <span class='st'>'Assurance/Virgin/T-Mobile'</span>
               <span class='op'>)</span><span class='op'>)</span>
     <span class='op'>}</span>  <span class='kw'>else</span> <span class='op'>{</span>
-      <span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span><span class='op'>(</span><span class='st'>"There has been a change in the number of unique companies"</span><span class='op'>)</span>
+      <span class='fu'><a href='https://docs.ropensci.org/skimr/reference/print.html'>print</a></span><span class='op'>(</span><span class='st'>"There has been a change in the number of unique companies"</span><span class='op'>)</span>
     <span class='op'>}</span>
   
   <span class='co'>#Confirm it worked</span>
-  <span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/unique.html'>unique</a></span><span class='op'>(</span><span class='va'>df</span><span class='op'>$</span><span class='va'>provider</span><span class='op'>)</span><span class='op'>)</span>
+  <span class='fu'><a href='https://docs.ropensci.org/skimr/reference/print.html'>print</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/unique.html'>unique</a></span><span class='op'>(</span><span class='va'>df</span><span class='op'>$</span><span class='va'>provider</span><span class='op'>)</span><span class='op'>)</span>
 </code></pre>
 </div>
 <pre><code>[1] &quot;Verizon&quot;                           
@@ -1720,10 +1720,10 @@ disbursement_year 2018 2019 2020 2021
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df</span> <span class='op'>%&gt;%</span>
-  <span class='fu'><a href='https://rdrr.io/r/stats/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>provider</span> <span class='op'>==</span> <span class='st'>"Tracfone/Safelink"</span> <span class='op'>&amp;</span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>provider</span> <span class='op'>==</span> <span class='st'>"Tracfone/Safelink"</span> <span class='op'>&amp;</span>
            <span class='va'>support_year</span> <span class='op'>==</span> <span class='st'>"2019"</span> <span class='op'>&amp;</span>
            <span class='va'>support_month</span> <span class='op'>==</span> <span class='st'>"7"</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
-  <span class='fu'>select</span><span class='op'>(</span><span class='va'>provider</span>, 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>provider</span>, 
          disbursement_date <span class='op'>=</span> <span class='va'>disbursement_month_date_format</span>,
          support_date <span class='op'>=</span> <span class='va'>support_month_date_format</span>,
          <span class='va'>service_type</span>,
@@ -1749,11 +1749,11 @@ disbursement_year 2018 2019 2020 2021
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df</span> <span class='op'>%&gt;%</span>
-  <span class='fu'>ggplot</span><span class='op'>(</span><span class='fu'>aes</span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>support_month_date_format</span>, 
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>support_month_date_format</span>, 
              y <span class='op'>=</span> <span class='va'>disbursement_month_date_format</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
-  <span class='fu'>geom_point</span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span>
-  <span class='fu'>xlab</span><span class='op'>(</span><span class='st'>"Support Date"</span><span class='op'>)</span> <span class='op'>+</span>
-  <span class='fu'>ylab</span><span class='op'>(</span><span class='st'>"Disbursement Date"</span><span class='op'>)</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>xlab</a></span><span class='op'>(</span><span class='st'>"Support Date"</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>ylab</a></span><span class='op'>(</span><span class='st'>"Disbursement Date"</span><span class='op'>)</span>
 </code></pre>
 </div>
 <p><img src="marinas-hw4_files/figure-html5/View%20corrections-1.png" width="624" /></p>
@@ -1763,19 +1763,19 @@ disbursement_year 2018 2019 2020 2021
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r">  <span class='va'>subscribers</span> <span class='op'>&lt;-</span> <span class='va'>df</span> <span class='op'>%&gt;%</span>
-                  <span class='fu'><a href='https://rdrr.io/r/stats/filter.html'>filter</a></span><span class='op'>(</span><span class='op'>!</span><span class='va'>submission_type</span> <span class='op'>==</span> <span class='st'>"ADJUSTMENT"</span><span class='op'>)</span> <span class='op'>%&gt;%</span> <span class='co'>#Exclude fin. adj. rows</span>
-                  <span class='fu'>select</span><span class='op'>(</span><span class='va'>provider</span>, 
+                  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='op'>!</span><span class='va'>submission_type</span> <span class='op'>==</span> <span class='st'>"ADJUSTMENT"</span><span class='op'>)</span> <span class='op'>%&gt;%</span> <span class='co'>#Exclude fin. adj. rows</span>
+                  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>provider</span>, 
                          <span class='va'>support_year</span>,
                          support_month <span class='op'>=</span> <span class='va'>support_month_date_format</span>,
                          <span class='va'>technology_type</span>,
                          <span class='va'>service_type</span>,
                          <span class='va'>subscriber_count</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
-                  <span class='fu'>group_by</span><span class='op'>(</span><span class='va'>provider</span>,
+                  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/group_by.html'>group_by</a></span><span class='op'>(</span><span class='va'>provider</span>,
                            <span class='va'>support_year</span>,
                            <span class='va'>support_month</span>,
                            <span class='va'>technology_type</span>,
                            <span class='va'>service_type</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
-                  <span class='fu'>summarise</span><span class='op'>(</span>subscriber_count <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sum.html'>sum</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/numeric.html'>as.numeric</a></span><span class='op'>(</span><span class='va'>subscriber_count</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span>
+                  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/summarise.html'>summarise</a></span><span class='op'>(</span>subscriber_count <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sum.html'>sum</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/numeric.html'>as.numeric</a></span><span class='op'>(</span><span class='va'>subscriber_count</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span>
 </code></pre>
 </div>
 </div>
@@ -1785,14 +1785,14 @@ disbursement_year 2018 2019 2020 2021
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>subscribers</span> <span class='op'>%&gt;%</span>
-  <span class='fu'>ungroup</span><span class='op'>(</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
-  <span class='fu'>select</span><span class='op'>(</span><span class='va'>provider</span>,
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/group_by.html'>ungroup</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>provider</span>,
          <span class='va'>support_year</span>,
          <span class='va'>subscriber_count</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
-  <span class='fu'>group_by</span><span class='op'>(</span><span class='va'>provider</span>, <span class='va'>support_year</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
-  <span class='fu'>summarise</span><span class='op'>(</span>mean_subscribers <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>subscriber_count</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
-  <span class='fu'>mutate</span><span class='op'>(</span>mean_subscribers <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Round.html'>round</a></span><span class='op'>(</span><span class='va'>mean_subscribers</span>, <span class='fl'>2</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
-  <span class='fu'>pivot_wider</span><span class='op'>(</span>id_cols <span class='op'>=</span> <span class='va'>provider</span>,
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/group_by.html'>group_by</a></span><span class='op'>(</span><span class='va'>provider</span>, <span class='va'>support_year</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/summarise.html'>summarise</a></span><span class='op'>(</span>mean_subscribers <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>subscriber_count</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>mean_subscribers <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Round.html'>round</a></span><span class='op'>(</span><span class='va'>mean_subscribers</span>, <span class='fl'>2</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+  <span class='fu'><a href='https://tidyr.tidyverse.org/reference/pivot_wider.html'>pivot_wider</a></span><span class='op'>(</span>id_cols <span class='op'>=</span> <span class='va'>provider</span>,
               names_from <span class='op'>=</span> <span class='va'>support_year</span>,
               values_from <span class='op'>=</span> <span class='va'>mean_subscribers</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
     <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kbl.html'>kbl</a></span><span class='op'>(</span>caption <span class='op'>=</span> <span class='st'>"Average subscribers per year"</span><span class='op'>)</span> <span class='op'>%&gt;%</span>

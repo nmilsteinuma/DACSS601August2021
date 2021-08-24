@@ -111,7 +111,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","draft"]}},"value":[{"type":"character","attributes":{},"value":["School Characteristics"]},{"type":"character","attributes":{},"value":["Blog posts about School Characteristics"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Joey Wolpert"]}]}]},{"type":"character","attributes":{},"value":["08-17-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"logical","attributes":{},"value":[true]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","draft"]}},"value":[{"type":"character","attributes":{},"value":["School Characteristics"]},{"type":"character","attributes":{},"value":["Blog posts about School Characteristics"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Joey Wolpert"]}]}]},{"type":"character","attributes":{},"value":["08-17-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"logical","attributes":{},"value":[false]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   
@@ -1455,7 +1455,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"School Characteristics","description":"Blog posts about School Characteristics","authors":[{"author":"Joey Wolpert","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-08-17T00:00:00.000-04:00","citationText":"Wolpert, 2021"}
+{"title":"School Characteristics","description":"Blog posts about School Characteristics","authors":[{"author":"Joey Wolpert","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-08-17T00:00:00.000+00:00","citationText":"Wolpert, 2021"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -1482,7 +1482,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h1 id="homework-2">Homework 2</h1>
 <p>Let’s read in the data and see what it looks like:</p>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code>       ï..X        Y OBJECTID    NCESSCH
+<pre><code>          X        Y OBJECTID    NCESSCH
 1 -149.3578 61.62714        1 2.0051e+10
 2 -156.7542 71.30034        2 2.0061e+10
 3 -151.0701 60.49144        3 2.0039e+10
@@ -1575,7 +1575,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h3 id="cleaning-data">Cleaning Data</h3>
 <p>The data is definitely unclean, let’s filter out some stuff so that we have more complete data.</p>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code>       ï..X        Y OBJECTID     NCESSCH                     NMCNTY
+<pre><code>          X        Y OBJECTID     NCESSCH                     NMCNTY
 1 -151.0701 60.49144        3 20039000448    Kenai Peninsula Borough
 2 -151.2791 60.56828        4 20039000463    Kenai Peninsula Borough
 3 -166.5224 53.86895       15 20072000340 Aleutians West Census Area
@@ -1766,7 +1766,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h3 id="summary-data">Summary Data</h3>
 <p>Now let’s take a look at some summary of the dataset in terms of its student-teacher ratio in each state.</p>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code># A tibble: 53 x 3
+<pre><code># A tibble: 53 × 3
 # Groups:   STABR [53]
    STABR AvgRatio SDRatio
    &lt;chr&gt;    &lt;dbl&gt;   &lt;dbl&gt;
@@ -1780,7 +1780,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
  8 DC        20.9   30.3 
  9 DE        14.9    2.63
 10 FL        21.0   50.2 
-# ... with 43 more rows</code></pre>
+# … with 43 more rows</code></pre>
 </div>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->

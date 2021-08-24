@@ -1,17 +1,14 @@
 ---
-title: "Wrangling U.S. homicide data"
+title: Wrangling U.S. homicide data
 description: |
   Importing and wrangling U.S. homicide data for Homework 3.
-author:
-  Leah Dion
+author: Leah Dion
 date: 08-20-2021
-categories:
-  .homework 3
-  .wrangling
+categories: .homework 3 .wrangling
 output:
   distill::distill_article:
-    self_contained: false
-draft: true
+    self_contained: no
+draft: yes
 ---
 
 Loading packages necessary for wrangling:
@@ -24,7 +21,15 @@ library(dplyr)
 
 Importing the data and assigning it to variable homi:
 
+**you will need to fill in the direct URL to the dataset you wish to use, similar to what I
+did with the executions data.**
+
+If you are using Kaggle data, you may need to use the API/R Package to access it directly. https://github.com/mkearney/kaggler
+
+If that doesn't work, there is another workaround for accessing datasets from Kaggle or other URL sources: https://stackoverflow.com/questions/55272909/read-dataset-from-kaggle
+
+
 ```{r}
-homi <- read.csv("/Users/leahleahleah/Documents/Data/homicides.csv")
-head(homi)
+#homi <- read.csv("")
+#head(homi)
 ```

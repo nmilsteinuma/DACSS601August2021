@@ -111,12 +111,12 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","draft"]}},"value":[{"type":"character","attributes":{},"value":["Marina's HW3"]},{"type":"character","attributes":{},"value":["Basic data wrangling\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Marina"]}]}]},{"type":"character","attributes":{},"value":["08-22-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"logical","attributes":{},"value":[true]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","draft"]}},"value":[{"type":"character","attributes":{},"value":["Marina's HW3"]},{"type":"character","attributes":{},"value":["Basic data wrangling\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Marina"]}]}]},{"type":"character","attributes":{},"value":["08-22-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"logical","attributes":{},"value":[false]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"NULL"}
+  {"type":"character","attributes":{},"value":["marinas-hw3_files/anchor-4.2.2/anchor.min.js","marinas-hw3_files/bowser-1.9.3/bowser.min.js","marinas-hw3_files/distill-2.2.21/template.v2.js","marinas-hw3_files/header-attrs-2.10/header-attrs.js","marinas-hw3_files/jquery-1.11.3/jquery.min.js","marinas-hw3_files/popper-2.6.0/popper.min.js","marinas-hw3_files/tippy-6.2.7/tippy-bundle.umd.min.js","marinas-hw3_files/tippy-6.2.7/tippy-light-border.css","marinas-hw3_files/tippy-6.2.7/tippy.css","marinas-hw3_files/tippy-6.2.7/tippy.umd.min.js","marinas-hw3_files/webcomponents-2.0.0/webcomponents.js"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -1455,7 +1455,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Marina's HW3","description":"Basic data wrangling","authors":[{"author":"Marina","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-08-22T00:00:00.000-04:00","citationText":"Marina, 2021"}
+{"title":"Marina's HW3","description":"Basic data wrangling","authors":[{"author":"Marina","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-08-22T00:00:00.000+00:00","citationText":"Marina, 2021"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -1497,38 +1497,38 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </div>
 <pre><code>Rows: 119,390
 Columns: 32
-$ hotel                          &lt;chr&gt; &quot;Resort Hotel&quot;, &quot;Resort Hotel~
-$ is_canceled                    &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 1, 1,~
-$ lead_time                      &lt;int&gt; 342, 737, 7, 13, 14, 14, 0, 9~
-$ arrival_date_year              &lt;int&gt; 2015, 2015, 2015, 2015, 2015,~
-$ arrival_date_month             &lt;chr&gt; &quot;July&quot;, &quot;July&quot;, &quot;July&quot;, &quot;July~
-$ arrival_date_week_number       &lt;int&gt; 27, 27, 27, 27, 27, 27, 27, 2~
-$ arrival_date_day_of_month      &lt;int&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,~
-$ stays_in_weekend_nights        &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,~
-$ stays_in_week_nights           &lt;int&gt; 0, 0, 1, 1, 2, 2, 2, 2, 3, 3,~
-$ adults                         &lt;int&gt; 2, 2, 1, 1, 2, 2, 2, 2, 2, 2,~
-$ children                       &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,~
-$ babies                         &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,~
-$ meal                           &lt;chr&gt; &quot;BB&quot;, &quot;BB&quot;, &quot;BB&quot;, &quot;BB&quot;, &quot;BB&quot;,~
-$ country                        &lt;chr&gt; &quot;PRT&quot;, &quot;PRT&quot;, &quot;GBR&quot;, &quot;GBR&quot;, &quot;~
-$ market_segment                 &lt;chr&gt; &quot;Direct&quot;, &quot;Direct&quot;, &quot;Direct&quot;,~
-$ distribution_channel           &lt;chr&gt; &quot;Direct&quot;, &quot;Direct&quot;, &quot;Direct&quot;,~
-$ is_repeated_guest              &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,~
-$ previous_cancellations         &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,~
-$ previous_bookings_not_canceled &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,~
-$ reserved_room_type             &lt;chr&gt; &quot;C&quot;, &quot;C&quot;, &quot;A&quot;, &quot;A&quot;, &quot;A&quot;, &quot;A&quot;,~
-$ assigned_room_type             &lt;chr&gt; &quot;C&quot;, &quot;C&quot;, &quot;C&quot;, &quot;A&quot;, &quot;A&quot;, &quot;A&quot;,~
-$ booking_changes                &lt;int&gt; 3, 4, 0, 0, 0, 0, 0, 0, 0, 0,~
-$ deposit_type                   &lt;chr&gt; &quot;No Deposit&quot;, &quot;No Deposit&quot;, &quot;~
-$ agent                          &lt;chr&gt; &quot;NULL&quot;, &quot;NULL&quot;, &quot;NULL&quot;, &quot;304&quot;~
-$ company                        &lt;chr&gt; &quot;NULL&quot;, &quot;NULL&quot;, &quot;NULL&quot;, &quot;NULL~
-$ days_in_waiting_list           &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,~
-$ customer_type                  &lt;chr&gt; &quot;Transient&quot;, &quot;Transient&quot;, &quot;Tr~
-$ adr                            &lt;dbl&gt; 0.00, 0.00, 75.00, 75.00, 98.~
-$ required_car_parking_spaces    &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,~
-$ total_of_special_requests      &lt;int&gt; 0, 0, 0, 0, 1, 1, 0, 1, 1, 0,~
-$ reservation_status             &lt;chr&gt; &quot;Check-Out&quot;, &quot;Check-Out&quot;, &quot;Ch~
-$ reservation_status_date        &lt;chr&gt; &quot;2015-07-01&quot;, &quot;2015-07-01&quot;, &quot;~</code></pre>
+$ hotel                          &lt;chr&gt; &quot;Resort Hotel&quot;, &quot;Resort Hotel…
+$ is_canceled                    &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 1, 1,…
+$ lead_time                      &lt;int&gt; 342, 737, 7, 13, 14, 14, 0, 9…
+$ arrival_date_year              &lt;int&gt; 2015, 2015, 2015, 2015, 2015,…
+$ arrival_date_month             &lt;chr&gt; &quot;July&quot;, &quot;July&quot;, &quot;July&quot;, &quot;July…
+$ arrival_date_week_number       &lt;int&gt; 27, 27, 27, 27, 27, 27, 27, 2…
+$ arrival_date_day_of_month      &lt;int&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,…
+$ stays_in_weekend_nights        &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,…
+$ stays_in_week_nights           &lt;int&gt; 0, 0, 1, 1, 2, 2, 2, 2, 3, 3,…
+$ adults                         &lt;int&gt; 2, 2, 1, 1, 2, 2, 2, 2, 2, 2,…
+$ children                       &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,…
+$ babies                         &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,…
+$ meal                           &lt;chr&gt; &quot;BB&quot;, &quot;BB&quot;, &quot;BB&quot;, &quot;BB&quot;, &quot;BB&quot;,…
+$ country                        &lt;chr&gt; &quot;PRT&quot;, &quot;PRT&quot;, &quot;GBR&quot;, &quot;GBR&quot;, &quot;…
+$ market_segment                 &lt;chr&gt; &quot;Direct&quot;, &quot;Direct&quot;, &quot;Direct&quot;,…
+$ distribution_channel           &lt;chr&gt; &quot;Direct&quot;, &quot;Direct&quot;, &quot;Direct&quot;,…
+$ is_repeated_guest              &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,…
+$ previous_cancellations         &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,…
+$ previous_bookings_not_canceled &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,…
+$ reserved_room_type             &lt;chr&gt; &quot;C&quot;, &quot;C&quot;, &quot;A&quot;, &quot;A&quot;, &quot;A&quot;, &quot;A&quot;,…
+$ assigned_room_type             &lt;chr&gt; &quot;C&quot;, &quot;C&quot;, &quot;C&quot;, &quot;A&quot;, &quot;A&quot;, &quot;A&quot;,…
+$ booking_changes                &lt;int&gt; 3, 4, 0, 0, 0, 0, 0, 0, 0, 0,…
+$ deposit_type                   &lt;chr&gt; &quot;No Deposit&quot;, &quot;No Deposit&quot;, &quot;…
+$ agent                          &lt;chr&gt; &quot;NULL&quot;, &quot;NULL&quot;, &quot;NULL&quot;, &quot;304&quot;…
+$ company                        &lt;chr&gt; &quot;NULL&quot;, &quot;NULL&quot;, &quot;NULL&quot;, &quot;NULL…
+$ days_in_waiting_list           &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,…
+$ customer_type                  &lt;chr&gt; &quot;Transient&quot;, &quot;Transient&quot;, &quot;Tr…
+$ adr                            &lt;dbl&gt; 0.00, 0.00, 75.00, 75.00, 98.…
+$ required_car_parking_spaces    &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,…
+$ total_of_special_requests      &lt;int&gt; 0, 0, 0, 0, 1, 1, 0, 1, 1, 0,…
+$ reservation_status             &lt;chr&gt; &quot;Check-Out&quot;, &quot;Check-Out&quot;, &quot;Ch…
+$ reservation_status_date        &lt;chr&gt; &quot;2015-07-01&quot;, &quot;2015-07-01&quot;, &quot;…</code></pre>
 </div>
 <h3 id="step-3-apply-required-functions">Step 3: Apply required functions</h3>
 <div class="layout-chunk" data-layout="l-body">
@@ -1546,7 +1546,7 @@ $ reservation_status_date        &lt;chr&gt; &quot;2015-07-01&quot;, &quot;2015-
               values_from <span class='op'>=</span> <span class='va'>mean_adults</span><span class='op'>)</span>
 </code></pre>
 </div>
-<pre><code># A tibble: 2 x 4
+<pre><code># A tibble: 2 × 4
 # Groups:   hotel_type [2]
   hotel_type   `2015` `2016` `2017`
   &lt;chr&gt;         &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;
