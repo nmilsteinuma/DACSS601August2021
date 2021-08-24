@@ -1,0 +1,122 @@
+---
+title: "Hanae- Homework 5"
+description: |
+  Homework 5: Creating Visualizations
+author: "Hanae"
+date: 08-24-2021
+output:
+  distill::distill_article:
+    self_contained: false
+draft: true
+---
+
+```{r}
+library(tidyverse)
+library(readxl)
+library(purrr)
+library(scales)
+```
+
+
+```{r echo = FALSE, message=FALSE} 
+#I am creating a new function that will take the name of the Excel sheet as an argument. This will allow me to apply the "cleaning" to all the sheets of the excel file.
+read_tourism<-function(sheet_name){
+#loading the data
+  read_excel("../../_data/Euro_tourism_full_dataset.xlsx", 
+#I am specifying what sheet I choose to work on
+             sheet = sheet_name, 
+#the 11 first rows are unnecessary titles that could be skipped
+             skip=11, 
+#between each two date columns, the data set has an empty column. These need to be deleted.
+             col_names = c("Countries",
+                           "2019-01","delete","2019-02","delete","2019-03","delete",
+                           "2019-04","delete","2019-05","delete","2019-06","delete",
+                           "2019-07","delete","2019-08","delete","2019-09","delete",
+                           "2019-10","delete","2019-11","delete","2019-12","delete",
+                           "2020-01","delete","2020-02","delete","2020-03","delete",
+                           "2020-04","delete","2020-05","delete","2020-06","delete",
+                           "2020-07","delete","2020-08","delete","2020-09","delete",
+                           "2020-10","delete","2020-11","delete","2020-12","delete",
+                           "2021-01","delete","2021-02","delete","2021-03","delete",
+                           "2021-04","delete","2021-05","delete","2021-06","delete")
+             )%>% 
+#create a new column that will contain the origin of the tourist (either foreign or domestic tourist)
+    mutate("Origin"=sheet_name) %>% 
+#then select only columns that are not empty
+  select(!contains("delete"))%>% 
+#filter out the first few rows that contain aggregated information as well as the last two rows that contain descriptive commentary.
+  filter(str_detect(Countries, "Euro|Special|:", negate=TRUE))%>% 
+#then filter out the last 3 columns and any empty column
+  filter(Countries!="c", Countries != "e" , Countries != "u" , Countries != "") %>%
+#now we want to turn columns into rows using pivot_longer.
+#pivot all columns except Countries and Origin
+  pivot_longer(cols = !(Countries|Origin),
+#name the new column that has the months in it Dates
+               names_to = "Dates",
+#name the new column that had the count Nights
+               values_to = "Nights")%>%
+#the column Origin now has Sheet 1 and Sheet 16 which is not very user friendly. I use mutate to rename it appropriately 
+  mutate(Origin = case_when(
+    Origin == "Sheet 1" ~ "Foreign country",
+    Origin == "Sheet 16" ~ "Reporting country"
+  ))%>%
+#Since my data goes from 2019 to 2021 let's just rename "Germany (until 1990 former territory of the FRG)" Germany
+    mutate(Countries=recode(Countries, `Germany (until 1990 former territory of the FRG)`= "Germany"))%>%
+#we can do the same thing using mutate() and case_when():
+  # mutate(Countries = case_when(
+  #   Countries == "Germany (until 1990 former territory of the FRG)" ~ "Germany", 
+  #   TRUE ~ Countries
+  # ))%>%
+#and replace : by NAs
+  mutate(Nights = case_when(
+    Nights == ":" ~ "NA", 
+    TRUE ~ Nights
+  ))%>%
+#note that Nights at this point is labeled as character which becomes problematic when plotting. Here I am turning it into numeric
+  mutate(Nights=as.numeric(Nights))%>%
+#turning Dates into date
+  mutate(Dates=as.Date(paste(Dates,"-01",sep="")))
+}
+
+#at this point my function is ready. I create a new variable tourismClean that uses purrr to apply my function read_tourism to sheets 1 and 16.
+
+tourismClean<-map_dfr(
+  c("Sheet 1", "Sheet 16"),
+  read_tourism)
+
+```
+
+For this homework, we need to create data visualization. For this purpose, I will be using the cleaned version of the same data set that I have used in homework 4.  
+
+```{r echo = TRUE, message=FALSE}
+tourismClean
+```
+I want to start by making a graph that shows how COVID impacted internal tourism in European countries
+
+```{r echo = TRUE, message=FALSE}
+#Make a graph of all the countries where Dates are on the x-axis and Nights on the y-axis. Each country is represented by a color.
+
+ggplot(tourismClean, aes(x=Dates, y=Nights, color=Countries))+geom_point()+theme(legend.position="bottom")+scale_x_date(labels = date_format("%b %Y"))
+```
+
+The visualization shows a clear decrease in the number of nights spent in a touristic establishment in all European countries starting April 2020. Although we see a spike in the summertime in some countries, it is still very low compared to the summer of 2019.
+
+This is obviously not the only visualization that can be used. In fact, although the colors make the graph visually appealing, it is hard for us to distinguish which countries are most impacted by the pandemic. To have a better idea, I am using facet_wrap() to plot each country separately.
+
+```{r echo = TRUE, message=FALSE, fig.height=50, fig.width=10}
+tourismClean%>%
+  ggplot(aes(Dates, Nights))+labs(y="Number of nights spent in a touristic establishment")+scale_y_continuous(labels = scales::number)+
+  theme_bw()+geom_line()+facet_wrap(vars(Countries), ncol=4, scales = "free_y")
+```
+While the decrease in the number of nights spent in a touristic establishment is clear in each country, these graphs remain a bit confusing and hard to interpret because of all the fluctuations that we see in each graph. These fluctuations seem to be caused by differences between the tourists visiting from a foreign country and those visiting from within the reporting country. 
+
+To fix this, we will filter by country of origin and only plot data about tourists visiting from foreign countries.
+
+```{r echo = TRUE, message=FALSE, fig.height=50, fig.width=10}
+tourismClean%>%
+  filter(Origin=="Foreign country")%>%
+  ggplot(aes(Dates, Nights))+labs(y="Number of nights spent in a touristic establishment")+scale_y_continuous(labels = scales::number)+
+  theme_bw()+geom_area()+facet_wrap(vars(Countries), ncol=4, scales = "free_y")
+```
+
+To further the analysis, I may have preferred to know more about the demographics of the visiting tourists and what countries are they visiting from. Our data, however, is limited to what we have here.
