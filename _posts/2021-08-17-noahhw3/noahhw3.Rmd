@@ -28,7 +28,7 @@ prices in excel form
 
 
 ```{r} 
-poultry <- read_excel("../../data/poultry_tidy.xlsx")
+poultry <- read_excel("../../_data/poultry_tidy.xlsx")
 ``` 
 
 ## The Poultry The Poultry data is broken into 4 columns, Product which is the cut of chicken, Year and Month corresponding to each observation. Price_Dollar represents the price of each cut at a month and year. 
