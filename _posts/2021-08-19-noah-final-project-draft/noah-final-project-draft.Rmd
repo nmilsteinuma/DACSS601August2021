@@ -1,7 +1,7 @@
 ---
-title: "Noah Homework 5"
+title: "Noah's Final Project"
 description:  |  
-  HW Five.
+  A Brief Analysis of Debt and Gross Domestic Product in the United States Since Quarter Four 2002
 author:
 -name: Noah Milstein
 date: 08-19-2021
@@ -13,15 +13,15 @@ draft: true
 
 ## Research Problem
 
-The Research Problem I will be addressing relates to nation debt in the United over the past two decades. Leading up to and after the financial crisis debt has become an important topic in economics. Since the financial crisis was largely caused by debtors being allowed more credit than they were able to pay back, it is important to ensure that the country is not following a similar path economically.
+THe Research problem I wanted to pursue with this project is the relationship between GDP and debt. Specifically I was interested in student debt and mortgage debt relative to GDP and the cumulative debt of consumer. I wanted to address this question over past two decades, leading up to and after the financial crisis. Debt is an important topic in economics and examine its size relative to the domestic product of the United States is also important for understanding how the economy function. Since the financial crisis was largely caused by debtors being allowed more credit than they were able to pay back, it is important to ensure that the country is not following a similar path economically.
 
 # How I will be analyzing the probelem
 
 In order to estimate extent to which debt has increased in the economy recently compared to the past I will compare united states national debt  to GDP or gross domestic product. 
 
-Specifically I wanted to see which ones had increased the most in the last few years relative to one another, and if any sectors have reached a similar level to what spurred the 2008 financial crisis. This issue is important on a macro scale as the general consensus seems to be that debt is excessive throughout the economy, especially on the consumer side. Because of this it is important to see how debt has changed in comparison to what the economy is actually able to produce. Excess debt largely implies that people have to borrow beyond income limitations, which could eventually have limits.
+Specifically I wanted to see which ones had increased the most in the last few years relative to one another, and if any sectors have reached a similar level to what spurred the 2008 financial crisis. This issue is important on a macro scale as the general consensus seems to be that debt is excessive throughout the economy, especially on the consumer side. Because of this it is important to see how debt has changed in comparison to what the economy is actually able to produce. Excess debt largely implies that people have to borrow beyond income limitations, which could eventually have far reaching consequences.
 
-I would argue that debt has returned to its pre-crisis highs and represents a threat to economic stability in the United States. Specifically I would argue that housing market debt is likely nearing unsustainable levels once again. In addition, upticks in other forms of debt have likely increased in comparison to what we produced, which could indicate a looming crisis or a coming inhibitor to non-debt fuled economic growth.
+I would argue that debt has returned to its pre-crisis highs and represents a threat to economic stability in the United States. Specifically I would argue that housing market debt is likely nearing unsustainable levels once again. In addition, upticks in other forms of debt have likely increased in comparison to what we produced, which could indicate a looming crisis or a coming inhibitor to non-debt fueled economic growth.
 
 
 ## My Data
@@ -65,12 +65,12 @@ GDP_FED_trills <- read_excel(
  
 The above code loads in the two datasets I will be using for this project. The first "total_debt_plus_comp_raw_NM" contains data from the federal reserve regarding cumulative debt in the united states in trillions of dollars. It is broken down into the Year and Quarter in which the observation was recorded. It is subdivided into columns by Mortgage, HE Revolving, Auto Loan, Credit Card, Student Loan, Other, and Total debt.
 
-The second of the two datasets "GDP_FED_trills" contains yearly GDP data also broken down into quarterly data.
+The second of the two datasets "GDP_FED_trills" contains yearly GDP data also broken down into quarters.
 
 ```{r, Echo=FALSE}
 GDP_Rows_Removed_to_Q4_2002<-GDP_FED_trills[-c(1:234),]
 
-# First unneeded observation not included in the debt sheet are removed from GDP
+# First unneeded observations not included in the debt sheet are removed from GDP
 
 GDP_Rows_Removed_to_Q4_2002<-GDP_Rows_Removed_to_Q4_2002[-c(1)]
 
@@ -83,7 +83,7 @@ names(GDP_Rows_Removed_to_Q4_2002)[1] <- "Total_GDP_Billions"
 
 GDP_Rows_Removed_to_Q4_2002$Quarters_Since_Q4_2002<-values_before_date_modification
 
-# Next to the GDP I add my sequence of number 
+# Next to the GDP I add my sequence of numbers 
 #from 1 to 74 representing the number of quarters 
 #since Q4 2002 which is a bootstrap method of creating a time variable
 
@@ -252,7 +252,6 @@ The code above changes each column's data from character to numeric values as th
 
 The line of code below shows each variable in the data frame that is used in the data analysis
 
-
 ```{r}
 complete_spreadsheet_GDP_Debt %>% select(
   c(
@@ -317,11 +316,13 @@ complete_spreadsheet_GDP_Debt_Total<- pivot_longer(
 ),                                          
 names_to="debt_type", 
 values_to="debt_amount") 
-     
+# The pivot_longer code above moves the debt types, each of which had its own
+#column into rows so that they can be more easily grouped and used in visuals
 ```
 
 ### Statistics Associated With Each Variable
 
+The statistics associated with each debt type are illustrating in the table below. 
 
 ```{r}
 complete_spreadsheet_GDP_Debt %>% select(
@@ -331,9 +332,32 @@ complete_spreadsheet_GDP_Debt %>% select(
   )) %>%
 describe(
   na.rm = TRUE
-  ) %>% select(c("n", "mean", "sd", "median", "mad", "min", "max", "range" )) %>% kable()
+  ) %>% select(c("n", "mean", "sd", "median", "min", "max", "range" )) %>% kable()
 ```
 
+Each debt type has an associated n, mean, sd, median, min, max, range and, mad:
+
+* **n** is the number of observations for each type of debt
+
+* **mean** is the average amount of debt for that particular debt type over the entire period from 2002 Q4 to 2021 Q2 in trillions of dollars.
+
+* **sd** or standard deviation of the group of observations is a measure how far the data deviates from the mean. It uses the square root of the sum of squared differences between each observation and its mean divided by the data's n. It standardizes the data's deviation so that the differences in variation between different forms of debt can be compared
+
+* **median** is the middle value in the range of all observations in the data.
+
+* **min and max** are both the minimum and maximum observation for each type of debt in terms of debt amount.
+
+* **range** is the difference between maximum and minimum observed values. 
+
+### Observations Regarding Statistical Measurements
+
+The mean observations for each indicate the largest range and average value for mortgage, so during visualization it can be expected to be larger than all other observation. The minimum of mortgage debt is also larger than the max of any other debt type. Additionally the sum of all debt types means is smaller than the mean of mortgage alone. 
+
+```{r}
+0.5160662+0.9308703+0.7565176+0.9188575+0.3830770 
+```
+
+Given these observations it is likely that mortgage is and was the largest share of debt despite the repercussions of this in 2008, though it is difficult to comprehend changes in the other debt types, though student loans have the second largest range of 1.3433 trillion after mortgage's 5.5000 trillion dollar range.
 
 ## Data Visualization
 
@@ -356,13 +380,13 @@ ggplot()+
  
 ```
 
-The graph illustrates a great deal about the data. Each type of debt besides mortgage occupies a relatively small amount compared to loans involving property. However, it is clear from the geom_smooth()s that auto loans and student loans have increased beyond all types of debt beyond mortgage. 
+The graph illustrates a great deal about the data. Each type of debt besides mortgage occupies a relatively small amount compared to loans involving property. However, it is clear from the geom_smooth()s that auto loans and student loans have increased, but represent a fraction of the debt that mortgage does.
 
-The graph also indicates that the cumulative mortgage debt reached a peak in 2008 and then fell sharply following the crisis and has returned to a point larger than it was before the crisis. It is also the only graph that appears to have extreme peaks and troughs that could not be explained through a purely linear increase.
+The graph also indicates that the cumulative mortgage debt reached a peak in 2008 and then fell sharply following the crisis and has returned to a point larger than it was before the crisis. It is also the only graph that appears to have extreme peaks and troughs that could not be explained through a purely linear increase in this visualization method.
 
 ### Graph 2
 
-The next graph is largely the same as the previous, but with the additional of Total GDP. In this case GDP and debt appear to be moving farther apart.
+The next graph is largely the same as the previous, but with the additional of Total GDP. In this case GDP and mortgage debt appear to be moving farther apart as time has went on as the gap between the lines has become larger since the 08 crisis.
 
 ```{r}
 complete_spreadsheet_GDP_Debt_pL_with_mort %>%
@@ -378,8 +402,6 @@ ggplot()+
         y= "Loan Volume (Trillions)", x="Time Since Q4 2002 (Quarters)")
  
 ```
-
-
 
 ### Graph 3
 
@@ -401,9 +423,11 @@ ggplot()+
  
 ```
 
+The graph confirms what was depicted in graph 2 as debt has increased, but due to the 2008 crisis the gap is still quite large.
+
 ### Graph 4
 
-The graph below illustrates all debt types but mortgage to better show the trends within this group, which was difficult to comprehend in the above graphs because the geom_smooth()s were compressed at the bottom of the graph as mortgage has a far greater volume than any of them.
+The graph below illustrates all debt types without mortgage. This better illustrates the trends within the group which was difficult to discern in prior graphs.
 
 ```{r}
 complete_spreadsheet_GDP_Debt_pL_wo_mort %>%
@@ -416,11 +440,11 @@ ggplot()+
       y= "Loan Volume (Trillions) ", x="Time Since Q1 2002 (Quarters)")
 ```
 
-The graph indicates a positive slope for Auto Loans, student loans, and credit card debt along with the "other" category. The only type of loan that appears to be decreasing is the Revolving loan category.
+The graph indicates a positive slope for Auto Loans, student loans, and credit card debt along with the "other" category. The only type of loan that appears to be decreasing is the Revolving category.
 
 ### Graph 5
 
-The graph below indicates a similar pattern when comparing "Total GDP" to all types of debt except for Mortgage debt. In this case it appears that the pace of GDP growth is larger than the growth of any individual form of debt besides mortgage debt.
+The graph below indicates a similar pattern when comparing "Total GDP" to all types of debt except for Mortgage debt. In this case it appears that the pace of GDP growth is larger than the growth of any individual form of debt, especially without the presence of mortgage debt.
 
 ```{r}
 complete_spreadsheet_GDP_Debt_pL_wo_mort %>%
@@ -471,7 +495,19 @@ The Second density plot compares all debt types. In this distribution is it clea
  
 ## Conclusion
 
+Analysis of cumulative United States debt is vital for understanding macroeconomic trends and the complexion of national consumption. The willingness of individuals to take on debt and spend beyond the capacity of their income represents a great deal about what areas of spending are a general priority.
+
+#### Implications of Graphs and Statistics
+
+The graphs and statistical information provide a great deal of information regarding recent trends in debt. Mortgage debt remains the largest holding of debt, while all but one of the six forms of debt analyzed appears to be falling. Overall debt for individuals is likely then growing. GDP, though a flawed measure of individual income and spending capacity, is useful to analyze in comparison to debt because the interaction between the two suggests a great deal about how the economy functions. 
+
 ## Reflection
+
+My experience with the process of making this project was fairly smooth. Both datasets that I used were made by professional, analysis minded, government agencies. Because of this they required minimal cleaning beyond the removal of rows describing what each table contained. 
+
+The most challenging and time consuming part of the process was figuring out that I would need to pivot my data in order to visualize the data more easily. Working with my initial columns was difficult and comparing multiple types of debt across the dataset was difficult. Figuring out how to pivot in visualize then took the greatest amount of time.
+
+Given more time I would have liked to do a state by state, or county breakdown of the data. Though debt and GDP are interesting to compare on a macro scale, going down and seeing how these trends differ by state and region would be interesting. I would also have liked to include other datasets that include information regarding loan delinquency and household spending relative to debt. It would have also been interested in a less broad approach, perhaps comparing one loan type to other areas of consumption
 
 ## Citations
 
